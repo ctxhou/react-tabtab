@@ -5,13 +5,13 @@ var App = React.createClass({
   render: function() {
     return (
       <Tabs>
-        <Panel>
+        <Panel title="hi">
           123121233132
         </Panel>
-        <Panel>
+        <Panel title="yo">
           ypmn
         </Panel>
-        <Panel>
+        <Panel title="ysdfsdo">
           sdfsdf
         </Panel>
       </Tabs>

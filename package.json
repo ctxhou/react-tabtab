@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "css": "sass --watch scss/tab.scss:dist/tab.css"
   },
   "repository": {
     "type": "git",
@@ -30,9 +31,10 @@
     "babel-core": "^5.5.8",
     "babel-loader": "^5.1.4",
     "node-libs-browser": "^0.5.2",
+    "node-sass": "^3.3.3",
     "raw-loader": "^0.5.1",
-    "style-loader": "^0.12.3",
     "react-hot-loader": "^1.2.7",
+    "style-loader": "^0.12.3",
     "webpack": "^1.9.11",
     "webpack-dev-server": "^1.9.0"
   }
