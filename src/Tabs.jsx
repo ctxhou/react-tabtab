@@ -1,5 +1,6 @@
 var React = require('react');
 var Tab = require('./Tab.jsx');
+var classNames = require('classnames');
 
 var Tabs = React.createClass({
   propTypes: {
@@ -35,14 +36,14 @@ var Tabs = React.createClass({
                       title={children.props.title}
                       status='active'
                       handleTabClick={that.handleTabClick}/>);
-        panel.push(React.cloneElement(children, {className: 'panel-active'}));
+        panel.push(React.cloneElement(children, {className: classNames('tabtab__panel', 'active')}));
       } else {
         tab.push(<Tab key={index}
                       tabKey={index}
                       title={children.props.title}
                       status='inactive'
                       handleTabClick={that.handleTabClick}/>);
-        panel.push(React.cloneElement(children, {className: 'panel-inactive'}));
+        panel.push(React.cloneElement(children, {className: classNames('tabtab__panel', 'inactive')}));
       }
     })
 
@@ -54,8 +55,12 @@ var Tabs = React.createClass({
     var opt = this._getPanel();
     return(
       <div>
-        {opt.tab}
-        {opt.panel}
+        <div className="tabtab__tab__wrapper">
+          {opt.tab}
+        </div>
+        <div className="tabtab__panel__wrapper">
+          {opt.panel}
+        </div>
       </div>
     )
   }

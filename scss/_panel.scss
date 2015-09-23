@@ -1,7 +1,9 @@
-.panel-active {
-    display: block;
-}
+.#{$prefix}panel {
+    &.active {
+        display: block;
+    }
 
-.panel-inactive {
-    display: none;
+    &.inactive {
+        display: none;
+    }
 }

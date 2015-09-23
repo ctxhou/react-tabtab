@@ -1,4 +1,5 @@
 var React = require('react');
+var classNames = require('classnames');
 
 var Tab = React.createClass({
 
@@ -9,17 +10,16 @@ var Tab = React.createClass({
   render: function() {
     var tabClass;
     if (this.props.status === 'active') {
-      tabClass = 'active'
+      tabClass = classNames('tabtab__tab', 'active');
     } else {
-      tabClass = 'inactive'
+      tabClass = classNames('tabtab__tab');
     }
     return(
       <li className={tabClass} onClick={this.clickTab}>
-        title: {this.props.title}
+        {this.props.title}
       </li>
     )
   }
-
 })
 
 module.exports = Tab;
