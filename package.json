@@ -1,5 +1,5 @@
 {
-  "name": "react-tabs",
+  "name": "react-tabtab",
   "version": "0.0.1",
   "description": "react, tabs",
   "main": "index.js",
@@ -16,6 +16,7 @@
     "react",
     "tabs",
     "react-tab",
+    "react-tabtab",
     "tab"
   ],
   "author": "ctxhou",
