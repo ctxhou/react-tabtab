@@ -1,5 +1,5 @@
 var React = require('react');
-var Tab = require('./Tab');
+var Tab = require('./Tab.jsx');
 
 var Tabs = React.createClass({
   propTypes: {

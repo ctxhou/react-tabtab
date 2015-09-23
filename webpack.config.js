@@ -14,8 +14,7 @@ module.exports = {
       'webpack/hot/only-dev-server',
       './test'
     ]
-  }
-  ,
+  },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
@@ -34,7 +33,11 @@ module.exports = {
         test: /\.js$/,
         loaders: ['react-hot', 'babel'],
         exclude: /node_modules/
-      }, 
+      },
+      {
+          test: /\.jsx$/,
+          loaders: ['react-hot','jsx-loader?insertPragma=React.DOM&harmony']
+      },
       {
         test: /\.css?$/,
         loaders: ['style', 'raw']
