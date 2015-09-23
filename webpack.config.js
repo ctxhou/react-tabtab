@@ -3,14 +3,22 @@ var webpack = require('webpack');
 
 module.exports = {
   devtool: 'eval',
-  entry: [
-    'webpack-dev-server/client?http://localhost:5000',
-    'webpack/hot/only-dev-server',
-    './index'
-  ],
+  entry: {
+    'react-tabtab':[
+      'webpack-dev-server/client?http://localhost:5000',
+      'webpack/hot/only-dev-server',
+      './index'
+    ],
+    'test': [
+      'webpack-dev-server/client?http://localhost:5000',
+      'webpack/hot/only-dev-server',
+      './test'
+    ]
+  }
+  ,
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.js',
+    filename: '[name].js',
     publicPath: '/static/'
   },
   plugins: [

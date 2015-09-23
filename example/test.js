@@ -1,6 +1,7 @@
-var React = require('react');
-var Tabs = require('../src/Tabs');
-var Panel = require('../src/Panel');
+var Tab = require('../index');
+var Tabs = Tab.Tabs;
+var Panel = Tab.Panel;
+
 var App = React.createClass({
   render: function() {
     return (

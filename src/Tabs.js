@@ -29,7 +29,6 @@ var Tabs = React.createClass({
     var panel = [];
     React.Children.forEach(this.props.children, function(children, index) {
       // add tabs
-      console.log(children)
       if (index === that.state.activeKey) {
         tab.push(<Tab key={index}
                       tabKey={index}
@@ -53,7 +52,6 @@ var Tabs = React.createClass({
 
   render: function() {
     var opt = this._getPanel();
-    console.log(opt.panel)
     return(
       <div>
         {opt.tab}
