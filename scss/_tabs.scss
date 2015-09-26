@@ -1,0 +1,21 @@
+.#{$prefix}tab {
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 5px;
+    border: 2px solid #e7e7e7;
+    padding: 5px;
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.active {
+        border-color: #2175bc;
+        background-color: #2175bc;
+        color: white;
+    }
+}
+
+
+.#{$prefix}tab__wrapper {
+    margin-bottom: 15px;
+}
