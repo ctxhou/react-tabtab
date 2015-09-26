@@ -1,6 +1,6 @@
-# React tabs
+# react-tabtab
 
-## NOT FINISH
+
 
 ## License
 

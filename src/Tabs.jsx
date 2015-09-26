@@ -18,6 +18,14 @@ var Tabs = React.createClass({
     }
   },
 
+  componentWillReceiveProps: function(nextProps) {
+    if (nextProps.activeKey !== this.state.activeKey) {
+      this.setState({
+        activeKey: nextProps.activeKey
+      })
+    }
+  },
+
   handleTabClick: function(activeKey) {
     this.setState({
       activeKey: activeKey

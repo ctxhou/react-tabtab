@@ -5,7 +5,7 @@ var Panel = Tab.Panel;
 var App = React.createClass({
   render: function() {
     return (
-      <Tabs>
+      <Tabs activeKey={2}>
         <Panel title="hi">
           123121233132
         </Panel>
