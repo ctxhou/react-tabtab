@@ -43,10 +43,10 @@ Simple example:
 
 ## API
     
-    | property       | type     | default | required | description                   |
-    |----------------|----------|---------|----------|-------------------------------|
-    | activeKey      | int      | 0       | no       | set the active key of the tab |
-    | handleTabClick | function | n/a     | no       |                               |
+| property       | type     | default | required | description                   |
+|----------------|----------|---------|----------|-------------------------------|
+| activeKey      | int      | 0       | no       | set the active key of the tab |
+| handleTabClick | function | n/a     | no       |                               |
 
 
 ## Style
