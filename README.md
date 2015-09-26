@@ -8,6 +8,8 @@ But in my case, I only need the tab that can hide and show. Besides, all the con
 
 No other magic. Maybe it would fit in your case.
 
+[demo](http://ctxhou.github.io/react-tabtab/)
+
 ## Usage
 
 Now only available the commonjs module.
@@ -51,7 +53,7 @@ Simple example:
 
 now only use css as style.
 
-if you want to use the same style as teh [demo](), just clone the `dist/tab.css` and inlcude in you project.
+if you want to use the same style as teh [demo](http://ctxhou.github.io/react-tabtab/), just clone the `dist/tab.css` and inlcude in you project.
 
     
 
