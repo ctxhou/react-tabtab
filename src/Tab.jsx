@@ -1,5 +1,6 @@
 var React = require('react');
 var classNames = require('classnames');
+var Tappable = require('react-tappable');
 
 var Tab = React.createClass({
 
@@ -15,9 +16,11 @@ var Tab = React.createClass({
       tabClass = classNames('tabtab__tab');
     }
     return(
-      <li className={tabClass} onClick={this.clickTab}>
-        {this.props.title}
-      </li>
+      <Tappable onTap={this.clickTab}>
+        <li className={tabClass} onClick={this.clickTab}>
+          {this.props.title}
+        </li>
+      </Tappable>
     )
   }
 })
