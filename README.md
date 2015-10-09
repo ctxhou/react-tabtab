@@ -16,37 +16,41 @@ Now only available the commonjs module.
 
 Install it with npm.
 
-    npm install react-tabtab --save
+```js
+npm install react-tabtab --save
+```
 
 Simple example:
 
-    var Tabs = require('react-tabtab').Tabs;
-    var Panel = require('react-tabtab').Panel;
+```js
+var Tabs = require('react-tabtab').Tabs;
+var Panel = require('react-tabtab').Panel;
 
-    var App = React.createClass({
-      render: function() {
-        return (
-          <Tabs>
-            <Panel title="hi">
-              Hi!
-            </Panel>
-            <Panel title="yo">
-              yo yo
-            </Panel>
-          </Tabs>
-        )
-      }
-    })
+var App = React.createClass({
+  render: function() {
+    return (
+      <Tabs>
+        <Panel title="hi">
+          Hi!
+        </Panel>
+        <Panel title="yo" lazy={true}>
+          yo yo
+        </Panel>
+      </Tabs>
+    )
+  }
+})
 
-    React.render(<App/>, document.getElementById('container'));
-
+React.render(<App/>, document.getElementById('container'));
+```
 
 ## API
     
-| property       | type     | default | required | description                      |
-|----------------|----------|---------|----------|----------------------------------|
-| activeKey      | int      | 0       | no       | set the active key of the tab    |
-| handleTabClick | function | n/a     | no       | return the key which user clicks |
+| property       | type     | default | required | description                                         |
+|----------------|----------|---------|----------|-----------------------------------------------------|
+| activeKey      | int      | 0       | no       | set the active key of the tab                       |
+| lazy           | boolean  | false   | no       | only load the content to DOM when you click the tab |
+| handleTabClick | function | n/a     | no       | return the key which user clicks                    |
 
 
 ## Style

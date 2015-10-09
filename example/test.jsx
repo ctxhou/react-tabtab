@@ -9,7 +9,7 @@ var App = React.createClass({
         <Panel title="hi">
           123121233132
         </Panel>
-        <Panel title="yo">
+        <Panel title="yo" lazy={true}>
           ypmn
         </Panel>
         <Panel title="ysdfsdo">

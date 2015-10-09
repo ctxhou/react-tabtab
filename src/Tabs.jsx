@@ -41,21 +41,20 @@ var Tabs = React.createClass({
     var panel = [];
     React.Children.forEach(this.props.children, function(children, index) {
       // add tabs
+      var status, className;
       if (index === that.state.activeKey) {
-        tab.push(<Tab key={index}
-                      tabKey={index}
-                      title={children.props.title}
-                      status='active'
-                      handleTabClick={that.handleTabClick}/>);
-        panel.push(React.cloneElement(children, {className: classNames('tabtab__panel', 'active')}));
+        status = 'active';
       } else {
-        tab.push(<Tab key={index}
-                      tabKey={index}
-                      title={children.props.title}
-                      status='inactive'
-                      handleTabClick={that.handleTabClick}/>);
-        panel.push(React.cloneElement(children, {className: classNames('tabtab__panel', 'inactive')}));
+        status = 'inactive';
       }
+      tab.push(<Tab key={index}
+                    tabKey={index}
+                    title={children.props.title}
+                    status={status}
+                    handleTabClick={that.handleTabClick}/>);
+      if (!children.props.lazy || (children.props.lazy && index === that.state.activeKey)) {
+        panel.push(React.cloneElement(children, {className: classNames('tabtab__panel', status)}));
+      } 
     })
 
 
