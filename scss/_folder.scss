@@ -1,0 +1,71 @@
+// default style
+$prefix: tabtab__folder__;
+$bkg-color-active: #F1F1F1;
+$border-color-active: #b0b0af;
+
+.#{$prefix}wrapper {
+    position: relative;
+}
+
+.#{$prefix}tab {
+    list-style-type: none;
+    display: inline-block;
+    color: black;
+    // margin-right: 5px;
+    // border: 2px solid #e7e7e7;
+    padding: 5px 20px;
+    background-color: #E6E6E6;
+    color: #B6B6B6;
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.active {
+        border-radius: 2px;
+        color: black;
+        background-color: $bkg-color-active;
+        border-top: 1px solid $border-color-active;
+        border-right: 1px solid $border-color-active;
+        border-left: 1px solid $border-color-active;
+        margin-bottom: -2px;
+    }
+}
+
+.#{$prefix}tab.add {
+    margin-left: 5px;
+    padding: 5px 8px;
+    background-color: $bkg-color-active;
+    color: black;
+    &:hover {
+        background-color: #ccc;
+    }
+}
+
+.#{$prefix}delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.#{$prefix}tab__wrapper {
+    // margin-bottom: 15px;
+}
+
+.#{$prefix}panel {
+    padding: 10px;
+    &.active {
+        display: block;
+        background-color: $bkg-color-active;
+        border: 1px solid $border-color-active;
+        // border-bottom: 1px solid $border-color-active;
+        // border-right: 1px solid $border-color-active;
+        // border-left: 1px solid $border-color-active;
+    }
+
+    &.inactive {
+        display: none;
+    }
+}

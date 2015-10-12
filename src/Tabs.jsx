@@ -8,13 +8,15 @@ var Tabs = React.createClass({
 
   getDefaultProps: function() {
     return {
-      defaultActiveKey: 0
+      defaultActiveKey: 0,
+      defaultStyle: "tabtab__default__"
     }
   },
 
   getInitialState: function() {
     return {
-      activeKey: this.props.activeKey || this.props.defaultActiveKey
+      activeKey: this.props.activeKey || this.props.defaultActiveKey,
+      style: this.props.style || this.props.defaultStyle
     }
   },
 
@@ -35,6 +37,14 @@ var Tabs = React.createClass({
     })
   },
 
+  handleAddClick: function() {
+    this.props.handleAddTab();
+  },
+
+  handleDeleteClick: function() {
+    this.props.handleDeleteButton();
+  },
+
   _getPanel: function() {
     var that = this;
     var tab = [];
@@ -51,24 +61,43 @@ var Tabs = React.createClass({
                     tabKey={index}
                     title={children.props.title}
                     status={status}
+                    style={that.state.style}
                     handleTabClick={that.handleTabClick}/>);
       if (!children.props.lazy || (children.props.lazy && index === that.state.activeKey)) {
-        panel.push(React.cloneElement(children, {className: classNames('tabtab__panel', status)}));
+        panel.push(React.cloneElement(children, {className: classNames(that.state.style + 'panel', status)}));
       } 
     })
+    if(this.props.addTab) {
+      tab.push(<Tab key="ADD"
+                    tabKey="ADD"
+                    title="＋"
+                    style={that.state.style}
+                    handleTabClick={that.handleAddClick}/>);
+    }
 
 
     return {tab: tab, panel: panel};
   },
 
   render: function() {
+    var deleteButtonTmpl;
     var opt = this._getPanel();
+    var wrapper = this.state.style + "wrapper";
+    var tabWrapper = this.state.style + "tab__wrapper";
+    var panelWrapper = this.state.style + "panel__wrapper";
+    if (this.props.deleteButton) {
+      var className = this.state.style + "delete";
+      deleteButtonTmpl = <button className={className} onClick={this.handleDeleteClick}>
+                            <i className="fa fa-times"></i>
+                        </button>;
+    }
     return(
-      <div>
-        <div className="tabtab__tab__wrapper">
+      <div className={wrapper}>
+        {deleteButtonTmpl}
+        <div className={tabWrapper}>
           {opt.tab}
         </div>
-        <div className="tabtab__panel__wrapper">
+        <div className={panelWrapper}>
           {opt.panel}
         </div>
       </div>

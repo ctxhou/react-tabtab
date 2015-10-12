@@ -46,11 +46,16 @@ React.render(<App/>, document.getElementById('container'));
 
 ## API
     
-| property       | type     | default | required | description                                         |
-|----------------|----------|---------|----------|-----------------------------------------------------|
-| activeKey      | int      | 0       | no       | set the active key of the tab                       |
-| lazy           | boolean  | false   | no       | only load the content to DOM when you click the tab |
-| handleTabClick | function | n/a     | no       | return the key which user clicks                    |
+| property           | type     | default           | required | description                                         |
+|--------------------|----------|-------------------|----------|-----------------------------------------------------|
+| activeKey          | int      | 0                 | no       | set the active key of the tab                       |
+| addTab             | boolean  | false             | no       | whether show a add tab at the end                   |
+| handleAddTab       | function | n/a               | no       | callback function when user click the add tab       |
+| deleteButton       | boolean  | false             | no       | whether show a delete button at each panel          |
+| handleDeleteButton | function | false             | no       | callback function when user click the delete button |
+| lazy               | boolean  | false             | no       | only load the content to DOM when you click the tab |
+| handleTabClick     | function | n/a               | no       | return the key which user clicks                    |
+| style              | string   | tabtab__default__ | no       |                                                     |
 
 
 ## Style

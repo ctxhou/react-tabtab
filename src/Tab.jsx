@@ -11,13 +11,16 @@ var Tab = React.createClass({
   render: function() {
     var tabClass;
     if (this.props.status === 'active') {
-      tabClass = classNames('tabtab__tab', 'active');
+      tabClass = classNames(this.props.style + 'tab', 'active');
     } else {
-      tabClass = classNames('tabtab__tab');
+      tabClass = classNames(this.props.style + 'tab');
+    }
+    if (this.props.tabKey === 'ADD') {
+      tabClass = classNames(this.props.style + 'tab', 'add');
     }
     return(
       <Tappable onTap={this.clickTab}>
-        <li className={tabClass} onClick={this.clickTab}>
+        <li className={tabClass}>
           {this.props.title}
         </li>
       </Tappable>

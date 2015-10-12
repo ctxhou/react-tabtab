@@ -1,22 +1,67 @@
-.tabtab__tab {
+.tabtab__default__tab {
   list-style-type: none;
   display: inline-block;
   margin-right: 5px;
   border: 2px solid #e7e7e7;
   padding: 5px; }
-  .tabtab__tab:hover {
+  .tabtab__default__tab:hover {
     cursor: pointer; }
-  .tabtab__tab.active {
+  .tabtab__default__tab.active {
     border-color: #2175bc;
     background-color: #2175bc;
     color: white; }
 
-.tabtab__tab__wrapper {
+.tabtab__default__tab__wrapper {
   margin-bottom: 15px; }
 
-.tabtab__panel.active {
+.tabtab__default__panel.active {
   display: block; }
-.tabtab__panel.inactive {
+.tabtab__default__panel.inactive {
   display: none; }
+
+.tabtab__folder__wrapper {
+  position: relative; }
+
+.tabtab__folder__tab {
+  list-style-type: none;
+  display: inline-block;
+  color: black;
+  padding: 5px 20px;
+  background-color: #E6E6E6;
+  color: #B6B6B6; }
+  .tabtab__folder__tab:hover {
+    cursor: pointer; }
+  .tabtab__folder__tab.active {
+    border-radius: 2px;
+    color: black;
+    background-color: #F1F1F1;
+    border-top: 1px solid #b0b0af;
+    border-right: 1px solid #b0b0af;
+    border-left: 1px solid #b0b0af;
+    margin-bottom: -2px; }
+
+.tabtab__folder__tab.add {
+  margin-left: 5px;
+  padding: 5px 8px;
+  background-color: #F1F1F1;
+  color: black; }
+  .tabtab__folder__tab.add:hover {
+    background-color: #ccc; }
+
+.tabtab__folder__delete {
+  position: absolute;
+  top: 10px;
+  right: 10px; }
+  .tabtab__folder__delete:hover {
+    cursor: pointer; }
+
+.tabtab__folder__panel {
+  padding: 10px; }
+  .tabtab__folder__panel.active {
+    display: block;
+    background-color: #F1F1F1;
+    border: 1px solid #b0b0af; }
+  .tabtab__folder__panel.inactive {
+    display: none; }
 
 /*# sourceMappingURL=tab.css.map */
