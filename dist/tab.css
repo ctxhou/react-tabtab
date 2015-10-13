@@ -50,8 +50,8 @@
 
 .tabtab__folder__delete {
   position: absolute;
-  top: 10px;
-  right: 10px; }
+  top: -5px;
+  right: -12px; }
   .tabtab__folder__delete:hover {
     cursor: pointer; }
 
@@ -63,5 +63,49 @@
     border: 1px solid #b0b0af; }
   .tabtab__folder__panel.inactive {
     display: none; }
+
+.tabtab__folder__circCont {
+  display: inline-block; }
+
+.tabtab__folder__circle {
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  background: transparent;
+  border: 2px solid #9c9c9a;
+  border-radius: 50%;
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 7px;
+  transition: background 50ms; }
+  .tabtab__folder__circle:after {
+    width: 10px;
+    height: 2px;
+    background-color: #9c9c9a;
+    content: "";
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+    position: absolute;
+    transform: rotate(-45deg); }
+  .tabtab__folder__circle:before {
+    left: 50%;
+    top: 50%;
+    margin-left: -5px;
+    margin-top: -1px;
+    width: 10px;
+    height: 2px;
+    background-color: #9c9c9a;
+    content: "";
+    position: absolute;
+    transform: rotate(45deg); }
+  .tabtab__folder__circle:hover {
+    background-color: #9c9c9a; }
+    .tabtab__folder__circle:hover:after, .tabtab__folder__circle:hover:before {
+      background-color: #F1F1F1; }
+  .tabtab__folder__circle:focus {
+    outline: none; }
 
 /*# sourceMappingURL=tab.css.map */

@@ -9,8 +9,10 @@ var App = React.createClass({
             style="tabtab__folder__" 
             addTab={true}
             handleAddTab={handleAddTab}
-            deleteButton={true}
-            handleDeleteButton={handleDeleteButton}>
+            tabDeleteButton={true}
+            handleTabDeleteButton={handleTabDeleteButton}
+            deleteAllButton={true}
+            handleDeleteAllButton={handleDeleteButton}>
         <Panel title="hi">
           123121233132
         </Panel>
@@ -34,6 +36,10 @@ function handleAddTab() {
 
 function handleDeleteButton() {
   console.log('delete')
+}
+
+function handleTabDeleteButton() {
+  console.log('tab delete dfkgdfkg ')
 }
 
 module.exports = App;

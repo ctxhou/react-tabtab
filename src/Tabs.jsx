@@ -41,14 +41,15 @@ var Tabs = React.createClass({
     this.props.handleAddTab();
   },
 
-  handleDeleteClick: function() {
-    this.props.handleDeleteButton();
+  handleTabDeleteButton: function() {
+    this.props.handleTabDeleteButton();
   },
 
   _getPanel: function() {
     var that = this;
     var tab = [];
     var panel = [];
+
     React.Children.forEach(this.props.children, function(children, index) {
       // add tabs
       var status, className;
@@ -57,17 +58,20 @@ var Tabs = React.createClass({
       } else {
         status = 'inactive';
       }
+
       tab.push(<Tab key={index}
                     tabKey={index}
                     title={children.props.title}
                     status={status}
                     style={that.state.style}
-                    handleTabClick={that.handleTabClick}/>);
+                    handleTabClick={that.handleTabClick}
+                    tabDeleteButton={that.props.tabDeleteButton}
+                    handleTabDeleteButton={that.props.handleTabDeleteButton}/>);
       if (!children.props.lazy || (children.props.lazy && index === that.state.activeKey)) {
         panel.push(React.cloneElement(children, {className: classNames(that.state.style + 'panel', status)}));
       } 
     })
-    if(this.props.addTab) {
+    if(this.props.addTab && tab.length > 0) { //if the tab more than one, show add button
       tab.push(<Tab key="ADD"
                     tabKey="ADD"
                     title="＋"
@@ -85,10 +89,10 @@ var Tabs = React.createClass({
     var wrapper = this.state.style + "wrapper";
     var tabWrapper = this.state.style + "tab__wrapper";
     var panelWrapper = this.state.style + "panel__wrapper";
-    if (this.props.deleteButton) {
-      var className = this.state.style + "delete";
-      deleteButtonTmpl = <button className={className} onClick={this.handleDeleteClick}>
-                            <i className="fa fa-times"></i>
+    if (this.props.deleteAllButton && opt.tab.length > 0) {
+      var className = this.state.style + "delete button btn-primary bg-red";
+      deleteButtonTmpl = <button className={className} onClick={this.props.handleDeleteAllButton}>
+                          無
                         </button>;
     }
     return(
