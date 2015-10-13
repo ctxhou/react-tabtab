@@ -68,7 +68,7 @@ var Tabs = React.createClass({
                     tabDeleteButton={that.props.tabDeleteButton}
                     handleTabDeleteButton={that.props.handleTabDeleteButton}/>);
       if (!children.props.lazy || (children.props.lazy && index === that.state.activeKey)) {
-        panel.push(React.cloneElement(children, {className: classNames(that.state.style + 'panel', status)}));
+        panel.push(React.cloneElement(children, {className: classNames(that.state.style + 'panel', status), status: status}));
       } 
     })
     if(this.props.addTab && tab.length > 0) { //if the tab more than one, show add button
