@@ -4,9 +4,15 @@ react-tabtab is another react tab. But why you need another react tab?
 
 Some react tabs provide so powerful function like only render the active tab to the DOM or it seperates the tab and panel.
 
-But in my case, I only need the tab that can hide and show. Besides, all the content in the panel is directly render to DOM. That's it. That is react-tabtab.
+But in my case, I only need the tab that can hide and show. Besides, all the content in the panel is directly render to DOM. 
 
-No other magic. Maybe it would fit in your case.
+Besides, cause my personal project need more function. I find the tab only show content can satisfy my use case.
+
+So react tabtab provide more api for you to interact with tabs.
+
+That's it. That is react-tabtab.
+
+Hope it would fit in your case.
 
 [demo](http://ctxhou.github.io/react-tabtab/)
 
@@ -67,6 +73,9 @@ now only use css as style.
 if you want to use the same style as teh [demo](http://ctxhou.github.io/react-tabtab/), just clone the `dist/tab.css` and inlcude in you project.
 
     
+## Todo
+
+- [] add the update partial selection
 
 ## License
 

@@ -1,14 +1,135 @@
 <html>
   <head>
     <title>React tab</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="./dist/tab.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="gh-pages/skull.css">
+    <link href="http://d2v52k3cl9vedd.cloudfront.net/basscss/7.0.4/basscss.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
   </head>
-  <body style="margin-top:100px; margin-left:40%;">
-    <div class="todoapp" id="root" style="width: 500px;">
-    </div>
+  <body>
+    <header class="center px2 py4">
+      <div class="mb1">
+        <h1 class="h2 inline-block m0">
+          React tabtab
+        </h1>
+      </div>
+      <div class="h6 bold caps mb3">v 0.0.12</div>
+      <a href="//github.com/ctxhou/react-tabtab" class="h6 caps button mr2">
+        Github
+      </a>
+      <div style="text-align: left">
+    </header>
+    <section class="container px2 py2">
+      <h1>Basic Tabs</h1>
+      <div class="clearfix">
+        <div class="col col-6">
+          <div id="basic" style="width: 500px;"></div>
+        </div>
+        <div class="col col-6">
+<pre><code  class="js">
+  var App = React.createClass({
+    render: function() {
+      return (
+        &lt;Tabs style="tabtab__folder__"&gt;
+          &lt;Panel title="Tab1"&gt;
+            Content1
+          &lt;/Panel&gt;
+          &lt;Panel title="Tab2"&gt;
+            Content2
+          &lt;/Panel&gt;
+          &lt;Panel title="Tab3"&gt;
+            Content3
+          &lt;/Panel&gt;
+        &lt;/Tabs&gt;
+      )
+    }
+  })
+</code></pre>
+        </div>
+      </div>
+    </section>
+    <section class="container px2 py4">
+      <h1>Advanced Tabs</h1>
+      <div class="clearfix">
+        <div class="col col-6 px1">
+          <div id="advanced" style="width: 500px;" class="mb3"></div>
+          <p>(check the console to see the click response)</p>
+          <p>With these callback function, you can combine them with your data to make the add tab, delete tab action.</p>
+
+        </div>
+        <div class="col col-6">
+<pre>
+<code class="javascript">
+var App = React.createClass({
+  render: function() {
+    return (
+      &lt;Tabs activeKey={2} 
+            style="tabtab__folder__" 
+            addTab={true}
+            handleAddTab={handleAddTab}
+            tabDeleteButton={true}
+            handleTabDeleteButton={handleTabDeleteButton}
+            deleteAllButton={true}
+            handleDeleteAllButton={handleDeleteButton}
+            handleTabClick={handleTabClick}&gt;
+        &lt;Panel title="Tab1"&gt;
+          Content1
+        &lt;/Panel&gt;
+        &lt;Panel title="Tab2"&gt;
+          Content2
+        &lt;/Panel&gt;
+        &lt;Panel title="Tab3"&gt;
+          Content3
+        &lt;/Panel&gt;
+      &lt;/Tabs&gt;
+    )
+  }
+})
+</code>  
+</pre>
+        </div>
+      </div>
+    </section>
+    <section class="container px2 py4">
+      <h1>Lazy</h1>
+      <div class="clearfix">
+        <div class="col col-6 px1">
+          <div id="lazy" style="width: 500px;" class="mb3"></div>
+          <p>It's totally simillar with Basic tabs. But check the Tab2, its panel is rendered to DOM when you click it.</p>
+        </div>
+              <div class="clearfix">
+                <div class="col col-6">
+                  <div id="lazy" style="width: 500px;"></div>
+                </div>
+                <div class="col col-6">
+<pre><code  class="js">
+  var App = React.createClass({
+    render: function() {
+      return (
+        &lt;Tabs style="tabtab__folder__"&gt;
+          &lt;Panel title="Tab1"&gt;
+            Content1
+          &lt;/Panel&gt;
+          &lt;Panel title="Tab2" lazy={true}&gt;
+            Content2
+          &lt;/Panel&gt;
+          &lt;Panel title="Tab3"&gt;
+            Content3
+          &lt;/Panel&gt;
+        &lt;/Tabs&gt;
+      )
+    }
+  })
+</code></pre>
+    
   </body>
   <script src="/static/test.js"></script>
 </html>

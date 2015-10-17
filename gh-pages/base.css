@@ -1,0 +1,68 @@
+/*
+ * Skull
+ *
+ * Minimal Basscss theme
+ *
+ */
+
+
+/* Basscss Modules */
+@import 'basscss-base-reset';
+/* @import 'basscss-base-forms'; */
+@import 'basscss-base-buttons';
+/* @import 'basscss-base-tables'; */
+@import 'basscss-base-typography';
+
+@import 'basscss-utility-layout';
+@import 'basscss-utility-typography';
+@import 'basscss-utility-white-space';
+
+@import 'basscss-color-base';
+/* Extend base styles for form defaults */
+/* @import 'basscss-color-forms'; */
+@import 'basscss-color-borders';
+@import 'basscss-colors';
+
+@import 'basscss-defaults';
+
+
+:root {
+
+  --font-family: 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+  --line-height: 1.5;
+  --heading-font-family: var(--font-family);
+  --heading-font-weight: bold;
+  --heading-line-height: 1.25;
+
+  --h1: 2.25rem;
+  --h2: 1.75rem;
+  --h3: 1.25rem;
+  --h4: 1.125rem;
+  --h5: 1rem;
+  --h6: .75rem;
+
+  --bold-font-weight: bold;
+
+  --button-font-size: var(--h5);
+  --button-font-weight: bold;
+  --button-line-height: 1.375rem;
+  --button-padding-y: .5rem;
+  --button-padding-x: 1rem;
+
+  --form-field-font-size: 1rem;
+  --form-field-height: 2.25rem;
+  --form-field-padding-y: .5rem;
+  --form-field-padding-x: .5rem;
+
+  --blue: #0099dd;
+  --border-color: var(--gray);
+
+  /*
+  --space-1: .5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+  */
+
+}
+
