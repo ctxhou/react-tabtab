@@ -33,7 +33,8 @@ var Tabs = React.createClass({
       this.props.handleTabClick(activeKey);
     }
     this.setState({
-      activeKey: activeKey
+      activeKey: activeKey,
+      panelUpdateKey: -1
     })
   },
 
@@ -41,8 +42,11 @@ var Tabs = React.createClass({
     this.props.handleAddTab();
   },
 
-  handleTabDeleteButton: function() {
+  handleTabDeleteButton: function(key) {
     this.props.handleTabDeleteButton();
+    this.setState({
+      panelUpdateKey: key
+    })
   },
 
   _getPanel: function() {
@@ -66,10 +70,14 @@ var Tabs = React.createClass({
                     style={that.state.style}
                     handleTabClick={that.handleTabClick}
                     tabDeleteButton={that.props.tabDeleteButton}
-                    handleTabDeleteButton={that.props.handleTabDeleteButton}/>);
+                    handleTabDeleteButton={that.handleTabDeleteButton}/>);
       if (!children.props.lazy || (children.props.lazy && index === that.state.activeKey)) {
-        panel.push(React.cloneElement(children, {className: classNames(that.state.style + 'panel', status), status: status}));
-      } 
+        var props = {className: classNames(that.state.style + 'panel', status), status: status};
+        if (that.state.panelUpdateKey === index) {
+          props.update = true;
+        }
+        panel.push(React.cloneElement(children, props));
+      }
     })
     if(this.props.addTab && tab.length > 0) { //if the tab more than one, show add button
       tab.push(<Tab key="ADD"

@@ -4,6 +4,10 @@ var Tappable = require('react-tappable');
 
 var Tab = React.createClass({
 
+  handleTabDeleteButton: function() {
+    this.props.handleTabDeleteButton(this.props.tabKey);
+  },
+
   clickTab: function() {
     this.props.handleTabClick(this.props.tabKey);
   },
@@ -34,7 +38,7 @@ var Tab = React.createClass({
         <li className={tabClass}>
           {this.props.title}
           <div className="tabtab__folder__circCont" style={closeButtonStyle}>
-            <div className="tabtab__folder__circle" onClick={this.props.handleTabDeleteButton}></div>
+            <div className="tabtab__folder__circle" onClick={this.handleTabDeleteButton}></div>
           </div>
         </li>
       </Tappable>
