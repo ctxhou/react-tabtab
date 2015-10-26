@@ -1,13 +1,8 @@
 var React = require('react');
 var Tab = require('./Tab.jsx');
-var Sortable = require('./mixin/Sortable');
 var classNames = require('classnames');
 
 var Tabs = React.createClass({
-
-  mixins: [Sortable],
-
-  sortableOptions: { group: "shared" },
 
   getDefaultProps: function() {
     return {
