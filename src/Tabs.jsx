@@ -1,10 +1,13 @@
 var React = require('react');
 var Tab = require('./Tab.jsx');
+var Sortable = require('./mixin/Sortable');
 var classNames = require('classnames');
 
 var Tabs = React.createClass({
-  propTypes: {
-  },
+
+  mixins: [Sortable],
+
+  sortableOptions: { group: "shared" },
 
   getDefaultProps: function() {
     return {
@@ -16,7 +19,7 @@ var Tabs = React.createClass({
   getInitialState: function() {
     return {
       activeKey: this.props.activeKey || this.props.defaultActiveKey,
-      style: this.props.style || this.props.defaultStyle
+      style: this.props.style || this.props.defaultStyle,
     }
   },
 

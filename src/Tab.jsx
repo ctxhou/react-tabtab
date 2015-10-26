@@ -15,6 +15,7 @@ var Tab = React.createClass({
   render: function() {
     var tabClass;
     var tabTmpl;
+
     if (this.props.status === 'active') {
       tabClass = classNames(this.props.style + 'tab', 'active');
     } else {
@@ -32,7 +33,7 @@ var Tab = React.createClass({
       closeButtonStyle = {display: 'none'};
     }
 
-    return(
+    return (
       <Tappable onTap={this.clickTab}>
         {tabTmpl}
         <li className={tabClass}>
@@ -42,7 +43,7 @@ var Tab = React.createClass({
           </div>
         </li>
       </Tappable>
-    )
+    );
   }
 })
 
