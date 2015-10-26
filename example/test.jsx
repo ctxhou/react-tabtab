@@ -7,8 +7,10 @@ var App = React.createClass({
     return (
       <Tabs activeKey={2} 
             style="tabtab__folder__" 
-            addTab={true}
-            handleAddTab={handleAddTab}
+            addFrontTab={true}
+            addBackTab={true}
+            handleAddFrontTab={handleAddFrontTab}
+            handleAddBackTab={handleAddBackTab}
             tabDeleteButton={true}
             handleTabDeleteButton={handleTabDeleteButton}
             deleteAllButton={true}
@@ -30,9 +32,14 @@ var App = React.createClass({
   }
 })
 
-function handleAddTab() {
-  console.log('add')
+function handleAddFrontTab() {
+  console.log('add front')
 }
+
+function handleAddBackTab() {
+  console.log('add back')
+}
+
 
 function handleDeleteButton() {
   console.log('delete')

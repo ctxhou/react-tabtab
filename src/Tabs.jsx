@@ -38,8 +38,12 @@ var Tabs = React.createClass({
     })
   },
 
-  handleAddClick: function() {
-    this.props.handleAddTab();
+  handleAddFrontClick: function() {
+    this.props.handleAddFrontTab();
+  },
+
+  handleAddBackClick: function() {
+    this.props.handleAddBackTab();
   },
 
   handleTabDeleteButton: function(key) {
@@ -79,12 +83,19 @@ var Tabs = React.createClass({
         panel.push(React.cloneElement(children, props));
       }
     })
-    if(this.props.addTab && tab.length > 0) { //if the tab more than one, show add button
-      tab.push(<Tab key="ADD"
+    if(this.props.addFrontTab && tab.length > 0) { //if the tab more than one, show add button
+      tab.unshift(<Tab key="ADDFront"
                     tabKey="ADD"
                     title="＋"
                     style={that.state.style}
-                    handleTabClick={that.handleAddClick}/>);
+                    handleTabClick={that.handleAddFrontClick}/>);
+    }
+    if(this.props.addBackTab && tab.length > 0) { //if the tab more than one, show add button
+      tab.push(<Tab key="ADDBack"
+                    tabKey="ADD"
+                    title="＋"
+                    style={that.state.style}
+                    handleTabClick={that.handleAddBackClick}/>);
     }
 
 
