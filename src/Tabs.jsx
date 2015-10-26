@@ -40,6 +40,9 @@ var Tabs = React.createClass({
 
   handleAddFrontClick: function() {
     this.props.handleAddFrontTab();
+    this.setState({
+      panelUpdateKey: 0
+    })
   },
 
   handleAddBackClick: function() {
