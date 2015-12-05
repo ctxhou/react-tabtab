@@ -1,6 +1,5 @@
-var React = require('react');
-var Tabs = require('./src/Tabs.jsx');
-var Panel = require('./src/Panel.jsx');
+var Tabs = require('./lib/Tabs');
+var Panel = require('./lib/Panel');
 
 module.exports = {
   Tabs: Tabs,

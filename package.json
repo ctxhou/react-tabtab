@@ -1,6 +1,6 @@
 {
   "name": "react-tabtab",
-  "version": "0.0.15",
+  "version": "0.1.0",
   "description": "react, tabs",
   "main": "index.js",
   "scripts": {
