@@ -1,5 +1,5 @@
 var React = require('react');
-var Tab = require('./Tab.jsx');
+var Tab = require('./Tab');
 var classNames = require('classnames');
 
 var Tabs = React.createClass({

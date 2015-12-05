@@ -1,12 +1,13 @@
 {
   "name": "react-tabtab",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react, tabs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "css": "sass --watch scss/tab.scss:dist/tab.css",
+    "build": "babel -w --stage 0 src --out-dir lib",
     "browsersync": "browser-sync start --proxy 'http://localhost:5000/' --files dist/tab.css"
   },
   "repository": {
