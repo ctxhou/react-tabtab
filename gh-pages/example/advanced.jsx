@@ -3,6 +3,15 @@ var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
 
 var App = React.createClass({
+
+  handleAddTab: function() {
+
+  },
+
+  handleDeleteButton: function() {
+
+  },
+
   render: function() {
     return (
       <Tabs activeKey={2} 
