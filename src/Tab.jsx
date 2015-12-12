@@ -4,7 +4,8 @@ var Tappable = require('react-tappable');
 
 var Tab = React.createClass({
 
-  handleTabDeleteButton: function() {
+  handleTabDeleteButton: function(e) {
+    e.stopPropagation(); //prevent trigger clickTab function
     this.props.handleTabDeleteButton(this.props.tabKey);
   },
 
@@ -14,7 +15,6 @@ var Tab = React.createClass({
 
   render: function() {
     var tabClass;
-    var tabTmpl;
 
     if (this.props.status === 'active') {
       tabClass = classNames(this.props.style + 'tab', 'active');
@@ -34,15 +34,14 @@ var Tab = React.createClass({
     }
 
     return (
-      <Tappable onClick={this.clickTab}>
-        {tabTmpl}
-        <li className={tabClass}>
+      <span>
+        <li className={tabClass} onClick={this.clickTab}>
           {this.props.title}
           <div className="tabtab__folder__circCont" style={closeButtonStyle}>
             <div className="tabtab__folder__circle" onClick={this.handleTabDeleteButton}></div>
           </div>
         </li>
-      </Tappable>
+      </span>
     );
   }
 })
