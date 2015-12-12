@@ -1,6 +1,6 @@
 {
   "name": "react-tabtab",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "react, tabs",
   "main": "index.js",
   "scripts": {
@@ -19,6 +19,7 @@
     "tabs",
     "react-tab",
     "react-tabtab",
+    "react-component",
     "tab"
   ],
   "author": "ctxhou",
