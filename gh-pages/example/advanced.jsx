@@ -43,13 +43,10 @@ var App = React.createClass({
     this.setState({
       data: data,
       activeKey: activeKey
-    }, function() {
-      console.log('active key:' , this.state.activeKey);
     })
   },
 
   handleTabClick: function(key) {
-    console.log('tabclick')
     this.setState({activeKey: key})
   },
 
@@ -62,7 +59,6 @@ var App = React.createClass({
                   {k.content}
                 </Panel>)
     }
-    console.log(this.state.activeKey)
     return (
       <Tabs activeKey={this.state.activeKey} 
             style="tabtab__folder__" 
