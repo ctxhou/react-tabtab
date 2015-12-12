@@ -76,6 +76,7 @@ if you want to use the same style as teh [demo](http://ctxhou.github.io/react-ta
 ## Todo
 
 - [] add the update partial selection
+- [] add more example
 
 ## License
 
