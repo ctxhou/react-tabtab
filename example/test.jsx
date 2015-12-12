@@ -7,13 +7,12 @@ var App = React.createClass({
     return (
       <Tabs activeKey={2} 
             style="tabtab__folder__" 
-            addFrontTab={true}
             addBackTab={true}
-            handleAddFrontTab={handleAddFrontTab}
             handleAddBackTab={handleAddBackTab}
             tabDeleteButton={true}
             handleTabDeleteButton={handleTabDeleteButton}
             deleteAllButton={true}
+            deleteAllButtonName="NONO"
             handleDeleteAllButton={handleDeleteButton}>
         <Panel title="hi">
           123121233132
