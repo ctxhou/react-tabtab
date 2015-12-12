@@ -30,6 +30,7 @@ var Tabs = React.createClass({
     if (this.props.handleTabClick) {
       this.props.handleTabClick(activeKey);
     }
+
     this.setState({
       activeKey: activeKey,
       panelUpdateKey: -1
@@ -86,10 +87,10 @@ var Tabs = React.createClass({
     })
     if(this.props.addFrontTab && tab.length > 0) { //if the tab more than one, show add button
       tab.unshift(<Tab key="ADDFront"
-                    tabKey="ADD"
-                    title="＋"
-                    style={that.state.style}
-                    handleTabClick={that.handleAddFrontClick}/>);
+                      tabKey="ADD"
+                      title="＋"
+                      style={that.state.style}
+                      handleTabClick={that.handleAddFrontClick}/>);
     }
     if(this.props.addBackTab && tab.length > 0) { //if the tab more than one, show add button
       tab.push(<Tab key="ADDBack"
@@ -116,6 +117,7 @@ var Tabs = React.createClass({
                           {noneName ? noneName : 'None'}
                         </button>;
     }
+
     return(
       <div className={wrapper}>
         {deleteButtonTmpl}

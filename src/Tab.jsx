@@ -34,7 +34,7 @@ var Tab = React.createClass({
     }
 
     return (
-      <Tappable onTap={this.clickTab}>
+      <Tappable onClick={this.clickTab}>
         {tabTmpl}
         <li className={tabClass}>
           {this.props.title}
