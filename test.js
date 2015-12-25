@@ -1,18 +1,20 @@
+var React = require('react');
 var App = require('./example/test.jsx');
 var Advanced = require('./example/advanced.jsx');
+var ReactDOM = require('react-dom');
 var rootInstance = null;
 
 
-rootInstance = React.render(
+rootInstance = ReactDOM.render(
   <App />,
   document.getElementById('root')
 );
 
 
-var advanceInstance = React.render(
-  <Advanced />,
-  document.getElementById('advance')
-);
+// var advanceInstance = ReactDOM.render(
+//   <Advanced />,
+//   document.getElementById('advance')
+// );
 
 
 if (module.hot) {

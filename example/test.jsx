@@ -1,3 +1,4 @@
+var React = require('react');
 var Tab = require('../index');
 var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
