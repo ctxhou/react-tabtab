@@ -1,19 +1,89 @@
 var React = require('react');
+var ReactDOM = require('react-dom');
 var classNames = require('classnames');
 var Tappable = require('react-tappable');
+var ItemTypes = require('./ItemTypes').ItemTypes;
+var DragSource = require('react-dnd').DragSource;
+var DropTarget = require('react-dnd').DropTarget;
 
-var Tab = React.createClass({
+var tabSource = {
+  beginDrag: function(props) {
+    return {
+      tabKey: props.tabKey
+    }
+  }
+}
 
-  handleTabDeleteButton: function(e) {
+const tabTarget = {
+  hover(props, monitor, component) {
+    const dragIndex = monitor.getItem().tabKey;
+    const hoverIndex = props.tabKey;
+
+    // Don't replace items with themselves
+    if (dragIndex === hoverIndex) {
+      return;
+    }
+
+    // Determine rectangle on screen
+    const hoverBoundingRect = ReactDOM.findDOMNode(component).getBoundingClientRect();
+
+    // Get vertical middle
+    const hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+
+    // Determine mouse position
+    const clientOffset = monitor.getClientOffset();
+
+    // Get pixels to the top
+    const hoverClientY = clientOffset.y - hoverBoundingRect.top;
+
+    // Only perform the move when the mouse has crossed half of the items height
+    // When dragging downwards, only move when the cursor is below 50%
+    // When dragging upwards, only move when the cursor is above 50%
+
+    // Dragging downwards
+    if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+      return;
+    }
+
+    // Dragging upwards
+    if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+      return;
+    }
+
+    // Time to actually perform the action
+    props.moveTab(dragIndex, hoverIndex);
+
+    // Note: we're mutating the monitor item here!
+    // Generally it's better to avoid mutations,
+    // but it's good here for the sake of performance
+    // to avoid expensive index searches.
+    monitor.getItem().index = hoverIndex;
+  }
+};
+
+@DropTarget(ItemTypes.TAB, tabTarget, connect => ({
+  connectDropTarget: connect.dropTarget()
+}))
+@DragSource(ItemTypes.TAB, tabSource, (connect, monitor) => ({
+  connectDragSource: connect.dragSource(),
+  isDragging: monitor.isDragging()
+}))
+
+export default class Tab extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  handleTabDeleteButton(e) {
     e.stopPropagation(); //prevent trigger clickTab function
     this.props.handleTabDeleteButton(this.props.tabKey);
-  },
+  }
 
-  clickTab: function() {
+  clickTab() {
     this.props.handleTabClick(this.props.tabKey);
-  },
+  }
 
-  render: function() {
+  render() {
     var tabClass;
 
     if (this.props.status === 'active') {
@@ -33,7 +103,11 @@ var Tab = React.createClass({
       closeButtonStyle = {display: 'none'};
     }
 
-    return (
+    var isDragging = this.props.isDragging;
+    var connectDragSource = this.props.connectDragSource;
+    var connectDropTarget = this.props.connectDropTarget;
+
+    return connectDragSource(connectDropTarget(
       <span>
         <li className={tabClass} onClick={this.clickTab}>
           {this.props.title}
@@ -42,8 +116,6 @@ var Tab = React.createClass({
           </div>
         </li>
       </span>
-    );
+    ));
   }
-})
-
-module.exports = Tab;
+}

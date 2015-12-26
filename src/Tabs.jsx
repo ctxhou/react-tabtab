@@ -1,6 +1,8 @@
 var React = require('react');
 var Tab = require('./Tab');
 var classNames = require('classnames');
+var DragDropContext = require('react-dnd').DragDropContext;
+var HTML5Backend = require('react-dnd-html5-backend');
 
 var Tabs = React.createClass({
 
@@ -55,6 +57,10 @@ var Tabs = React.createClass({
     })
   },
 
+  moveTab: function(dragIndex, hoverIndex) {
+    console.log(this.props.children)
+  },
+
   _getPanel: function() {
     var that = this;
     var tab = [];
@@ -76,7 +82,8 @@ var Tabs = React.createClass({
                     style={that.state.style}
                     handleTabClick={that.handleTabClick}
                     tabDeleteButton={that.props.tabDeleteButton}
-                    handleTabDeleteButton={that.handleTabDeleteButton}/>);
+                    handleTabDeleteButton={that.handleTabDeleteButton}
+                    moveTab={that.moveTab}/>);
       if (!children.props.lazy || (children.props.lazy && index === that.state.activeKey)) {
         var props = {className: classNames(that.state.style + 'panel', status), status: status, key: index};
         if (that.state.panelUpdateKey === index) {
@@ -133,4 +140,4 @@ var Tabs = React.createClass({
 
 })
 
-module.exports = Tabs;
+module.exports = DragDropContext(HTML5Backend)(Tabs);
