@@ -4,44 +4,33 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: {
-    'react-tabtab':[
-      'webpack-dev-server/client?http://localhost:5000',
-      'webpack/hot/only-dev-server',
-      './index'
-    ],
-    'test': [
-      'webpack-dev-server/client?http://localhost:5000',
-      'webpack/hot/only-dev-server',
-      './test'
-    ]
+    'react-tabtab': ['webpack-hot-middleware/client','./index'],
+    test: ['webpack-hot-middleware/client','./test']
   },
   output: {
     path: path.join(__dirname, 'dist'),
     filename: '[name].js',
     publicPath: '/static/'
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin()
   ],
-  resolve: {
-    extensions: ['', '.js', '.jsx']
-  },
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        loaders: ['react-hot', 'babel'],
+        test: /\.jsx$/,
+        loaders: ['babel'],
         exclude: /node_modules/
       },
       {
-          test: /\.jsx$/,
-          loaders: ['react-hot','jsx-loader?insertPragma=React.DOM&harmony']
-      },
-      {
-        test: /\.css?$/,
-        loaders: ['style', 'raw']
+        test: /\.js$/,
+        loaders: ['babel'],
+        exclude: /node_modules/
       }
     ]
   }
-};
+}
