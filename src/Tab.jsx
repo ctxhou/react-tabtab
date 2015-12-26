@@ -1,12 +1,11 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var classNames = require('classnames');
-var Tappable = require('react-tappable');
-var ItemTypes = require('./ItemTypes').ItemTypes;
-var DragSource = require('react-dnd').DragSource;
-var DropTarget = require('react-dnd').DropTarget;
+import React from 'react';
+import ReactDOM from 'react-dom';
+import classNames from 'classnames';
+import Tappable from 'react-tappable';
+import ItemTypes from './ItemTypes';
+import { DragSource, DropTarget } from 'react-dnd';
 
-var tabSource = {
+const tabSource = {
   beginDrag: function(props) {
     return {
       tabKey: props.tabKey
@@ -14,6 +13,7 @@ var tabSource = {
   }
 }
 
+// reference from https://github.com/gaearon/react-dnd/tree/master/examples/04%20Sortable/Simple
 const tabTarget = {
   hover(props, monitor, component) {
     const dragIndex = monitor.getItem().tabKey;
@@ -27,38 +27,26 @@ const tabTarget = {
     // Determine rectangle on screen
     const hoverBoundingRect = ReactDOM.findDOMNode(component).getBoundingClientRect();
 
-    // Get vertical middle
+    // Get horizontal middle
     const hoverMiddleX = (hoverBoundingRect.right - hoverBoundingRect.left) / 2;
 
     // Determine mouse position
     const clientOffset = monitor.getClientOffset();
 
-    // Get pixels to the top
-    // console.log(clientOffset)
-    // console.log(hoverBoundingRect)
     const hoverClientX = hoverBoundingRect.right - clientOffset.x;
 
-    // Only perform the move when the mouse has crossed half of the items height
-    // When dragging downwards, only move when the cursor is below 50%
-    // When dragging upwards, only move when the cursor is above 50%
-
-    // Dragging downwards
+    // Dragging left
     if (dragIndex < hoverIndex && hoverClientX < hoverMiddleX) {
       return;
     }
 
-    // Dragging upwards
+    // Dragging right
     if (dragIndex > hoverIndex && hoverClientX > hoverMiddleX) {
       return;
     }
 
-    // Time to actually perform the action
     props.moveTab(dragIndex, hoverIndex);
-
-    // Note: we're mutating the monitor item here!
-    // Generally it's better to avoid mutations,
-    // but it's good here for the sake of performance
-    // to avoid expensive index searches.
+    // change the dragging tab index
     monitor.getItem().tabKey = hoverIndex;
   }
 };
@@ -88,28 +76,22 @@ export default class Tab extends React.Component {
   }
 
   render() {
-    var tabClass;
-
+    let tabClass,
+        closeButtonStyle;
+    const {connectDragSource, connectDropTarget } = this.props;
     if (this.props.status === 'active') {
       tabClass = classNames(this.props.style + 'tab', 'active');
     } else {
       tabClass = classNames(this.props.style + 'tab');
     }
-    if (this.props.tabKey === 'ADD') {
-      tabClass = classNames(this.props.style + 'tab', 'add');
-    }
 
     // only show the delete button when it's active
-    var closeButtonStyle;
     if (this.props.tabDeleteButton && this.props.status === "active") {
       closeButtonStyle = {display: 'inline-block'};
     } else {
       closeButtonStyle = {display: 'none'};
     }
 
-    var isDragging = this.props.isDragging;
-    var connectDragSource = this.props.connectDragSource;
-    var connectDropTarget = this.props.connectDropTarget;
 
     return connectDragSource(connectDropTarget(
       <span>

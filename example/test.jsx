@@ -15,16 +15,16 @@ var App = React.createClass({
             deleteAllButton={true}
             deleteAllButtonName="NONO"
             handleDeleteAllButton={handleDeleteButton}>
-        <Panel title="t1">
+        <Panel title="tab1">
           123121233132
         </Panel>
-        <Panel title="t2" lazy={true}>
+        <Panel title="tab2" lazy={true}>
           ypmn
         </Panel>
-        <Panel title="t3">
+        <Panel title="tab3">
           sdfsdf
         </Panel>
-        <Panel title="t4">
+        <Panel title="tab4">
           sdfsdf
         </Panel>
       </Tabs>

@@ -1,36 +1,47 @@
-var React = require('react');
-var update = require('react/lib/update');
-var Tab = require('./Tab');
-var classNames = require('classnames');
-var DragDropContext = require('react-dnd').DragDropContext;
-var HTML5Backend = require('react-dnd-html5-backend');
+import React from 'react';
+import update from 'react/lib/update';
+import Tab from './Tab';
+import FunctionTab from './FunctionTab';
+import classNames from 'classnames';
+import { DragDropContext } from 'react-dnd';
+import HTML5Backend from 'react-dnd-html5-backend';
 
-var Tabs = React.createClass({
 
-  getDefaultProps: function() {
-    return {
+@DragDropContext(HTML5Backend)
+export default class Tabs extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.handleTabClick = this.handleTabClick.bind(this);
+    this.handleAddFrontClick = this.handleAddFrontClick.bind(this);
+    this.handleAddBackClick = this.handleAddBackClick.bind(this);
+    this.handleTabDeleteButton = this.handleTabDeleteButton.bind(this);
+    this.moveTab = this.moveTab.bind(this);
+    this._getPanel = this._getPanel.bind(this);
+
+    this.state = {
+      activeKey: props.activeKey || props.defaultActiveKey,
+      style: props.style || props.defaultStyle,
+      children: props.children
+    }
+
+  }
+
+  static defaultProps = {
       defaultActiveKey: 0,
       defaultStyle: "tabtab__default__"
-    }
-  },
+  }
 
-  getInitialState: function() {
-    return {
-      activeKey: this.props.activeKey || this.props.defaultActiveKey,
-      style: this.props.style || this.props.defaultStyle,
-      children: this.props.children
-    }
-  },
 
-  componentWillReceiveProps: function(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.activeKey !== this.state.activeKey) {
       this.setState({
         activeKey: nextProps.activeKey
       })
     }
-  },
+  }
 
-  handleTabClick: function(activeKey) {
+  handleTabClick(activeKey) {
     if (this.props.handleTabClick) {
       this.props.handleTabClick(activeKey);
     }
@@ -39,27 +50,27 @@ var Tabs = React.createClass({
       activeKey: activeKey,
       panelUpdateKey: -1
     })
-  },
+  }
 
-  handleAddFrontClick: function() {
+  handleAddFrontClick() {
     this.props.handleAddFrontTab();
     this.setState({
       panelUpdateKey: 0
     })
-  },
+  }
 
-  handleAddBackClick: function() {
+  handleAddBackClick() {
     this.props.handleAddBackTab();
-  },
+  }
 
-  handleTabDeleteButton: function(key) {
+  handleTabDeleteButton(key) {
     this.props.handleTabDeleteButton();
     this.setState({
       panelUpdateKey: key
     })
-  },
+  }
 
-  moveTab: function(dragIndex, hoverIndex) {
+  moveTab(dragIndex, hoverIndex) {
     var dragTab = this.state.children[dragIndex];
     this.setState(update(this.state, {
       children: {
@@ -72,9 +83,9 @@ var Tabs = React.createClass({
         return hoverIndex;
       }}
     }));
-  },
+  }
 
-  _getPanel: function() {
+  _getPanel() {
     var that = this;
     var tab = [];
     var panel = [];
@@ -105,25 +116,25 @@ var Tabs = React.createClass({
       }
     })
     if(this.props.addFrontTab && tab.length > 0) { //if the tab more than one, show add button
-      tab.unshift(<Tab key="ADDFront"
-                      tabKey="ADD"
-                      title="＋"
-                      style={that.state.style}
-                      handleTabClick={that.handleAddFrontClick}/>);
+      tab.unshift(<FunctionTab key="ADDFront"
+                                tabKey="ADD"
+                                title="＋"
+                                style={that.state.style}
+                                handleTabClick={that.handleAddFrontClick}/>);
     }
     if(this.props.addBackTab && tab.length > 0) { //if the tab more than one, show add button
-      tab.push(<Tab key="ADDBack"
-                    tabKey="ADD"
-                    title="＋"
-                    style={that.state.style}
-                    handleTabClick={that.handleAddBackClick}/>);
+      tab.push(<FunctionTab key="ADDBack"
+                            tabKey="ADD"
+                            title="＋"
+                            style={that.state.style}
+                            handleTabClick={that.handleAddBackClick}/>);
     }
 
 
     return {tab: tab, panel: panel};
-  },
+  }
 
-  render: function() {
+  render() {
     var deleteButtonTmpl;
     var opt = this._getPanel();
     var wrapper = this.state.style + "wrapper";
@@ -150,6 +161,4 @@ var Tabs = React.createClass({
     )
   }
 
-})
-
-module.exports = DragDropContext(HTML5Backend)(Tabs);
+}

@@ -1,3 +1,3 @@
-exports.ItemTypes = {
+export default {
   TAB: 'tab'
-}
+};
