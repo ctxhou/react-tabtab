@@ -53,14 +53,14 @@ export default class Tabs extends React.Component {
   }
 
   handleAddFrontClick() {
-    this.props.handleAddFrontTab();
+    this.props.handleAddFrontClick();
     this.setState({
       panelUpdateKey: 0
     })
   }
 
   handleAddBackClick() {
-    this.props.handleAddBackTab();
+    this.props.handleAddBackClick();
   }
 
   handleTabDeleteButton(key) {
