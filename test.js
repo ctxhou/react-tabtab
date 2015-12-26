@@ -5,16 +5,16 @@ var ReactDOM = require('react-dom');
 var rootInstance = null;
 
 
-rootInstance = ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
-
-
-// var advanceInstance = ReactDOM.render(
-//   <Advanced />,
-//   document.getElementById('advance')
+// rootInstance = ReactDOM.render(
+//   <App />,
+//   document.getElementById('root')
 // );
+
+
+var advanceInstance = ReactDOM.render(
+  <Advanced />,
+  document.getElementById('advance')
+);
 
 
 if (module.hot) {

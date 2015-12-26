@@ -5,24 +5,17 @@ import Tappable from 'react-tappable';
 export default class FunctionTab extends React.Component {
   constructor(props) {
     super(props);
-    this.handleTabDeleteButton = this.handleTabDeleteButton.bind(this);
     this.clickTab = this.clickTab.bind(this);
   }
 
-  handleTabDeleteButton(e) {
-    e.stopPropagation(); //prevent trigger clickTab function
-    this.props.handleTabDeleteButton(this.props.tabKey);
-  }
-
   clickTab() {
-    this.props.handleTabClick(this.props.tabKey);
+    this.props.handleTabClick();
   }
 
   render() {
     var tabClass;
 
     tabClass = classNames(this.props.style + 'tab', 'add');
-    // only show the delete button when it's active
 
     return (
       <span>

@@ -39,6 +39,12 @@ export default class Tabs extends React.Component {
         activeKey: nextProps.activeKey
       })
     }
+
+    if (nextProps.children !== this.state.children) {
+      this.setState({
+        children: nextProps.children
+      })
+    }
   }
 
   handleTabClick(activeKey) {
