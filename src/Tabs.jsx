@@ -1,4 +1,5 @@
 var React = require('react');
+var update = require('react/lib/update');
 var Tab = require('./Tab');
 var classNames = require('classnames');
 var DragDropContext = require('react-dnd').DragDropContext;
@@ -17,6 +18,7 @@ var Tabs = React.createClass({
     return {
       activeKey: this.props.activeKey || this.props.defaultActiveKey,
       style: this.props.style || this.props.defaultStyle,
+      children: this.props.children
     }
   },
 
@@ -58,7 +60,18 @@ var Tabs = React.createClass({
   },
 
   moveTab: function(dragIndex, hoverIndex) {
-    console.log(this.props.children)
+    var dragTab = this.state.children[dragIndex];
+    this.setState(update(this.state, {
+      children: {
+        $splice: [
+          [dragIndex, 1],
+          [hoverIndex, 0, dragTab]
+        ]
+      },
+      activeKey: {$apply: function() {
+        return hoverIndex;
+      }}
+    }));
   },
 
   _getPanel: function() {
@@ -66,7 +79,7 @@ var Tabs = React.createClass({
     var tab = [];
     var panel = [];
 
-    React.Children.forEach(this.props.children, function(children, index) {
+    React.Children.forEach(this.state.children, function(children, index) {
       // add tabs
       var status, className;
       if (index === that.state.activeKey) {
@@ -74,7 +87,6 @@ var Tabs = React.createClass({
       } else {
         status = 'inactive';
       }
-
       tab.push(<Tab key={'tab'+index}
                     tabKey={index}
                     title={children.props.title}
