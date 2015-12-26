@@ -89,13 +89,13 @@ export default class Tabs extends React.Component {
         return hoverIndex;
       }}
     }));
+    this.props.setMoveData(dragIndex, hoverIndex);
   }
 
   _getPanel() {
     var that = this;
     var tab = [];
     var panel = [];
-
     React.Children.forEach(this.state.children, function(children, index) {
       // add tabs
       var status, className;
@@ -104,6 +104,7 @@ export default class Tabs extends React.Component {
       } else {
         status = 'inactive';
       }
+
       tab.push(<Tab key={'tab'+index}
                     tabKey={index}
                     title={children.props.title}

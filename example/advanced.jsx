@@ -1,5 +1,5 @@
 var React = require('react');
-var Tab = require('../index');
+var Tab = require('../');
 var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
 
@@ -52,11 +52,20 @@ module.exports = React.createClass({
     this.setState({activeKey: key})
   },
 
+  setMoveData: function(dragIndex, hoverIndex) {
+    var data = this.state.data;
+    var dragData = data[dragIndex];
+    data.splice(dragIndex, 1);
+    data.splice(hoverIndex, 0, dragData);
+    this.setState({data: data, activeKey: hoverIndex});
+  },
+
   render: function() {
     var panel = [];
     var data = this.state.data;
     for (var i in data) {
       var k = data[i];
+      console.log(k.title)
       panel.push(<Panel title={k.title} key={i}>
                   {k.content}
                 </Panel>)
@@ -70,7 +79,8 @@ module.exports = React.createClass({
             handleTabDeleteButton={this.handleTabDeleteButton}
             deleteAllButton={true}
             handleDeleteAllButton={this.handleDeleteAllButton}
-            handleTabClick={this.handleTabClick}>
+            handleTabClick={this.handleTabClick}
+            setMoveData={this.setMoveData}>
         {panel}
       </Tabs>
     )
