@@ -78,17 +78,6 @@ export default class Tabs extends React.Component {
 
   moveTab(dragIndex, hoverIndex) {
     var dragTab = this.state.children[dragIndex];
-    this.setState(update(this.state, {
-      children: {
-        $splice: [
-          [dragIndex, 1],
-          [hoverIndex, 0, dragTab]
-        ]
-      },
-      activeKey: {$apply: function() {
-        return hoverIndex;
-      }}
-    }));
     this.props.setMoveData(dragIndex, hoverIndex);
   }
 
