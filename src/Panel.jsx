@@ -16,7 +16,6 @@ var Panel = React.createClass({
 
   render: function() {
     var tmpl;
-    console.log('render')
     return(
       <div className={this.props.className}>
         {this.props.children}
