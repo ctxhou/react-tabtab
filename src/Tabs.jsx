@@ -22,7 +22,8 @@ export default class Tabs extends React.Component {
     this.state = {
       activeKey: props.activeKey || props.defaultActiveKey,
       style: props.style || props.defaultStyle,
-      children: props.children
+      children: props.children,
+      status: 'static' // || 'dragging'
     }
 
   }

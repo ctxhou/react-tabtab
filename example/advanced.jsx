@@ -65,7 +65,6 @@ module.exports = React.createClass({
     var data = this.state.data;
     for (var i in data) {
       var k = data[i];
-      console.log(k.title)
       panel.push(<Panel title={k.title} key={i}>
                   {k.content}
                 </Panel>)

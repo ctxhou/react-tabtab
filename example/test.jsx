@@ -1,5 +1,5 @@
 var React = require('react');
-var Tab = require('../index');
+var Tab = require('../');
 var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
 
