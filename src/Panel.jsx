@@ -4,13 +4,14 @@ var Panel = React.createClass({
 
   shouldComponentUpdate: function(nextProps) {
     // not render if the status didnt change or the children is the same
-    if (nextProps.update) {
-      return true;
-    } else if (nextProps.status === this.props.status) {
-      return false;
-    } else {
-      return true;
-    }
+    // if (nextProps.update) {
+    //   return true;
+    // } else if (nextProps.status === this.props.status) {
+    //   return false;
+    // } else {
+    //   return true;
+    // }
+    return true;
   },
 
   render: function() {
