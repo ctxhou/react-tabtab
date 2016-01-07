@@ -52,6 +52,10 @@ module.exports = React.createClass({
     this.setState({activeKey: key})
   },
 
+  beginDrag: function() {
+    console.log('begin drag')
+  },
+
   setMoveData: function(dragIndex, hoverIndex) {
     var data = this.state.data;
     var dragData = data[dragIndex];
@@ -78,6 +82,7 @@ module.exports = React.createClass({
             handleTabDeleteButton={this.handleTabDeleteButton}
             deleteAllButton={true}
             handleDeleteAllButton={this.handleDeleteAllButton}
+            beginDrag={this.beginDrag}
             handleTabClick={this.handleTabClick}
             setMoveData={this.setMoveData}>
         {panel}

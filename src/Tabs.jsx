@@ -40,7 +40,6 @@ export default class Tabs extends React.Component {
         activeKey: nextProps.activeKey
       })
     }
-
     if (nextProps.children !== this.state.children) {
       this.setState({
         children: nextProps.children
@@ -103,6 +102,7 @@ export default class Tabs extends React.Component {
                     handleTabClick={that.handleTabClick}
                     tabDeleteButton={that.props.tabDeleteButton}
                     handleTabDeleteButton={that.handleTabDeleteButton}
+                    beginDrag={that.props.beginDrag}
                     moveTab={that.moveTab}/>);
       if (!children.props.lazy || (children.props.lazy && index === that.state.activeKey)) {
         var props = {className: classNames(that.state.style + 'panel', status), status: status, key: index};

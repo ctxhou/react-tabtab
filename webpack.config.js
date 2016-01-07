@@ -4,7 +4,7 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval',
   entry: {
-    'react-tabtab': ['webpack-hot-middleware/client','./src/index'],
+    'react-tabtab': ['webpack-hot-middleware/client','./lib/index'],
     test: ['webpack-hot-middleware/client','./test']
   },
   output: {

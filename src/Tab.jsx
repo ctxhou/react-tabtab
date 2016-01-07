@@ -7,6 +7,7 @@ import { DragSource, DropTarget } from 'react-dnd';
 
 const tabSource = {
   beginDrag: function(props) {
+    props.beginDrag();
     return {
       tabKey: props.tabKey
     }
