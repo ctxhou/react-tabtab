@@ -75,12 +75,12 @@ module.exports = React.createClass({
     }
     return (
       <Tabs activeKey={this.state.activeKey} 
-            style="tabtab__folder__" 
-            addBackTab={true}
+            style="tabtab__modern__" 
+            addBackTab={false}
             handleAddBackClick={this.handleAddBackTab}
-            tabDeleteButton={true}
+            tabDeleteButton={false}
             handleTabDeleteButton={this.handleTabDeleteButton}
-            deleteAllButton={true}
+            deleteAllButton={false}
             handleDeleteAllButton={this.handleDeleteAllButton}
             beginDrag={this.beginDrag}
             handleTabClick={this.handleTabClick}

@@ -5,7 +5,7 @@
   "main": "lib/",
   "scripts": {
     "start": "node server.js",
-    "css": "sass --watch scss/tab.scss:dist/tab.css",
+    "css": "sass --watch scss/*.scss:dist/*.css",
     "build:watch": "babel -w --stage 0 src --out-dir lib",
     "build": "rm -rf ./lib && BABEL_ENV=production babel --stage 0 src --out-dir lib"
   },
@@ -55,6 +55,10 @@
     "rimraf": "^2.4.3",
     "webpack": "^1.9.6",
     "webpack-dev-middleware": "^1.2.0",
-    "webpack-hot-middleware": "^2.0.0"
+    "webpack-hot-middleware": "^2.0.0",
+    "gulp": "~3.8.11",
+    "gulp-autoprefixer": "^2.0.0",
+    "browser-sync": "~1.9.0",
+    "gulp-sass": "^2.0.4"
   }
 }

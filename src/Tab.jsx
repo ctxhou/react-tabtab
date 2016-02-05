@@ -95,14 +95,12 @@ export default class Tab extends React.Component {
 
 
     return connectDragSource(connectDropTarget(
-      <span>
-        <li className={tabClass} onClick={this.clickTab}>
-          {this.props.title}
-          <div className="tabtab__folder__circCont" style={closeButtonStyle}>
-            <div className="tabtab__folder__circle" onClick={this.handleTabDeleteButton}></div>
-          </div>
-        </li>
-      </span>
+      <div className={tabClass} onClick={this.clickTab}>
+        {this.props.title}
+        <div className="tabtab__folder__circCont" style={closeButtonStyle}>
+          <div className="tabtab__folder__circle" onClick={this.handleTabDeleteButton}></div>
+        </div>
+      </div>
     ));
   }
 }

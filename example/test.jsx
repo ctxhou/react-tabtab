@@ -7,7 +7,7 @@ var App = React.createClass({
   render: function() {
     return (
       <Tabs activeKey={2} 
-            style="tabtab__folder__" 
+            style="tabtab__modern__" 
             addBackTab={true}
             handleAddBackClick={handleAddBackTab}
             tabDeleteButton={true}
