@@ -14,7 +14,8 @@ var App = React.createClass({
             handleTabDeleteButton={handleTabDeleteButton}
             deleteAllButton={true}
             deleteAllButtonName="NONO"
-            handleDeleteAllButton={handleDeleteButton}>
+            handleDeleteAllButton={handleDeleteButton}
+            deleteAllClassname="tabbbbb">
         <Panel title="tab1">
           123121233132
         </Panel>

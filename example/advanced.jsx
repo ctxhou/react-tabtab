@@ -80,11 +80,12 @@ module.exports = React.createClass({
             handleAddBackClick={this.handleAddBackTab}
             tabDeleteButton={false}
             handleTabDeleteButton={this.handleTabDeleteButton}
-            deleteAllButton={false}
+            deleteAllButton={true}
             handleDeleteAllButton={this.handleDeleteAllButton}
             beginDrag={this.beginDrag}
             handleTabClick={this.handleTabClick}
-            setMoveData={this.setMoveData}>
+            setMoveData={this.setMoveData}
+            deleteAllClassname="tabbbbb">
         {panel}
       </Tabs>
     )

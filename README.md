@@ -58,7 +58,7 @@ React.render(<App/>, document.getElementById('container'));
 | tabDeleteButton       | boolean  | false             | no       | whether each tab show delete button                 |
 | handleTabDeleteButton | function | n/a               | no       | callback function when click tabDeleteButton        |
 | style                 | string   | tabtab__default__ | no       | the class prefix                                    |
-
+| deleteAllClassname    | string   | n/a               | no       |                                                     |
 
 ## Style
 

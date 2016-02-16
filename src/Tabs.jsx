@@ -139,7 +139,7 @@ export default class Tabs extends React.Component {
     var panelWrapper = this.state.style + "panel__wrapper";
     var noneName = this.props.deleteAllButtonName;
     if (this.props.deleteAllButton && opt.tab.length > 0) {
-      var className = this.state.style + "delete button btn-primary bg-red";
+      var className = this.state.style + "delete " + this.props.deleteAllClassname;
       deleteButtonTmpl = <button className={className} onClick={this.props.handleDeleteAllButton}>
                           {noneName ? noneName : 'None'}
                         </button>;
