@@ -1,5 +1,6 @@
 import React from 'react';
 import update from 'react/lib/update';
+import DragTab from './DragTab';
 import Tab from './Tab';
 import FunctionTab from './FunctionTab';
 import classNames from 'classnames';
@@ -89,17 +90,23 @@ export default class Tabs extends React.Component {
       } else {
         status = 'inactive';
       }
-
-      tab.push(<Tab key={'tab'+index}
-                    tabKey={index}
-                    title={children.props.title}
-                    status={status}
-                    style={that.state.style}
-                    handleTabClick={that.handleTabClick}
-                    tabDeleteButton={that.props.tabDeleteButton}
-                    handleTabDeleteButton={that.handleTabDeleteButton}
-                    beginDrag={that.props.beginDrag}
-                    moveTab={that.moveTab}/>);
+      var props = {
+        key: 'tab'+index,
+        tabKey: index,
+        title: children.props.title,
+        status: status,
+        style: that.state.style,
+        handleTabClick: that.handleTabClick,
+        tabDeleteButton: that.props.tabDeleteButton,
+        handleTabDeleteButton: that.handleTabDeleteButton,
+        beginDrag: that.props.beginDrag,
+        moveTab: that.moveTab
+      }
+      if (that.props.draggable) {
+        tab.push(<DragTab {...props}/>);
+      } else {
+        tab.push(<Tab {...props}/>);
+      }
       if (!children.props.lazy || (children.props.lazy && index === that.state.activeKey)) {
         var props = {className: classNames(that.state.style + 'panel', status), status: status, key: index};
         if (that.state.panelUpdateKey === index) {

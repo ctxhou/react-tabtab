@@ -1,14 +1,14 @@
 var React = require('react');
-var App = require('./example/test.jsx');
+var Simple = require('./example/simple.jsx');
 var Advanced = require('./example/advanced.jsx');
 var ReactDOM = require('react-dom');
-var rootInstance = null;
 
 
-// rootInstance = ReactDOM.render(
-//   <App />,
-//   document.getElementById('root')
-// );
+
+var rootInstance = ReactDOM.render(
+  <Simple />,
+  document.getElementById('root')
+);
 
 
 var advanceInstance = ReactDOM.render(

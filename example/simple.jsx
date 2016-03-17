@@ -3,11 +3,11 @@ var Tab = require('../');
 var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
 
-var App = React.createClass({
+var Simple = React.createClass({
   render: function() {
     return (
       <Tabs activeKey={2} 
-            style="tabtab__modern__" 
+            style="tabtab__folder__" 
             addBackTab={true}
             handleAddBackClick={handleAddBackTab}
             tabDeleteButton={true}
@@ -50,4 +50,4 @@ function handleTabDeleteButton() {
   console.log('tab delete dfkgdfkg ')
 }
 
-module.exports = App;
+module.exports = Simple;
