@@ -3,11 +3,7 @@ import update from 'react/lib/update';
 import Tab from './Tab';
 import FunctionTab from './FunctionTab';
 import classNames from 'classnames';
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
 
-
-@DragDropContext(HTML5Backend)
 export default class Tabs extends React.Component {
 
   constructor(props) {

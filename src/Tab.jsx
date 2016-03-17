@@ -59,7 +59,6 @@ const tabTarget = {
   connectDragSource: connect.dragSource(),
   isDragging: monitor.isDragging()
 }))
-
 export default class Tab extends React.Component {
   constructor(props) {
     super(props);
