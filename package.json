@@ -7,7 +7,8 @@
     "start": "node devServer.js",
     "css": "sass --watch scss/*.scss:dist/*.css",
     "build:watch": "babel -w --stage 0 src --out-dir lib",
-    "build": "rm -rf ./lib && BABEL_ENV=production babel --stage 0 src --out-dir lib"
+    "build": "rm -rf ./lib && BABEL_ENV=production babel --stage 0 src --out-dir lib",
+    "build-gh": "BABEL_ENV=production webpack --config webpack.config.ghpages.js"
   },
   "repository": {
     "type": "git",

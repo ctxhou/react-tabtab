@@ -1,11 +1,12 @@
-var Tab = require('../../index');
+var React = require('react');
+var Tab = require('react-tabtab');
 var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
 
 var App = React.createClass({
   render: function() {
     return (
-      <Tabs style="tabtab__folder__">
+      <Tabs style="tabtab__folder__" draggable={false}>
         <Panel title="Tab1">
           It is quite a task thinking up great made-up words that are unique, so I created this word generator to help you come up with the best fake word ideas. They can be great for naming your website, business, product or project. Fake words or pseudowords are words which look like they are real, but actually have no meaning. They are easy to pronounce, and this also helps to make them sound like they are real. Pseudowords have been around ever since our brain evolved the ability to process language, it is probably how all our modern day words came into being. A language has a lot of sounds called phonemes which when used in various combinations, you can create relatable sounds that do not have any meaning behind them, this is where a meaning could be attached to a sound to create a new word.
         </Panel>

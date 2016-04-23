@@ -1,8 +1,9 @@
-var Tab = require('../../index');
+var React = require('react');
+var Tab = require('react-tabtab');
 var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
 
-var App = React.createClass({
+var Advanced = React.createClass({
 
   getInitialState: function() {
     var data = [
@@ -27,7 +28,6 @@ var App = React.createClass({
     var length = data.length + 1;
     var title = "Tab" + length;
     var content = "content " + length;
-
     data.push({title: title, content: content});
     this.setState({data: data, activeKey: data.length-1});
   },
@@ -50,6 +50,18 @@ var App = React.createClass({
     this.setState({activeKey: key})
   },
 
+  beginDrag: function() {
+    console.log('begin drag')
+  },
+
+  setMoveData: function(dragIndex, hoverIndex) {
+    var data = this.state.data;
+    var dragData = data[dragIndex];
+    data.splice(dragIndex, 1);
+    data.splice(hoverIndex, 0, dragData);
+    this.setState({data: data, activeKey: hoverIndex});
+  },
+
   render: function() {
     var panel = [];
     var data = this.state.data;
@@ -63,17 +75,23 @@ var App = React.createClass({
       <Tabs activeKey={this.state.activeKey} 
             style="tabtab__folder__" 
             addBackTab={true}
-            handleAddBackTab={this.handleAddBackTab}
+            handleAddBackClick={this.handleAddBackTab}
             tabDeleteButton={true}
             handleTabDeleteButton={this.handleTabDeleteButton}
             deleteAllButton={true}
             handleDeleteAllButton={this.handleDeleteAllButton}
-            handleTabClick={this.handleTabClick}>
+            draggable={true}
+            beginDrag={this.beginDrag}
+            handleTabClick={this.handleTabClick}
+            setMoveData={this.setMoveData}
+            deleteAllClassname="tabbbbb">
         {panel}
       </Tabs>
     )
   }
 })
+
+module.exports = Advanced;
 
 function handleDeleteButton() {
   console.log('delete')
@@ -82,6 +100,3 @@ function handleDeleteButton() {
 function handleTabDeleteButton() {
   console.log('tab delete dfkgdfkg ')
 }
-
-
-module.exports = App;
