@@ -1,14 +1,16 @@
 # react-tabtab
 
-react-tabtab is another react tab. But why you need another react tab?
+react-tabtab is an api based react tab.
 
-Some react tabs provide so powerful function like only render the active tab to the DOM or it seperates the tab and panel.
+[Demo](http://ctxhou.github.io/react-tabtab/)
 
-But in my case, I only need the tab that can hide and show. Besides, all the content in the panel is directly render to DOM. That's it. That is react-tabtab.
+## Features
 
-No other magic. Maybe it would fit in your case.
+![img](http://i.imgur.com/r5ssaiM.png)
 
-[demo](http://ctxhou.github.io/react-tabtab/)
+* Add tab
+* Delete tab
+* Drag and Drop tab
 
 ## Usage
 
@@ -43,6 +45,11 @@ var App = React.createClass({
 
 React.render(<App/>, document.getElementById('container'));
 ```
+
+## Advanced Usage
+
+### Add tab
+
 
 ## API
     
