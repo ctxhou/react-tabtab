@@ -52,7 +52,7 @@ React.render(<App/>, document.getElementById('container'));
 
 ![img](http://i.imgur.com/55GxKoR.png)
 
-Trigger event on the add tab. Check the [example code](/ctxhou/react-tabtab/blob/master/example/addTab.jsx).
+Trigger event on the add tab. Check the [example code](https://github.com//ctxhou/react-tabtab/blob/master/example/addTab.jsx).
 
 #### props
 
@@ -65,7 +65,7 @@ Trigger event on the add tab. Check the [example code](/ctxhou/react-tabtab/blob
 
 ![img](http://i.imgur.com/znf3CJA.png)
 
-Trigger event on the delete button. Check the [example code](/ctxhou/react-tabtab/blob/master/example/deleteTab.jsx).
+Trigger event on the delete button. Check the [example code](https://github.com/ctxhou/react-tabtab/blob/master/example/deleteTab.jsx).
 
 #### props
 
@@ -86,7 +86,7 @@ React-tabtab only wrap the `DragSource` and `DropTarget` on the tab, so if you w
 
 In this way, the drag and drop feature in react-tabtab can fit with other dnd library.
 
-Check out the [example code](/ctxhou/react-tabtab/blob/master/example/dragAndDrop.js) and the [top component](/ctxhou/react-tabtab/blob/master/test/test.js).
+Check out the [example code](https://github.com//ctxhou/react-tabtab/blob/master/example/dragAndDrop.js) and the [top component](https://github.com//ctxhou/react-tabtab/blob/master/test/test.js).
 
 #### props
 * draggable (boolean)
@@ -101,7 +101,7 @@ Check out the [example code](/ctxhou/react-tabtab/blob/master/example/dragAndDro
 
 ### Advanced example
 
-Check the [advanced.jsx](/ctxhou/react-tabtab/blob/master/example/advanced.jsx). 
+Check the [advanced.jsx](https://github.com//ctxhou/react-tabtab/blob/master/example/advanced.jsx). 
 
 This example show how to add tab, delete tab, and drag and drop.
 
