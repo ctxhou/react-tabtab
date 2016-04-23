@@ -2,12 +2,8 @@ var React = require('react');
 var Tab = require('../');
 var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
-var HTML5Backend = require('react-dnd-html5-backend');
-var DragDropContext = require('react-dnd').DragDropContext;
 
 var Advanced = React.createClass({
-
-  displayName: 'Advanced',
 
   getInitialState: function() {
     var data = [
@@ -78,9 +74,9 @@ var Advanced = React.createClass({
     return (
       <Tabs activeKey={this.state.activeKey} 
             style="tabtab__folder__" 
-            addBackTab={false}
+            addBackTab={true}
             handleAddBackClick={this.handleAddBackTab}
-            tabDeleteButton={false}
+            tabDeleteButton={true}
             handleTabDeleteButton={this.handleTabDeleteButton}
             deleteAllButton={true}
             handleDeleteAllButton={this.handleDeleteAllButton}
@@ -95,7 +91,7 @@ var Advanced = React.createClass({
   }
 })
 
-module.exports = DragDropContext(HTML5Backend)(Advanced)
+module.exports = (Advanced)
 
 function handleDeleteButton() {
   console.log('delete')

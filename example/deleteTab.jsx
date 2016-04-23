@@ -3,19 +3,18 @@ var Tab = require('../');
 var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
 
-var AddTab = React.createClass({
+var DeleteTab = React.createClass({
   render: function() {
     return (
       <Tabs activeKey={2} 
             style="tabtab__folder__" 
-            addBackTab={true}
-            handleAddBackClick={handleAddBackTab}
-            tabDeleteButton={false}
-            deleteAllButton={false}>
+            addBackTab={false}
+            tabDeleteButton={true}
+            handleTabDeleteButton={handleTabDeleteButton}>
         <Panel title="tab1">
           123121233132
         </Panel>
-        <Panel title="tab2" lazy={true}>
+        <Panel title="tab2">
           ypmn
         </Panel>
         <Panel title="tab3">
@@ -29,8 +28,8 @@ var AddTab = React.createClass({
   }
 })
 
-function handleAddBackTab() {
-  alert('add Tab')
+function handleTabDeleteButton() {
+  alert('delete tab ');
 }
 
-module.exports = AddTab;
+module.exports = DeleteTab;
