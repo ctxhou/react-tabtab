@@ -5,7 +5,7 @@ module.exports = {
   devtool: 'eval',
   entry: {
     'react-tabtab': ['webpack-hot-middleware/client','./lib/index'],
-    test: ['webpack-hot-middleware/client','./test']
+    test: ['webpack-hot-middleware/client','./test/test']
   },
   output: {
     path: path.join(__dirname, 'dist'),

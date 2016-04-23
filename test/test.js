@@ -1,22 +1,13 @@
-var Basic = require('./gh-pages/example/basic.jsx');
-var Advanced = require('./gh-pages/example/advanced.jsx');
-var Lazy = require('./gh-pages/example/lazy.jsx');
+var React = require('react');
+var Simple = require('../example/simple.jsx');
+var Advanced = require('../example/advanced.jsx');
+var ReactDOM = require('react-dom');
 
 
-React.render(
-  <Basic/>,
-  document.getElementById('basic')
-);
 
-React.render(
-  <Advanced/>,
-  document.getElementById('advanced')
-);
-
-
-React.render(
-  <Lazy/>,
-  document.getElementById('lazy')
+var rootInstance = ReactDOM.render(
+  <Simple />,
+  document.getElementById('root')
 );
 
 

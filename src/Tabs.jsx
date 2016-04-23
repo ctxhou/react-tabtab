@@ -1,17 +1,5 @@
 import React from 'react';
 import update from 'react/lib/update';
-<<<<<<< HEAD
-import Tab from './Tab';
-import FunctionTab from './FunctionTab';
-import classNames from 'classnames';
-import { DragDropContext } from 'react-dnd';
-import HTML5Backend from 'react-dnd-html5-backend';
-
-
-@DragDropContext(HTML5Backend)
-export default class Tabs extends React.Component {
-
-=======
 import DragTab from './DragTab';
 import Tab from './Tab';
 import FunctionTab from './FunctionTab';
@@ -19,7 +7,6 @@ import classNames from 'classnames';
 
 export default class Tabs extends React.Component {
 
->>>>>>> master
   constructor(props) {
     super(props);
     this.handleTabClick = this.handleTabClick.bind(this);
@@ -32,12 +19,8 @@ export default class Tabs extends React.Component {
     this.state = {
       activeKey: props.activeKey || props.defaultActiveKey,
       style: props.style || props.defaultStyle,
-<<<<<<< HEAD
-      children: props.children
-=======
       children: props.children,
       status: 'static' // || 'dragging'
->>>>>>> master
     }
 
   }
@@ -54,8 +37,6 @@ export default class Tabs extends React.Component {
         activeKey: nextProps.activeKey
       })
     }
-<<<<<<< HEAD
-
     if (nextProps.children !== this.state.children) {
       this.setState({
         children: nextProps.children
@@ -63,21 +44,11 @@ export default class Tabs extends React.Component {
     }
   }
 
-=======
-    if (nextProps.children !== this.state.children) {
-      this.setState({
-        children: nextProps.children
-      })
-    }
-  }
-
->>>>>>> master
   handleTabClick(activeKey) {
     if (this.props.handleTabClick) {
       this.props.handleTabClick(activeKey);
     }
 
-<<<<<<< HEAD
     this.setState({
       activeKey: activeKey,
       panelUpdateKey: -1
@@ -91,21 +62,6 @@ export default class Tabs extends React.Component {
     })
   }
 
-=======
-    this.setState({
-      activeKey: activeKey,
-      panelUpdateKey: -1
-    })
-  }
-
-  handleAddFrontClick() {
-    this.props.handleAddFrontClick();
-    this.setState({
-      panelUpdateKey: 0
-    })
-  }
-
->>>>>>> master
   handleAddBackClick() {
     this.props.handleAddBackClick();
   }
@@ -116,21 +72,12 @@ export default class Tabs extends React.Component {
       panelUpdateKey: key
     })
   }
-<<<<<<< HEAD
 
   moveTab(dragIndex, hoverIndex) {
     var dragTab = this.state.children[dragIndex];
     this.props.setMoveData(dragIndex, hoverIndex);
   }
 
-=======
-
-  moveTab(dragIndex, hoverIndex) {
-    var dragTab = this.state.children[dragIndex];
-    this.props.setMoveData(dragIndex, hoverIndex);
-  }
-
->>>>>>> master
   _getPanel() {
     var that = this;
     var tab = [];
@@ -143,18 +90,6 @@ export default class Tabs extends React.Component {
       } else {
         status = 'inactive';
       }
-<<<<<<< HEAD
-
-      tab.push(<Tab key={'tab'+index}
-                    tabKey={index}
-                    title={children.props.title}
-                    status={status}
-                    style={that.state.style}
-                    handleTabClick={that.handleTabClick}
-                    tabDeleteButton={that.props.tabDeleteButton}
-                    handleTabDeleteButton={that.handleTabDeleteButton}
-                    moveTab={that.moveTab}/>);
-=======
       var props = {
         key: 'tab'+index,
         tabKey: index,
@@ -172,7 +107,6 @@ export default class Tabs extends React.Component {
       } else {
         tab.push(<Tab {...props}/>);
       }
->>>>>>> master
       if (!children.props.lazy || (children.props.lazy && index === that.state.activeKey)) {
         var props = {className: classNames(that.state.style + 'panel', status), status: status, key: index};
         if (that.state.panelUpdateKey === index) {
