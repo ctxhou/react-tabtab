@@ -8,3 +8,8 @@ root = true
 charset = utf-8
 indent_style = space
 indent_size = 2
+
+[*.js]
+charset = utf-8
+indent_style = space
+indent_size = 2

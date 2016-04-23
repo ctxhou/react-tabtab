@@ -18,3 +18,19 @@ React.render(
   <Lazy/>,
   document.getElementById('lazy')
 );
+
+
+var advanceInstance = ReactDOM.render(
+  <Advanced />,
+  document.getElementById('advance')
+);
+
+
+if (module.hot) {
+  require('react-hot-loader/Injection').RootInstanceProvider.injectProvider({
+    getRootInstances: function () {
+      // Help React Hot Loader figure out the root component instances on the page:
+      return [rootInstance,advanceInstance];
+    }
+  });
+}

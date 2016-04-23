@@ -1,28 +1,31 @@
-var Tab = require('../index');
+var React = require('react');
+var Tab = require('../');
 var Tabs = Tab.Tabs;
 var Panel = Tab.Panel;
 
-var App = React.createClass({
+var Simple = React.createClass({
   render: function() {
     return (
       <Tabs activeKey={2} 
             style="tabtab__folder__" 
-            addTab={true}
-            handleAddTab={handleAddTab}
+            addBackTab={true}
+            handleAddBackClick={handleAddBackTab}
             tabDeleteButton={true}
             handleTabDeleteButton={handleTabDeleteButton}
             deleteAllButton={true}
-            handleDeleteAllButton={handleDeleteButton}>
-        <Panel title="hi">
+            deleteAllButtonName="NONO"
+            handleDeleteAllButton={handleDeleteButton}
+            deleteAllClassname="tabbbbb">
+        <Panel title="tab1">
           123121233132
         </Panel>
-        <Panel title="yo" lazy={true}>
+        <Panel title="tab2" lazy={true}>
           ypmn
         </Panel>
-        <Panel title="ysdfsdo">
+        <Panel title="tab3">
           sdfsdf
         </Panel>
-        <Panel title="ysdfsdo">
+        <Panel title="tab4">
           sdfsdf
         </Panel>
       </Tabs>
@@ -30,9 +33,14 @@ var App = React.createClass({
   }
 })
 
-function handleAddTab() {
-  console.log('add')
+function handleAddFrontTab() {
+  console.log('add front')
 }
+
+function handleAddBackTab() {
+  console.log('add back')
+}
+
 
 function handleDeleteButton() {
   console.log('delete')
@@ -42,4 +50,4 @@ function handleTabDeleteButton() {
   console.log('tab delete dfkgdfkg ')
 }
 
-module.exports = App;
+module.exports = Simple;

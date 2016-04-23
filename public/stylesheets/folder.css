@@ -1,24 +1,3 @@
-.tabtab__default__tab {
-  list-style-type: none;
-  display: inline-block;
-  margin-right: 5px;
-  border: 2px solid #e7e7e7;
-  padding: 5px; }
-  .tabtab__default__tab:hover {
-    cursor: pointer; }
-  .tabtab__default__tab.active {
-    border-color: #2175bc;
-    background-color: #2175bc;
-    color: white; }
-
-.tabtab__default__tab__wrapper {
-  margin-bottom: 15px; }
-
-.tabtab__default__panel.active {
-  display: block; }
-.tabtab__default__panel.inactive {
-  display: none; }
-
 .tabtab__folder__wrapper {
   position: relative; }
 
@@ -41,7 +20,6 @@
     margin-bottom: -2px; }
 
 .tabtab__folder__tab.add {
-  margin-left: 5px;
   padding: 5px 8px;
   background-color: #F1F1F1;
   color: black; }
@@ -89,6 +67,7 @@
     margin-left: -5px;
     margin-top: -1px;
     position: absolute;
+    -webkit-transform: rotate(-45deg);
     transform: rotate(-45deg); }
   .tabtab__folder__circle:before {
     left: 50%;
@@ -100,6 +79,7 @@
     background-color: #9c9c9a;
     content: "";
     position: absolute;
+    -webkit-transform: rotate(45deg);
     transform: rotate(45deg); }
   .tabtab__folder__circle:hover {
     background-color: #9c9c9a; }
@@ -107,5 +87,3 @@
       background-color: #F1F1F1; }
   .tabtab__folder__circle:focus {
     outline: none; }
-
-/*# sourceMappingURL=tab.css.map */

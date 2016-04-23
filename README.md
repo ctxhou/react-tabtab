@@ -1,20 +1,16 @@
 # react-tabtab
 
-react-tabtab is another react tab. But why you need another react tab?
+react-tabtab is an api based react tab.
 
-Some react tabs provide so powerful function like only render the active tab to the DOM or it seperates the tab and panel.
+[Demo](http://ctxhou.github.io/react-tabtab/)
 
-But in my case, I only need the tab that can hide and show. Besides, all the content in the panel is directly render to DOM. 
+## Features
 
-Besides, cause my personal project need more function. I find the tab only show content can satisfy my use case.
+![img](http://i.imgur.com/r5ssaiM.png)
 
-So react tabtab provide more api for you to interact with tabs.
-
-That's it. That is react-tabtab.
-
-Hope it would fit in your case.
-
-[demo](http://ctxhou.github.io/react-tabtab/)
+* Add tab
+* Delete tab
+* Drag and Drop tab
 
 ## Usage
 
@@ -50,6 +46,11 @@ var App = React.createClass({
 React.render(<App/>, document.getElementById('container'));
 ```
 
+## Advanced Usage
+
+### Add tab
+
+
 ## API
     
 | property              | type     | default           | required | description                                         |
@@ -64,7 +65,7 @@ React.render(<App/>, document.getElementById('container'));
 | tabDeleteButton       | boolean  | false             | no       | whether each tab show delete button                 |
 | handleTabDeleteButton | function | n/a               | no       | callback function when click tabDeleteButton        |
 | style                 | string   | tabtab__default__ | no       | the class prefix                                    |
-
+| deleteAllClassname    | string   | n/a               | no       |                                                     |
 
 ## Style
 
@@ -72,12 +73,6 @@ now only use css as style.
 
 if you want to use the same style as teh [demo](http://ctxhou.github.io/react-tabtab/), just clone the `dist/tab.css` and inlcude in you project.
 
-    
-## Todo
-
-- [] add the update partial selection
-- [] add more example
-
 ## License
 
-MIT
+MIT [@ctxhou](github.com/ctxhou)
