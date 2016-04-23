@@ -86,7 +86,7 @@ React-tabtab only wrap the `DragSource` and `DropTarget` on the tab, so if you w
 
 In this way, the drag and drop feature in react-tabtab can fit with other dnd library.
 
-Check out the [example code](https://github.com//ctxhou/react-tabtab/blob/master/example/dragAndDrop.js) and the [top component](https://github.com//ctxhou/react-tabtab/blob/master/test/test.js).
+Check out the [example code](https://github.com//ctxhou/react-tabtab/blob/master/example/dragAndDrop.js) and the [top component](https://github.com//ctxhou/react-tabtab/blob/master/test/test.js#L31).
 
 #### props
 * draggable (boolean)
@@ -101,7 +101,8 @@ Check out the [example code](https://github.com//ctxhou/react-tabtab/blob/master
 
 ### Advanced example
 
-Check the [advanced.jsx](https://github.com//ctxhou/react-tabtab/blob/master/example/advanced.jsx). 
+Check the [advanced.jsx](https://github.com/
+/ctxhou/react-tabtab/blob/master/example/advanced.jsx). 
 
 This example show how to add tab, delete tab, and drag and drop.
 
@@ -128,6 +129,7 @@ This example show how to add tab, delete tab, and drag and drop.
 now only use css as style.
 
 if you want to use the same style as teh [demo](http://ctxhou.github.io/react-tabtab/), just clone the `dist/tab.css` and inlcude in you project.
+
 
 ## License
 
