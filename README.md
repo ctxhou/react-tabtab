@@ -1,9 +1,15 @@
 # react-tabtab
+![version][version]
+![david][david]
+![download][download]
 
 react-tabtab is an api based react tab.
 
 [Demo](http://ctxhou.github.io/react-tabtab/)
 
+[david]:       https://david-dm.org/ctxhou/react-tabtab.svg
+[version]:     https://img.shields.io/npm/v/react-tabtab.svg?maxAge=2592000
+[download]:    https://img.shields.io/npm/dm/react-tabtab.svg?maxAge=2592000
 ## Features
 
 ![img](http://i.imgur.com/r5ssaiM.png)
