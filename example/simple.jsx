@@ -7,7 +7,7 @@ var Simple = React.createClass({
   render: function() {
     return (
       <Tabs activeKey={2} 
-            style="tabtab__folder__" 
+            style={"tabtab__"+this.props.style+"__"} 
             addBackTab={true}
             handleAddBackClick={handleAddBackTab}
             tabDeleteButton={true}

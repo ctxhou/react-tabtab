@@ -14,7 +14,9 @@ var Example = React.createClass({
     return (
       <div>
         <h2>Simple:</h2>
-        <Simple/>
+        <Simple style='folder'/>
+        <h2>Simple side:</h2>
+        <Simple style='side'/>
         <h2>Add Tab</h2>
         <AddTab/>
         <h2>Delete Tab</h2>

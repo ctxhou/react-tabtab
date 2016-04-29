@@ -1,0 +1,64 @@
+// side style
+
+$prefix: tabtab__side__;
+$bkg-color-active: #4078c0;
+$border-color-active: #4078c0;
+
+.#{$prefix}wrapper {
+    position: relative;
+}
+
+.tabtab__clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+
+
+.#{$prefix}tab__wrapper {
+  float: left;
+  display: inline-block;
+}
+
+.#{$prefix}panel__wrapper {
+  float: left;
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.#{$prefix}panel {
+    &.active {
+        display: block;
+    }
+
+    &.inactive {
+        display: none;
+    }
+}
+
+
+.#{$prefix}tab {
+    list-style-type: none;
+    color: black;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 2px;
+    background-color: white;
+    color: $bkg-color-active;
+    &:hover {
+        cursor: pointer;
+    }
+    &.active {
+        color: white;
+        background-color: $bkg-color-active;
+    }
+}
+
+.#{$prefix}tab.add {
+    // margin-left: 5px;
+    padding: 5px 8px;
+    background-color: $bkg-color-active;
+    color: black;
+    &:hover {
+        background-color: #ccc;
+    }
+}

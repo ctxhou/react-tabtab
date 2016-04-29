@@ -137,7 +137,7 @@ export default class Tabs extends React.Component {
   render() {
     var deleteButtonTmpl;
     var opt = this._getPanel();
-    var wrapper = this.state.style + "wrapper";
+    var wrapper = this.state.style + "wrapper tabtab__clearfix";
     var tabWrapper = this.state.style + "tab__wrapper";
     var panelWrapper = this.state.style + "panel__wrapper";
     var noneName = this.props.deleteAllButtonName;

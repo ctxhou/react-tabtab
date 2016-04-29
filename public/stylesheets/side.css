@@ -1,0 +1,42 @@
+.tabtab__side__wrapper {
+  position: relative; }
+
+.tabtab__clearfix {
+  overflow: auto;
+  zoom: 1; }
+
+.tabtab__side__tab__wrapper {
+  float: left;
+  display: inline-block; }
+
+.tabtab__side__panel__wrapper {
+  float: left;
+  display: inline-block;
+  margin-left: 30px; }
+
+.tabtab__side__panel.active {
+  display: block; }
+
+.tabtab__side__panel.inactive {
+  display: none; }
+
+.tabtab__side__tab {
+  list-style-type: none;
+  color: black;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin-bottom: 2px;
+  background-color: white;
+  color: #4078c0; }
+  .tabtab__side__tab:hover {
+    cursor: pointer; }
+  .tabtab__side__tab.active {
+    color: white;
+    background-color: #4078c0; }
+
+.tabtab__side__tab.add {
+  padding: 5px 8px;
+  background-color: #4078c0;
+  color: black; }
+  .tabtab__side__tab.add:hover {
+    background-color: #ccc; }
