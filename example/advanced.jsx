@@ -73,7 +73,7 @@ var Advanced = React.createClass({
     }
     return (
       <Tabs activeKey={this.state.activeKey} 
-            style="tabtab__folder__" 
+            style={"tabtab__"+this.props.style+"__"} 
             addBackTab={true}
             handleAddBackClick={this.handleAddBackTab}
             tabDeleteButton={true}

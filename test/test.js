@@ -15,8 +15,6 @@ var Example = React.createClass({
       <div>
         <h2>Simple:</h2>
         <Simple style='folder'/>
-        <h2>Simple side:</h2>
-        <Simple style='side'/>
         <h2>Add Tab</h2>
         <AddTab/>
         <h2>Delete Tab</h2>
@@ -24,7 +22,9 @@ var Example = React.createClass({
         <h2>Drag and Drop</h2>
         <DragAndDrop/>
         <h2>Advanced: </h2>
-        <Advanced/>
+        <Advanced style='folder'/>
+        <h2>Advanced side tab: </h2>
+        <Advanced style='side'/>
       </div>
     )
   }

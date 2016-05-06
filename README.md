@@ -136,6 +136,10 @@ now only use css as style.
 
 if you want to use the same style as teh [demo](http://ctxhou.github.io/react-tabtab/), just clone the `dist/tab.css` and inlcude in you project.
 
+## Development
+
+  npm run build:watch
+  node devServer.js
 
 ## License
 
