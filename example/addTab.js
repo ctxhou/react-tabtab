@@ -1,10 +1,12 @@
-var React = require('react');
-var Tab = require('../');
-var Tabs = Tab.Tabs;
-var Panel = Tab.Panel;
+import React, {Component} from 'react';
+import {Tabs, Panel} from '../';
 
-var AddTab = React.createClass({
-  render: function() {
+export default class AddTab extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  render() {
     return (
       <Tabs activeKey={2} 
             style="tabtab__folder__" 
@@ -27,10 +29,8 @@ var AddTab = React.createClass({
       </Tabs>
     )
   }
-})
+}
 
 function handleAddBackTab() {
   alert('add Tab')
 }
-
-module.exports = AddTab;

@@ -1,10 +1,8 @@
-var React = require('react');
-var Tab = require('../');
-var Tabs = Tab.Tabs;
-var Panel = Tab.Panel;
+import React, {Component} from 'react';
+import {Tabs, Panel} from '../lib';
 
-var Simple = React.createClass({
-  render: function() {
+export default class Simple extends Component {
+  render() {
     return (
       <Tabs activeKey={2} 
             style={"tabtab__"+this.props.style+"__"} 
@@ -31,7 +29,7 @@ var Simple = React.createClass({
       </Tabs>
     )
   }
-})
+}
 
 function handleAddFrontTab() {
   console.log('add front')
@@ -49,5 +47,3 @@ function handleDeleteButton() {
 function handleTabDeleteButton() {
   console.log('tab delete dfkgdfkg ')
 }
-
-module.exports = Simple;

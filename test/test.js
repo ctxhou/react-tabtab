@@ -1,13 +1,13 @@
 var React = require('react');
-var Simple = require('../example/simple.jsx');
-var Advanced = require('../example/advanced.jsx');
-var AddTab = require('../example/addTab.jsx');
-var DeleteTab = require('../example/deleteTab.jsx');
-var DragAndDrop = require('../example/dragAndDrop.js');
 var ReactDOM = require('react-dom');
 var DragDropContext = require('react-dnd').DragDropContext;
 var HTML5Backend = require('react-dnd-html5-backend');
 
+var Simple = require('../example/simple');
+var Advanced = require('../example/advanced');
+var AddTab = require('../example/addTab');
+var DeleteTab = require('../example/deleteTab');
+var DragAndDrop = require('../example/dragAndDrop');
 
 var Example = React.createClass({
   render: function() {
@@ -32,16 +32,7 @@ var Example = React.createClass({
 
 var Ex = DragDropContext(HTML5Backend)(Example);
 
-var rootInstance = ReactDOM.render(
+ReactDOM.render(
   <Ex/>,
   document.getElementById('root')
 );
-
-if (module.hot) {
-  require('react-hot-loader/Injection').RootInstanceProvider.injectProvider({
-    getRootInstances: function () {
-      // Help React Hot Loader figure out the root component instances on the page:
-      return [rootInstance,advanceInstance];
-    }
-  });
-}

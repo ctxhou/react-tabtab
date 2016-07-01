@@ -1,27 +1,25 @@
-var React = require('react');
-var Tab = require('../');
-var Tabs = Tab.Tabs;
-var Panel = Tab.Panel;
+import React, {Component} from 'react';
+import {Tabs, Panel} from '../';
 
-var DragAndDrop = React.createClass({
-
-  getInitialState: function() {
-    return {
+export default class DragAndDrop extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
       beginDrag: '',
       dragIndex: '0',
       hoverIndex: '0'
     }
-  },
+  }
 
-  beginDrag: function() {
+  beginDrag() {
     this.setState({beginDrag: 'beginDrag'});
-  },
+  }
 
-  setMoveData: function(dragIndex, hoverIndex) {
+  setMoveData(dragIndex, hoverIndex) {
     this.setState({dragIndex: dragIndex, hoverIndex: hoverIndex});
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <div>
         <h3>Try to drag one of the tab</h3>
@@ -33,8 +31,8 @@ var DragAndDrop = React.createClass({
               tabDeleteButton={false}
               deleteAllButton={false}
               draggable={true}
-              beginDrag={this.beginDrag}
-              setMoveData={this.setMoveData}>
+              beginDrag={::this.beginDrag}
+              setMoveData={::this.setMoveData}>
           <Panel title="tab1">
             123121233132
           </Panel>
@@ -51,6 +49,4 @@ var DragAndDrop = React.createClass({
       </div>
     )
   }
-})
-
-module.exports = (DragAndDrop);
+}

@@ -1,10 +1,12 @@
-var React = require('react');
-var Tab = require('../');
-var Tabs = Tab.Tabs;
-var Panel = Tab.Panel;
+import React, {Component} from 'react';
+import {Tabs, Panel} from '../';
 
-var DeleteTab = React.createClass({
-  render: function() {
+export default class DeleteTab extends Component {
+  constructor(props) {
+    super(props);
+  }
+  
+  render() {
     return (
       <Tabs activeKey={2} 
             style="tabtab__folder__" 
@@ -26,10 +28,9 @@ var DeleteTab = React.createClass({
       </Tabs>
     )
   }
-})
+}
+
 
 function handleTabDeleteButton() {
   alert('delete tab ');
 }
-
-module.exports = DeleteTab;
