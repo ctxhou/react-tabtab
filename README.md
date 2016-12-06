@@ -134,7 +134,7 @@ This example show how to add tab, delete tab, and drag and drop.
 
 now only use css as style.
 
-if you want to use the same style as teh [demo](http://ctxhou.github.io/react-tabtab/), just clone the `dist/tab.css` and inlcude in you project.
+if you want to use the same style as teh [demo](http://ctxhou.github.io/react-tabtab/), just clone the `stylesheets/folder.css` and inlcude in you project.
 
 ## Development
 
