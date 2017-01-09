@@ -59,7 +59,7 @@
     "express": "^4.13.3",
     "gulp": "~3.9.1",
     "gulp-autoprefixer": "^3.1.1",
-    "gulp-sass": "^2.0.4",
+    "gulp-sass": "^3.1.0",
     "postcss-hash-classname": "^0.4.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
