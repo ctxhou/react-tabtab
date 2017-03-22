@@ -67,7 +67,7 @@
     "react-transform-hmr": "^1.0.2",
     "redbox-react": "^1.0.1",
     "rimraf": "^2.4.3",
-    "webpack": "^1.9.6",
+    "webpack": "^2.3.1",
     "webpack-dev-middleware": "^1.2.0",
     "webpack-hot-middleware": "^2.0.0"
   }
