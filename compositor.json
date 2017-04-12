@@ -1,0 +1,89 @@
+{
+  "name": "ctxhou/react-tabtab",
+  "version": "0.1.4",
+  "libraries": {
+    "xv": "^1.1.25"
+  },
+  "title": "",
+  "branch": "",
+  "style": {
+    "name": "Williamsburg",
+    "componentSet": {
+      "nav": "nav/BasicNav",
+      "header": "header/LightBannerHeader",
+      "article": "article/ReaderArticle",
+      "footer": "footer/BasicFooter"
+    },
+    "fontFamily": "Montserrat, sans-serif",
+    "heading": {
+      "fontWeight": 600,
+      "letterSpacing": "0.1em"
+    },
+    "colors": {
+      "text": "#346",
+      "background": "#fff",
+      "primary": "#0099e0",
+      "secondary": "#ab61ff",
+      "highlight": "#f7b",
+      "muted": "#fffab3",
+      "border": "#ccd"
+    }
+  },
+  "content": [
+    {
+      "component": "nav",
+      "links": [
+        {
+          "href": "http://ctxhou.github.io/react-tabtab/",
+          "text": "Home"
+        },
+        {
+          "href": "https://github.com/ctxhou/react-tabtab",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://npmjs.com/package/react-tabtab",
+          "text": "npm"
+        }
+      ]
+    },
+    {
+      "component": "header",
+      "heading": "react-tabtab",
+      "subhead": "An api based react tab.",
+      "children": [
+        {
+          "component": "ui/TweetButton",
+          "text": "react-tabtab: An api based react tab.",
+          "url": "http://ctxhou.github.io/react-tabtab/"
+        },
+        {
+          "component": "ui/GithubButton",
+          "user": "ctxhou",
+          "repo": "react-tabtab"
+        }
+      ],
+      "text": "v0.8.0"
+    },
+    {
+      "component": "article",
+      "metadata": {
+        "source": "github.readme"
+      },
+      "html": "\n<p><img src=\"https://img.shields.io/npm/v/react-tabtab.svg?maxAge=2592000\">\n<img src=\"https://david-dm.org/ctxhou/react-tabtab.svg\">\n<img src=\"https://img.shields.io/npm/dm/react-tabtab.svg?maxAge=2592000\"></p>\n<p>react-tabtab is an api based react tab.</p>\n<p><a href=\"http://ctxhou.github.io/react-tabtab/\">Demo</a></p>\n<h2>Features</h2>\n<p><img src=\"http://i.imgur.com/r5ssaiM.png\"></p>\n<ul>\n<li>Add tab</li>\n<li>Delete tab</li>\n<li>Drag and Drop tab</li>\n</ul>\n<h2>Usage</h2>\n<p>Now only available the commonjs module.</p>\n<p>Install it with npm.</p>\n<pre>npm install react-tabtab --save</pre><p>Simple example:</p>\n<pre><span class=\"hljs-keyword\">var</span> Tabs = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&apos;react-tabtab&apos;</span>).Tabs;\n<span class=\"hljs-keyword\">var</span> Panel = <span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">&apos;react-tabtab&apos;</span>).Panel;\n\n<span class=\"hljs-keyword\">var</span> App = React.createClass({\n  <span class=\"hljs-attr\">render</span>: <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n    <span class=\"hljs-keyword\">return</span> (\n      <span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">Tabs</span>&gt;</span>\n        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">Panel</span> <span class=\"hljs-attr\">title</span>=<span class=\"hljs-string\">&quot;hi&quot;</span>&gt;</span>\n          Hi!\n        <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">Panel</span>&gt;</span>\n        <span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">Panel</span> <span class=\"hljs-attr\">title</span>=<span class=\"hljs-string\">&quot;yo&quot;</span> <span class=\"hljs-attr\">lazy</span>=<span class=\"hljs-string\">{true}</span>&gt;</span>\n          yo yo\n        <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">Panel</span>&gt;</span>\n      <span class=\"hljs-tag\">&lt;/<span class=\"hljs-name\">Tabs</span>&gt;</span></span>\n    )\n  }\n})\n\nReact.render(<span class=\"xml\"><span class=\"hljs-tag\">&lt;<span class=\"hljs-name\">App</span>/&gt;</span></span>, <span class=\"hljs-built_in\">document</span>.getElementById(<span class=\"hljs-string\">&apos;container&apos;</span>));</pre><h2>Advanced Usage</h2>\n<h3>Add tab</h3>\n<p><img src=\"http://i.imgur.com/55GxKoR.png\"></p>\n<p>Trigger event on the add tab. Check the <a href=\"https://github.com//ctxhou/react-tabtab/blob/master/example/addTab.jsx\">example code</a>.</p>\n<h4>props</h4>\n<ul>\n<li>addBackTab (boolean)<ul>\n<li>true : show add tab</li>\n<li>false: hide add tab</li>\n</ul>\n</li>\n<li>handleAddBackClick (function): trigger the event when user click the tab.</li>\n</ul>\n<h3>Delete tab</h3>\n<p><img src=\"http://i.imgur.com/znf3CJA.png\"></p>\n<p>Trigger event on the delete button. Check the <a href=\"https://github.com/ctxhou/react-tabtab/blob/master/example/deleteTab.jsx\">example code</a>.</p>\n<h4>props</h4>\n<ul>\n<li>tabDeleteButton (boolean)<ul>\n<li>true : show delete button</li>\n<li>false: hide delete button</li>\n</ul>\n</li>\n<li>handleTabDeleteButton (function): trigger the event when user click delete button.</li>\n</ul>\n<h3>Drag and Drop:</h3>\n<p><img src=\"http://i.imgur.com/crMwvdr.gif\"></p>\n<p>The drag and drop feature is based on <a href=\"https://github.com/gaearon/react-dnd\">react-dnd</a>. You can drag the tab to change the sequence.</p>\n<p>Because react-dnd can&apos;t have two HTML5 backends at the same time (<a href=\"https://github.com/gaearon/react-dnd/issues/186\">this issue</a>), react-tabtab doesn&apos;t wrap the HTML5 in the library.</p>\n<p>React-tabtab only wrap the <code>DragSource</code> and <code>DropTarget</code> on the tab, so if you want to use drag and drop, you need to wrap the <code>DragDropContext</code> on your top compoennt. (in case in your project you already have another html5 backend)</p>\n<p>In this way, the drag and drop feature in react-tabtab can fit with other dnd library.</p>\n<p>Check out the <a href=\"https://github.com//ctxhou/react-tabtab/blob/master/example/dragAndDrop.js\">example code</a> and the <a href=\"https://github.com//ctxhou/react-tabtab/blob/master/test/test.js#L31\">top component</a>.</p>\n<h4>props</h4>\n<ul>\n<li>draggable (boolean)<ul>\n<li>true : tab can drag</li>\n<li>false: tab can&apos;t drag</li>\n</ul>\n</li>\n<li>beginDrag (function): do something when start to drag</li>\n<li>setMoveData (function)<ul>\n<li>return value {dragIndex, hoverIndex}<ul>\n<li>dragIndex: current drag tab index</li>\n<li>hoverIndex: current hove tab index</li>\n</ul>\n</li>\n</ul>\n</li>\n</ul>\n<h3>Advanced example</h3>\n<p>Check the <a href=\"https://github.com/\n/ctxhou/react-tabtab/blob/master/example/advanced.jsx\">advanced.jsx</a>. </p>\n<p>This example show how to add tab, delete tab, and drag and drop.</p>\n<h2>All API</h2>\n<table>\n<thead>\n<tr>\n<th>property</th>\n<th>type</th>\n<th>default</th>\n<th>required</th>\n<th>description</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>activeKey</td>\n<td>int</td>\n<td>0</td>\n<td>no</td>\n<td>set the active key of the tab</td>\n</tr>\n<tr>\n<td>addBackTab</td>\n<td>boolean</td>\n<td>false</td>\n<td>no</td>\n<td>whether show a add tab at the end</td>\n</tr>\n<tr>\n<td>handleAddBackClick</td>\n<td>function</td>\n<td>n/a</td>\n<td>no</td>\n<td>callback function when user click the add tab</td>\n</tr>\n<tr>\n<td>deleteButton</td>\n<td>boolean</td>\n<td>false</td>\n<td>no</td>\n<td>whether show a delete button at each panel</td>\n</tr>\n<tr>\n<td>handleDeleteButton</td>\n<td>function</td>\n<td>false</td>\n<td>no</td>\n<td>callback function when user click the delete button</td>\n</tr>\n<tr>\n<td>handleTabClick</td>\n<td>function</td>\n<td>n/a</td>\n<td>no</td>\n<td>return the key which user clicks</td>\n</tr>\n<tr>\n<td>tabDeleteButton</td>\n<td>boolean</td>\n<td>false</td>\n<td>no</td>\n<td>whether each tab show delete button</td>\n</tr>\n<tr>\n<td>handleTabDeleteButton</td>\n<td>function</td>\n<td>n/a</td>\n<td>no</td>\n<td>callback function when click tabDeleteButton</td>\n</tr>\n<tr>\n<td>style</td>\n<td>string</td>\n<td>tabtab<strong>default</strong></td>\n<td>no</td>\n<td>the class prefix</td>\n</tr>\n<tr>\n<td>deleteAllClassname</td>\n<td>string</td>\n<td>n/a</td>\n<td>no</td>\n<td></td>\n</tr>\n<tr>\n<td>draggable</td>\n<td>boolean</td>\n<td>false</td>\n<td>no</td>\n<td>whether tab can drag and drop</td>\n</tr>\n<tr>\n<td>beginDrag</td>\n<td>function</td>\n<td>n/a</td>\n<td>no</td>\n<td>callback function when start drag</td>\n</tr>\n<tr>\n<td>setMoveData</td>\n<td>function</td>\n<td>n/a</td>\n<td>no</td>\n<td>callback function to get current index and hover index</td>\n</tr>\n</tbody>\n</table>\n<h2>Style</h2>\n<p>now only use css as style.</p>\n<p>if you want to use the same style as teh <a href=\"http://ctxhou.github.io/react-tabtab/\">demo</a>, just clone the <code>stylesheets/folder.css</code> and inlcude in you project.</p>\n<h2>Development</h2>\n<p>  npm run build:watch\n  node devServer.js</p>\n<h2>License</h2>\n<p>MIT <a href=\"github.com/ctxhou\">@ctxhou</a></p>\n"
+    },
+    {
+      "component": "footer",
+      "links": [
+        {
+          "href": "https://github.com/ctxhou/react-tabtab",
+          "text": "GitHub"
+        },
+        {
+          "href": "https://github.com/ctxhou",
+          "text": "ctxhou"
+        }
+      ]
+    }
+  ]
+}
