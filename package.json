@@ -55,7 +55,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "browser-sync": "~2.15.0",
     "eslint": "^3.4.0",
-    "eslint-plugin-react": "^6.2.0",
+    "eslint-plugin-react": "^7.0.0",
     "express": "^4.13.3",
     "gulp": "~3.9.1",
     "gulp-autoprefixer": "^3.1.1",
