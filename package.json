@@ -39,7 +39,7 @@
     "react-tappable": "^0.8.4"
   },
   "devDependencies": {
-    "autoprefixer": "^6.1.1",
+    "autoprefixer": "^7.1.0",
     "babel-cli": "^6.6.5",
     "babel-core": "^6.5.2",
     "babel-loader": "^6.2.3",
