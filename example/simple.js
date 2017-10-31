@@ -3,6 +3,12 @@ import {Tabs, Panel} from '../lib';
 
 export default class Simple extends Component {
   render() {
+    const titleGen = text => (
+      <div>
+        <i className="fa fa-calendar"></i>
+        {text}
+      </div>
+    )
     return (
       <Tabs activeKey={2} 
             style={"tabtab__"+this.props.style+"__"} 
@@ -14,7 +20,7 @@ export default class Simple extends Component {
             deleteAllButtonName="NONO"
             handleDeleteAllButton={handleDeleteButton}
             deleteAllClassname="tabbbbb">
-        <Panel title="tab1">
+        <Panel title={titleGen('tab1')}>
           123121233132
         </Panel>
         <Panel title="tab2" lazy={true}>
