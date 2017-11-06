@@ -4,6 +4,8 @@ import {Tabs, Panel} from '../';
 export default class DragAndDrop extends Component {
   constructor(props) {
     super(props);
+    this.beginDrag = this.beginDrag.bind(this);
+    this.setMoveData = this.setMoveData.bind(this);
     this.state = {
       beginDrag: '',
       dragIndex: '0',
@@ -31,8 +33,8 @@ export default class DragAndDrop extends Component {
               tabDeleteButton={false}
               deleteAllButton={false}
               draggable={true}
-              beginDrag={::this.beginDrag}
-              setMoveData={::this.setMoveData}>
+              beginDrag={this.beginDrag}
+              setMoveData={this.setMoveData}>
           <Panel title="tab1">
             123121233132
           </Panel>

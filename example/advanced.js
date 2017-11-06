@@ -5,7 +5,7 @@ export default class Advanced extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data:  [
+      data: [
         {
           title: "Tab1",
           content: "content 1"
@@ -51,7 +51,7 @@ export default class Advanced extends Component {
   }
 
   beginDrag() {
-    console.log('begin drag')
+
   }
 
   setMoveData(dragIndex, hoverIndex) {
@@ -89,12 +89,4 @@ export default class Advanced extends Component {
       </Tabs>
     )
   }
-}
-
-function handleDeleteButton() {
-  console.log('delete')
-}
-
-function handleTabDeleteButton() {
-  console.log('tab delete dfkgdfkg ')
 }

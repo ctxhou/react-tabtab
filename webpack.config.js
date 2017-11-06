@@ -2,10 +2,10 @@ var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
-  devtool: 'eval',
+  devtool: 'eval-source-map',
   entry: {
-    'react-tabtab': ['webpack-hot-middleware/client','./lib/index'],
-    test: ['webpack-hot-middleware/client','./test/test']
+    // 'react-tabtab': ['webpack-hot-middleware/client','./lib/index'],
+    example: ['webpack-hot-middleware/client','./example/all']
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -13,22 +13,27 @@ module.exports = {
     publicPath: '/static/'
   },
   resolve: {
-    extensions: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify("development")
+      }
+    })
   ],
   module: {
     loaders: [
       {
         test: /\.jsx$/,
-        loaders: ['babel'],
+        loader: 'babel-loader',
         exclude: /node_modules/
       },
       {
         test: /\.js$/,
-        loaders: ['babel'],
+        loader: 'babel-loader',
         exclude: /node_modules/
       }
     ]

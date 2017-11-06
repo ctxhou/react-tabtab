@@ -3,11 +3,11 @@ var ReactDOM = require('react-dom');
 var DragDropContext = require('react-dnd').DragDropContext;
 var HTML5Backend = require('react-dnd-html5-backend');
 
-var Simple = require('../example/simple');
-var Advanced = require('../example/advanced');
-var AddTab = require('../example/addTab');
-var DeleteTab = require('../example/deleteTab');
-var DragAndDrop = require('../example/dragAndDrop');
+var Simple = require('./simple');
+var Advanced = require('./advanced');
+var AddTab = require('./addTab');
+var DeleteTab = require('./deleteTab');
+var DragAndDrop = require('./dragAndDrop');
 
 var Example = React.createClass({
   render: function() {

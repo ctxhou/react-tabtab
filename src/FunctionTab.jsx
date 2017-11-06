@@ -16,7 +16,7 @@ export default class FunctionTab extends React.Component {
     var tabClass;
 
     tabClass = classNames(this.props.style + 'tab', 'add');
-
+    
     return (
       <span>
         <li className={tabClass} onClick={this.clickTab}>

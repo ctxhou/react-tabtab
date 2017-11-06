@@ -37,14 +37,9 @@ export default class Simple extends Component {
   }
 }
 
-function handleAddFrontTab() {
-  console.log('add front')
-}
-
 function handleAddBackTab() {
   console.log('add back')
 }
-
 
 function handleDeleteButton() {
   console.log('delete')

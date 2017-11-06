@@ -1,7 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import classNames from 'classnames';
-import Tappable from 'react-tappable';
 
 export default class Tab extends React.Component {
   constructor(props) {
