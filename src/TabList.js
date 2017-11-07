@@ -15,26 +15,31 @@ export default class TabList extends React.Component {
       customStyle,
       children,
       activeIndex,
-      handleActiveIndex
+      handleActiveIndex,
+      tabSequence
     } = this.props;
     const props = {
       handleActiveIndex
     };
     const Wrapper = customStyle || ListStyle;
+    // console.log('tabList:', tabSequence, activeIndex)
     return (
       <Wrapper>
-        {React.Children.map(children, (child, index) => {
-          return React.cloneElement(child, {
+        {tabSequence.map((seq, index) => {
+          return React.cloneElement(children[seq], {
+            key: index,
             active: index === activeIndex,
             index,
             tabIndex: index,
             ...props
-          });
+          }); 
         })}
       </Wrapper>
     )
   }
 }
+
+TabList.displayName = 'TabList';
 
 export {
   ListStyle

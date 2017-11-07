@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import Simple from './simple';
+import Simple from './simple';
 import Drag from './drag';
 // var Advanced = require('./advanced');
 // var AddTab = require('./addTab');
@@ -11,8 +11,8 @@ class Example extends React.Component {
   render() {
     return (
       <div>
-        {/*<h2>Simple:</h2>
-        <Simple/>*/}
+        <h2>Simple:</h2>
+        <Simple/>
         <h2>Drag:</h2>
         <Drag/>
         {/*<h2>Add Tab</h2>

@@ -4,7 +4,7 @@ import TabList from './TabList';
 
 const DragTabContainer = SortableContainer(({children, ...props}) => {
   return (
-    <TabList {...props} distance={10}>
+    <TabList {...props}>
       {children}
     </TabList>
   );
@@ -17,22 +17,28 @@ export default class DragTabList extends React.Component {
   }
 
   onSortEnd({oldIndex, newIndex}) {
-    const {activeIndex, handleActiveIndex} = this.props;
+    const {activeIndex, handleActiveIndex, handleTabSequence} = this.props;
     if (oldIndex === newIndex) {
       if (activeIndex !== oldIndex) {
         handleActiveIndex(oldIndex);
       }
+    } else {
+      console.log('switch: ', oldIndex, newIndex)
+      handleTabSequence({oldIndex, newIndex})
     }
   }
 
   render() {
-    const {children, ...props} = this.props;
+    const {children, ...props} = this.props; // eslint-disable-line
     return (
       <DragTabContainer onSortEnd={this.onSortEnd}
                         axis='x'
+                        lockAxis='x'
                         {...props}>
         {children}
       </DragTabContainer>
     );
   }
 }
+
+DragTabList.displayName = 'DragTabList';

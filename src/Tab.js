@@ -7,6 +7,7 @@ const TabStyle = styled.div`
   border-bottom: ${props => props.active ? '2px solid #007bff' : '1px solid #eee'};
   padding: 5px 10px;
   transition: color .3s cubic-bezier(.645, .045, .355, 1);
+  user-select: none;
   &:hover {
     cursor: pointer;
     color: #007bff;
@@ -21,7 +22,6 @@ export default class Tab extends React.Component {
 
   clickTab() {
     const {handleActiveIndex, index} = this.props;
-    console.log(index)
     handleActiveIndex(index);
   }
 
@@ -36,6 +36,8 @@ export default class Tab extends React.Component {
     )
   }
 }
+
+Tab.displayName = 'Tab';
 
 export {
   TabStyle

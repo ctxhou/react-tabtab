@@ -38,16 +38,10 @@
   },
   "homepage": "https://github.com/ctxhou/react-tabtab#readme",
   "dependencies": {
-    "babel-preset-stage-0": "^6.24.1",
     "classnames": "^2.2.5",
+    "lodash": "^4.17.4",
     "prop-types": "^15.6.0",
-    "prop-types-extra": "^1.0.1",
-    "react": "^15.3.1",
-    "react-dnd": "^2.1.4",
-    "react-dnd-html5-backend": "^2.1.2",
-    "react-dom": "^15.3.1",
     "react-sortable-hoc": "^0.6.8",
-    "react-tappable": "^0.8.4",
     "styled-components": "^2.2.3"
   },
   "devDependencies": {
@@ -71,6 +65,7 @@
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-react-hmre": "^1.1.1",
+    "babel-preset-stage-0": "^6.24.1",
     "babel-runtime": "^6.11.6",
     "compression-webpack-plugin": "^1.0.1",
     "cross-env": "^2.0.1",
@@ -91,7 +86,7 @@
     "git-directory-deploy": "^1.5.1",
     "html-webpack-plugin": "^2.30.1",
     "husky": "^0.14.3",
-    "jest": "^21.2.1",
+    "jest": "^20.0.4",
     "jest-styled-components": "^4.9.0",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.8",
@@ -99,8 +94,9 @@
     "precommit-hook-eslint": "^3.0.0",
     "prettier": "^1.7.4",
     "raw-loader": "^0.5.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "react-addons-test-utils": "^15.3.1",
-    "redux-devtools": "^3.4.0",
     "resolve-url-loader": "^2.1.1",
     "rimraf": "^2.6.2",
     "rollup-plugin-commonjs": "^8.2.6",
@@ -113,6 +109,9 @@
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-hot-middleware": "^2.18.2"
+  },
+  "peerDependencies": {
+    "react": ">= 0.14.0 < 17.0.0-0"
   },
   "jest": {
     "setupFiles": [

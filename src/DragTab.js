@@ -21,4 +21,6 @@ class DragTab extends React.Component {
   }
 }
 
+DragTab.displayName = 'DragTab';
+
 export default DragTab;
