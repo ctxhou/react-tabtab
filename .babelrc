@@ -20,11 +20,6 @@
     ]
   ],
   "env": {
-    "development": {
-      "presets": [
-        "react-hmre"
-      ]
-    },
     "production": {
       "plugins": [
         "transform-react-remove-prop-types",

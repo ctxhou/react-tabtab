@@ -5,7 +5,8 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: {
     example: [
-      'webpack-hot-middleware/client',
+      // 'webpack-hot-middleware/client',
+      'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
       './example/all'
     ]
   },

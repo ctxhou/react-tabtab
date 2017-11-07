@@ -27,7 +27,6 @@ export default class Tab extends React.Component {
 
   render() {
     const {customStyle, active} = this.props;
-    // console.log(this.props)
     const TabComponent = customStyle || TabStyle;
     return (
       <TabComponent onClick={this.clickTab} active={active}>
