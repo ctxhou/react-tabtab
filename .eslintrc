@@ -2,7 +2,8 @@
   "extends": [
     "prettier",
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:jest/recommended"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -12,11 +13,13 @@
   "env": {
     "browser": true,
     "node": true,
-    "es6": true
+    "es6": true,
+    "jest": true
   },
   "plugins": [
     "prettier",
-    "react"
+    "react",
+    "jest"
   ],
   "rules": {
     "switch-colon-spacing": 0,

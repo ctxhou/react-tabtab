@@ -4,8 +4,10 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'eval-source-map',
   entry: {
-    // 'react-tabtab': ['webpack-hot-middleware/client','./lib/index'],
-    example: ['webpack-hot-middleware/client','./example/all']
+    example: [
+      'webpack-hot-middleware/client',
+      './example/all'
+    ]
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -13,7 +15,7 @@ module.exports = {
     publicPath: '/static/'
   },
   resolve: {
-    extensions: ['.js', '.jsx']
+    extensions: ['.js']
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
@@ -26,11 +28,6 @@ module.exports = {
   ],
   module: {
     loaders: [
-      {
-        test: /\.jsx$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
       {
         test: /\.js$/,
         loader: 'babel-loader',

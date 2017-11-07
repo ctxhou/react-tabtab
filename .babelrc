@@ -1,17 +1,28 @@
 {
-  "presets": ["react"],
+  "presets": [
+    "es2015",
+    "react",
+    "stage-0",
+    [
+      "env",
+      {
+        "loose": true
+      }
+    ]
+  ],
   "plugins": [
     [
+      "add-module-exports",
+      "flow-react-proptypes",
       "transform-decorators-legacy",
       "transform-class-properties",
-      "add-module-exports"
+      "transform-flow-strip-types"
     ]
   ],
   "env": {
     "development": {
-      "presets": ["react-hmre"],
-      "plugins": [
-        "add-module-exports"
+      "presets": [
+        "react-hmre"
       ]
     },
     "production": {

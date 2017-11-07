@@ -1,7 +1,17 @@
-var Tabs = require('./Tabs');
-var Panel = require('./Panel');
+import Tabs from './Tabs';
+import TabList from './TabList';
+import Tab from './Tab';
+import DragTabList from './DragTabList';
+import DragTab from './DragTab';
+import PanelList from './PanelList';
+import Panel from './Panel';
 
-module.exports = {
-  Tabs: Tabs,
-  Panel: Panel
+export {
+  Tabs,
+  TabList,
+  Tab,
+  DragTabList,
+  DragTab,
+  PanelList,
+  Panel
 }
