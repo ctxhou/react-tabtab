@@ -21,8 +21,8 @@ export default class Tab extends React.Component {
   }
 
   clickTab() {
-    const {handleActiveIndex, index} = this.props;
-    handleActiveIndex(index);
+    const {handleTabChange, index} = this.props;
+    handleTabChange(index);
   }
 
   render() {

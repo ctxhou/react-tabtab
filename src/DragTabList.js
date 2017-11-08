@@ -17,10 +17,10 @@ export default class DragTabList extends React.Component {
   }
 
   onSortEnd({oldIndex, newIndex}) {
-    const {activeIndex, handleActiveIndex, handleTabSequence} = this.props;
+    const {activeIndex, handleTabChange, handleTabSequence} = this.props;
     if (oldIndex === newIndex) {
       if (activeIndex !== oldIndex) {
-        handleActiveIndex(oldIndex);
+        handleTabChange(oldIndex);
       }
     } else {
       console.log('switch: ', oldIndex, newIndex)

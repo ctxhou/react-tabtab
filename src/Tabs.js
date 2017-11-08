@@ -2,24 +2,39 @@ import React from 'react';
 import {range} from 'lodash';
 import {arrayMove} from 'react-sortable-hoc';
 import countTab from './utils/countTab';
-// import DragTab from './DragTab';
-// import Tab from './Tab';
-// import FunctionTab from './FunctionTab';
-// import classNames from 'classnames';
 
 export default class Tabs extends React.Component {
   constructor(props) {
     super(props);
-    this.handleActiveIndex = this.handleActiveIndex.bind(this);
+    this.handleTabChange = this.handleTabChange.bind(this);
     this.handleTabSequence = this.handleTabSequence.bind(this);
     this.state = {
-      activeIndex: props.defaultIndex || 0,
+      activeIndex: this.getActiveIndex(props),
       tabSequence: range(countTab(props.children))
     };
   }
 
-  handleActiveIndex(index) {
-    this.setState({activeIndex: index});
+  getActiveIndex(props) {
+    const {defaultIndex, activeIndex} = props;
+    if (activeIndex)
+      return activeIndex;
+    if (defaultIndex)
+      return defaultIndex
+    return 0;
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.activeIndex !== this.props.activeIndex) {
+      this.setState({activeIndex: nextProps.activeIndex});
+    }
+  }
+
+  handleTabChange(index) {
+    const {activeIndex, onTabChange} = this.props;
+    if (!activeIndex) {
+      this.setState({activeIndex: index});
+    }
+    onTabChange(index);
   }
 
   handleTabSequence({oldIndex, newIndex}) {
@@ -32,7 +47,7 @@ export default class Tabs extends React.Component {
     const {children} = this.props;
     const {activeIndex, tabSequence} = this.state;
     const props = {
-      handleActiveIndex: this.handleActiveIndex,
+      handleTabChange: this.handleTabChange,
       handleTabSequence: this.handleTabSequence,
       activeIndex,
       tabSequence
@@ -45,4 +60,9 @@ export default class Tabs extends React.Component {
       </div>
     )
   }
+}
+
+Tabs.defaultProps = {
+  onTabChange: () => {},
+  onSequenceChange: () => {}
 }

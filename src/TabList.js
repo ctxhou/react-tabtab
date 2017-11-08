@@ -15,11 +15,11 @@ export default class TabList extends React.Component {
       customStyle,
       children,
       activeIndex,
-      handleActiveIndex,
+      handleTabChange,
       tabSequence
     } = this.props;
     const props = {
-      handleActiveIndex
+      handleTabChange
     };
     const Wrapper = customStyle || ListStyle;
     // console.log('tabList:', tabSequence, activeIndex)
