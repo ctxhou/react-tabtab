@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Tabs normal drag tabs 1`] = `"<div><div class=\\"sc-bdVaJa jnoZas\\"><div class=\\"sc-bwzfXH efFOLV\\">DragTab1</div><div class=\\"sc-bwzfXH hCFwAv\\">DragTab2</div></div><div><div>Content1</div></div></div>"`;
+
+exports[`render Tabs normal tabs 1`] = `"<div><div class=\\"sc-bdVaJa jnoZas\\"><div class=\\"sc-bwzfXH efFOLV\\">Tab1</div><div class=\\"sc-bwzfXH hCFwAv\\">Tab2</div></div><div><div>Content1</div></div></div>"`;

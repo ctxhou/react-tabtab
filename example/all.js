@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Simple from './simple';
+import ControllTab from './controllTab';
 import Drag from './drag';
 // var Advanced = require('./advanced');
 // var AddTab = require('./addTab');
@@ -12,6 +13,8 @@ export default class Example extends React.Component {
       <div>
         <h2>Simple:</h2>
         <Simple/>
+        <h2>Controll active tab:</h2>
+        <ControllTab/>
         <h2>Drag:</h2>
         <Drag/>
         {/*<h2>Add Tab</h2>
