@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom';
 import Simple from './simple';
 import ControllTab from './controllTab';
 import Drag from './drag';
+import Mix from './mix';
+import CloseTab from './closable';
+import AddButton from './addButton';
 // var Advanced = require('./advanced');
 // var AddTab = require('./addTab');
 // var DeleteTab = require('./deleteTab');
@@ -17,16 +20,12 @@ export default class Example extends React.Component {
         <ControllTab/>
         <h2>Drag:</h2>
         <Drag/>
-        {/*<h2>Add Tab</h2>
-        <AddTab/>
-        <h2>Delete Tab</h2>
-        <DeleteTab/>
-        <h2>Drag and Drop</h2>
-        <DragAndDrop/>
-        <h2>Advanced: </h2>
-        <Advanced style='folder'/>
-        <h2>Advanced side tab: </h2>
-        <Advanced style='side'/>*/}
+        <h2>Mix drag and normal tab:</h2>
+        <Mix/>
+        <h2>closable:</h2>
+        <CloseTab/>
+        <h2>add button:</h2>
+        <AddButton/>
       </div>
     )
   }

@@ -23,13 +23,12 @@ export default class DragTabList extends React.Component {
         handleTabChange(oldIndex);
       }
     } else {
-      console.log('switch: ', oldIndex, newIndex)
       handleTabSequence({oldIndex, newIndex})
     }
   }
 
   render() {
-    const {children, ...props} = this.props; // eslint-disable-line
+    const {children, ...props} = this.props;
     return (
       <DragTabContainer onSortEnd={this.onSortEnd}
                         axis='x'

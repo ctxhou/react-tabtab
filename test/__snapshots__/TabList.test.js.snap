@@ -21,22 +21,37 @@ ShallowWrapper {
     "key": undefined,
     "nodeType": "class",
     "props": Object {
-      "children": <span>
-        hi
-      </span>,
+      "children": Array [
+        <span
+          active={false}
+          handleEdit={undefined}
+          handleTabChange={undefined}
+          index={0}
+          tabIndex={0}
+        >
+          hi
+        </span>,
+      ],
     },
     "ref": null,
-    "rendered": Object {
-      "instance": null,
-      "key": undefined,
-      "nodeType": "host",
-      "props": Object {
-        "children": "hi",
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": "0/.0",
+        "nodeType": "host",
+        "props": Object {
+          "active": false,
+          "children": "hi",
+          "handleEdit": undefined,
+          "handleTabChange": undefined,
+          "index": 0,
+          "tabIndex": 0,
+        },
+        "ref": null,
+        "rendered": "hi",
+        "type": "span",
       },
-      "ref": null,
-      "rendered": "hi",
-      "type": "span",
-    },
+    ],
     "type": [Function],
   },
   Symbol(enzyme.__nodes__): Array [
@@ -45,22 +60,37 @@ ShallowWrapper {
       "key": undefined,
       "nodeType": "class",
       "props": Object {
-        "children": <span>
-          hi
-        </span>,
+        "children": Array [
+          <span
+            active={false}
+            handleEdit={undefined}
+            handleTabChange={undefined}
+            index={0}
+            tabIndex={0}
+          >
+            hi
+          </span>,
+        ],
       },
       "ref": null,
-      "rendered": Object {
-        "instance": null,
-        "key": undefined,
-        "nodeType": "host",
-        "props": Object {
-          "children": "hi",
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": "0/.0",
+          "nodeType": "host",
+          "props": Object {
+            "active": false,
+            "children": "hi",
+            "handleEdit": undefined,
+            "handleTabChange": undefined,
+            "index": 0,
+            "tabIndex": 0,
+          },
+          "ref": null,
+          "rendered": "hi",
+          "type": "span",
         },
-        "ref": null,
-        "rendered": "hi",
-        "type": "span",
-      },
+      ],
       "type": [Function],
     },
   ],

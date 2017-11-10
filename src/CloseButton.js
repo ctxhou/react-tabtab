@@ -1,0 +1,26 @@
+import React from 'react';
+import Close from 'react-icons/lib/md/clear';
+import styled from 'styled-components';
+
+const CloseWrapper = styled.div`
+  display: inline-block;
+  color: #777;
+  margin-left: 3px;
+  vertical-align: middle;
+  transition: background-color .2s cubic-bezier(.645, .045, .355, 1);
+  &:hover {
+    color: black;
+    background-color: #eee;
+    cursor: pointer;
+  }
+`;
+
+export default class CloseButton extends React.Component {
+  render() {
+    return (
+      <CloseWrapper onClick={this.props.handleDelete}>
+        <Close/>        
+      </CloseWrapper>
+    );
+  }
+}

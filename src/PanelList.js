@@ -8,12 +8,11 @@ export default class PanelList extends React.Component {
   render() {
     const {
       children,
-      activeIndex,
-      tabSequence
+      activeIndex
     } = this.props;
     return (
       <div>
-        {React.cloneElement(children[tabSequence[activeIndex]])}
+        {React.cloneElement(children[activeIndex])}
       </div>
     )
   }

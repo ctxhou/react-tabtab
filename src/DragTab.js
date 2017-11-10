@@ -14,7 +14,7 @@ class DragTab extends React.Component {
   render() {
     const {children, ...props} = this.props;
     return (
-      <DragTabElement {...props}>
+      <DragTabElement ref={node => this.__INTERNAL_NODE = node} {...props}>
         {children}
       </DragTabElement>
     )

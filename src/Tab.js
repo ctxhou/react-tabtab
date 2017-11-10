@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import CloseButton from './CloseButton';
 
 const TabStyle = styled.div`
   display: inline-block;
   color: ${props => props.active ? '#007bff' : 'black'};
-  border-bottom: ${props => props.active ? '2px solid #007bff' : '1px solid #eee'};
+  border-bottom: ${props => props.active ? '2px solid #007bff' : '0'};
   padding: 5px 10px;
   transition: color .3s cubic-bezier(.645, .045, .355, 1);
   user-select: none;
@@ -18,6 +19,7 @@ export default class Tab extends React.Component {
   constructor(props) {
     super(props);
     this.clickTab = this.clickTab.bind(this);
+    this.clickDelete = this.clickDelete.bind(this);
   }
 
   clickTab() {
@@ -25,12 +27,23 @@ export default class Tab extends React.Component {
     handleTabChange(index);
   }
 
+  clickDelete(event) {
+    event.stopPropagation(); // prevent trigger clickTab event.
+    const {handleEdit, index} = this.props;
+    handleEdit({type: 'delete', index});
+  }
+
   render() {
-    const {customStyle, active} = this.props;
+    const {customStyle, active, closable} = this.props;
     const TabComponent = customStyle || TabStyle;
     return (
-      <TabComponent onClick={this.clickTab} active={active}>
+      <TabComponent innerRef={node => this.__INTERNAL_NODE = node}
+                    onClick={this.clickTab}
+                    active={active}>
         {this.props.children}
+        {closable ?
+          <CloseButton handleDelete={this.clickDelete}/>
+        : null}
       </TabComponent>
     )
   }

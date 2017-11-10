@@ -5,6 +5,7 @@ import DragTabList from './DragTabList';
 import DragTab from './DragTab';
 import PanelList from './PanelList';
 import Panel from './Panel';
+import ExtraButton from './ExtraButton';
 
 export {
   Tabs,
@@ -13,5 +14,6 @@ export {
   DragTabList,
   DragTab,
   PanelList,
-  Panel
+  Panel,
+  ExtraButton
 }

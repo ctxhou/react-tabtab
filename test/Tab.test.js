@@ -33,7 +33,7 @@ describe('Tab', () => {
       const tabKey = 1;
       const component = mount(
         <Tab index={tabKey}
-             handleActiveIndex={mockHandleClick}>
+             handleTabChange={mockHandleClick}>
           text
         </Tab>
       );

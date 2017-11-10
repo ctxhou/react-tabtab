@@ -6,9 +6,9 @@ ShallowWrapper {
   Symbol(enzyme.__root__): [Circular],
   Symbol(enzyme.__unrendered__): <Panel>
     <span>
-        panel content
+      panel content
     </span>
-</Panel>,
+  </Panel>,
   Symbol(enzyme.__renderer__): Object {
     "batchedUpdates": [Function],
     "getNode": [Function],
@@ -23,7 +23,7 @@ ShallowWrapper {
     "props": Object {
       "children": <span>
         panel content
-</span>,
+      </span>,
     },
     "ref": null,
     "rendered": Object {
@@ -47,7 +47,7 @@ ShallowWrapper {
       "props": Object {
         "children": <span>
           panel content
-</span>,
+        </span>,
       },
       "ref": null,
       "rendered": Object {
