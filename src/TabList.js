@@ -71,6 +71,11 @@ export default class TabList extends React.Component {
     this.isShowModalButton();
   }
 
+  componentDidUpdate() {
+    this.isShowArrowButton();
+    this.isShowModalButton();
+  }
+
   getTabNode(tab) {
     const tabType = tab.constructor.name;
     if (tabType === 'Tab') {
@@ -152,7 +157,8 @@ export default class TabList extends React.Component {
         }
       }
     }
-    this.arrowNode.style.display = showArrowButton ? 'block' : 'none';
+    this.leftArrowNode.style.display = showArrowButton ? 'block' : 'none';
+    this.rightArrowNode.style.display = showArrowButton ? 'block' : 'none';
   }
 
   renderTabs(options = {}, isModal) {
@@ -199,14 +205,15 @@ export default class TabList extends React.Component {
                       onClick={this.toggleModal.bind(this, true)}>
             <MdFormatListBulleted/>
           </FoldButton>
-          <div ref={node => this.arrowNode = node} style={{display: 'none'}}>
-            <ScrollButton left onClick={() => {this.handleScroll('left')}}>
-              <MdChevronLeft/>
-            </ScrollButton>
-            <ScrollButton onClick={() => {this.handleScroll('right')}}>
-              <MdChevronRight/>
-            </ScrollButton>
-          </div>
+          <ScrollButton left
+                        onClick={() => {this.handleScroll('left')}}
+                        innerRef={node => this.leftArrowNode = node}>
+            <MdChevronLeft/>
+          </ScrollButton>
+          <ScrollButton onClick={() => {this.handleScroll('right')}}
+                        innerRef={node => this.rightArrowNode = node}>
+            <MdChevronRight/>
+          </ScrollButton>
           <ListInner innerRef={node => this.listContainer = node}>
             <ListScroll innerRef={node => this.listScroll = node}>
               {this.renderTabs()}

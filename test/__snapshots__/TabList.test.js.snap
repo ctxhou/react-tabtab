@@ -125,83 +125,77 @@ exports[`custom ListStyle style 1`] = `
             </MdFormatListBulleted>
           </div>
         </styled.div>
-        <div
-          style={
-            Object {
-              "display": "none",
-            }
-          }
+        <styled.div
+          innerRef={[Function]}
+          left={true}
+          onClick={[Function]}
         >
-          <styled.div
-            left={true}
+          <div
+            className="c2"
             onClick={[Function]}
           >
-            <div
-              className="c2"
-              onClick={[Function]}
-            >
-              <MdChevronLeft>
-                <IconBase
-                  viewBox="0 0 40 40"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
+            <MdChevronLeft>
+              <IconBase
+                viewBox="0 0 40 40"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "color": undefined,
+                      "verticalAlign": "middle",
                     }
-                    viewBox="0 0 40 40"
-                    width="1em"
-                  >
-                    <g>
-                      <path
-                        d="m25.7 12.3l-7.7 7.7 7.7 7.7-2.3 2.3-10-10 10-10z"
-                      />
-                    </g>
-                  </svg>
-                </IconBase>
-              </MdChevronLeft>
-            </div>
-          </styled.div>
-          <styled.div
+                  }
+                  viewBox="0 0 40 40"
+                  width="1em"
+                >
+                  <g>
+                    <path
+                      d="m25.7 12.3l-7.7 7.7 7.7 7.7-2.3 2.3-10-10 10-10z"
+                    />
+                  </g>
+                </svg>
+              </IconBase>
+            </MdChevronLeft>
+          </div>
+        </styled.div>
+        <styled.div
+          innerRef={[Function]}
+          onClick={[Function]}
+        >
+          <div
+            className="c3"
             onClick={[Function]}
           >
-            <div
-              className="c3"
-              onClick={[Function]}
-            >
-              <MdChevronRight>
-                <IconBase
-                  viewBox="0 0 40 40"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
+            <MdChevronRight>
+              <IconBase
+                viewBox="0 0 40 40"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "color": undefined,
+                      "verticalAlign": "middle",
                     }
-                    viewBox="0 0 40 40"
-                    width="1em"
-                  >
-                    <g>
-                      <path
-                        d="m16.6 10l10 10-10 10-2.3-2.3 7.7-7.7-7.7-7.7z"
-                      />
-                    </g>
-                  </svg>
-                </IconBase>
-              </MdChevronRight>
-            </div>
-          </styled.div>
-        </div>
+                  }
+                  viewBox="0 0 40 40"
+                  width="1em"
+                >
+                  <g>
+                    <path
+                      d="m16.6 10l10 10-10 10-2.3-2.3 7.7-7.7-7.7-7.7z"
+                    />
+                  </g>
+                </svg>
+              </IconBase>
+            </MdChevronRight>
+          </div>
+        </styled.div>
         <styled.div
           innerRef={[Function]}
         >
@@ -365,83 +359,77 @@ exports[`render TabList 1`] = `
             </MdFormatListBulleted>
           </div>
         </styled.div>
-        <div
-          style={
-            Object {
-              "display": "none",
-            }
-          }
+        <styled.div
+          innerRef={[Function]}
+          left={true}
+          onClick={[Function]}
         >
-          <styled.div
-            left={true}
+          <div
+            className="c2"
             onClick={[Function]}
           >
-            <div
-              className="c2"
-              onClick={[Function]}
-            >
-              <MdChevronLeft>
-                <IconBase
-                  viewBox="0 0 40 40"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
+            <MdChevronLeft>
+              <IconBase
+                viewBox="0 0 40 40"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "color": undefined,
+                      "verticalAlign": "middle",
                     }
-                    viewBox="0 0 40 40"
-                    width="1em"
-                  >
-                    <g>
-                      <path
-                        d="m25.7 12.3l-7.7 7.7 7.7 7.7-2.3 2.3-10-10 10-10z"
-                      />
-                    </g>
-                  </svg>
-                </IconBase>
-              </MdChevronLeft>
-            </div>
-          </styled.div>
-          <styled.div
+                  }
+                  viewBox="0 0 40 40"
+                  width="1em"
+                >
+                  <g>
+                    <path
+                      d="m25.7 12.3l-7.7 7.7 7.7 7.7-2.3 2.3-10-10 10-10z"
+                    />
+                  </g>
+                </svg>
+              </IconBase>
+            </MdChevronLeft>
+          </div>
+        </styled.div>
+        <styled.div
+          innerRef={[Function]}
+          onClick={[Function]}
+        >
+          <div
+            className="c3"
             onClick={[Function]}
           >
-            <div
-              className="c3"
-              onClick={[Function]}
-            >
-              <MdChevronRight>
-                <IconBase
-                  viewBox="0 0 40 40"
-                >
-                  <svg
-                    fill="currentColor"
-                    height="1em"
-                    preserveAspectRatio="xMidYMid meet"
-                    style={
-                      Object {
-                        "color": undefined,
-                        "verticalAlign": "middle",
-                      }
+            <MdChevronRight>
+              <IconBase
+                viewBox="0 0 40 40"
+              >
+                <svg
+                  fill="currentColor"
+                  height="1em"
+                  preserveAspectRatio="xMidYMid meet"
+                  style={
+                    Object {
+                      "color": undefined,
+                      "verticalAlign": "middle",
                     }
-                    viewBox="0 0 40 40"
-                    width="1em"
-                  >
-                    <g>
-                      <path
-                        d="m16.6 10l10 10-10 10-2.3-2.3 7.7-7.7-7.7-7.7z"
-                      />
-                    </g>
-                  </svg>
-                </IconBase>
-              </MdChevronRight>
-            </div>
-          </styled.div>
-        </div>
+                  }
+                  viewBox="0 0 40 40"
+                  width="1em"
+                >
+                  <g>
+                    <path
+                      d="m16.6 10l10 10-10 10-2.3-2.3 7.7-7.7-7.7-7.7z"
+                    />
+                  </g>
+                </svg>
+              </IconBase>
+            </MdChevronRight>
+          </div>
+        </styled.div>
         <styled.div
           innerRef={[Function]}
         >

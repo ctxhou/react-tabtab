@@ -5,6 +5,7 @@ import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import 'jest-styled-components'
 import MdFormatListBulleted from 'react-icons/lib/md/format-list-bulleted';
+import MdChevronRight from 'react-icons/lib/md/chevron-right';
 
 const shareComponent = props => (
   <TabList {...props}>
@@ -54,5 +55,37 @@ describe('showModalButton', () => {
     it('100', () => {
       expect(returnMountedDisplay(100)).toEqual('none');
     })
+
+    it('show modal button when new tab is added', () => {
+      const component = mount(shareComponent({showModalButton: 4}));
+      component.setProps({children: [
+        <Tab>Tab1</Tab>,
+        <Tab>Tab2</Tab>,
+        <Tab>Tab3</Tab>,
+        <Tab>Tab4</Tab>
+      ]});
+      const buttonWrapper = component.find(MdFormatListBulleted).closest('div');
+      expect(buttonWrapper.instance().style.display).toEqual('block');
+    })
+  })
+})
+
+describe('showArrowButton', () => {
+  const returnMountedDisplay = showArrowButton => {
+    const component = mount(shareComponent({showArrowButton}));
+    const buttonWrapper = component.find(MdChevronRight).closest('div');
+    return buttonWrapper.instance().style.display;
+  }
+  // because in test env it's containerWidth = 0, it always show arrow
+  it('auto', () => {
+    expect(returnMountedDisplay('auto')).toEqual('block');
+  })
+
+  it('true', () => {
+    expect(returnMountedDisplay(true)).toEqual('block');
+  })
+
+  it('false', () => {
+    expect(returnMountedDisplay(false)).toEqual('none');
   })
 })
