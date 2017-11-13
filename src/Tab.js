@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import CloseButton from './CloseButton';
 
 const TabStyle = styled.div`
-  display: inline-block;
+  display: ${props => props.vertical ? 'block': 'inline-block'};
   color: ${props => props.active ? '#007bff' : 'black'};
   border-bottom: ${props => props.active ? '2px solid #007bff' : '0'};
   padding: 5px 10px;
@@ -34,12 +34,13 @@ export default class Tab extends React.Component {
   }
 
   render() {
-    const {customStyle, active, closable} = this.props;
+    const {customStyle, active, closable, vertical} = this.props;
     const TabComponent = customStyle || TabStyle;
     return (
       <TabComponent innerRef={node => this.__INTERNAL_NODE = node}
                     onClick={this.clickTab}
-                    active={active}>
+                    active={active}
+                    vertical={vertical}>
         {this.props.children}
         {closable ?
           <CloseButton handleDelete={this.clickDelete}/>

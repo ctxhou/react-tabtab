@@ -28,7 +28,7 @@ export default class Tabs extends React.Component {
 
   handleTabChange(index) {
     const {activeIndex, onTabChange} = this.props;
-    if (!activeIndex) {
+    if (activeIndex !== 0 && !activeIndex) {
       this.setState({activeIndex: index});
     }
     onTabChange(index);

@@ -1,4 +1,5 @@
 import React from 'react';
+import SortMethod from './SortMethod';
 import {SortableContainer} from 'react-sortable-hoc';
 import TabList from './TabList';
 
@@ -10,23 +11,7 @@ const DragTabContainer = SortableContainer(({children, ...props}) => {
   );
 });
 
-export default class DragTabList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onSortEnd = this.onSortEnd.bind(this);
-  }
-
-  onSortEnd({oldIndex, newIndex}) {
-    const {activeIndex, handleTabChange, handleTabSequence} = this.props;
-    if (oldIndex === newIndex) {
-      if (activeIndex !== oldIndex) {
-        handleTabChange(oldIndex);
-      }
-    } else {
-      handleTabSequence({oldIndex, newIndex})
-    }
-  }
-
+export default class DragTabList extends SortMethod {
   render() {
     const {children, ...props} = this.props;
     return (

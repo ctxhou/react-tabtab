@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import MdChevronLeft from 'react-icons/lib/md/chevron-left';
 import MdChevronRight from 'react-icons/lib/md/chevron-right';
+import MdFormatListBulleted from 'react-icons/lib/md/format-list-bulleted';
+import TabModal from './TabModal';
 
 const ListWrapper = styled.div`
   position: relative;
@@ -30,9 +32,19 @@ const ScrollButton = styled.div`
   filter: none;
   position: absolute;
   ${props => props.left ?
-    'left: 0'
+    'left: 10px'
   : 'right: 0'
   };
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const FoldButton = styled.div`
+  display: inline-block;
+  filter: none;
+  position: absolute;
+  left: 0;
   &:hover {
     cursor: pointer;
   }
@@ -42,8 +54,12 @@ export default class TabList extends React.Component {
   constructor(props) {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
     this.scrollPosition = 0;
     this.tabRefs = [];
+    this.state = {
+      modalIsOpen: false
+    }
   }
 
   getTabNode(tab) {
@@ -78,11 +94,18 @@ export default class TabList extends React.Component {
       }
       this.scrollPosition += leftMove;
     }
+
     if (this.scrollPosition < 0) {
       this.scrollPosition = 0;
+    } else if (this.scrollPosition > tabLastOffset.right) {
+      this.scrollPosition = tabLastOffset.right - containerOffset.right;
     }
 
     this.listScroll.style.transform = `translate3d(-${this.scrollPosition}px, 0, 0)`;
+  }
+
+  toggleModal(type) {
+    this.setState({modalIsOpen: type});
   }
 
   render() {
@@ -91,18 +114,24 @@ export default class TabList extends React.Component {
       children,
       activeIndex,
       handleTabChange,
+      handleTabSequence,
       handleEdit,
       ExtraButton
     } = this.props;
+    const {modalIsOpen} = this.state;
     const props = {
       handleTabChange,
       handleEdit
     };
+    console.log('TabList:', activeIndex)
     const ListInner = customStyle || ListStyle;
     return (
       <div>
         {ExtraButton ? ExtraButton : null}
         <ListWrapper hasExtraButton={!!ExtraButton}>
+          <FoldButton onClick={this.toggleModal.bind(this, true)}>
+            <MdFormatListBulleted/>
+          </FoldButton>
           <ScrollButton left onClick={() => {this.handleScroll('left')}}>
             <MdChevronLeft/>
           </ScrollButton>
@@ -126,6 +155,26 @@ export default class TabList extends React.Component {
             </ListScroll>
           </ListInner>
         </ListWrapper>
+        {modalIsOpen ?
+          <TabModal closeModal={this.toggleModal.bind(this, false)}
+                    handleTabSequence={handleTabSequence}
+                    handleTabChange={handleTabChange}
+                    activeIndex={activeIndex}>
+            {React.Children.map(children, (child, index) => (
+              React.cloneElement(child, {
+                key: index,
+                active: index === activeIndex,
+                vertical: true,
+                index,
+                tabIndex: index,
+                ref: node => {
+                  this.tabRefs.push(node)
+                },
+                ...props
+              })
+            ))}
+          </TabModal>
+        : null}
       </div>
     )
   }
