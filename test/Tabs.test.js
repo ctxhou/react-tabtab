@@ -2,8 +2,8 @@ import React from 'react';
 import {Tabs, DragTabList, DragTab, TabList, Tab, PanelList, Panel} from '../src';
 import {shallow, mount} from 'enzyme';
 
-const normalComponent = (
-  <Tabs>
+const normalComponent = (props = {}) => (
+  <Tabs {...props}>
     <TabList>
       <Tab>Tab1</Tab>
       <Tab>Tab2</Tab>
@@ -15,8 +15,8 @@ const normalComponent = (
   </Tabs>
 );
 
-const dragComponent = (
-  <Tabs>
+const dragComponent = (props = {}) => (
+  <Tabs {...props}>
     <DragTabList>
       <DragTab>DragTab1</DragTab>
       <DragTab>DragTab2</DragTab>
@@ -30,11 +30,11 @@ const dragComponent = (
 
 describe('render Tabs', () => {
   it('normal tabs', () => {
-    const component = mount(normalComponent);
+    const component = mount(normalComponent());
     expect(component.html()).toMatchSnapshot();
   });
   it('normal drag tabs', () => {
-    const component = mount(dragComponent);
+    const component = mount(dragComponent());
     expect(component.html()).toMatchSnapshot();
   });
 });
@@ -42,35 +42,13 @@ describe('render Tabs', () => {
 describe('props', () => {
   it('defaultIndex', () => {
     const defaultIndex = 1;
-    const component = shallow(
-      <Tabs defaultIndex={defaultIndex}>
-        <TabList>
-          <Tab>Tab1</Tab>
-          <Tab>Tab2</Tab>
-        </TabList>
-        <PanelList>
-          <Panel>Content1</Panel>
-          <Panel>Content2</Panel>
-        </PanelList>
-      </Tabs>
-    );
+    const component = shallow(normalComponent({defaultIndex}));
     expect(component.state().activeIndex).toEqual(defaultIndex);
   })
 
   it('click tab, onTabChange callback', () => {
     const mockTabChange = jest.fn();
-    const component = mount(
-      <Tabs onTabChange={mockTabChange}>
-        <TabList>
-          <Tab>Tab1</Tab>
-          <Tab>Tab2</Tab>
-        </TabList>
-        <PanelList>
-          <Panel>Content1</Panel>
-          <Panel>Content2</Panel>
-        </PanelList>
-      </Tabs>
-    );
+    const component = mount(normalComponent({onTabChange: mockTabChange}));
     component.find('Tab').at(1).simulate('click');
     expect(component.state().activeIndex).toEqual(1);
     expect(mockTabChange).toBeCalled();
@@ -78,35 +56,21 @@ describe('props', () => {
   })
 
   describe('activeIndex', () => {
-    const component = mockTabChange => (
-      <Tabs activeIndex={1}
-            onTabChange={mockTabChange}>
-        <TabList>
-          <Tab>Tab1</Tab>
-          <Tab>Tab2</Tab>
-        </TabList>
-        <PanelList>
-          <Panel>Content1</Panel>
-          <Panel>Content2</Panel>
-        </PanelList>
-      </Tabs>
-    );
-
     it('show active index', () => {
-      const mountComponent = mount(component());
+      const mountComponent = mount(normalComponent({activeIndex: 1}));
       expect(mountComponent.state().activeIndex).toEqual(1);
     });
 
     it('do nothing when click tab', () => {
       const mockTabChange = jest.fn();
-      const mountComponent = mount(component(mockTabChange));
+      const mountComponent = mount(normalComponent({onTabChange: mockTabChange, activeIndex: 1}));
       mountComponent.find('Tab').at(0).simulate('click');
       expect(mountComponent.state().activeIndex).toEqual(1);
     });
 
     it('update active tab when pass new activeKey', () => {
       const mockTabChange = jest.fn();
-      const mountComponent = mount(component(mockTabChange));
+      const mountComponent = mount(normalComponent({onTabChange: mockTabChange, activeIndex: 1}));
       mountComponent.setProps({activeIndex: 0})
       expect(mountComponent.state().activeIndex).toEqual(0);
     })

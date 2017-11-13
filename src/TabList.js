@@ -68,6 +68,7 @@ export default class TabList extends React.Component {
 
   componentDidMount() {
     this.isShowArrowButton();
+    this.isShowModalButton();
   }
 
   getTabNode(tab) {
@@ -129,11 +130,11 @@ export default class TabList extends React.Component {
   }
 
   isShowModalButton() {
-    const {showModalButton} = this.props;
+    let {showModalButton} = this.props;
     if (isNumber(showModalButton)) {
-      return this.tabRefs.length >= showModalButton;
+      showModalButton = this.tabRefs.length >= showModalButton;
     }
-    return showModalButton;
+    this.foldNode.style.display = showModalButton ? 'block' : 'none';
   }
 
   isShowArrowButton() {
@@ -194,11 +195,10 @@ export default class TabList extends React.Component {
       <div>
         {ExtraButton ? ExtraButton : null}
         <ListWrapper hasExtraButton={!!ExtraButton}>
-          {this.isShowModalButton() ? 
-            <FoldButton onClick={this.toggleModal.bind(this, true)}>
-              <MdFormatListBulleted/>
-            </FoldButton>
-          : null}
+          <FoldButton innerRef={node => this.foldNode = node}
+                      onClick={this.toggleModal.bind(this, true)}>
+            <MdFormatListBulleted/>
+          </FoldButton>
           <div ref={node => this.arrowNode = node} style={{display: 'none'}}>
             <ScrollButton left onClick={() => {this.handleScroll('left')}}>
               <MdChevronLeft/>
