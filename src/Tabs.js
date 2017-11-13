@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import ExtraButtonType from './ExtraButton';
 
 export default class Tabs extends React.Component {
   constructor(props) {
@@ -47,16 +49,16 @@ export default class Tabs extends React.Component {
   }
 
   render() {
-    const {children, ExtraButton} = this.props;
+    const {children, ...extraProps} = this.props;
     const {activeIndex} = this.state;
     const props = {
       handleTabChange: this.handleTabChange,
       handleTabSequence: this.handleTabSequence,
       handleEdit: this.handleEdit,
       activeIndex,
-      ExtraButton
+      ...extraProps
     }
-    return(
+    return (
       <div>
         {React.Children.map(children, (child) => {
           return React.cloneElement(child, props);
@@ -67,6 +69,20 @@ export default class Tabs extends React.Component {
 }
 
 Tabs.defaultProps = {
+  showModalButton: true,
+  showArrowButton: 'auto',
   onTabChange: () => {},
   onSequenceChange: () => {}
+}
+
+Tabs.propTypes = {
+  showModalButton: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.bool
+  ]),
+  showArrowButton: PropTypes.oneOf(['auto', true, false]),
+  onTabChange: PropTypes.func,
+  onSequenceChange: PropTypes.func,
+  activeIndex: PropTypes.number,
+  ExtraButton: PropTypes.instanceOf(ExtraButtonType)
 }

@@ -43,7 +43,6 @@ export default class AddButton extends Component {
       tabsTemplate.push(<DragTab key={index}>{tab.title}</DragTab>)
       panelTemplate.push(<Panel key={index}>{tab.panel}</Panel>)
     })
-    console.log('activeIndex:', activeIndex)
     return (
       <Tabs activeIndex={activeIndex}
             onTabChange={this.handleTabChange}

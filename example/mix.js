@@ -4,7 +4,7 @@ import {Tabs, DragTabList, DragTab, Tab, PanelList, Panel} from '../src';
 export default class Drag extends Component {
   render() {
     return (
-      <Tabs>
+      <Tabs showModalButton={4}>
         <DragTabList>
           <DragTab>DragTab1</DragTab>
           <Tab>Tab2</Tab>

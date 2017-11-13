@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import MdChevronLeft from 'react-icons/lib/md/chevron-left';
 import MdChevronRight from 'react-icons/lib/md/chevron-right';
 import MdFormatListBulleted from 'react-icons/lib/md/format-list-bulleted';
+import {isNumber} from 'lodash';
 import TabModal from './TabModal';
 
 const ListWrapper = styled.div`
@@ -55,6 +56,9 @@ export default class TabList extends React.Component {
     super(props);
     this.handleScroll = this.handleScroll.bind(this);
     this.toggleModal = this.toggleModal.bind(this);
+    this.renderTabs = this.renderTabs.bind(this);
+    this.isShowModalButton = this.isShowModalButton.bind(this);
+    this.isShowArrowButton = this.isShowArrowButton.bind(this);
     this.scrollPosition = 0;
     this.tabRefs = [];
     this.state = {
@@ -62,10 +66,14 @@ export default class TabList extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.isShowArrowButton();
+  }
+
   getTabNode(tab) {
     const tabType = tab.constructor.name;
     if (tabType === 'Tab') {
-      return tab.tab.__INTERNAL_NODE;
+      return tab.__INTERNAL_NODE;
     } else if (tabType === 'DragTab') {
       return tab.__INTERNAL_NODE.node;
     }
@@ -81,77 +89,127 @@ export default class TabList extends React.Component {
     const containerWidth = this.listContainer.offsetWidth;
     const tabFirstOffset = this.getTabNode(this.tabRefs[0]).getBoundingClientRect();
     const tabLastOffset = this.getTabNode(this.tabRefs[this.tabRefs.length - 1]).getBoundingClientRect();
+
     if (direction === 'right') {
       leftMove = tabLastOffset.right - containerOffset.right;
       if (leftMove > containerWidth) {
         leftMove = this.unifyScrollMax(containerWidth);
       }
-      this.scrollPosition += leftMove;
     } else if (direction === 'left') {
       leftMove = tabFirstOffset.left - containerOffset.left;
       if (-leftMove > containerWidth) {
         leftMove = - this.unifyScrollMax(containerWidth);
       }
-      this.scrollPosition += leftMove;
     }
-
+    this.scrollPosition += leftMove;
     if (this.scrollPosition < 0) {
       this.scrollPosition = 0;
-    } else if (this.scrollPosition > tabLastOffset.right) {
-      this.scrollPosition = tabLastOffset.right - containerOffset.right;
     }
 
     this.listScroll.style.transform = `translate3d(-${this.scrollPosition}px, 0, 0)`;
   }
 
-  toggleModal(type) {
-    this.setState({modalIsOpen: type});
+  scrollToIndex(index) {
+    const tabOffset = this.getTabNode(this.tabRefs[index]).getBoundingClientRect();
+    const containerOffset = this.listContainer.getBoundingClientRect();
+    const leftMove = tabOffset.right - containerOffset.right;
+    this.scrollPosition += leftMove;
+    if (this.scrollPosition < 0) {
+      this.scrollPosition = 0;
+    }
+    this.listScroll.style.transform = `translate3d(-${this.scrollPosition}px, 0, 0)`;
+  }
+
+  toggleModal(open) {
+    this.setState({modalIsOpen: open}, () => {
+      if (!open) {
+        this.scrollToIndex(this.props.activeIndex);
+      }
+    });
+  }
+
+  isShowModalButton() {
+    const {showModalButton} = this.props;
+    if (isNumber(showModalButton)) {
+      return this.tabRefs.length >= showModalButton;
+    }
+    return showModalButton;
+  }
+
+  isShowArrowButton() {
+    let {showArrowButton} = this.props;
+    if (showArrowButton === 'auto') {
+      let tabWidth = 0;
+      const containerWidth = this.listContainer.offsetWidth;
+      showArrowButton = false;
+      for (let index in this.tabRefs) {
+        const tab = this.getTabNode(this.tabRefs[index]);
+        tabWidth += tab.offsetWidth;
+        if (tabWidth >= containerWidth) {
+          showArrowButton = true;
+          break;
+        }
+      }
+    }
+    this.arrowNode.style.display = showArrowButton ? 'block' : 'none';
+  }
+
+  renderTabs(options = {}, isModal) {
+    const {children, activeIndex, handleTabChange, handleEdit} = this.props;
+    const props = {
+      handleTabChange,
+      handleEdit
+    };
+    if (!isModal) {
+      this.tabRefs = [];
+    }
+    return React.Children.map(children, (child, index) => (
+      React.cloneElement(child, {
+        key: index,
+        active: index === activeIndex,
+        index,
+        tabIndex: index,
+        ref: node => {
+          if (!isModal && node) {
+            this.tabRefs.push(node)
+          }
+        },
+        ...props,
+        ...options
+      })
+    ));
   }
 
   render() {
     const {
       customStyle,
-      children,
       activeIndex,
       handleTabChange,
       handleTabSequence,
-      handleEdit,
       ExtraButton
     } = this.props;
     const {modalIsOpen} = this.state;
-    const props = {
-      handleTabChange,
-      handleEdit
-    };
-    console.log('TabList:', activeIndex)
     const ListInner = customStyle || ListStyle;
     return (
       <div>
         {ExtraButton ? ExtraButton : null}
         <ListWrapper hasExtraButton={!!ExtraButton}>
-          <FoldButton onClick={this.toggleModal.bind(this, true)}>
-            <MdFormatListBulleted/>
-          </FoldButton>
-          <ScrollButton left onClick={() => {this.handleScroll('left')}}>
-            <MdChevronLeft/>
-          </ScrollButton>
-          <ScrollButton onClick={() => {this.handleScroll('right')}}>
-            <MdChevronRight/>
-          </ScrollButton>
+          {this.isShowModalButton() ? 
+            <FoldButton onClick={this.toggleModal.bind(this, true)}>
+              <MdFormatListBulleted/>
+            </FoldButton>
+          : null}
+          <div ref={node => this.arrowNode = node} style={{display: 'none'}}>
+            <ScrollButton left onClick={() => {this.handleScroll('left')}}>
+              <MdChevronLeft/>
+            </ScrollButton>
+            <ScrollButton onClick={() => {this.handleScroll('right')}}>
+              <MdChevronRight/>
+            </ScrollButton>
+          </div>
           <ListInner innerRef={node => this.listContainer = node}>
             <ListScroll innerRef={node => this.listScroll = node}>
-              {React.Children.map(children, (child, index) => (
-                React.cloneElement(child, {
-                  key: index,
-                  active: index === activeIndex,
-                  index,
-                  tabIndex: index,
-                  ref: node => {
-                    this.tabRefs.push(node)
-                  },
-                  ...props
-                })
-              ))}
+              {this.renderTabs()}
             </ListScroll>
           </ListInner>
         </ListWrapper>
@@ -160,19 +218,7 @@ export default class TabList extends React.Component {
                     handleTabSequence={handleTabSequence}
                     handleTabChange={handleTabChange}
                     activeIndex={activeIndex}>
-            {React.Children.map(children, (child, index) => (
-              React.cloneElement(child, {
-                key: index,
-                active: index === activeIndex,
-                vertical: true,
-                index,
-                tabIndex: index,
-                ref: node => {
-                  this.tabRefs.push(node)
-                },
-                ...props
-              })
-            ))}
+            {this.renderTabs({vertical: true}, true)}
           </TabModal>
         : null}
       </div>
