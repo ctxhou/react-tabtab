@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
-  // position: absolute;
-  // right: 0;
   float: right;
   border: 1px solid #eee;
   border-radius: 2px;
   padding: 3px;
+  margin-top: 10px;
+  margin-left: 2px;
   display: inline-block;
   color: #777;
   vertical-align: middle;
@@ -22,7 +22,9 @@ export default class ExtraButton extends React.Component {
   render() {
     return (
       <Wrapper onClick={this.props.onClick}>
-        {this.props.children}       
+        <div>
+          {this.props.children}          
+        </div>
       </Wrapper>
     );
   }

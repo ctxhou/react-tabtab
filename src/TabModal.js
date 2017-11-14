@@ -1,11 +1,12 @@
 import React from 'react';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
+import Modal from 'react-responsive-modal';
 import {SortableContainer} from 'react-sortable-hoc';
 import SortMethod from './SortMethod';
 
 const DragTabContainer = SortableContainer(({children}) => {
   return (
-    <div>
+    <div style={{marginTop: '30px'}}>
       {children}
     </div>
   );
@@ -26,11 +27,9 @@ class ModalTabListWrapper extends SortMethod {
 export default class TabModal extends React.Component {
   render() {
     return (
-      <Modal isOpen={true}
-             contentLabel="Modal"
-             shouldCloseOnOverlayClick={true}
-             onRequestClose={this.props.closeModal}>
-        <button onClick={this.props.closeModal}>close</button>
+      <Modal open={true}
+             onClose={this.props.closeModal}
+             modalStyle={{minWidth: '20%', backgroundColor: 'rgb(249, 249, 249)'}}>
         <ModalTabListWrapper handleTabSequence={this.props.handleTabSequence}
                              handleTabChange={this.props.handleTabChange}>
           {this.props.children}

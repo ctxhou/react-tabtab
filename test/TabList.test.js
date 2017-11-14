@@ -36,56 +36,55 @@ test('custom ListStyle style', () => {
 })
 
 describe('showModalButton', () => {
-  const returnMountedDisplay = showModalButton => {
+  const returnMountedButton = showModalButton => {
     const component = mount(shareComponent({showModalButton}));
-    const buttonWrapper = component.find(MdFormatListBulleted).closest('div');
-    return buttonWrapper.instance().style.display;
+    return component.find(MdFormatListBulleted);
   }
 
   it('default: true => show', () => {
-    expect(returnMountedDisplay(true)).toEqual('block');
+    expect(returnMountedButton(true).length).toEqual(1);
   })
   it('false', () => {
-    expect(returnMountedDisplay(false)).toEqual('none');
+    expect(returnMountedButton(false).length).toEqual(0);
   })
   describe('number', () => {
     it('2', () => {
-      expect(returnMountedDisplay(2)).toEqual('block');
+      expect(returnMountedButton(2).length).toEqual(1);
     })
     it('100', () => {
-      expect(returnMountedDisplay(100)).toEqual('none');
+      expect(returnMountedButton(100).length).toEqual(0);
     })
 
     it('show modal button when new tab is added', () => {
       const component = mount(shareComponent({showModalButton: 4}));
+      expect(component.find(MdFormatListBulleted).length).toEqual(0);
       component.setProps({children: [
         <Tab>Tab1</Tab>,
         <Tab>Tab2</Tab>,
         <Tab>Tab3</Tab>,
         <Tab>Tab4</Tab>
       ]});
-      const buttonWrapper = component.find(MdFormatListBulleted).closest('div');
-      expect(buttonWrapper.instance().style.display).toEqual('block');
+      console.log(component.state())
+      expect(component.find(MdFormatListBulleted).length).toEqual(1);
     })
   })
 })
 
 describe('showArrowButton', () => {
-  const returnMountedDisplay = showArrowButton => {
+  const returnMountedButton = showArrowButton => {
     const component = mount(shareComponent({showArrowButton}));
-    const buttonWrapper = component.find(MdChevronRight).closest('div');
-    return buttonWrapper.instance().style.display;
+    return component.find(MdChevronRight);
   }
   // because in test env it's containerWidth = 0, it always show arrow
   it('auto', () => {
-    expect(returnMountedDisplay('auto')).toEqual('block');
+    expect(returnMountedButton('auto').length).toEqual(1);
   })
 
   it('true', () => {
-    expect(returnMountedDisplay(true)).toEqual('block');
+    expect(returnMountedButton(true).length).toEqual(1);
   })
 
   it('false', () => {
-    expect(returnMountedDisplay(false)).toEqual('none');
+    expect(returnMountedButton(false).length).toEqual(0);
   })
 })

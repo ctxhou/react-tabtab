@@ -6,13 +6,36 @@ import MdFormatListBulleted from 'react-icons/lib/md/format-list-bulleted';
 import {isNumber} from 'lodash';
 import TabModal from './TabModal';
 
+const buttonWidth = 35;
+const getPadding = ({showModalButton, showArrowButton}) => {
+  let paddingLeft = 0;
+  let paddingRight = 0;
+  if (showModalButton) {
+    paddingLeft += buttonWidth;
+  }
+  if (showArrowButton) {
+    paddingLeft += buttonWidth;
+    paddingRight += buttonWidth;
+    if (showModalButton) {
+      paddingLeft += 2;
+    }
+  }
+  if (paddingLeft > 0) {
+    paddingLeft += 3;
+  }
+  if (paddingRight > 0) {
+    paddingRight += 3;
+  }
+  return `0 ${paddingRight}px 0 ${paddingLeft}px`;
+}
+
 const ListWrapper = styled.div`
   position: relative;
   white-space: nowrap;
   overflow: hidden;
   width: auto;
   border-bottom: 1px solid #eee;
-  padding: ${props => props.hasExtraButton ? '0 32px' : '0'};
+  padding: ${props => getPadding(props)};
 `;
 
 const ListStyle = styled.div`
@@ -28,12 +51,25 @@ const ListScroll = styled.div`
   transition: transform .3s cubic-bezier(.42, 0, .58, 1);
 `;
 
-const ScrollButton = styled.div`
+const ActionButton = styled.div`
+  height: 100%;
+  width ${buttonWidth}px;
+  text-align: center;
+  border: 1px solid #d9d9d9;
+  border-bottom: 0;
+  border-radius: 4px 4px 0 0;
+  background: #f9f9f9;
+  > svg {
+    padding-top: 15px;
+  }
+`;
+
+const ScrollButton = ActionButton.extend`
   display: inline-block;
   filter: none;
   position: absolute;
   ${props => props.left ?
-    'left: 10px'
+    props.showModalButton ? `left: ${buttonWidth + 2}px`: `left: 0`
   : 'right: 0'
   };
   &:hover {
@@ -41,7 +77,7 @@ const ScrollButton = styled.div`
   }
 `;
 
-const FoldButton = styled.div`
+const FoldButton = ActionButton.extend`
   display: inline-block;
   filter: none;
   position: absolute;
@@ -62,7 +98,9 @@ export default class TabList extends React.Component {
     this.scrollPosition = 0;
     this.tabRefs = [];
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      showArrowButton: false,
+      showModalButton: false
     }
   }
 
@@ -71,9 +109,17 @@ export default class TabList extends React.Component {
     this.isShowModalButton();
   }
 
-  componentDidUpdate() {
-    this.isShowArrowButton();
-    this.isShowModalButton();
+  componentDidUpdate(prevProps) {
+    if (prevProps.children.length !== this.props.children.length) {
+      this.isShowArrowButton();
+      this.isShowModalButton();
+    }
+    // if activeIndex is changed, and children is added
+    // means => add new child
+    if (prevProps.activeIndex !== this.props.activeIndex &&
+        prevProps.children.length < this.props.children.length) {
+      this.scrollToIndex(this.props.activeIndex);
+    }
   }
 
   getTabNode(tab) {
@@ -137,9 +183,9 @@ export default class TabList extends React.Component {
   isShowModalButton() {
     let {showModalButton} = this.props;
     if (isNumber(showModalButton)) {
-      showModalButton = this.tabRefs.length >= showModalButton;
+      showModalButton = this.props.children.length >= showModalButton;
     }
-    this.foldNode.style.display = showModalButton ? 'block' : 'none';
+    this.setState({showModalButton});
   }
 
   isShowArrowButton() {
@@ -157,8 +203,7 @@ export default class TabList extends React.Component {
         }
       }
     }
-    this.leftArrowNode.style.display = showArrowButton ? 'block' : 'none';
-    this.rightArrowNode.style.display = showArrowButton ? 'block' : 'none';
+    this.setState({showArrowButton});
   }
 
   renderTabs(options = {}, isModal) {
@@ -200,20 +245,30 @@ export default class TabList extends React.Component {
     return (
       <div>
         {ExtraButton ? ExtraButton : null}
-        <ListWrapper hasExtraButton={!!ExtraButton}>
-          <FoldButton innerRef={node => this.foldNode = node}
-                      onClick={this.toggleModal.bind(this, true)}>
-            <MdFormatListBulleted/>
-          </FoldButton>
-          <ScrollButton left
-                        onClick={() => {this.handleScroll('left')}}
-                        innerRef={node => this.leftArrowNode = node}>
-            <MdChevronLeft/>
-          </ScrollButton>
-          <ScrollButton onClick={() => {this.handleScroll('right')}}
-                        innerRef={node => this.rightArrowNode = node}>
-            <MdChevronRight/>
-          </ScrollButton>
+        <ListWrapper hasExtraButton={!!ExtraButton}
+                     showModalButton={this.state.showModalButton}
+                     showArrowButton={this.state.showArrowButton}>
+          {this.state.showModalButton ?
+            <FoldButton innerRef={node => this.foldNode = node}
+                        onClick={this.toggleModal.bind(this, true)}
+                        showArrowButton={this.state.showArrowButton}>
+              <MdFormatListBulleted/>
+            </FoldButton>
+          : null}
+          {this.state.showArrowButton ?
+            <div>
+              <ScrollButton left
+                            onClick={() => {this.handleScroll('left')}}
+                            innerRef={node => this.leftArrowNode = node}
+                            showModalButton={this.state.showModalButton}>
+                <MdChevronLeft/>
+              </ScrollButton>
+              <ScrollButton onClick={() => {this.handleScroll('right')}}
+                            innerRef={node => this.rightArrowNode = node}>
+                <MdChevronRight/>
+              </ScrollButton>
+            </div>
+          : null}
           <ListInner innerRef={node => this.listContainer = node}>
             <ListScroll innerRef={node => this.listScroll = node}>
               {this.renderTabs()}

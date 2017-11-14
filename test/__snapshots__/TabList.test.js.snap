@@ -10,43 +10,7 @@ exports[`custom ListStyle style 1`] = `
   padding: 0;
 }
 
-.c1 {
-  display: inline-block;
-  -webkit-filter: none;
-  filter: none;
-  position: absolute;
-  left: 0;
-}
-
-.c1:hover {
-  cursor: pointer;
-}
-
 .c2 {
-  display: inline-block;
-  -webkit-filter: none;
-  filter: none;
-  position: absolute;
-  left: 10px;
-}
-
-.c2:hover {
-  cursor: pointer;
-}
-
-.c3 {
-  display: inline-block;
-  -webkit-filter: none;
-  filter: none;
-  position: absolute;
-  right: 0;
-}
-
-.c3:hover {
-  cursor: pointer;
-}
-
-.c5 {
   padding-left: 0;
   position: relative;
   margin: 0;
@@ -57,7 +21,7 @@ exports[`custom ListStyle style 1`] = `
   transition: transform .3s cubic-bezier(.42,0,.58,1);
 }
 
-.c6 {
+.c3 {
   display: inline-block;
   color: black;
   border-bottom: 0;
@@ -70,12 +34,12 @@ exports[`custom ListStyle style 1`] = `
   user-select: none;
 }
 
-.c6:hover {
+.c3:hover {
   cursor: pointer;
   color: #007bff;
 }
 
-.c4 {
+.c1 {
   overflow: hidden;
   background-color: red;
 }
@@ -92,121 +56,15 @@ exports[`custom ListStyle style 1`] = `
       >
         <styled.div
           innerRef={[Function]}
-          onClick={[Function]}
         >
           <div
             className="c1"
-            onClick={[Function]}
-          >
-            <MdFormatListBulleted>
-              <IconBase
-                viewBox="0 0 40 40"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
-                  viewBox="0 0 40 40"
-                  width="1em"
-                >
-                  <g>
-                    <path
-                      d="m11.6 8.4h23.4v3.2h-23.4v-3.2z m0 13.2v-3.2h23.4v3.2h-23.4z m0 10v-3.2h23.4v3.2h-23.4z m-5-3.8q1 0 1.6 0.6t0.7 1.6-0.7 1.6-1.6 0.6-1.5-0.6-0.6-1.6 0.6-1.6 1.5-0.6z m0-20.3q1.1 0 1.8 0.7t0.7 1.8-0.7 1.8-1.8 0.7-1.7-0.7-0.8-1.8 0.8-1.8 1.7-0.7z m0 10q1.1 0 1.8 0.7t0.7 1.8-0.7 1.8-1.8 0.7-1.7-0.7-0.8-1.8 0.8-1.8 1.7-0.7z"
-                    />
-                  </g>
-                </svg>
-              </IconBase>
-            </MdFormatListBulleted>
-          </div>
-        </styled.div>
-        <styled.div
-          innerRef={[Function]}
-          left={true}
-          onClick={[Function]}
-        >
-          <div
-            className="c2"
-            onClick={[Function]}
-          >
-            <MdChevronLeft>
-              <IconBase
-                viewBox="0 0 40 40"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
-                  viewBox="0 0 40 40"
-                  width="1em"
-                >
-                  <g>
-                    <path
-                      d="m25.7 12.3l-7.7 7.7 7.7 7.7-2.3 2.3-10-10 10-10z"
-                    />
-                  </g>
-                </svg>
-              </IconBase>
-            </MdChevronLeft>
-          </div>
-        </styled.div>
-        <styled.div
-          innerRef={[Function]}
-          onClick={[Function]}
-        >
-          <div
-            className="c3"
-            onClick={[Function]}
-          >
-            <MdChevronRight>
-              <IconBase
-                viewBox="0 0 40 40"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
-                  viewBox="0 0 40 40"
-                  width="1em"
-                >
-                  <g>
-                    <path
-                      d="m16.6 10l10 10-10 10-2.3-2.3 7.7-7.7-7.7-7.7z"
-                    />
-                  </g>
-                </svg>
-              </IconBase>
-            </MdChevronRight>
-          </div>
-        </styled.div>
-        <styled.div
-          innerRef={[Function]}
-        >
-          <div
-            className="c4"
           >
             <styled.div
               innerRef={[Function]}
             >
               <div
-                className="c5"
+                className="c2"
               >
                 <Tab
                   active={false}
@@ -220,7 +78,7 @@ exports[`custom ListStyle style 1`] = `
                     onClick={[Function]}
                   >
                     <div
-                      className="c6"
+                      className="c3"
                       onClick={[Function]}
                     >
                       Tab1
@@ -248,46 +106,10 @@ exports[`render TabList 1`] = `
 }
 
 .c1 {
-  display: inline-block;
-  -webkit-filter: none;
-  filter: none;
-  position: absolute;
-  left: 0;
-}
-
-.c1:hover {
-  cursor: pointer;
-}
-
-.c2 {
-  display: inline-block;
-  -webkit-filter: none;
-  filter: none;
-  position: absolute;
-  left: 10px;
-}
-
-.c2:hover {
-  cursor: pointer;
-}
-
-.c3 {
-  display: inline-block;
-  -webkit-filter: none;
-  filter: none;
-  position: absolute;
-  right: 0;
-}
-
-.c3:hover {
-  cursor: pointer;
-}
-
-.c4 {
   overflow: hidden;
 }
 
-.c5 {
+.c2 {
   padding-left: 0;
   position: relative;
   margin: 0;
@@ -298,7 +120,7 @@ exports[`render TabList 1`] = `
   transition: transform .3s cubic-bezier(.42,0,.58,1);
 }
 
-.c6 {
+.c3 {
   display: inline-block;
   color: black;
   border-bottom: 0;
@@ -311,7 +133,7 @@ exports[`render TabList 1`] = `
   user-select: none;
 }
 
-.c6:hover {
+.c3:hover {
   cursor: pointer;
   color: #007bff;
 }
@@ -326,121 +148,15 @@ exports[`render TabList 1`] = `
       >
         <styled.div
           innerRef={[Function]}
-          onClick={[Function]}
         >
           <div
             className="c1"
-            onClick={[Function]}
-          >
-            <MdFormatListBulleted>
-              <IconBase
-                viewBox="0 0 40 40"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
-                  viewBox="0 0 40 40"
-                  width="1em"
-                >
-                  <g>
-                    <path
-                      d="m11.6 8.4h23.4v3.2h-23.4v-3.2z m0 13.2v-3.2h23.4v3.2h-23.4z m0 10v-3.2h23.4v3.2h-23.4z m-5-3.8q1 0 1.6 0.6t0.7 1.6-0.7 1.6-1.6 0.6-1.5-0.6-0.6-1.6 0.6-1.6 1.5-0.6z m0-20.3q1.1 0 1.8 0.7t0.7 1.8-0.7 1.8-1.8 0.7-1.7-0.7-0.8-1.8 0.8-1.8 1.7-0.7z m0 10q1.1 0 1.8 0.7t0.7 1.8-0.7 1.8-1.8 0.7-1.7-0.7-0.8-1.8 0.8-1.8 1.7-0.7z"
-                    />
-                  </g>
-                </svg>
-              </IconBase>
-            </MdFormatListBulleted>
-          </div>
-        </styled.div>
-        <styled.div
-          innerRef={[Function]}
-          left={true}
-          onClick={[Function]}
-        >
-          <div
-            className="c2"
-            onClick={[Function]}
-          >
-            <MdChevronLeft>
-              <IconBase
-                viewBox="0 0 40 40"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
-                  viewBox="0 0 40 40"
-                  width="1em"
-                >
-                  <g>
-                    <path
-                      d="m25.7 12.3l-7.7 7.7 7.7 7.7-2.3 2.3-10-10 10-10z"
-                    />
-                  </g>
-                </svg>
-              </IconBase>
-            </MdChevronLeft>
-          </div>
-        </styled.div>
-        <styled.div
-          innerRef={[Function]}
-          onClick={[Function]}
-        >
-          <div
-            className="c3"
-            onClick={[Function]}
-          >
-            <MdChevronRight>
-              <IconBase
-                viewBox="0 0 40 40"
-              >
-                <svg
-                  fill="currentColor"
-                  height="1em"
-                  preserveAspectRatio="xMidYMid meet"
-                  style={
-                    Object {
-                      "color": undefined,
-                      "verticalAlign": "middle",
-                    }
-                  }
-                  viewBox="0 0 40 40"
-                  width="1em"
-                >
-                  <g>
-                    <path
-                      d="m16.6 10l10 10-10 10-2.3-2.3 7.7-7.7-7.7-7.7z"
-                    />
-                  </g>
-                </svg>
-              </IconBase>
-            </MdChevronRight>
-          </div>
-        </styled.div>
-        <styled.div
-          innerRef={[Function]}
-        >
-          <div
-            className="c4"
           >
             <styled.div
               innerRef={[Function]}
             >
               <div
-                className="c5"
+                className="c2"
               >
                 <Tab
                   active={false}
@@ -454,7 +170,7 @@ exports[`render TabList 1`] = `
                     onClick={[Function]}
                   >
                     <div
-                      className="c6"
+                      className="c3"
                       onClick={[Function]}
                     >
                       Tab1

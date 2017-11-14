@@ -29,11 +29,6 @@ test('count Tab', () => {
         <Tab>Tab2</Tab>
         <Tab>Tab3</Tab>
       </TabList>
-      {/*<PanelList>
-        <Panel>Content1</Panel>
-        <Panel>Content2</Panel>
-        <Panel>Content3</Panel>
-      </PanelList>*/}
     </Tabs>
   ));
   expect(count).toEqual(3);
