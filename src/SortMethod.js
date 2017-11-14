@@ -1,12 +1,21 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 
-export default class SortMethod extends React.Component {
-  constructor(props) {
+type Props = {
+  onSortEnd?: (event: any) => void,
+  handleTabChange: (event: any) => void,
+  handleTabSequence: (event: any) => void,
+  activeIndex: number,
+  children: React.Node
+};
+
+export default class SortMethod extends React.Component<Props> {
+  constructor(props: Props) {
     super(props);
-    this.onSortEnd = this.onSortEnd.bind(this);
+    (this: any).onSortEnd = this.onSortEnd.bind(this);
   }
 
-  onSortEnd({oldIndex, newIndex}) {
+  onSortEnd({oldIndex, newIndex}: {oldIndex: number, newIndex: number}) {
     const {activeIndex, handleTabChange, handleTabSequence} = this.props;
     if (oldIndex === newIndex) {
       if (activeIndex !== oldIndex) {

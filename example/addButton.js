@@ -51,7 +51,8 @@ export default class AddButton extends Component {
               <ExtraButton onClick={this.handleExtraButton}>
                 <Plus/>
               </ExtraButton>
-            }>
+            }
+            showModalButton={'5'}>
         <DragTabList>
           {tabsTemplate}
         </DragTabList>

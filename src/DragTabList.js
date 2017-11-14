@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import SortMethod from './SortMethod';
 import {SortableContainer} from 'react-sortable-hoc';

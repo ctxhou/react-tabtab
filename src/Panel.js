@@ -1,4 +1,5 @@
-import React from 'react'
+// @flow
+import * as React from 'react'
 import styled, {keyframes} from 'styled-components';
 
 const fadeOut = keyframes`
@@ -19,7 +20,11 @@ const PanelStyle = styled.div`
   transition: all 1s linear;
 `;
 
-export default class Panel extends React.Component {
+type Props = {
+  children: React.Node
+};
+
+export default class Panel extends React.Component<Props> {
   render() {
     return (
       <PanelStyle>

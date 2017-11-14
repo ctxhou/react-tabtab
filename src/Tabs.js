@@ -1,19 +1,43 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import ExtraButtonType from './ExtraButton';
 
-export default class Tabs extends React.Component {
-  constructor(props) {
+type Props = {
+  children: React.Element<*>,
+  showModalButton?: number | boolean,
+  showArrowButton?: 'auto' | boolean ,
+  activeIndex?: number,
+  ExtraButton?: ExtraButtonType,
+  defaultIndex?: number,
+  onTabChange?: (event: any) => void,
+  onSequenceChange?: (event: any) => void,
+  onTabSequenceChange?: (event: any) => void,
+  onTabEdit?: (event: any) => void
+};
+
+type State = {
+  activeIndex: number
+};
+
+export default class Tabs extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
-    this.handleTabChange = this.handleTabChange.bind(this);
-    this.handleTabSequence = this.handleTabSequence.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
-    this.state = {
+    (this: any).handleTabChange = this.handleTabChange.bind(this);
+    (this: any).handleTabSequence = this.handleTabSequence.bind(this);
+    (this: any).handleEdit = this.handleEdit.bind(this);
+    (this: any).state = {
       activeIndex: this.getActiveIndex(props)
     };
   }
 
-  getActiveIndex(props) {
+  static defaultProps = {
+    showModalButton: true,
+    showArrowButton: 'auto',
+    onTabChange: () => {},
+    onSequenceChange: () => {}
+  }
+
+  getActiveIndex(props: Props) {
     const {defaultIndex, activeIndex} = props;
     if (activeIndex)
       return activeIndex;
@@ -22,26 +46,30 @@ export default class Tabs extends React.Component {
     return 0;
   }
 
-  componentWillReceiveProps(nextProps) {
+  componentWillReceiveProps(nextProps: Props) {
     if (nextProps.activeIndex !== this.props.activeIndex) {
       this.setState({activeIndex: nextProps.activeIndex});
     }
   }
 
-  handleTabChange(index) {
+  handleTabChange(index: number) {
     const {activeIndex, onTabChange} = this.props;
     if (activeIndex !== 0 && !activeIndex) {
       this.setState({activeIndex: index});
     }
-    onTabChange(index);
+    if (onTabChange) {
+      onTabChange(index);      
+    }
   }
 
-  handleTabSequence({oldIndex, newIndex}) {
+  handleTabSequence({oldIndex, newIndex}: {oldIndex: number, newIndex: number}) {
     const {onTabSequenceChange} = this.props;
-    onTabSequenceChange({oldIndex, newIndex});
+    if (onTabSequenceChange) {
+      onTabSequenceChange({oldIndex, newIndex});
+    }
   }
 
-  handleEdit({type, index}) {
+  handleEdit({type, index}: {type: string, index: number}) {
     const {onTabEdit} = this.props;
     if (onTabEdit) {
       onTabEdit({type, index});
@@ -66,23 +94,4 @@ export default class Tabs extends React.Component {
       </div>
     )
   }
-}
-
-Tabs.defaultProps = {
-  showModalButton: true,
-  showArrowButton: 'auto',
-  onTabChange: () => {},
-  onSequenceChange: () => {}
-}
-
-Tabs.propTypes = {
-  showModalButton: PropTypes.oneOfType([
-    PropTypes.number,
-    PropTypes.bool
-  ]),
-  showArrowButton: PropTypes.oneOf(['auto', true, false]),
-  onTabChange: PropTypes.func,
-  onSequenceChange: PropTypes.func,
-  activeIndex: PropTypes.number,
-  ExtraButton: PropTypes.instanceOf(ExtraButtonType)
 }

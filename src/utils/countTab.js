@@ -1,16 +1,17 @@
-import {Children} from 'react';
+// @flow
+import * as React from 'react';
 import {isTab, isTabList} from './isType';
 
 function loopTabList(tabList, cb) {
-  Children.forEach(tabList, tab => {
+  React.Children.forEach(tabList, tab => {
     if (isTab(tab)) {
       cb();
     }
   });
 }
 
-function deepLoop(children, cb) {
-  Children.forEach(children, child => {
+function deepLoop(children: React.ChildrenArray<any>, cb) {
+  React.Children.forEach(children, child => {
     if (isTabList(child)) {
       if (child.props && child.props.children) {
         return loopTabList(child.props.children, cb);        
@@ -24,7 +25,7 @@ function deepLoop(children, cb) {
 }
 
 
-export default function countTab(children) {
+export default function countTab(children: React.ChildrenArray<any>) {
   let count = 0
   deepLoop(children, () => count++);
   return count;

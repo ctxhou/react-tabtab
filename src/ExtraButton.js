@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -18,7 +19,12 @@ const Wrapper = styled.div`
   }
 `;
 
-export default class ExtraButton extends React.Component {
+type Props = {
+  onClick: (event: any) => void,
+  children: React.Node
+};
+
+export default class ExtraButton extends React.Component<Props> {
   render() {
     return (
       <Wrapper onClick={this.props.onClick}>

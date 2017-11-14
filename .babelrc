@@ -11,13 +11,11 @@
     ]
   ],
   "plugins": [
-    [
-      "add-module-exports",
-      "flow-react-proptypes",
-      "transform-decorators-legacy",
-      "transform-class-properties",
-      "transform-flow-strip-types"
-    ]
+    "add-module-exports",
+    "flow-react-proptypes",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-flow-strip-types"
   ],
   "env": {
     "production": {

@@ -1,10 +1,12 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 
-export default class PanelList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+type Props = {
+  children: Array<any>,
+  activeIndex: number
+};
 
+export default class PanelList extends React.Component<Props> {
   render() {
     const {
       children,

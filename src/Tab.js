@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import styled from 'styled-components';
 import CloseButton from './CloseButton';
 
@@ -41,11 +42,25 @@ const TabStyle = styled.div`
   }
 `;
 
-export default class Tab extends React.Component {
-  constructor(props) {
+type Props = {
+  customStyle?: React.Element<any>,
+  handleTabChange: (event: any) => void,
+  handleEdit: (event: any) => void,
+  index: number,
+  active: boolean,
+  closable: boolean,
+  vertical: boolean,
+  children: React.Element<any>
+};
+
+export default class Tab extends React.Component<Props> {
+
+  __INTERNAL_NODE: React.ElementRef<any>;
+
+  constructor(props: Props) {
     super(props);
-    this.clickTab = this.clickTab.bind(this);
-    this.clickDelete = this.clickDelete.bind(this);
+    (this: any).clickTab = this.clickTab.bind(this);
+    (this: any).clickDelete = this.clickDelete.bind(this);
   }
 
   clickTab() {
@@ -53,7 +68,7 @@ export default class Tab extends React.Component {
     handleTabChange(index);
   }
 
-  clickDelete(event) {
+  clickDelete(event: SyntheticEvent<HTMLButtonElement>) {
     event.stopPropagation(); // prevent trigger clickTab event.
     const {handleEdit, index} = this.props;
     handleEdit({type: 'delete', index});
@@ -63,6 +78,7 @@ export default class Tab extends React.Component {
     const {customStyle, active, closable, vertical} = this.props;
     const TabComponent = customStyle || TabStyle;
     return (
+      // $FlowFixMe
       <TabComponent innerRef={node => this.__INTERNAL_NODE = node}
                     onClick={this.clickTab}
                     active={active}

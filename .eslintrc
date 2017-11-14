@@ -3,7 +3,8 @@
     "prettier",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:flowtype/recommended"
   ],
   "parser": "babel-eslint",
   "parserOptions": {
@@ -19,8 +20,12 @@
   "plugins": [
     "prettier",
     "react",
-    "jest"
+    "jest",
+    "flowtype"
   ],
+  "global" : {
+    "SyntheticEvent": true
+  },
   "rules": {
     "switch-colon-spacing": 0,
     "require-jsdoc": 0,

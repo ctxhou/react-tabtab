@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import Close from 'react-icons/lib/md/clear';
 import styled from 'styled-components';
@@ -16,7 +17,11 @@ const CloseWrapper = styled.div`
   }
 `;
 
-export default class CloseButton extends React.Component {
+type Props = {
+  handleDelete: (event: any) => void
+};
+
+export default class CloseButton extends React.Component<Props> {
   render() {
     return (
       <CloseWrapper onClick={this.props.handleDelete}>
