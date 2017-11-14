@@ -57,15 +57,14 @@ describe('showModalButton', () => {
 
     it('show modal button when new tab is added', () => {
       const component = mount(shareComponent({showModalButton: 4}));
-      expect(component.find(MdFormatListBulleted).length).toEqual(0);
+      expect(component.state().showModalButton).toEqual(false);
       component.setProps({children: [
         <Tab>Tab1</Tab>,
         <Tab>Tab2</Tab>,
         <Tab>Tab3</Tab>,
         <Tab>Tab4</Tab>
       ]});
-      console.log(component.state())
-      expect(component.find(MdFormatListBulleted).length).toEqual(1);
+      expect(component.state().showModalButton).toEqual(true);
     })
   })
 })

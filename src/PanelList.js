@@ -12,7 +12,7 @@ export default class PanelList extends React.Component {
     } = this.props;
     return (
       <div>
-        {React.cloneElement(children[activeIndex])}
+        {React.cloneElement(children[activeIndex], {activeIndex})}
       </div>
     )
   }

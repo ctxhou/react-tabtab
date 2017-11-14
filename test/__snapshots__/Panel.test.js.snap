@@ -1,9 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render Panel 1`] = `
-<div>
+<styled.div>
   <span>
     panel content
   </span>
-</div>
+</styled.div>
 `;
