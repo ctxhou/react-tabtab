@@ -3,7 +3,7 @@ import * as React from 'react';
 
 type Props = {
   children: Array<any>,
-  activeIndex: number
+  activeIndex?: number
 };
 
 export default class PanelList extends React.Component<Props> {

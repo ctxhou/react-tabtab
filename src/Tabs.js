@@ -1,13 +1,12 @@
 // @flow
 import * as React from 'react';
-import ExtraButtonType from './ExtraButton';
 
 type Props = {
   children: React.Element<*>,
   showModalButton?: number | boolean,
   showArrowButton?: 'auto' | boolean ,
   activeIndex?: number,
-  ExtraButton?: ExtraButtonType,
+  ExtraButton?: React.Node,
   defaultIndex?: number,
   onTabChange?: (event: any) => void,
   onSequenceChange?: (event: any) => void,

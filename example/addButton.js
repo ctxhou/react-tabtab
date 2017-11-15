@@ -52,7 +52,7 @@ export default class AddButton extends Component {
                 <Plus/>
               </ExtraButton>
             }
-            showModalButton={'5'}>
+            showModalButton={5}>
         <DragTabList>
           {tabsTemplate}
         </DragTabList>

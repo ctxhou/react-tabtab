@@ -43,13 +43,13 @@ const TabStyle = styled.div`
 `;
 
 type Props = {
-  customStyle?: React.Element<any>,
-  handleTabChange: (event: any) => void,
-  handleEdit: (event: any) => void,
-  index: number,
-  active: boolean,
-  closable: boolean,
-  vertical: boolean,
+  customStyle?: () => void,
+  handleTabChange?: (event: any) => void,
+  handleEdit?: (event: any) => void,
+  index?: number,
+  active?: boolean,
+  closable?: boolean,
+  vertical?: boolean,
   children: React.Element<any>
 };
 

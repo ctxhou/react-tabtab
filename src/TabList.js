@@ -6,7 +6,6 @@ import MdChevronRight from 'react-icons/lib/md/chevron-right';
 import MdFormatListBulleted from 'react-icons/lib/md/format-list-bulleted';
 import {isNumber} from 'lodash';
 import TabModal from './TabModal';
-import type Tab from './Tab';
 
 const buttonWidth = 35;
 const getPadding = ({showModalButton, showArrowButton}) => {
@@ -90,15 +89,15 @@ const FoldButton = ActionButton.extend`
 `;
 
 type Props = {
-  customStyle: void,
-  activeIndex: number,
-  showArrowButton: boolean,
-  showModalButton: number | boolean,
-  handleTabChange: (event: any) => void,
-  handleTabSequence: (event: any) => void,
-  handleEdit: (event: any) => void,
-  ExtraButton: React.Element<*>,
-  children: Array<Tab>
+  customStyle?: () => void,
+  activeIndex?: number,
+  showArrowButton?: 'auto' | boolean,
+  showModalButton?: number | boolean,
+  handleTabChange?: (event: any) => void,
+  handleTabSequence?: (event: any) => void,
+  handleEdit?: (event: any) => void,
+  ExtraButton?: React.Element<*>,
+  children: React.Node
 };
 
 type State = {
