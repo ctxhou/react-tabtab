@@ -13,8 +13,8 @@ react-tabtab is an api based react tab.
 ## Features
 
 * **Mobile first** — Touch support. Easy usage at mobile view
-* **Customizable style** — Based on `styled-components`, super easy to customize tab style
 * **Draggable tab** — Support drag and drop tab feature
+* **Customizable style** — Based on `styled-components`, super easy to customize tab style
 * **API based** — All action is controllable
 
 ## Installation
@@ -107,7 +107,7 @@ It's simple to use. Zero configuration and it works well !
     <tr>
       <td>showModalButton</td>
       <td><code>boolean</code><br/><code>number</code></td>
-      <td>true</td>
+      <td>4</td>
       <td>
         <ul>
           <li><b>true</b>: always show button</li>

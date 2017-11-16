@@ -35,7 +35,7 @@ export default class Tabs extends React.Component<Props, State> {
   }
 
   static defaultProps = {
-    showModalButton: true,
+    showModalButton: 4,
     showArrowButton: 'auto',
     onTabChange: () => {},
     onTabSequenceChange: () => {},

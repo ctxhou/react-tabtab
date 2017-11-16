@@ -15,7 +15,9 @@ const fadeOut = keyframes`
 `;
 
 const PanelStyle = styled.div`
-  padding: 10px 5px;
+  background-color: white;
+  text-align: left;
+  padding: 20px 15px;
   animation: ${fadeOut} 0.2s linear;
   transition: all 1s linear;
 `;

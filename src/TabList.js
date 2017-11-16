@@ -31,6 +31,8 @@ const getPadding = ({showModalButton, showArrowButton}) => {
 }
 
 const TabListStyle = styled.div`
+  background-color: white;
+  text-align: left;
   position: relative;
   white-space: nowrap;
   overflow: hidden;
@@ -61,7 +63,7 @@ const ActionButtonStyle = styled.div`
   border-radius: 4px 4px 0 0;
   background: #f9f9f9;
   > svg {
-    padding-top: 15px;
+    padding-top: 11px;
   }
 `;
 
