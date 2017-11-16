@@ -30,7 +30,7 @@ const getPadding = ({showModalButton, showArrowButton}) => {
   return `0 ${paddingRight}px 0 ${paddingLeft}px`;
 }
 
-const ListWrapper = styled.div`
+const TabListStyle = styled.div`
   position: relative;
   white-space: nowrap;
   overflow: hidden;
@@ -39,7 +39,7 @@ const ListWrapper = styled.div`
   padding: ${props => getPadding(props)};
 `;
 
-const ListStyle = styled.div`
+const ListInner = styled.div`
   overflow: hidden;
 `;
 
@@ -52,7 +52,7 @@ const ListScroll = styled.div`
   transition: transform .3s cubic-bezier(.42, 0, .58, 1);
 `;
 
-const ActionButton = styled.div`
+const ActionButtonStyle = styled.div`
   height: 100%;
   width ${buttonWidth}px;
   text-align: center;
@@ -65,7 +65,7 @@ const ActionButton = styled.div`
   }
 `;
 
-const ScrollButton = ActionButton.extend`
+const makeScrollButton = ActionButton => ActionButton.extend`
   display: inline-block;
   filter: none;
   position: absolute;
@@ -78,7 +78,7 @@ const ScrollButton = ActionButton.extend`
   }
 `;
 
-const FoldButton = ActionButton.extend`
+const makeFoldButton = ActionButton => ActionButton.extend`
   display: inline-block;
   filter: none;
   position: absolute;
@@ -89,7 +89,7 @@ const FoldButton = ActionButton.extend`
 `;
 
 type Props = {
-  customStyle?: () => void,
+  customStyle?: Object,
   activeIndex?: number,
   showArrowButton?: 'auto' | boolean,
   showModalButton?: number | boolean,
@@ -106,7 +106,7 @@ type State = {
   showModalButton: boolean | number
 };
 
-export default class TabList extends React.Component<Props, State> {
+export default class TabListComponent extends React.Component<Props, State> {
 
   listContainer: React.ElementRef<any>;
   rightArrowNode: React.ElementRef<any>;
@@ -237,10 +237,11 @@ export default class TabList extends React.Component<Props, State> {
   }
 
   renderTabs(options?: any = {}, isModal?: boolean) {
-    const {children, activeIndex, handleTabChange, handleEdit} = this.props;
+    const {children, activeIndex, handleTabChange, handleEdit, customStyle} = this.props;
     const props = {
       handleTabChange,
-      handleEdit
+      handleEdit,
+      CustomTabStyle: customStyle.Tab
     };
     if (!isModal) {
       this.tabRefs = [];
@@ -271,11 +272,15 @@ export default class TabList extends React.Component<Props, State> {
       ExtraButton
     } = this.props;
     const {modalIsOpen} = this.state;
-    const ListInner = customStyle || ListStyle;
+    const TabList = customStyle.TabList || TabListStyle;
+    const ActionButton = customStyle.ActionButton || ActionButtonStyle;
+    const FoldButton = makeFoldButton(ActionButton);
+    const ScrollButton = makeScrollButton(ActionButton);
+
     return (
       <div>
         {ExtraButton ? ExtraButton : null}
-        <ListWrapper hasExtraButton={!!ExtraButton}
+        <TabList hasExtraButton={!!ExtraButton}
                      showModalButton={this.state.showModalButton}
                      showArrowButton={this.state.showArrowButton}>
           {this.state.showModalButton ?
@@ -304,7 +309,7 @@ export default class TabList extends React.Component<Props, State> {
               {this.renderTabs()}
             </ListScroll>
           </ListInner>
-        </ListWrapper>
+        </TabList>
         {modalIsOpen ?
           <TabModal closeModal={this.toggleModal.bind(this, false)}
                     handleTabSequence={handleTabSequence}
@@ -318,8 +323,9 @@ export default class TabList extends React.Component<Props, State> {
   }
 }
 
-TabList.displayName = 'TabList';
+TabListComponent.displayName = 'TabList';
 
 export {
-  ListStyle
-};
+  TabListStyle,
+  ActionButtonStyle
+}

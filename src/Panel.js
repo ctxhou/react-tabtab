@@ -21,15 +21,21 @@ const PanelStyle = styled.div`
 `;
 
 type Props = {
-  children: React.Node
+  children: React.Node,
+  CustomPanelStyle: React.Node | null
 };
 
-export default class Panel extends React.Component<Props> {
+export default class PanelComponent extends React.Component<Props> {
   render() {
+    const Panel = this.props.CustomPanelStyle || PanelStyle;
     return (
-      <PanelStyle>
+      <Panel>
         {this.props.children}
-      </PanelStyle>
+      </Panel>
     )
   }
+}
+
+export {
+  PanelStyle
 }

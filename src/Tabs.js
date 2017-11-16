@@ -11,7 +11,13 @@ type Props = {
   onTabChange?: (event: any) => void,
   onSequenceChange?: (event: any) => void,
   onTabSequenceChange?: (event: any) => void,
-  onTabEdit?: (event: any) => void
+  onTabEdit?: (event: any) => void,
+  customStyle?: {
+    TabList: React.Element<*>,
+    Tab: React.Element<*>,
+    Panel: React.Element<*>,
+    ActionButton: React.Element<*>
+  }
 };
 
 type State = {
@@ -33,7 +39,13 @@ export default class Tabs extends React.Component<Props, State> {
     showModalButton: true,
     showArrowButton: 'auto',
     onTabChange: () => {},
-    onSequenceChange: () => {}
+    onSequenceChange: () => {},
+    customStyle: {
+      TabList: null,
+      Tab: null,
+      Panel: null,
+      ActionButton: null
+    }
   }
 
   getActiveIndex(props: Props) {

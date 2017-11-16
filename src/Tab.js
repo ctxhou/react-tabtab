@@ -43,7 +43,7 @@ const TabStyle = styled.div`
 `;
 
 type Props = {
-  customStyle?: () => void,
+  CustomTabStyle?: React.Node | null,
   handleTabChange?: (event: any) => void,
   handleEdit?: (event: any) => void,
   index?: number,
@@ -75,8 +75,8 @@ export default class Tab extends React.Component<Props> {
   }
 
   render() {
-    const {customStyle, active, closable, vertical} = this.props;
-    const TabComponent = customStyle || TabStyle;
+    const {CustomTabStyle, active, closable, vertical} = this.props;
+    const TabComponent = CustomTabStyle || TabStyle;
     return (
       // $FlowFixMe
       <TabComponent innerRef={node => this.__INTERNAL_NODE = node}

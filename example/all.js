@@ -6,6 +6,7 @@ import Drag from './drag';
 import Mix from './mix';
 import CloseTab from './closable';
 import AddButton from './addButton';
+import CustomTheme from './customTheme';
 // var Advanced = require('./advanced');
 // var AddTab = require('./addTab');
 // var DeleteTab = require('./deleteTab');
@@ -26,6 +27,8 @@ export default class Example extends React.Component {
         <CloseTab/>
         <h2>add button:</h2>
         <AddButton/>
+        <h2>custom theme:</h2>
+        <CustomTheme/>
       </div>
     )
   }

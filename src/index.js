@@ -1,12 +1,14 @@
 // @flow
 import Tabs from './Tabs';
-import TabList from './TabList';
-import Tab from './Tab';
+import TabList, {TabListStyle, ActionButtonStyle} from './TabList';
+import Tab, {TabStyle} from './Tab';
 import DragTabList from './DragTabList';
 import DragTab from './DragTab';
 import PanelList from './PanelList';
-import Panel from './Panel';
+import Panel, {PanelStyle} from './Panel';
 import ExtraButton from './ExtraButton';
+
+const styled = {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle};
 
 export {
   Tabs,
@@ -16,5 +18,6 @@ export {
   DragTab,
   PanelList,
   Panel,
-  ExtraButton
+  ExtraButton,
+  styled
 }
