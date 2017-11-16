@@ -1,13 +1,14 @@
-var path = require('path');
-var webpack = require('webpack');
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'eval-source-map',
   entry: {
-    example: [
+    root: [
       'babel-polyfill',
       'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
-      './example/all'
+      './docs/root'
     ]
   },
   output: {
@@ -25,6 +26,12 @@ module.exports = {
       'process.env': {
         NODE_ENV: JSON.stringify("development")
       }
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: 'docs/index.ejs',
+      title: 'react-tabtab',
+      js: ['/root.js']
     })
   ],
   module: {

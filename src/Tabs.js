@@ -2,14 +2,12 @@
 import * as React from 'react';
 
 type Props = {
-  children: React.Element<*>,
+  defaultIndex?: number,
+  activeIndex?: number,
   showModalButton?: number | boolean,
   showArrowButton?: 'auto' | boolean ,
-  activeIndex?: number,
   ExtraButton?: React.Node,
-  defaultIndex?: number,
   onTabChange?: (event: any) => void,
-  onSequenceChange?: (event: any) => void,
   onTabSequenceChange?: (event: any) => void,
   onTabEdit?: (event: any) => void,
   customStyle?: {
@@ -17,7 +15,8 @@ type Props = {
     Tab: React.Element<*>,
     Panel: React.Element<*>,
     ActionButton: React.Element<*>
-  }
+  },
+  children: React.Element<*>
 };
 
 type State = {
@@ -39,7 +38,7 @@ export default class Tabs extends React.Component<Props, State> {
     showModalButton: true,
     showArrowButton: 'auto',
     onTabChange: () => {},
-    onSequenceChange: () => {},
+    onTabSequenceChange: () => {},
     customStyle: {
       TabList: null,
       Tab: null,
