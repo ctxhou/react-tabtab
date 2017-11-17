@@ -9,8 +9,7 @@ import Panel, {PanelStyle} from './Panel';
 import ExtraButton from './ExtraButton';
 
 const styled = {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle};
-
-export {
+const defaultOutput = {
   Tabs,
   TabList,
   Tab,
@@ -21,3 +20,5 @@ export {
   ExtraButton,
   styled
 }
+
+export default defaultOutput;

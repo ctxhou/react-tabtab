@@ -25,7 +25,8 @@ class ModalTabListWrapper extends SortMethod {
     return (
       <DragTabContainer onSortEnd={this.onSortEnd}
                         axis='y'
-                        lockAxis='y'>
+                        lockAxis='y'
+                        distance={2}>
         {this.props.children}
       </DragTabContainer>
     );

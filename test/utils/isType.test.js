@@ -1,5 +1,5 @@
 import {DragTabList, DragTab, TabList, Tab} from '../../src';
-import {isTabList, isTab} from '../../src/utils/isType';
+import {isTabList, isTab, isNumber} from '../../src/utils/isType';
 
 describe('isTabList', () => {
   it('DragTabList', () => {
@@ -17,4 +17,10 @@ describe('isTab', () => {
   it('Tab', () => {
     expect(isTab({type: Tab})).toEqual(true);
   });
+})
+
+it('isNumber', () => {
+  expect(isNumber(1)).toEqual(true);
+  expect(isNumber('2')).toEqual(true);
+  expect(isNumber('sdfsdf')).toEqual(false);
 })

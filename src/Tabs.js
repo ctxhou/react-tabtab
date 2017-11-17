@@ -34,18 +34,18 @@ export default class Tabs extends React.Component<Props, State> {
     };
   }
 
-  static defaultProps = {
-    showModalButton: 4,
-    showArrowButton: 'auto',
-    onTabChange: () => {},
-    onTabSequenceChange: () => {},
-    customStyle: {
-      TabList: null,
-      Tab: null,
-      Panel: null,
-      ActionButton: null
-    }
-  }
+  // static defaultProps = {
+  //   showModalButton: 4,
+  //   showArrowButton: 'auto',
+  //   onTabChange: () => {},
+  //   onTabSequenceChange: () => {},
+  //   customStyle: {
+  //     TabList: null,
+  //     Tab: null,
+  //     Panel: null,
+  //     ActionButton: null
+  //   }
+  // }
 
   getActiveIndex(props: Props) {
     const {defaultIndex, activeIndex} = props;
@@ -103,5 +103,18 @@ export default class Tabs extends React.Component<Props, State> {
         })}
       </div>
     )
+  }
+}
+
+Tabs.defaultProps = {
+  showModalButton: 4,
+  showArrowButton: 'auto',
+  onTabChange: () => {},
+  onTabSequenceChange: () => {},
+  customStyle: {
+    TabList: null,
+    Tab: null,
+    Panel: null,
+    ActionButton: null
   }
 }

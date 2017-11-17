@@ -1,27 +1,23 @@
 {
   "presets": [
     "es2015",
-    "react",
-    "stage-0",
-    [
-      "env",
-      {
-        "loose": true
-      }
-    ]
+    "react"
   ],
   "plugins": [
     "add-module-exports",
-    "flow-react-proptypes",
-    "transform-decorators-legacy",
     "transform-class-properties",
+    "transform-object-rest-spread",
     "transform-flow-strip-types"
   ],
   "env": {
+    "development": {
+      "plugins": [
+        "flow-react-proptypes"
+      ]
+    },
     "production": {
       "plugins": [
-        "transform-react-remove-prop-types",
-        "add-module-exports"
+        "transform-react-remove-prop-types"
       ]
     }
   }

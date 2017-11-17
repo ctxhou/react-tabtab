@@ -5,7 +5,7 @@ import invariant from 'invariant';
 import MdChevronLeft from 'react-icons/lib/md/chevron-left';
 import MdChevronRight from 'react-icons/lib/md/chevron-right';
 import MdFormatListBulleted from 'react-icons/lib/md/format-list-bulleted';
-import {isNumber} from 'lodash';
+import {isNumber} from './utils/isType';
 import TabModal from './TabModal';
 
 const buttonWidth = 35;

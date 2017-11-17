@@ -10,7 +10,7 @@ module.exports = {
     ]
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '_gh-pages'),
     filename: '[name].js'
   },
   resolve: {
@@ -37,7 +37,7 @@ module.exports = {
       template: 'docs/index.ejs',
       title: 'React tabtab - Make your react tab dance!',
       googleAnalytics: {
-        trackingId: 'UA-XXXX-XX',
+        trackingId: 'UA-54035195-6',
         pageViewOnLoad: true
       }
     })

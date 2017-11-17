@@ -85,6 +85,7 @@ export default class Root extends React.Component {
                 value={currentTheme}
                 options={themeOptions}
                 clearable={false}
+                autoBlur={true}
                 onChange={this.handleThemeChange}
               />
             </SelectWrapper>
