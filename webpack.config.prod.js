@@ -3,35 +3,43 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  devtool: 'eval-source-map',
   entry: {
     root: [
       'babel-polyfill',
-      'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000',
       './docs/root'
     ]
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: '[name].js',
-    publicPath: '/static/'
+    filename: '[name].js'
   },
   resolve: {
     extensions: ['.js']
   },
+  externals: {
+    'react': "React",
+    'react-dom': "ReactDOM"
+  },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify("development")
+        NODE_ENV: JSON.stringify("production")
       }
+    }),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'common',
+      filename: 'common.js',
+      minChunk: 2,
     }),
     new HtmlWebpackPlugin({
       inject: false,
+      production: true,
       template: 'docs/index.ejs',
-      title: 'react-tabtab',
-      // js: ['/root.js']
+      title: 'React tabtab - Make your react tab dance!',
+      googleAnalytics: {
+        trackingId: 'UA-XXXX-XX',
+        pageViewOnLoad: true
+      }
     })
   ],
   module: {
