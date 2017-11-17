@@ -40,7 +40,7 @@ PanelStyle = PanelStyle.extend`
   border-radius: 2px;
 `;
 
-module.exports = {
+export default {
   TabList: TabListStyle,
   ActionButton: ActionButtonStyle,
   Tab: TabStyle,

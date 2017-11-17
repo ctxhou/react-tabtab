@@ -1,6 +1,7 @@
 // @flow
 import * as React from 'react';
 import styled from 'styled-components';
+import invariant from 'invariant';
 import MdChevronLeft from 'react-icons/lib/md/chevron-left';
 import MdChevronRight from 'react-icons/lib/md/chevron-right';
 import MdFormatListBulleted from 'react-icons/lib/md/format-list-bulleted';
@@ -139,7 +140,7 @@ export default class TabListComponent extends React.Component<Props, State> {
     this.isShowModalButton();
   }
 
-  componentDidUpdate(prevProps: Props) {
+  componentDidUpdate(prevProps: Props, prevState: State) {
     if (prevProps.children.length !== this.props.children.length) {
       this.isShowArrowButton();
       this.isShowModalButton();
@@ -149,6 +150,11 @@ export default class TabListComponent extends React.Component<Props, State> {
     if (prevProps.activeIndex !== this.props.activeIndex &&
         prevProps.children.length < this.props.children.length) {
       this.scrollToIndex(this.props.activeIndex);
+    }
+    // if prev state show arrow button, and current state doesn't show
+    // need to reset the scroll position, or some tabs will be hided by container.
+    if (prevState.showArrowButton && !this.state.showArrowButton) {
+      this.scrollToZero();
     }
   }
 
@@ -200,6 +206,10 @@ export default class TabListComponent extends React.Component<Props, State> {
       this.scrollPosition = 0;
     }
     this.listScroll.style.transform = `translate3d(-${this.scrollPosition}px, 0, 0)`;
+  }
+
+  scrollToZero() {
+    this.listScroll.style.transform = `translate3d(0, 0, 0)`;
   }
 
   toggleModal(open: boolean) {
@@ -278,7 +288,7 @@ export default class TabListComponent extends React.Component<Props, State> {
     const ActionButton = customStyle.ActionButton || ActionButtonStyle;
     const FoldButton = makeFoldButton(ActionButton);
     const ScrollButton = makeScrollButton(ActionButton);
-
+    invariant(this.props.children, 'React-tabtab Error: You MUST pass at least one tab')
     return (
       <div>
         {ExtraButton ? ExtraButton : null}

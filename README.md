@@ -12,7 +12,7 @@ react-tabtab is an api based react tab.
 [download]:    https://img.shields.io/npm/dm/react-tabtab.svg?maxAge=2592000
 ## Features
 
-* **Mobile first** — Touch support. Easy usage at mobile view
+* **Mobile supported** — Touch support. Easy usage at mobile view
 * **Draggable tab** — Support drag and drop tab feature
 * **Customizable style** — Based on `styled-components`, super easy to customize tab style
 * **API based** — All action is controllable

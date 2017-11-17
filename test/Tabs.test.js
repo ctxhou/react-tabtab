@@ -29,13 +29,15 @@ const dragComponent = (props = {}) => (
 );
 
 describe('render Tabs', () => {
-  it('normal tabs', () => {
-    const component = mount(normalComponent());
+  const testRender = (tabsComponent) => {
+    const component = mount(tabsComponent);
     expect(component.html()).toMatchSnapshot();
+  }
+  it('normal tabs', () => {
+    testRender(normalComponent())
   });
   it('normal drag tabs', () => {
-    const component = mount(dragComponent());
-    expect(component.html()).toMatchSnapshot();
+    testRender(dragComponent());
   });
 });
 

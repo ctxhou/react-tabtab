@@ -36,7 +36,8 @@ export default class Drag extends Component {
     return (
       <Tabs activeIndex={activeIndex}
             onTabChange={this.handleTabChange}
-            onTabSequenceChange={this.handleTabSequenceChange}>
+            onTabSequenceChange={this.handleTabSequenceChange}
+            customStyle={this.props.customStyle}>
         <DragTabList>
           {tabsTemplate}
         </DragTabList>

@@ -13,6 +13,10 @@ export default class PanelList extends React.Component<Props> {
       activeIndex,
       customStyle
     } = this.props;
+    if (!children) {
+      return null;
+    }
+
     return (
       <div>
         {React.cloneElement(children[activeIndex], {activeIndex, CustomPanelStyle: customStyle.Panel})}

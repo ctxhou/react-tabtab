@@ -4,7 +4,7 @@ import {Tabs, TabList, Tab, PanelList, Panel} from '../../src';
 export default class Basic extends Component {
   render() {
     return (
-      <Tabs>
+      <Tabs customStyle={this.props.customStyle}>
         <TabList>
           <Tab>Tab1</Tab>
           <Tab>Tab2</Tab>

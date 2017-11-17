@@ -1,21 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
+import Select from 'react-select';
 import Basic from './components/Basic';
 import Draggable from './components/Draggable';
-import Closable from './components/Closable';
-// import ControllTab from './controllTab';
-// import Drag from './drag';
-// import Mix from './mix';
-// import AddButton from './addButton';
-// import CustomTheme from './customTheme';
-// var Advanced = require('./advanced');
-// var AddTab = require('./addTab');
-// var DeleteTab = require('./deleteTab');
-// var DragAndDrop = require('./dragAndDrop');
+import AddAndClose from './components/AddAndClose';
+import Modal from './components/Modal';
+import Complicated from './components/Complicated';
+import themes from './themes';
+
+const themeOptions = Object.keys(themes).map(theme => {
+  return {value: theme, label: themes[theme].name};
+});
 
 const Header = styled.div`
   text-align: center;
+`;
+
+const SelectWrapper = styled.div`
+  display: inline-block;
+  width: 300px;
 `;
 const examples = [
   {
@@ -29,22 +33,62 @@ const examples = [
     Component: Draggable
   },
   {
-    title: 'Closable Tabs',
+    title: 'Add and Close Tabs',
     description: null,
-    Component: Closable
+    Component: AddAndClose
+  },
+  {
+    title: 'Modal View',
+    description: 'With modal view, it\'s easier to select tab when there are lots of tabs',
+    Component: Modal
   }
 ]
 
 export default class Root extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleThemeChange = this.handleThemeChange.bind(this);
+    this.state = {
+      currentTheme: 'bootstrap'
+    }
+  }
+
+  handleThemeChange(opt) {
+    this.setState({currentTheme: opt.value});
+  }
+
   render() {
+    const {currentTheme} = this.state;
+
     return (
       <div className="avenir">
         <Header className="mw8 center mb4">
           <h1 className="f1">React tabtab</h1>
-          <p className="f3">Make your react tab dance. 💃</p>
+          <p className="f3">
+            💃 A mobile support, flexible and beautiful Tab for ReactJS. 💃
+          </p>
           <a className="github-button" href="https://github.com/ctxhou/react-tabtab" data-size="large" data-show-count="true" aria-label="Star ctxhou/react-tabtab on GitHub">Star</a>
+          <div>
+            <a className="f6 link dim br-pill ba bw1 ph3 pv2 mt3 mb1 dib green"
+               href="https://github.com/ctxhou/react-tabtab"
+               target="_blank">
+              Document
+            </a>            
+          </div>
         </Header>
         <div className="bg-light-gray">
+          <div className="center pa1" style={{textAlign: 'center'}}>
+            <div className="black-90 pa2">Select a theme</div>
+            <SelectWrapper>
+              <Select
+                name="form-field-name"
+                value={currentTheme}
+                options={themeOptions}
+                clearable={false}
+                onChange={this.handleThemeChange}
+              />
+            </SelectWrapper>
+          </div>
           {examples.map(item => (
             <div className="mw6 center pa3" key={item.title}>
               <h3 className="f3 fw2 black-90 mv3">
@@ -53,10 +97,48 @@ export default class Root extends React.Component {
               {item.description ?
                 <p>{item.description}</p>
               : null}
-              <item.Component/>
+              <item.Component customStyle={themes[currentTheme].style}/>
             </div>
           ))}
+
+          <div className="mw6 center pl3 pt3">
+            <h2>Now, let's mix all feature together. <br/>Demo a complicated example!</h2>
+            <p>Try to</p>
+            <ul>
+              <li>Drag and drop the tab</li>
+              <li>Add new tab</li>
+              <li>Close tab</li>
+              <li><b>And last, do above actions on MODAL view!</b></li>
+            </ul>
+          </div>
+          <div className="mw7 center pb4">
+            <Complicated customStyle={themes[currentTheme].style}/>
+          </div>
+          <div className="mw6 center pt3 pb4" style={{textAlign: 'center'}}>
+            <h1>Try it!</h1>
+            <p>
+              Reference the document to use it.
+            </p>
+            <div>
+              <a className="f6 link dim br-pill ba bw1 ph3 pv2 mt1 mb1 dib green"
+                 href="https://github.com/ctxhou/react-tabtab"
+                 target="_blank">
+                Document
+              </a>
+            </div>
+          </div>
         </div>
+        <footer className="pv4 ph3 ph5-m ph6-l mid-gray">
+          <small className="f6 db tc">Maintained by <a href="https://github.com/ctxhou">@ctxhou</a></small>
+          <div className="tc mt3">
+            <a className="link dim gray dib br-100 h2 w2 mr3 " href="https://github.com/ctxhou/react-tabtab" title="">
+              <svg data-icon="github" viewBox="0 0 32 32" style={{fill: 'currentcolor'}}>
+                <title>github icon</title>
+                <path d="M0 18 C0 12 3 10 3 9 C2.5 7 2.5 4 3 3 C6 3 9 5 10 6 C12 5 14 5 16 5 C18 5 20 5 22 6 C23 5 26 3 29 3 C29.5 4 29.5 7 29 9 C29 10 32 12 32 18 C32 25 30 30 16 30 C2 30 0 25 0 18 M3 20 C3 24 4 28 16 28 C28 28 29 24 29 20 C29 16 28 14 16 14 C4 14 3 16 3 20 M8 21 A1.5 2.5 0 0 0 13 21 A1.5 2.5 0 0 0 8 21 M24 21 A1.5 2.5 0 0 0 19 21 A1.5 2.5 0 0 0 24 21 z"></path>
+              </svg>
+            </a>
+          </div>
+        </footer>
       </div>
     )
   }

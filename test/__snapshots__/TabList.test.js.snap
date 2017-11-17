@@ -1,13 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`custom ListStyle style 1`] = `
+exports[`TabList custom ListStyle style 1`] = `
 .c0 {
+  background-color: white;
+  text-align: left;
   position: relative;
   white-space: nowrap;
   overflow: hidden;
   width: auto;
   border-bottom: 1px solid #eee;
   padding: 0 0px 0 0px;
+}
+
+.c1 {
+  overflow: hidden;
 }
 
 .c2 {
@@ -44,13 +50,12 @@ exports[`custom ListStyle style 1`] = `
   border-color: #ddd #ddd #fff;
 }
 
-.c1 {
-  overflow: hidden;
-  background-color: red;
-}
-
 <TabList
-  customStyle={[Function]}
+  customStyle={
+    Object {
+      "CustomTabList": [Function],
+    }
+  }
 >
   <div>
     <styled.div
@@ -100,8 +105,10 @@ exports[`custom ListStyle style 1`] = `
 </TabList>
 `;
 
-exports[`render TabList 1`] = `
+exports[`TabList render Tab List 1`] = `
 .c0 {
+  background-color: white;
+  text-align: left;
   position: relative;
   white-space: nowrap;
   overflow: hidden;
@@ -148,7 +155,9 @@ exports[`render TabList 1`] = `
   border-color: #ddd #ddd #fff;
 }
 
-<TabList>
+<TabList
+  customStyle={Object {}}
+>
   <div>
     <styled.div
       hasExtraButton={false}

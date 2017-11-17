@@ -48,7 +48,7 @@ describe('Tab', () => {
       background-color: red;
     `;
     const component = shallow(
-      <Tab customStyle={CustomTabStyle}>
+      <Tab CustomTabStyle={CustomTabStyle}>
         <span>tab</span>
       </Tab>
     );
