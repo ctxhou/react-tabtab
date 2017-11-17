@@ -70,7 +70,7 @@ if (prod) {
 }
 export default {
   input: 'src/index.js', // because use es6 version it would cause `Unexpected token at static syntax`, I don't know why use `transform-class-properties` cannot fix it
-  name: 'react-tabtab',
+  name: 'Tabtab',
   external: external,
   exports: 'named',
   output,

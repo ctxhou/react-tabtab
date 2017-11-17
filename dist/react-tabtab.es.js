@@ -247,19 +247,6 @@ var Tabs = function (_React$Component) {
     return _this;
   }
 
-  // static defaultProps = {
-  //   showModalButton: 4,
-  //   showArrowButton: 'auto',
-  //   onTabChange: () => {},
-  //   onTabSequenceChange: () => {},
-  //   customStyle: {
-  //     TabList: null,
-  //     Tab: null,
-  //     Panel: null,
-  //     ActionButton: null
-  //   }
-  // }
-
   createClass(Tabs, [{
     key: 'getActiveIndex',
     value: function getActiveIndex(props) {

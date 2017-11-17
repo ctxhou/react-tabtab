@@ -1,7 +1,7 @@
 {
   "name": "react-tabtab",
-  "version": "0.8.0",
-  "description": "react, tabs",
+  "version": "1.0.0-rc.1",
+  "description": "A mobile support, flexible, beautiful and api based Tab for ReactJS",
   "main": "lib/",
   "scripts": {
     "start": "node devServer.js",
@@ -14,8 +14,7 @@
     "flow:watch": "flow-watch",
     "gh-pages": "gh-pages:build && gh-pages:publish",
     "gh-pages:build": "NODE_ENV=production webpack --config webpack.config.prod.js",
-    "gh-pages:publish": "git-directory-deploy --directory _gh-pages --branch gh-pages",
-    "validate": "npm ls"
+    "gh-pages:publish": "git-directory-deploy --directory _gh-pages --branch gh-pages"
   },
   "repository": {
     "type": "git",
@@ -135,6 +134,7 @@
     ]
   },
   "pre-commit": [
-    "lint"
+    "lint",
+    "test"
   ]
 }
