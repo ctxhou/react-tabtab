@@ -2,6 +2,7 @@
 ![version][version]
 ![david][david]
 ![download][download]
+![gzip size][gzip size]
 
 > A mobile support, flexible, beautiful and api based Tab for ReactJS.
 > Make your react tab dance 💃💃
@@ -11,6 +12,7 @@
 [david]:       https://david-dm.org/ctxhou/react-tabtab.svg
 [version]:     https://img.shields.io/npm/v/react-tabtab.svg?maxAge=2592000
 [download]:    https://img.shields.io/npm/dm/react-tabtab.svg?maxAge=2592000
+[gzip size]:   http://img.badgesize.io/https://unpkg.com/react-tabtab/dist/react-tabtab.min.js?compression=gzip
 
 ## Features
 
@@ -41,6 +43,19 @@ var DragTab = Tabtab.DragTab;
 var PanelList = Tabtab.PanelList;
 var Panel = Tabtab.Panel;
 var ExtraButton = Tabtab.ExtraButton;
+```
+
+UMD build is also available. If you do this, you'll need to include the dependencies:
+
+For example:
+
+```html
+<script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
+<script src="https://unpkg.com/classnames@2.2.5/index.js"></script>
+<script src="https://unpkg.com/react-sortable-hoc/dist/umd/react-sortable-hoc.js"></script>
+<script src="https://unpkg.com/react-tabtab/dist/react-tabtab.min.js"></script>
 ```
 
 ## Usage

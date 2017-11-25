@@ -5,8 +5,9 @@
   "main": "lib/",
   "scripts": {
     "start": "node devServer.js",
-    "build": "rm -rf ./lib && BABEL_ENV=production babel src -d lib",
-    "build:dist": "rollup -c --environment ESBUNDLE && rollup -c --environment PRODUCTION",
+    "build": "npm run build:lib && npm run build:dist",
+    "build:lib": "rimraf ./lib && BABEL_ENV=production babel src -d lib",
+    "build:dist": "rimraf dist && rollup -c --environment ESBUNDLE && rollup -c --environment PRODUCTION",
     "lint": "eslint src example test",
     "test": "jest",
     "test:watch": "NODE_ENV=test npm test -- --watch",
@@ -14,7 +15,8 @@
     "flow:watch": "flow-watch",
     "gh-pages": "gh-pages:build && gh-pages:publish",
     "gh-pages:build": "NODE_ENV=production webpack --config webpack.config.prod.js",
-    "gh-pages:publish": "git-directory-deploy --directory _gh-pages --branch gh-pages"
+    "gh-pages:publish": "git-directory-deploy --directory _gh-pages --branch gh-pages",
+    "prepublish": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -46,6 +48,7 @@
     "invariant": "^2.2.2",
     "prop-types": "^15.6.0",
     "react-icons": "^2.2.7",
+    "react-poppop": "^1.0.1",
     "react-responsive-modal": "^2.0.0",
     "react-sortable-hoc": "^0.6.8",
     "styled-components": "^2.2.3"

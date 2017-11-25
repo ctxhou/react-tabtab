@@ -6,19 +6,20 @@ import uglify from 'rollup-plugin-uglify';
 import json from 'rollup-plugin-json';
 import visualizer from 'rollup-plugin-visualizer';
 import replace from 'rollup-plugin-replace';
-import pkg from './package.json'
 import commonjs from 'rollup-plugin-commonjs'
 
 const path = 'dist/react-tabtab';
 
+const name = 'TabTab';
 const globals = {
   'prop-types': 'PropTypes',
   'react-dom': 'ReactDOM',
-  react: 'React'
+  react: 'React',
+  'react-sortable-hoc': 'SortableHOC',
+  'classnames': 'classNames',
+  'styled-components': 'styled'
 };
 
-Object.keys(pkg.dependencies).forEach(key => globals[key] = key);
-delete globals['react-icons']
 const external = Object.keys(globals);
 
 const prod = process.env.PRODUCTION
@@ -27,7 +28,7 @@ const esbundle = process.env.ESBUNDLE
 let output;
 if (prod) {
   console.log('Creating production UMD bundle...');
-  output = {file: path + '.min.js', format: 'umd'};
+  output = {file: path + '.min.js', format: 'umd', name};
 } else if (esbundle) {
   console.log('Creating ES modules bundle...');
   output = {file: path + '.es.js', format: 'es'};
@@ -36,7 +37,9 @@ if (prod) {
 const plugins = [
   flow(),
   json(),
-  resolve(),
+  resolve({
+    browser: true
+  }),
   commonjs({
     ignoreGlobal: true,
     exclude: 'src/**'
@@ -49,7 +52,6 @@ const plugins = [
       'react'
     ],
     plugins: [
-      "add-module-exports",
       'transform-react-remove-prop-types',
       'transform-flow-strip-types',
       'transform-class-properties',
@@ -61,7 +63,7 @@ const plugins = [
 
 if (prod) {
   plugins.push(
-    uglify(),
+    // uglify(),
     visualizer({filename: './bundle-stats.html'}),
     replace({
       'process.env.NODE_ENV': JSON.stringify(prod ? 'production' : 'development'),
@@ -69,8 +71,8 @@ if (prod) {
   );
 }
 export default {
-  input: 'src/index.js', // because use es6 version it would cause `Unexpected token at static syntax`, I don't know why use `transform-class-properties` cannot fix it
-  name: 'Tabtab',
+  input: 'src/index.js',
+  name: 'TabTab',
   external: external,
   exports: 'named',
   output,
