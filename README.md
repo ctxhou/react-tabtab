@@ -2,25 +2,26 @@
 ![version][version]
 ![david][david]
 ![download][download]
+![gzip size][gzip size]
 
-react-tabtab is an api based react tab.
+> A mobile support, flexible, beautiful and api based Tab for ReactJS.
+> Make your react tab dance 💃💃
 
 [Demo](http://ctxhou.github.io/react-tabtab/)
 
 [david]:       https://david-dm.org/ctxhou/react-tabtab.svg
 [version]:     https://img.shields.io/npm/v/react-tabtab.svg?maxAge=2592000
 [download]:    https://img.shields.io/npm/dm/react-tabtab.svg?maxAge=2592000
+[gzip size]:   http://img.badgesize.io/https://unpkg.com/react-tabtab/dist/react-tabtab.min.js?compression=gzip
+
 ## Features
 
-![img](http://i.imgur.com/r5ssaiM.png)
+* **Mobile supported** — Touch support. Easy usage at mobile device
+* **Draggable tab** — Support drag and drop tab feature
+* **Customizable style** — Based on `styled-components`, super easy to customize tab style
+* **API based** — All actions are controllable
 
-* Add tab
-* Delete tab
-* Drag and Drop tab
-
-## Usage
-
-Now only available the commonjs module.
+## Installation
 
 Install it with npm.
 
@@ -28,119 +29,402 @@ Install it with npm.
 npm install react-tabtab --save
 ```
 
-Simple example:
+Then, import the module by module bundler like `webpack`, `browserify`
 
 ```js
-var Tabs = require('react-tabtab').Tabs;
-var Panel = require('react-tabtab').Panel;
+// es6
+import {Tabs, DragTabList, DragTab, PanelList, Panel, ExtraButton} from 'react-tabtab';
 
-var App = React.createClass({
-  render: function() {
+// not using es6
+var Tabtab = require('react-tabtab');
+var Tabs = Tabtab.Tabs;
+var DragTabList = Tabtab.DragTabList;
+var DragTab = Tabtab.DragTab;
+var PanelList = Tabtab.PanelList;
+var Panel = Tabtab.Panel;
+var ExtraButton = Tabtab.ExtraButton;
+```
+
+UMD build is also available. If you do this, you'll need to include the dependencies:
+
+For example:
+
+```html
+<script src="https://unpkg.com/react@16.0.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
+<script src="https://unpkg.com/classnames@2.2.5/index.js"></script>
+<script src="https://unpkg.com/react-sortable-hoc/dist/umd/react-sortable-hoc.js"></script>
+<script src="https://unpkg.com/react-tabtab/dist/react-tabtab.min.js"></script>
+```
+
+## Usage
+
+### Basic Example:
+
+```js
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import {Tabs, TabList, Tab, PanelList, Panel} from 'react-tabtab';
+
+class Basic extends Component {
+  render() {
     return (
       <Tabs>
-        <Panel title="hi">
-          Hi!
-        </Panel>
-        <Panel title="yo" lazy={true}>
-          yo yo
-        </Panel>
+        <TabList>
+          <Tab>Tab1</Tab>
+          <Tab>Tab2</Tab>
+        </TabList>
+        <PanelList>
+          <Panel>Content1</Panel>
+          <Panel>Content2</Panel>
+        </PanelList>
       </Tabs>
     )
   }
-})
+}
 
-React.render(<App/>, document.getElementById('container'));
+ReactDOM.render(<Basic/>, document.getElementById('root'));
 ```
 
-## Advanced Usage
+It's simple to use. Zero configuration and it works well !
 
-### Add tab
+### Draggable Example
 
-![img](http://i.imgur.com/55GxKoR.png)
+```js
+import React, {Component} from 'react';
+import {Tabs, DragTabList, DragTab, PanelList, Panel} from 'react-tabtab';
+import {simpleSwitch} from 'react-tabtab/lib/helpers/move';
 
-Trigger event on the add tab. Check the [example code](https://github.com//ctxhou/react-tabtab/blob/master/example/addTab.jsx).
+export default class Drag extends Component {
+  constructor(props) {
+    super(props);
+    this.handleTabChange = this.handleTabChange.bind(this);
+    this.handleTabSequenceChange = this.handleTabSequenceChange.bind(this);
+    this.state = {
+      activeIndex: 0,
+    }
+  }
 
-#### props
+  handleTabChange(index) {
+    this.setState({activeIndex: index});
+  }
 
-* addBackTab (boolean)
-  - true : show add tab
-  - false: hide add tab
-* handleAddBackClick (function): trigger the event when user click the tab.
+  handleTabSequenceChange({oldIndex, newIndex}) {
+    const {tabs} = this.state;
+    const updateTabs = simpleSwitch(tabs, oldIndex, newIndex);
+    this.setState({tabs: updateTabs, activeIndex: newIndex});
+  }
 
-### Delete tab
+  render() {
+    const {activeIndex} = this.state;
+    return (
+      <Tabs activeIndex={activeIndex}
+            onTabChange={this.handleTabChange}
+            onTabSequenceChange={this.handleTabSequenceChange}>
+        <DragTabList>
+          <DragTab>DragTab1</DragTab>
+          <DragTab>DragTab2</DragTab>
+        </DragTabList>
+        <PanelList>
+          <Panel>Content1</Panel>
+          <Panel>Content2</Panel>
+        </PanelList>
+      </Tabs>
+    )
+  }
+}
+ReactDOM.render(<Basic/>, document.getElementById('root'));
+```
 
-![img](http://i.imgur.com/znf3CJA.png)
+Based on above example, the different to implement `normal tab` or `drag tab` is using different wrapper and child.
 
-Trigger event on the delete button. Check the [example code](https://github.com/ctxhou/react-tabtab/blob/master/example/deleteTab.jsx).
+**normal tab**
 
-#### props
+```js
+<Tab>
+  <TabList>
+    <Tab>Tab1</Tab>
+  </TabList>
+  <PanelList>
+    <Panel>Content1</Panel>
+  </PanelList>
+</Tabs>
+```
 
-* tabDeleteButton (boolean)
-    - true : show delete button
-    - false: hide delete button
-* handleTabDeleteButton (function): trigger the event when user click delete button.
+**drag tab**
 
-### Drag and Drop:
+```js
+<Tab>
+  <DragTabList>
+    <DragTab>DragTab1</DragTab>
+  </DragTabList>
+  <PanelList>
+    <Panel>Content1</Panel>
+  </PanelList>
+</Tabs>
+```
 
-![img](http://i.imgur.com/crMwvdr.gif)
+### Another Example
 
-The drag and drop feature is based on [react-dnd](https://github.com/gaearon/react-dnd). You can drag the tab to change the sequence.
+Except drag and drop tab, `react-tabtab` also support other usable application, like:
 
-Because react-dnd can't have two HTML5 backends at the same time ([this issue](https://github.com/gaearon/react-dnd/issues/186)), react-tabtab doesn't wrap the HTML5 in the library.
+* Add and close button
+* Modal view at mobile support
+* Auto detect number of tab and make it scrollable
 
-React-tabtab only wrap the `DragSource` and `DropTarget` on the tab, so if you want to use drag and drop, you need to wrap the `DragDropContext` on your top compoennt. (in case in your project you already have another html5 backend)
+All of these features are api based, so you can customize each action on demand.
 
-In this way, the drag and drop feature in react-tabtab can fit with other dnd library.
+More code examples are avalable [here](https://github.com/ctxhou/react-tabtab/blob/master/docs/components/).
 
-Check out the [example code](https://github.com//ctxhou/react-tabtab/blob/master/example/dragAndDrop.js) and the [top component](https://github.com//ctxhou/react-tabtab/blob/master/test/test.js#L31).
+## Components / Api
 
-#### props
-* draggable (boolean)
-  - true : tab can drag
-  - false: tab can't drag
-* beginDrag (function): do something when start to drag
-* setMoveData (function)
-  - return value {dragIndex, hoverIndex}
-      - dragIndex: current drag tab index
-      - hoverIndex: current hove tab index
+### &lt;Tabs /&gt;
 
+`<Tabs/>` is the main component of `react-tabtab`. Most of the api is passed from it.
 
-### Advanced example
+<table>
+  <tbody>
+    <tr>
+      <th>props</th>
+      <th>type</th>
+      <th>default</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>defaultIndex</td>
+      <td><code>int</code></td>
+      <td>null</td>
+      <td>set the <b>initial</b> active key</td>
+    </tr>
+    <tr>
+      <td>activeIndex</td>
+      <td><code>int</code></td>
+      <td>null</td>
+      <td>control current activeIndex.<br/>You need to pass new activeIndex value if you want to show different tab.</td>
+    </tr>
+    <tr>
+      <td>defaultIndex</td>
+      <td><code>int</code></td>
+      <td>null</td>
+      <td>set the <b>initial</b> active key</td>
+    </tr>
+    <tr>
+      <td>showModalButton</td>
+      <td><code>boolean</code><br/><code>number</code></td>
+      <td>4</td>
+      <td>
+        <ul>
+          <li><b>true</b>: always show button</li>
+          <li><b>false</b>: always hide button</li>
+          <li><b>[number]</b>: when <code>number of tab >= [number]</code>, show button</li>
+        </ul>
+      </td>
+    </tr>
+    <tr>
+      <td>showArrowButton</td>
+      <td><code>auto</code><br/><code>boolean</code></td>
+      <td>auto</td>
+      <td>
+        <li><b>auto</b>: detect tab width, if they exceed container, show button</li>
+        <li><b>true</b>: always show button</li>
+        <li><b>false</b>: always hide button</li>
+      </td>
+    </tr>
+    <tr>
+      <td>ExtraButton</td>
+      <td><code>React Node</code></td>
+      <td>null</td>
+      <td>
+        customize extra button content, example: `+` button
+      </td>
+    </tr>
+    <tr>
+      <td>onTabChange</td>
+      <td><code>() => tabIndex</code></td>
+      <td>null</td>
+      <td>
+        return tabIndex is clicked<br/>
+        You can use this api with <code>activeIndex</code>. When user click tab, update <code>activeIndex</code>.
+      </td>
+    </tr>
+    <tr>
+      <td>onTabSequenceChange</td>
+      <td><code>() => {oldIndex, newIndex}</code></td>
+      <td>null</td>
+      <td>
+        return changed oldIndex and newIndex value<br/>
+        With this api, you can do switch tab very easily.
+        <b>Note:<b/>This api is only called by <code>&lt;DragTab/&gt;</code>
+      </td>
+    </tr>
+    <tr>
+      <td>onTabEdit</td>
+      <td><code>() => {type: [delete], index}</code></td>
+      <td>null</td>
+      <td>
+        When user click <b>close button</b> , this api will return the clicked close button index.
+      </td>
+    </tr>
+    <tr>
+      <td>customStyle</td>
+      <td>
+        <pre>
+<code>{
+  TabList: React.Element,
+  Tab: React.Element,
+  Panel: React.Element,
+  ActionButton: React.Element
+}</code></pre>
+      </td>
+      <td>Bootstrap theme</td>
+      <td>
+        customized tab style component
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-Check the [advanced.jsx](https://github.com/
-/ctxhou/react-tabtab/blob/master/example/advanced.jsx). 
+### &lt;TabList /&gt;
 
-This example show how to add tab, delete tab, and drag and drop.
+Use to wrap `<Tab/>`.
 
-## All API
+### &lt;Tab /&gt;
 
-| property              | type     | default           | required | description                                            |
-|-----------------------|----------|-------------------|----------|--------------------------------------------------------|
-| activeKey             | int      | 0                 | no       | set the active key of the tab                          |
-| addBackTab            | boolean  | false             | no       | whether show a add tab at the end                      |
-| handleAddBackClick    | function | n/a               | no       | callback function when user click the add tab          |
-| deleteButton          | boolean  | false             | no       | whether show a delete button at each panel             |
-| handleDeleteButton    | function | false             | no       | callback function when user click the delete button    |
-| handleTabClick        | function | n/a               | no       | return the key which user clicks                       |
-| tabDeleteButton       | boolean  | false             | no       | whether each tab show delete button                    |
-| handleTabDeleteButton | function | n/a               | no       | callback function when click tabDeleteButton           |
-| style                 | string   | tabtab__default__ | no       | the class prefix                                       |
-| deleteAllClassname    | string   | n/a               | no       |                                                        |
-| draggable             | boolean  | false             | no       | whether tab can drag and drop                          |
-| beginDrag             | function | n/a               | no       | callback function when start drag                      |
-| setMoveData           | function | n/a               | no       | callback function to get current index and hover index |
+Normal Tab. Show the children component on tab.
 
-## Style
+<table>
+  <tbody>
+    <tr>
+      <th>props</th>
+      <th>type</th>
+      <th>default</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>closable</td>
+      <td><code>boolean</code></td>
+      <td>false</td>
+      <td>whether to show close button</td>
+    </tr>
+  </tbody>
+</table>
 
-now only use css as style.
+**Example**
 
-if you want to use the same style as teh [demo](http://ctxhou.github.io/react-tabtab/), just clone the `stylesheets/folder.css` and inlcude in you project.
+```js
+<Tab>
+  <i className="fa fa-map-pin"></i>
+  map tab
+</Tab>
+```
+
+### &lt;DragTabList /&gt;
+
+Use to wrap `<DragTab/>`.
+
+### &lt;DragTab/ &gt;
+
+A draggable tab. Api is the same with `<Tab/>`
+
+### &lt;PanelList/ &gt;
+
+Use to wrap `<Panel/>`
+
+### &lt;Panel /&gt;
+
+Tab content.
+
+## Customize style
+
+`react-tabtab` is based on `styled-components`. Therefore, it's super easy to customize the tab style.
+
+Just extend the default component style and pass it to `customStyle` props.
+
+### Use current style
+
+You can check the current style at `src/themes` folder.
+
+For example, if you want to use `material-design`, import the style and pass to `customStyle` props.
+
+**Example:**
+
+```js
+import {Component} from 'react';
+import {Tabs, TabList, Tab, PanelList, Panel} from 'react-tabtab';
+import * as customStyle from 'react-tabtab/lib/themes/material-design';
+
+class Customized extends Component {
+  render() {
+    return (
+      <Tabs customStyle={customStyle}>
+        <TabList>
+          <Tab>Tab1</Tab>
+          <Tab>Tab2</Tab>
+        </TabList>
+        <PanelList>
+          <Panel>Content1</Panel>
+          <Panel>Content2</Panel>
+        </PanelList>
+      </Tabs>
+    )
+  }
+}
+```
+
+And now your tab is material design style!
+
+### Make your own style
+
+If current theme doesn't meet your demand, follow this three steps and create a new one.
+
+**First step: import current style**
+
+```js
+import {styled} from 'react-tabtab';
+let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styled;
+```
+
+**Second: extend style and export it**
+
+```js
+import {styled} from 'react-tabtab';
+let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styled;
+
+TabListStyle = TabListStyle.extend`
+  // write css
+`;
+
+TabStyle = TabStyle.extend`
+  // write css
+`;
+
+ActionButtonStyle = ActionButtonStyle.extend`
+  // write css
+`;
+
+PanelStyle = PanelStyle.extend`
+  // write css
+`;
+
+// need to follow this object naming
+module.exports = {
+  TabList: TabListStyle,
+  ActionButton: ActionButtonStyle,
+  Tab: TabStyle,
+  Panel: PanelStyle
+}
+```
+
+**Last: import your style and use it!**
+
+When you finish the new `react-tabtab` style, feel free to add it to `theme/` folder and send PR!
 
 ## Development
 
-  npm run build:watch
-  node devServer.js
-
+```bash
+npm start
+```
 ## License
 
 MIT [@ctxhou](github.com/ctxhou)

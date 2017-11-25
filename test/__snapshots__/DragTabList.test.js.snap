@@ -1,0 +1,305 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DragTabList custom ListStyle style 1`] = `
+.c0 {
+  background-color: white;
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  width: auto;
+  border-bottom: 1px solid #eee;
+  padding: 0 0px 0 0px;
+}
+
+.c1 {
+  overflow: hidden;
+}
+
+.c2 {
+  padding-left: 0;
+  position: relative;
+  margin: 0;
+  list-style: none;
+  display: inline-block;
+  -webkit-transition: -webkit-transform .3s cubic-bezier(.42,0,.58,1);
+  -webkit-transition: transform .3s cubic-bezier(.42,0,.58,1);
+  transition: transform .3s cubic-bezier(.42,0,.58,1);
+}
+
+.c3 {
+  display: inline-block;
+  color: #007bff;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  -webkit-transition: color .3s cubic-bezier(.645,.045,.355,1);
+  transition: color .3s cubic-bezier(.645,.045,.355,1);
+  -webkit-transition: background-color .3s cubic-bezier(.645,.045,.355,1);
+  transition: background-color .3s cubic-bezier(.645,.045,.355,1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3:hover {
+  cursor: pointer;
+  color: black;
+  border-color: #ddd #ddd #fff;
+}
+
+<DragTabList
+  customStyle={
+    Object {
+      "CustomTabList": [Function],
+    }
+  }
+>
+  <sortableList
+    axis="x"
+    customStyle={
+      Object {
+        "CustomTabList": [Function],
+      }
+    }
+    distance={2}
+    getHelperDimensions={[Function]}
+    hideSortableGhost={true}
+    lockAxis="x"
+    lockOffset="50%"
+    lockToContainerEdges={false}
+    onSortEnd={[Function]}
+    pressDelay={0}
+    pressThreshold={5}
+    shouldCancelStart={[Function]}
+    transitionDuration={300}
+    useWindowAsScrollContainer={false}
+  >
+    <Component
+      customStyle={
+        Object {
+          "CustomTabList": [Function],
+        }
+      }
+    >
+      <TabList
+        customStyle={
+          Object {
+            "CustomTabList": [Function],
+          }
+        }
+      >
+        <div>
+          <styled.div
+            hasExtraButton={false}
+          >
+            <div
+              className="c0"
+            >
+              <styled.div
+                innerRef={[Function]}
+              >
+                <div
+                  className="c1"
+                >
+                  <styled.div
+                    innerRef={[Function]}
+                  >
+                    <div
+                      className="c2"
+                    >
+                      <DragTab
+                        active={false}
+                        index={0}
+                        key="0/.0"
+                        tabIndex={0}
+                      >
+                        <sortableElement
+                          active={false}
+                          collection={0}
+                          index={0}
+                          tabIndex={0}
+                        >
+                          <Component
+                            active={false}
+                            tabIndex={0}
+                          >
+                            <Tab
+                              active={false}
+                              index={0}
+                              tabIndex={0}
+                            >
+                              <styled.div
+                                active={false}
+                                innerRef={[Function]}
+                                onClick={[Function]}
+                              >
+                                <div
+                                  className="c3"
+                                  onClick={[Function]}
+                                >
+                                  Tab1
+                                </div>
+                              </styled.div>
+                            </Tab>
+                          </Component>
+                        </sortableElement>
+                      </DragTab>
+                    </div>
+                  </styled.div>
+                </div>
+              </styled.div>
+            </div>
+          </styled.div>
+        </div>
+      </TabList>
+    </Component>
+  </sortableList>
+</DragTabList>
+`;
+
+exports[`DragTabList render DragTab List 1`] = `
+.c0 {
+  background-color: white;
+  text-align: left;
+  position: relative;
+  white-space: nowrap;
+  overflow: hidden;
+  width: auto;
+  border-bottom: 1px solid #eee;
+  padding: 0 0px 0 0px;
+}
+
+.c1 {
+  overflow: hidden;
+}
+
+.c2 {
+  padding-left: 0;
+  position: relative;
+  margin: 0;
+  list-style: none;
+  display: inline-block;
+  -webkit-transition: -webkit-transform .3s cubic-bezier(.42,0,.58,1);
+  -webkit-transition: transform .3s cubic-bezier(.42,0,.58,1);
+  transition: transform .3s cubic-bezier(.42,0,.58,1);
+}
+
+.c3 {
+  display: inline-block;
+  color: #007bff;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  border: 1px solid transparent;
+  padding: 10px 15px;
+  -webkit-transition: color .3s cubic-bezier(.645,.045,.355,1);
+  transition: color .3s cubic-bezier(.645,.045,.355,1);
+  -webkit-transition: background-color .3s cubic-bezier(.645,.045,.355,1);
+  transition: background-color .3s cubic-bezier(.645,.045,.355,1);
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.c3:hover {
+  cursor: pointer;
+  color: black;
+  border-color: #ddd #ddd #fff;
+}
+
+<DragTabList
+  customStyle={Object {}}
+>
+  <sortableList
+    axis="x"
+    customStyle={Object {}}
+    distance={2}
+    getHelperDimensions={[Function]}
+    hideSortableGhost={true}
+    lockAxis="x"
+    lockOffset="50%"
+    lockToContainerEdges={false}
+    onSortEnd={[Function]}
+    pressDelay={0}
+    pressThreshold={5}
+    shouldCancelStart={[Function]}
+    transitionDuration={300}
+    useWindowAsScrollContainer={false}
+  >
+    <Component
+      customStyle={Object {}}
+    >
+      <TabList
+        customStyle={Object {}}
+      >
+        <div>
+          <styled.div
+            hasExtraButton={false}
+          >
+            <div
+              className="c0"
+            >
+              <styled.div
+                innerRef={[Function]}
+              >
+                <div
+                  className="c1"
+                >
+                  <styled.div
+                    innerRef={[Function]}
+                  >
+                    <div
+                      className="c2"
+                    >
+                      <DragTab
+                        active={false}
+                        index={0}
+                        key="0/.0"
+                        tabIndex={0}
+                      >
+                        <sortableElement
+                          active={false}
+                          collection={0}
+                          index={0}
+                          tabIndex={0}
+                        >
+                          <Component
+                            active={false}
+                            tabIndex={0}
+                          >
+                            <Tab
+                              active={false}
+                              index={0}
+                              tabIndex={0}
+                            >
+                              <styled.div
+                                active={false}
+                                innerRef={[Function]}
+                                onClick={[Function]}
+                              >
+                                <div
+                                  className="c3"
+                                  onClick={[Function]}
+                                >
+                                  Tab1
+                                </div>
+                              </styled.div>
+                            </Tab>
+                          </Component>
+                        </sortableElement>
+                      </DragTab>
+                    </div>
+                  </styled.div>
+                </div>
+              </styled.div>
+            </div>
+          </styled.div>
+        </div>
+      </TabList>
+    </Component>
+  </sortableList>
+</DragTabList>
+`;

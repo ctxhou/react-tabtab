@@ -1,0 +1,38 @@
+{
+  "extends": [
+    "prettier",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jest/recommended",
+    "plugin:flowtype/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 7,
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "plugins": [
+    "prettier",
+    "react",
+    "jest",
+    "flowtype"
+  ],
+  "global" : {
+    "SyntheticEvent": true
+  },
+  "rules": {
+    "switch-colon-spacing": 0,
+    "require-jsdoc": 0,
+    "react/prop-types": 0,
+    "no-unused-vars": [
+      "error"
+    ],
+    "no-console": 0
+  }
+}

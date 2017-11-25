@@ -1,4 +1,5 @@
 node_modules/
-.sass-cache/
-dist/*.map
+_gh-pages
 lib
+yarn.lock
+.DS_Store

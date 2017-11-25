@@ -1,0 +1,12 @@
+[ignore]
+.*/node_modules/flow-remove-types/.*
+.*/node_modules/babel-plugin-transform-react-remove-prop-types/.*
+.*/node_modules/babel-plugin-flow-react-proptypes/src/__test__/.*
+.*/lib/.*
+
+[include]
+
+[libs]
+
+[options]
+suppress_comment=.*\\$FlowFixMe
