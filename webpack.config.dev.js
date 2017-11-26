@@ -30,8 +30,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: 'docs/index.ejs',
-      title: 'react-tabtab',
-      // js: ['/root.js']
+      title: 'react-tabtab'
     })
   ],
   module: {

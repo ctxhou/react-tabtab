@@ -35,7 +35,7 @@ module.exports = {
       inject: false,
       production: true,
       template: 'docs/index.ejs',
-      title: 'React tabtab - Make your react tab dance!',
+      title: 'React tabtab - Make your react tab dance',
       googleAnalytics: {
         trackingId: 'UA-54035195-6',
         pageViewOnLoad: true
