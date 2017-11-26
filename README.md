@@ -8,7 +8,6 @@
 ![download](https://img.shields.io/npm/dm/react-tabtab.svg)
 
 > A mobile support, flexible, beautiful and api based Tab for ReactJS.
-> 💃 Make your react tab dance 💃
 
 [Demo](http://ctxhou.github.io/react-tabtab/)
 
@@ -18,6 +17,8 @@
 * **Draggable tab** — Support drag and drop tab feature
 * **Customizable style** — Based on `styled-components`, super easy to customize tab style
 * **API based** — All actions are controllable
+
+## NOTE: Currently v1 is still unstable. Welcome any feedback.
 
 ## Installation
 
@@ -52,9 +53,13 @@ For example:
 <script src="https://unpkg.com/react-dom@16.0.0/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/prop-types@15.6/prop-types.min.js"></script>
 <script src="https://unpkg.com/classnames@2.2.5/index.js"></script>
+<script src="https://unpkg.com/styled-components/dist/styled-components.min.js" type="text/javascript"></script>
 <script src="https://unpkg.com/react-sortable-hoc/dist/umd/react-sortable-hoc.js"></script>
-<script src="https://unpkg.com/react-tabtab/dist/react-tabtab.min.js"></script>
+<script src="https://unpkg.com/react-poppop/dist/react-poppop.min.js"></script>
 ```
+
+You can reference [standalone.html](https://github.com/ctxhou/react-tabtab/blob/master/docs/standalone.html) example.
+
 
 ## Usage
 
