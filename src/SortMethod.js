@@ -2,9 +2,8 @@
 import * as React from 'react';
 
 type Props = {
-  onSortEnd?: (event: any) => void,
-  handleTabChange?: (event: any) => void,
-  handleTabSequence?: (event: any) => void,
+  handleTabChange: (event: any) => void,
+  handleTabSequence: (event: any) => void,
   activeIndex?: number,
   children: React.Node
 };

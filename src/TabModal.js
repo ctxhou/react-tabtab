@@ -1,6 +1,6 @@
 // @flow
 import * as React from 'react';
-import Modal from 'react-responsive-modal';
+import Poppop from 'react-poppop';
 import {SortableContainer} from 'react-sortable-hoc';
 import SortMethod from './SortMethod';
 
@@ -14,7 +14,7 @@ type Props = {
 
 const DragTabContainer = SortableContainer(({children}) => {
   return (
-    <div style={{marginTop: '30px'}}>
+    <div style={{marginTop: '50px'}}>
       {children}
     </div>
   );
@@ -36,15 +36,16 @@ class ModalTabListWrapper extends SortMethod {
 export default class TabModal extends React.Component<Props> {
   render() {
     return (
-      <Modal open={true}
-             onClose={this.props.closeModal}
-             modalStyle={{minWidth: '20%', backgroundColor: 'rgb(249, 249, 249)'}}>
+      <Poppop open={true}
+              onClose={this.props.closeModal}
+              closeOnEsc={true}
+              closeBtn={true}>
         <ModalTabListWrapper handleTabSequence={this.props.handleTabSequence}
                              handleTabChange={this.props.handleTabChange}
                              activeIndex={this.props.activeIndex}>
           {this.props.children}
         </ModalTabListWrapper>
-      </Modal>
+      </Poppop>
     );
   }
 }

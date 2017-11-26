@@ -3,7 +3,10 @@ import * as React from 'react';
 
 type Props = {
   children: Array<any>,
-  activeIndex?: number
+  activeIndex?: number,
+  customStyle?: {
+    Panel?: React.Element<*>
+  }
 };
 
 export default class PanelList extends React.Component<Props> {
@@ -13,13 +16,19 @@ export default class PanelList extends React.Component<Props> {
       activeIndex,
       customStyle
     } = this.props;
-    if (!children) {
+    if (!children || activeIndex === undefined) {
       return null;
     }
 
+    let props = {activeIndex};
+    if (customStyle && customStyle.Panel) {
+      props = {...props, CustomPanelStyle: customStyle.Panel}
+    }
+
+    const child = children[activeIndex];
     return (
       <div>
-        {React.cloneElement(children[activeIndex], {activeIndex, CustomPanelStyle: customStyle.Panel})}
+        {React.cloneElement(child, props)}
       </div>
     )
   }

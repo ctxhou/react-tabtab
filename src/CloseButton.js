@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import Close from 'react-icons/lib/md/clear';
+import {CloseIcon} from './IconSvg';
 import styled from 'styled-components';
 
 const CloseWrapper = styled.div`
@@ -15,6 +15,9 @@ const CloseWrapper = styled.div`
     background-color: #eee;
     cursor: pointer;
   }
+  > svg {
+    vertical-align: middle;
+  }
 `;
 
 type Props = {
@@ -25,7 +28,7 @@ export default class CloseButton extends React.Component<Props> {
   render() {
     return (
       <CloseWrapper onClick={this.props.handleDelete}>
-        <Close/>        
+        <CloseIcon/>        
       </CloseWrapper>
     );
   }

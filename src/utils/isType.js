@@ -9,6 +9,6 @@ export function isTab(element: any) {
          (element.type.displayName === 'Tab' || element.type.displayName === 'DragTab');
 }
 
-export function isNumber(number) {
+export function isNumber(number: any) {
   return !isNaN(parseInt(number, 10));
 }

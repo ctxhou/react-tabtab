@@ -47,9 +47,7 @@
     "classnames": "^2.2.5",
     "invariant": "^2.2.2",
     "prop-types": "^15.6.0",
-    "react-icons": "^2.2.7",
     "react-poppop": "^1.0.1",
-    "react-responsive-modal": "^2.0.0",
     "react-sortable-hoc": "^0.6.8",
     "styled-components": "^2.2.3"
   },

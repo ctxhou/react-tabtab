@@ -2,9 +2,8 @@ import React from 'react';
 import { TabListStyle } from '../src/TabList';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import 'jest-styled-components'
-import MdFormatListBulleted from 'react-icons/lib/md/format-list-bulleted';
-import MdChevronRight from 'react-icons/lib/md/chevron-right';
+import 'jest-styled-components';
+import {BulletIcon, RightIcon} from '../src/IconSvg';
 
 const tabListTest = (type, TabListComponent, TabComponent) => {
   const shareComponent = props => (
@@ -38,7 +37,7 @@ const tabListTest = (type, TabListComponent, TabComponent) => {
   describe('showModalButton', () => {
     const returnMountedButton = showModalButton => {
       const component = mount(shareComponent({showModalButton}));
-      return component.find(MdFormatListBulleted);
+      return component.find(BulletIcon);
     }
 
     it('default: true => show', () => {
@@ -72,7 +71,7 @@ const tabListTest = (type, TabListComponent, TabComponent) => {
   describe('showArrowButton', () => {
     const returnMountedButton = showArrowButton => {
       const component = mount(shareComponent({showArrowButton}));
-      return component.find(MdChevronRight);
+      return component.find(RightIcon);
     }
     // because in test env it's containerWidth = 0, it always show arrow
     it('auto', () => {

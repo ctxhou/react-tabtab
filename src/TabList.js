@@ -2,9 +2,7 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import invariant from 'invariant';
-import MdChevronLeft from 'react-icons/lib/md/chevron-left';
-import MdChevronRight from 'react-icons/lib/md/chevron-right';
-import MdFormatListBulleted from 'react-icons/lib/md/format-list-bulleted';
+import {LeftIcon, RightIcon, BulletIcon} from './IconSvg';
 import {isNumber} from './utils/isType';
 import TabModal from './TabModal';
 
@@ -92,15 +90,15 @@ const makeFoldButton = ActionButton => ActionButton.extend`
 `;
 
 type Props = {
-  customStyle?: Object,
-  activeIndex?: number,
-  showArrowButton?: 'auto' | boolean,
-  showModalButton?: number | boolean,
-  handleTabChange?: (event: any) => void,
-  handleTabSequence?: (event: any) => void,
-  handleEdit?: (event: any) => void,
+  customStyle: Object,
+  activeIndex: number,
+  showArrowButton: 'auto' | boolean,
+  showModalButton: number | boolean,
+  handleTabChange: (event: any) => void,
+  handleTabSequence: (event: any) => void,
+  handleEdit: (event: any) => void,
   ExtraButton?: React.Element<*>,
-  children: React.Node
+  children: React.ChildrenArray<*>
 };
 
 type State = {
@@ -245,6 +243,7 @@ export default class TabListComponent extends React.Component<Props, State> {
         }
       }
     }
+    // $FlowFixMe: flow will show 'auto' is not bool, but with this logic, showArrowButton will never be 'auto'
     this.setState({showArrowButton});
   }
 
@@ -299,7 +298,7 @@ export default class TabListComponent extends React.Component<Props, State> {
             <FoldButton innerRef={node => this.foldNode = node}
                         onClick={this.toggleModal.bind(this, true)}
                         showArrowButton={this.state.showArrowButton}>
-              <MdFormatListBulleted/>
+              <BulletIcon/>
             </FoldButton>
           : null}
           {this.state.showArrowButton ?
@@ -308,11 +307,11 @@ export default class TabListComponent extends React.Component<Props, State> {
                             onClick={() => {this.handleScroll('left')}}
                             innerRef={node => this.leftArrowNode = node}
                             showModalButton={this.state.showModalButton}>
-                <MdChevronLeft/>
+                <LeftIcon/>
               </ScrollButton>
               <ScrollButton onClick={() => {this.handleScroll('right')}}
                             innerRef={node => this.rightArrowNode = node}>
-                <MdChevronRight/>
+                <RightIcon/>
               </ScrollButton>
             </div>
           : null}
