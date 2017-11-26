@@ -1,18 +1,16 @@
 # react-tabtab
-![version][version]
-![david][david]
-![download][download]
-![gzip size][gzip size]
+
+[![version](https://img.shields.io/npm/v/react-tabtab.svg)](https://www.npmjs.com/package/react-tabtab/)
+[![travis](https://travis-ci.org/ctxhou/react-tabtab.svg?branch=master)](https://travis-ci.org/ctxhou/react-tabtab)
+[![appveyor](https://ci.appveyor.com/api/projects/status/jn6724u4k4uer53j?svg=true)](https://ci.appveyor.com/project/ctxhou/react-tabtab)
+![david](https://david-dm.org/ctxhou/react-tabtab.svg)
+[![codecov](https://codecov.io/gh/ctxhou/react-tabtab/branch/master/graph/badge.svg)](https://codecov.io/gh/ctxhou/react-tabtab)
+![download](https://img.shields.io/npm/dm/react-tabtab.svg)
 
 > A mobile support, flexible, beautiful and api based Tab for ReactJS.
-> Make your react tab dance 💃💃
+> 💃 Make your react tab dance 💃
 
 [Demo](http://ctxhou.github.io/react-tabtab/)
-
-[david]:       https://david-dm.org/ctxhou/react-tabtab.svg
-[version]:     https://img.shields.io/npm/v/react-tabtab.svg?maxAge=2592000
-[download]:    https://img.shields.io/npm/dm/react-tabtab.svg?maxAge=2592000
-[gzip size]:   http://img.badgesize.io/https://unpkg.com/react-tabtab/dist/react-tabtab.min.js?compression=gzip
 
 ## Features
 

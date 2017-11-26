@@ -10,14 +10,15 @@ import commonjs from 'rollup-plugin-commonjs'
 
 const path = 'dist/react-tabtab';
 
-const name = 'TabTab';
+const name = 'Tabtab';
 const globals = {
   'prop-types': 'PropTypes',
   'react-dom': 'ReactDOM',
   react: 'React',
   'react-sortable-hoc': 'SortableHOC',
   'classnames': 'classNames',
-  'styled-components': 'styled'
+  'styled-components': 'styled',
+  'react-poppop': 'PopPop'
 };
 
 const external = Object.keys(globals);
@@ -48,7 +49,6 @@ const plugins = [
     babelrc: false,
     presets: [
       ['es2015', { modules: false }],
-      'stage-0',
       'react'
     ],
     plugins: [
@@ -72,8 +72,8 @@ if (prod) {
 }
 export default {
   input: 'src/index.js',
-  name: 'TabTab',
-  external: external,
+  name,
+  external,
   exports: 'named',
   output,
   plugins,

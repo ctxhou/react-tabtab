@@ -15,14 +15,15 @@
 <script src="https://unpkg.com/classnames@2.2.5/index.js"></script>
 <script src="https://unpkg.com/styled-components/dist/styled-components.min.js" type="text/javascript"></script>
 <script src="https://unpkg.com/react-sortable-hoc/dist/umd/react-sortable-hoc.js"></script>
+<script src="https://unpkg.com/react-poppop/dist/react-poppop.min.js"></script>
 <script src="../dist/react-tabtab.min.js"></script>
 <script type="text/babel">
-  const Tabs = TabTab.Tabs;
-  const TabList = TabTab.TabList;
-  const Tab = TabTab.Tab;
-  const PanelList = TabTab.PanelList;
-  const Panel = TabTab.Panel;
-  class App extends Component {
+  const Tabs = Tabtab.Tabs;
+  const TabList = Tabtab.TabList;
+  const Tab = Tabtab.Tab;
+  const PanelList = Tabtab.PanelList;
+  const Panel = Tabtab.Panel;
+  class App extends React.Component {
     render() {
       return (
         <Tabs>

@@ -1,5 +1,5 @@
 // @flow
-import React from 'react';
+import * as React from 'react';
 import {CloseIcon} from './IconSvg';
 import styled from 'styled-components';
 
