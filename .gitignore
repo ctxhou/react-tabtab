@@ -3,3 +3,4 @@ _gh-pages
 lib
 yarn.lock
 .DS_Store
+bundle-stats.html
