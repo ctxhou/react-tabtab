@@ -16,7 +16,8 @@
     "gh-pages": "rimraf _gh-pages && gh-pages:build && gh-pages:publish",
     "gh-pages:build": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
     "gh-pages:publish": "git-directory-deploy --directory _gh-pages --branch gh-pages",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "validate": "npm ls"
   },
   "repository": {
     "type": "git",
