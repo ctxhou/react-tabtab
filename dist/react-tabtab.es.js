@@ -619,7 +619,7 @@ var TabListComponent = function (_React$Component) {
     _this.toggleModal = _this.toggleModal.bind(_this);
     _this.renderTabs = _this.renderTabs.bind(_this);
     _this.isShowModalButton = _this.isShowModalButton.bind(_this);
-    _this.isShowArrowButton = _this.isShowArrowButton.bind(_this);
+    // (this: any).isShowArrowButton = this.isShowArrowButton.bind(this);
     _this.scrollPosition = 0;
     _this.tabRefs = [];
     _this.state = {
@@ -657,11 +657,12 @@ var TabListComponent = function (_React$Component) {
   }, {
     key: 'getTabNode',
     value: function getTabNode(tab) {
-      var tabType = tab.constructor.name;
-      if (tabType === 'Tab') {
+      if (tab.__INTERNAL_NODE) {
+        // normal tab
         return tab.__INTERNAL_NODE;
-      } else if (tabType === 'DragTab') {
-        return tab.__INTERNAL_NODE.node;
+      } else if (tab.__DRAG_TAB_INTERNAL_NODE) {
+        // drag tab
+        return tab.__DRAG_TAB_INTERNAL_NODE.node;
       }
     }
   }, {
@@ -746,7 +747,6 @@ var TabListComponent = function (_React$Component) {
         showArrowButton = false;
         for (var index = 0; index < this.tabRefs.length; index++) {
           var tab = this.getTabNode(this.tabRefs[index]);
-          // $FlowFixMe
           tabWidth += tab.offsetWidth;
           if (tabWidth >= containerWidth) {
             showArrowButton = true;
@@ -1069,7 +1069,7 @@ var DragTab = function (_React$Component) {
       return createElement(
         DragTabElement,
         _extends({ ref: function ref(node) {
-            return _this2.__INTERNAL_NODE = node;
+            return _this2.__DRAG_TAB_INTERNAL_NODE = node;
           } }, props),
         children
       );

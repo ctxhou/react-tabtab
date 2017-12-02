@@ -63,7 +63,7 @@ const plugins = [
 
 if (prod) {
   plugins.push(
-    // uglify(),
+    uglify(),
     visualizer({filename: './bundle-stats.html'}),
     replace({
       'process.env.NODE_ENV': JSON.stringify(prod ? 'production' : 'development'),

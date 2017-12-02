@@ -123,7 +123,7 @@ export default class TabListComponent extends React.Component<Props, State> {
     (this: any).toggleModal = this.toggleModal.bind(this);
     (this: any).renderTabs = this.renderTabs.bind(this);
     (this: any).isShowModalButton = this.isShowModalButton.bind(this);
-    (this: any).isShowArrowButton = this.isShowArrowButton.bind(this);
+    // (this: any).isShowArrowButton = this.isShowArrowButton.bind(this);
     (this: any).scrollPosition = 0;
     (this: any).tabRefs = [];
     (this: any).state = {
@@ -157,11 +157,10 @@ export default class TabListComponent extends React.Component<Props, State> {
   }
 
   getTabNode(tab: any): React.ElementRef<any> {
-    const tabType = tab.constructor.name;
-    if (tabType === 'Tab') {
+    if (tab.__INTERNAL_NODE) { // normal tab
       return tab.__INTERNAL_NODE;
-    } else if (tabType === 'DragTab') {
-      return tab.__INTERNAL_NODE.node;
+    } else if (tab.__DRAG_TAB_INTERNAL_NODE) { // drag tab
+      return tab.__DRAG_TAB_INTERNAL_NODE.node;
     }
   }
 
@@ -235,7 +234,6 @@ export default class TabListComponent extends React.Component<Props, State> {
       showArrowButton = false;
       for (let index = 0; index < this.tabRefs.length; index++) {
         const tab = this.getTabNode(this.tabRefs[index]);
-        // $FlowFixMe
         tabWidth += tab.offsetWidth;
         if (tabWidth >= containerWidth) {
           showArrowButton = true;

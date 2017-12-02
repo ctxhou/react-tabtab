@@ -17,12 +17,12 @@ type Props = {
 
 class DragTab extends React.Component<Props> {
 
-  __INTERNAL_NODE: React.ElementRef<any>;
+  __DRAG_TAB_INTERNAL_NODE: React.ElementRef<any>;
 
   render() {
     const {children, ...props} = this.props;
     return (
-      <DragTabElement ref={node => this.__INTERNAL_NODE = node} {...props}>
+      <DragTabElement ref={node => this.__DRAG_TAB_INTERNAL_NODE = node} {...props}>
         {children}
       </DragTabElement>
     )
