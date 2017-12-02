@@ -6,19 +6,20 @@
 ![david](https://david-dm.org/ctxhou/react-tabtab.svg)
 [![codecov](https://codecov.io/gh/ctxhou/react-tabtab/branch/master/graph/badge.svg)](https://codecov.io/gh/ctxhou/react-tabtab)
 ![download](https://img.shields.io/npm/dm/react-tabtab.svg)
+![gzip size](http://img.badgesize.io/https://unpkg.com/react-tabtab/dist/react-tabtab.min.js?compression=gzip)
 
-> A mobile support, flexible, beautiful and api based Tab for ReactJS.
+> A mobile support, flexible, beautiful and api based Tab for ReactJS. <br/>
+> *Support react v16 and v15*
 
 [Demo](http://ctxhou.github.io/react-tabtab/)
 
 ## Features
 
-* **Mobile supported** — Touch support. Easy usage at mobile device
-* **Draggable tab** — Support drag and drop tab feature
+* **Mobile supported** — Touch support. Easy to use on mobile device
+* **Draggable tab** — Support drag and drop tab
+* **Add & Delete** — Tab can be added and deleted
 * **Customizable style** — Based on `styled-components`, super easy to customize tab style
 * **API based** — All actions are controllable
-
-## NOTE: Currently v1 is still unstable. Welcome any feedback.
 
 ## Installation
 
@@ -56,6 +57,7 @@ For example:
 <script src="https://unpkg.com/styled-components/dist/styled-components.min.js" type="text/javascript"></script>
 <script src="https://unpkg.com/react-sortable-hoc/dist/umd/react-sortable-hoc.js"></script>
 <script src="https://unpkg.com/react-poppop/dist/react-poppop.min.js"></script>
+<script src="https://unpkg.com/react-tabtab/dist/react-tabtab.min.js"></script>
 ```
 
 You can reference [standalone.html](https://github.com/ctxhou/react-tabtab/blob/master/docs/standalone.html) example.
@@ -141,6 +143,8 @@ ReactDOM.render(<Basic/>, document.getElementById('root'));
 ```
 
 Based on above example, the different to implement `normal tab` or `drag tab` is using different wrapper and child.
+
+And all the actions is controllable. You can customize your switch action. But if you don't want to write your own one switch logic, you can directly use `import {simpleSwitch} from 'react-tabtab/lib/helpers/move'` this built-in function.
 
 **normal tab**
 
