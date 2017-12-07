@@ -4765,9 +4765,9 @@ react-input-autosize@^2.0.1:
     create-react-class "^15.5.2"
     prop-types "^15.5.8"
 
-react-poppop@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/react-poppop/-/react-poppop-1.0.1.tgz#c57273b5c0dcca80b24675b5dfc77593435f0d22"
+react-poppop@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.npmjs.org/react-poppop/-/react-poppop-1.3.0.tgz#74ccb44bc4551041493fdadc4729f0ad94139e89"
   dependencies:
     classnames "^2.1.3"
     react-tappable "^1.0.2"

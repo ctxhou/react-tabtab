@@ -48,7 +48,7 @@
     "classnames": "^2.2.5",
     "invariant": "^2.2.2",
     "prop-types": "^15.6.0",
-    "react-poppop": "^1.0.1",
+    "react-poppop": "^1.3.0",
     "react-sortable-hoc": "^0.6.8",
     "styled-components": "^2.2.3"
   },

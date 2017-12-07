@@ -1,4 +1,8 @@
-# react-tabtab
+<h1 align="center">
+  <img src="https://i.imgur.com/6o66rig.png" alt="">
+  <br/>
+  <br/>
+</h1>
 
 [![version](https://img.shields.io/npm/v/react-tabtab.svg)](https://www.npmjs.com/package/react-tabtab/)
 [![travis](https://travis-ci.org/ctxhou/react-tabtab.svg?branch=master)](https://travis-ci.org/ctxhou/react-tabtab)
@@ -8,7 +12,7 @@
 ![download](https://img.shields.io/npm/dm/react-tabtab.svg)
 ![gzip size](http://img.badgesize.io/https://unpkg.com/react-tabtab/dist/react-tabtab.min.js?compression=gzip)
 
-> A mobile support, flexible, beautiful and api based Tab for ReactJS. <br/>
+> A mobile support, draggable, editable and api based Tab for ReactJS. <br/>
 > *Support react v16 and v15*
 
 [Demo](http://ctxhou.github.io/react-tabtab/)
@@ -144,7 +148,7 @@ ReactDOM.render(<Basic/>, document.getElementById('root'));
 
 Based on above example, the different to implement `normal tab` or `drag tab` is using different wrapper and child.
 
-And all the actions is controllable. You can customize your switch action. But if you don't want to write your own one switch logic, you can directly use `import {simpleSwitch} from 'react-tabtab/lib/helpers/move'` this built-in function.
+And all the actions is controllable. You can customize your switch action. But if you don't want to write customized switch logic, you can directly use `import {simpleSwitch} from 'react-tabtab/lib/helpers/move'` this built-in function.
 
 **normal tab**
 
