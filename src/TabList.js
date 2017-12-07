@@ -158,6 +158,14 @@ export default class TabListComponent extends React.Component<Props, State> {
     if (prevState.showArrowButton && !this.state.showArrowButton) {
       this.scrollToZero();
     }
+
+    if (prevProps.showModalButton !== this.props.showModalButton) {
+      this.isShowModalButton();
+    }
+
+    if (prevProps.showArrowButton !== this.props.showArrowButton) {
+      this.isShowArrowButton();
+    }
   }
 
   getTabNode(tab: any): React.ElementRef<any> {
@@ -299,8 +307,8 @@ export default class TabListComponent extends React.Component<Props, State> {
       <div>
         {ExtraButton ? ExtraButton : null}
         <TabList hasExtraButton={!!ExtraButton}
-                     showModalButton={this.state.showModalButton}
-                     showArrowButton={this.state.showArrowButton}>
+                 showModalButton={this.state.showModalButton}
+                 showArrowButton={this.state.showArrowButton}>
           {this.state.showModalButton ?
             <FoldButton innerRef={node => this.foldNode = node}
                         onClick={this.toggleModal.bind(this, true)}

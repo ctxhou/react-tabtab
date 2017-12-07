@@ -96,6 +96,7 @@ export default class Tabs extends React.Component<Props, State> {
       activeIndex,
       ...extraProps
     }
+
     return (
       <div>
         {React.Children.map(children, (child) => {

@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import Select from 'react-select';
 import Basic from './components/Basic';
+import IconTab from './components/IconTab';
 import Draggable from './components/Draggable';
 import AddAndClose from './components/AddAndClose';
 import Modal from './components/Modal';
@@ -35,23 +36,38 @@ const Logo = styled.img`
 const examples = [
   {
     title: 'Basic Tabs',
+    anchor: 'basic',
     description: null,
-    Component: Basic
+    Component: Basic,
+    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Basic.js'
+  },
+  {
+    title: 'Icon Tabs',
+    anchor: 'icon',
+    description: 'Tab content is customizable. Icons, images, any content is available.',
+    Component: IconTab,
+    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/IconTab.js'
   },
   {
     title: 'Draggable Tabs',
+    anchor: 'draggable',
     description: 'Try to drag and drop the tab.',
-    Component: Draggable
+    Component: Draggable,
+    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Draggable.js'
   },
   {
     title: 'Add and Close Tabs',
+    anchor: 'add-close',
     description: null,
-    Component: AddAndClose
+    Component: AddAndClose,
+    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/AddAndClose.js'
   },
   {
     title: 'Modal View',
-    description: 'With modal view, it\'s easier to select tab when there are lots of tabs',
-    Component: Modal
+    anchor: 'modal',
+    description: 'With modal view, it\'s easier to select tab when there are lots of tabs and on mobile device',
+    Component: Modal,
+    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Modal.js'
   }
 ]
 
@@ -103,17 +119,18 @@ export default class Root extends React.Component {
           </div>
           {examples.map(item => (
             <div className="mw6 center pa3" key={item.title}>
-              <h3 className="f3 fw2 black-90 mv3">
+              <h3 className="f3 fw2 black-90 mv3" id={item.anchor}>
                 {item.title}
               </h3>
               {item.description ?
                 <p>{item.description}</p>
               : null}
               <item.Component customStyle={themes[currentTheme].style}/>
+              <a className="green mt2 db tr" href={item.source} target="_blank">View Source</a>
             </div>
           ))}
 
-          <div className="mw6 center pl3 pt3">
+          <div className="mw6 center pl3 pt3" id="complicated">
             <h2>Now, let's mix all feature together. <br/>Demo a complicated example!</h2>
             <p>Try to</p>
             <ul>
@@ -125,6 +142,7 @@ export default class Root extends React.Component {
           </div>
           <div className="mw7 center pb4">
             <Complicated customStyle={themes[currentTheme].style}/>
+            <a className="green mt2 db tr" href="https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Complicated.js" target="_blank">View Source</a>
           </div>
           <div className="mw6 center pt3 pb4" style={{textAlign: 'center'}}>
             <h1>Try it!</h1>

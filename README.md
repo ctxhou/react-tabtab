@@ -15,7 +15,7 @@
 > A mobile support, draggable, editable and api based Tab for ReactJS. <br/>
 > *Support react v16 and v15*
 
-[Demo](https://ctxhou.github.io/react-tabtab/)
+### [Demo](https://ctxhou.github.io/react-tabtab/)
 
 ## Features
 
@@ -180,9 +180,10 @@ And all the actions is controllable. You can customize your switch action. But i
 
 Except drag and drop tab, `react-tabtab` also support other usable application, like:
 
-* Add and close button
-* Modal view at mobile support
+* Add and close button: [Example](https://ctxhou.github.io/react-tabtab/#add-close)
+* Modal view at mobile support: [Example](https://ctxhou.github.io/react-tabtab/modal)
 * Auto detect number of tab and make it scrollable
+* **All the action is controllable**:[Example](https://ctxhou.github.io/react-tabtab/#complicated)
 
 All of these features are api based, so you can customize each action on demand.
 
