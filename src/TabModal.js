@@ -8,8 +8,8 @@ type Props = {
   closeModal: (event: any) => void,
   handleTabSequence?: (event: any) => void,
   handleTabChange?: (event: any) => void,
-  children: React.Node,
-  activeIndex: number
+  activeIndex?: number,
+  children: React.Node
 };
 
 const DragTabContainer = SortableContainer(({children}) => {

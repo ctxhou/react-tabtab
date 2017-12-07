@@ -10,4 +10,3 @@
 
 [options]
 suppress_type=$FlowFixMe
-suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe

@@ -199,6 +199,7 @@ export default class TabListComponent extends React.Component<Props, State> {
     this.listScroll.style.transform = `translate3d(-${this.scrollPosition}px, 0, 0)`;
   }
 
+  // $FlowFixMe
   scrollToIndex(index: number) {
     const tabOffset = this.getTabNode(this.tabRefs[index]).getBoundingClientRect();
     const containerOffset = this.listContainer.getBoundingClientRect();
@@ -217,6 +218,7 @@ export default class TabListComponent extends React.Component<Props, State> {
   toggleModal(open: boolean) {
     this.setState({modalIsOpen: open}, () => {
       if (!open) {
+        // $FlowFixMe
         this.scrollToIndex(this.props.activeIndex);
       }
     });
