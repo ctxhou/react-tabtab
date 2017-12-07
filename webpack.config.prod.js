@@ -12,7 +12,7 @@ module.exports = {
   },
   output: {
     path: path.join(__dirname, '_gh-pages'),
-    filename: '[name].js'
+    filename: '[name].[chunkhash].js'
   },
   resolve: {
     extensions: ['.js']
