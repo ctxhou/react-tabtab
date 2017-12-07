@@ -92,7 +92,7 @@ export default class Root extends React.Component {
         <Header className="mw8 center mb4">
           <Logo src="https://i.imgur.com/6o66rig.png" alt=""/>
           <p className="f3">
-            A mobile support, flexible and beautiful Tab for ReactJS.
+            A mobile support, draggable, editable and api based Tab for ReactJS.
           </p>
           <a className="github-button" href="https://github.com/ctxhou/react-tabtab" data-size="large" data-show-count="true" aria-label="Star ctxhou/react-tabtab on GitHub">Star</a>
           <div>

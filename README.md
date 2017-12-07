@@ -25,6 +25,30 @@
 * **Customizable style** — Based on `styled-components`, super easy to customize tab style
 * **API based** — All actions are controllable
 
+## Table of Contents
+<!-- toc -->
+
+- [Installation](#installation)
+- [Usage](#usage)
+  * [Basic Example:](#basic-example)
+  * [Draggable Example](#draggable-example)
+  * [Another Example](#another-example)
+- [Components / Api](#components--api)
+  * [&lt;Tabs /&gt;](#lttabs-gt)
+  * [&lt;TabList /&gt;](#lttablist-gt)
+  * [&lt;Tab /&gt;](#lttab-gt)
+  * [&lt;DragTabList /&gt;](#ltdragtablist-gt)
+  * [&lt;DragTab/ &gt;](#ltdragtab-gt)
+  * [&lt;PanelList/ &gt;](#ltpanellist-gt)
+  * [&lt;Panel /&gt;](#ltpanel-gt)
+- [Customize style](#customize-style)
+  * [Use current style](#use-current-style)
+  * [Make your own style](#make-your-own-style)
+- [Development](#development)
+- [License](#license)
+
+<!-- tocstop -->
+
 ## Installation
 
 Install it with npm.
@@ -181,7 +205,7 @@ And all the actions is controllable. You can customize your switch action. But i
 Except drag and drop tab, `react-tabtab` also support other usable application, like:
 
 * Add and close button: [Example](https://ctxhou.github.io/react-tabtab/#add-close)
-* Modal view at mobile support: [Example](https://ctxhou.github.io/react-tabtab/modal)
+* Modal view at mobile support: [Example](https://ctxhou.github.io/react-tabtab/#modal)
 * Auto detect number of tab and make it scrollable
 * **All the action is controllable**:[Example](https://ctxhou.github.io/react-tabtab/#complicated)
 
