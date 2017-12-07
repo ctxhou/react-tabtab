@@ -30,7 +30,7 @@
 Install it with npm.
 
 ```js
-npm install react-tabtab --save
+$ npm install react-tabtab --save
 ```
 
 Then, import the module by module bundler like `webpack`, `browserify`
@@ -435,7 +435,8 @@ When you finish the new `react-tabtab` style, feel free to add it to `theme/` fo
 ## Development
 
 ```bash
-npm start
+$ yarn
+$ npm start
 ```
 ## License
 
