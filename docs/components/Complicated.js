@@ -79,7 +79,6 @@ export default class Complicated extends Component {
     const {tabs, activeIndex, numberOfTabs, showArrow, showModal, showExtra} = this.state;
     const tabTemplate = [];
     const panelTemplate = [];
-    console.log(this.state)
     tabs.forEach((tab, i) => {
       const closable = tabs.length > 1;
       tabTemplate.push(<DragTab key={i} closable={closable}>{tab.title}</DragTab>);
@@ -109,7 +108,6 @@ export default class Complicated extends Component {
         </Tabs>
         <form className="pa4">
           <fieldset id="favorite_movies" className="bn">
-            <legend className="fw7 mb2">Favorite Movies</legend>
             <div className="flex items-center mb2">
               <label className="lh-copy">Number of tabs:</label>
               <input className="input-reset ba b--black-20 pa1 mb2 db ml2" type="number"
