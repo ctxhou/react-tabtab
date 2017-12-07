@@ -15,7 +15,7 @@
 > A mobile support, draggable, editable and api based Tab for ReactJS. <br/>
 > *Support react v16 and v15*
 
-[Demo](http://ctxhou.github.io/react-tabtab/)
+[Demo](https://ctxhou.github.io/react-tabtab/)
 
 ## Features
 

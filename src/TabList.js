@@ -36,7 +36,6 @@ const TabListStyle = styled.div`
   white-space: nowrap;
   overflow: hidden;
   width: auto;
-  border-bottom: 1px solid #eee;
   padding: ${props => getPadding(props)};
 `;
 

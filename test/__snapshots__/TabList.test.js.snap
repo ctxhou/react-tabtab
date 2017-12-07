@@ -8,7 +8,6 @@ exports[`TabList custom ListStyle style 1`] = `
   white-space: nowrap;
   overflow: hidden;
   width: auto;
-  border-bottom: 1px solid #eee;
   padding: 0 0px 0 0px;
 }
 
@@ -29,15 +28,7 @@ exports[`TabList custom ListStyle style 1`] = `
 
 .c3 {
   display: inline-block;
-  color: #007bff;
-  border-top-left-radius: .25rem;
-  border-top-right-radius: .25rem;
-  border: 1px solid transparent;
   padding: 10px 15px;
-  -webkit-transition: color .3s cubic-bezier(.645,.045,.355,1);
-  transition: color .3s cubic-bezier(.645,.045,.355,1);
-  -webkit-transition: background-color .3s cubic-bezier(.645,.045,.355,1);
-  transition: background-color .3s cubic-bezier(.645,.045,.355,1);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -47,7 +38,6 @@ exports[`TabList custom ListStyle style 1`] = `
 .c3:hover {
   cursor: pointer;
   color: black;
-  border-color: #ddd #ddd #fff;
 }
 
 <TabList
@@ -113,7 +103,6 @@ exports[`TabList render Tab List 1`] = `
   white-space: nowrap;
   overflow: hidden;
   width: auto;
-  border-bottom: 1px solid #eee;
   padding: 0 0px 0 0px;
 }
 
@@ -134,15 +123,7 @@ exports[`TabList render Tab List 1`] = `
 
 .c3 {
   display: inline-block;
-  color: #007bff;
-  border-top-left-radius: .25rem;
-  border-top-right-radius: .25rem;
-  border: 1px solid transparent;
   padding: 10px 15px;
-  -webkit-transition: color .3s cubic-bezier(.645,.045,.355,1);
-  transition: color .3s cubic-bezier(.645,.045,.355,1);
-  -webkit-transition: background-color .3s cubic-bezier(.645,.045,.355,1);
-  transition: background-color .3s cubic-bezier(.645,.045,.355,1);
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -152,7 +133,6 @@ exports[`TabList render Tab List 1`] = `
 .c3:hover {
   cursor: pointer;
   color: black;
-  border-color: #ddd #ddd #fff;
 }
 
 <TabList

@@ -1,5 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tab render TabList render component. 1`] = `"<div class=\\"sc-bwzfXH EYmkr\\"><span><i class=\\"fa fa-icon\\"></i>tab</span></div>"`;
+exports[`Tab render TabList render component. 1`] = `"<div class=\\"sc-bwzfXH jsVSXf\\"><span><i class=\\"fa fa-icon\\"></i>tab</span></div>"`;
 
-exports[`Tab render TabList render pure text 1`] = `"<div class=\\"sc-bwzfXH EYmkr\\">tab</div>"`;
+exports[`Tab render TabList render pure text 1`] = `"<div class=\\"sc-bwzfXH jsVSXf\\">tab</div>"`;

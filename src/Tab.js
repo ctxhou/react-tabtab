@@ -5,10 +5,6 @@ import CloseButton from './CloseButton';
 
 const TabStyle = styled.div`
   display: ${props => props.vertical ? 'block': 'inline-block'};
-  color: ${props => props.active ? 'black' : '#007bff'};
-  border-top-left-radius: .25rem;
-  border-top-right-radius: .25rem;
-  border: 1px solid transparent;
   ${props => props.vertical ?
     `
       border-bottom: 1px solid #efefef;
@@ -22,23 +18,11 @@ const TabStyle = styled.div`
     `
   : props => props.closable ? 'padding: 10px 10px 10px 15px;' : 'padding: 10px 15px;'
   }
-  ${props => props.active && props.vertical ?
-    `
-      background-color: #eee;
-    `
-  : null}
-  ${props => props.active && !props.vertical ?
-    `
-      border-color: #ddd #ddd #fff;
-    `
-  : null}
-  transition: color .3s cubic-bezier(.645, .045, .355, 1);
-  transition: background-color .3s cubic-bezier(.645, .045, .355, 1);
+
   user-select: none;
   &:hover {
     cursor: pointer;
     color: black;
-    border-color: #ddd #ddd #fff;
   }
 `;
 
