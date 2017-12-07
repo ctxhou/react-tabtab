@@ -27,7 +27,7 @@ type Props = {
   CustomPanelStyle?: () => void
 };
 
-export default class PanelComponent extends React.Component<Props> {
+export default class PanelComponent extends React.PureComponent<Props> {
   render() {
     const Panel = this.props.CustomPanelStyle || PanelStyle;
     return (

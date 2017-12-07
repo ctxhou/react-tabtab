@@ -24,7 +24,7 @@ type Props = {
   handleDelete: (event: any) => void
 };
 
-export default class CloseButton extends React.Component<Props> {
+export default class CloseButton extends React.PureComponent<Props> {
   render() {
     return (
       <CloseWrapper onClick={this.props.handleDelete}>

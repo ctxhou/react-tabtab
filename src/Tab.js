@@ -53,7 +53,7 @@ type Props = {
   children: React.Element<any>
 };
 
-export default class Tab extends React.Component<Props> {
+export default class Tab extends React.PureComponent<Props> {
 
   __INTERNAL_NODE: React.ElementRef<any>;
 

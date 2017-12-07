@@ -24,7 +24,7 @@ type Props = {
   children: React.Node
 };
 
-export default class ExtraButton extends React.Component<Props> {
+export default class ExtraButton extends React.PureComponent<Props> {
   render() {
     return (
       <Wrapper onClick={this.props.onClick}>

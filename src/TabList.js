@@ -96,9 +96,9 @@ type Props = {
     TabList?: () => void,
     Tab?: () => void
   },
-  activeIndex: number,
-  showArrowButton: 'auto' | boolean,
-  showModalButton: number | boolean,
+  activeIndex?: number,
+  showArrowButton?: 'auto' | boolean,
+  showModalButton?: number | boolean,
   handleTabChange?: (event: any) => void,
   handleTabSequence?: (event: any) => void,
   handleEdit?: (event: any) => void,

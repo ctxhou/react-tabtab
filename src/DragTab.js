@@ -15,7 +15,7 @@ type Props = {
   children: React.Node
 };
 
-class DragTab extends React.Component<Props> {
+class DragTab extends React.PureComponent<Props> {
 
   __DRAG_TAB_INTERNAL_NODE: React.ElementRef<any>;
 
