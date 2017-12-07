@@ -5,7 +5,7 @@ type Props = {
   children: Array<any>,
   activeIndex?: number,
   customStyle?: {
-    Panel?: React.Element<*>
+    Panel?: () => void
   }
 };
 

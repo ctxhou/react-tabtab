@@ -9,4 +9,5 @@
 [libs]
 
 [options]
-suppress_comment=.*\\$FlowFixMe
+suppress_type=$FlowFixMe
+suppress_comment= \\(.\\|\n\\)*\\$FlowFixMe

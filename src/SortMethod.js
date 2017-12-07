@@ -2,8 +2,8 @@
 import * as React from 'react';
 
 type Props = {
-  handleTabChange: (event: any) => void,
-  handleTabSequence: (event: any) => void,
+  handleTabChange?: (event: any) => void,
+  handleTabSequence?: (event: any) => void,
   activeIndex?: number,
   children: React.Node
 };
@@ -18,10 +18,12 @@ export default class SortMethod extends React.Component<Props> {
     const {activeIndex, handleTabChange, handleTabSequence} = this.props;
     if (oldIndex === newIndex) {
       if (activeIndex !== oldIndex) {
+        //$FlowFixMe
         handleTabChange(oldIndex);
       }
     } else {
-      handleTabSequence({oldIndex, newIndex})
+      //$FlowFixMe
+      handleTabSequence({oldIndex, newIndex});
     }
   }
 }

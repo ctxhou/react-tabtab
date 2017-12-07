@@ -66,6 +66,7 @@ const ActionButtonStyle = styled.div`
   }
 `;
 
+// $FlowFixMe
 const makeScrollButton = ActionButton => ActionButton.extend`
   display: inline-block;
   filter: none;
@@ -79,6 +80,7 @@ const makeScrollButton = ActionButton => ActionButton.extend`
   }
 `;
 
+// $FlowFixMe
 const makeFoldButton = ActionButton => ActionButton.extend`
   display: inline-block;
   filter: none;
@@ -90,13 +92,16 @@ const makeFoldButton = ActionButton => ActionButton.extend`
 `;
 
 type Props = {
-  customStyle: Object,
+  customStyle?: {
+    TabList?: () => void,
+    Tab?: () => void
+  },
   activeIndex: number,
   showArrowButton: 'auto' | boolean,
   showModalButton: number | boolean,
-  handleTabChange: (event: any) => void,
-  handleTabSequence: (event: any) => void,
-  handleEdit: (event: any) => void,
+  handleTabChange?: (event: any) => void,
+  handleTabSequence?: (event: any) => void,
+  handleEdit?: (event: any) => void,
   ExtraButton?: React.Element<*>,
   children: React.ChildrenArray<*>
 };
@@ -250,6 +255,7 @@ export default class TabListComponent extends React.Component<Props, State> {
     const props = {
       handleTabChange,
       handleEdit,
+      //$FlowFixMe
       CustomTabStyle: customStyle.Tab
     };
     if (!isModal) {
@@ -281,7 +287,9 @@ export default class TabListComponent extends React.Component<Props, State> {
       ExtraButton
     } = this.props;
     const {modalIsOpen} = this.state;
+    // $FlowFixMe
     const TabList = customStyle.TabList || TabListStyle;
+    // $FlowFixMe
     const ActionButton = customStyle.ActionButton || ActionButtonStyle;
     const FoldButton = makeFoldButton(ActionButton);
     const ScrollButton = makeScrollButton(ActionButton);

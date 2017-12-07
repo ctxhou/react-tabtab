@@ -11,10 +11,10 @@ type Props = {
   onTabSequenceChange?: (event: any) => void,
   onTabEdit?: (event: any) => void,
   customStyle?: {
-    TabList?: React.Element<*>,
-    Tab?: React.Element<*>,
-    Panel?: React.Element<*>,
-    ActionButton?: React.Element<*>
+    TabList?: () => void,
+    Tab?: () => void,
+    Panel?: () => void,
+    ActionButton?: () => void
   },
   children: React.Element<*>
 };

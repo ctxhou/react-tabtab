@@ -43,9 +43,9 @@ const TabStyle = styled.div`
 `;
 
 type Props = {
-  CustomTabStyle?: React.Element<any> | null,
-  handleTabChange: (event: any) => void,
-  handleEdit: (event: any) => void,
+  CustomTabStyle?: () => void,
+  handleTabChange?: (event: any) => void,
+  handleEdit?: (event: any) => void,
   index?: number,
   active?: boolean,
   closable?: boolean,
@@ -65,12 +65,14 @@ export default class Tab extends React.Component<Props> {
 
   clickTab() {
     const {handleTabChange, index} = this.props;
+    //$FlowFixMe
     handleTabChange(index);
   }
 
   clickDelete(event: SyntheticEvent<HTMLButtonElement>) {
     event.stopPropagation(); // prevent trigger clickTab event.
     const {handleEdit, index} = this.props;
+    //$FlowFixMe
     handleEdit({type: 'delete', index});
   }
 

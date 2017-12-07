@@ -24,7 +24,7 @@ const PanelStyle = styled.div`
 
 type Props = {
   children: React.Node,
-  CustomPanelStyle?: Object
+  CustomPanelStyle?: () => void
 };
 
 export default class PanelComponent extends React.Component<Props> {
