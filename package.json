@@ -1,6 +1,6 @@
 {
   "name": "react-tabtab",
-  "version": "1.0.0-rc.2",
+  "version": "1.0.0-rc.3",
   "description": "A mobile support, flexible, beautiful and api based Tab for ReactJS",
   "main": "lib/",
   "scripts": {

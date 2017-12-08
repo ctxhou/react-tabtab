@@ -4,3 +4,4 @@ lib
 yarn.lock
 .DS_Store
 bundle-stats.html
+dist
