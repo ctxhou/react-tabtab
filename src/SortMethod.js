@@ -8,7 +8,7 @@ type Props = {
   children: React.Node
 };
 
-export default class SortMethod extends React.Component<Props> {
+export default class SortMethod extends React.PureComponent<Props> {
   constructor(props: Props) {
     super(props);
     (this: any).onSortEnd = this.onSortEnd.bind(this);
