@@ -5210,9 +5210,9 @@ rollup-pluginutils@^2.0.1:
     estree-walker "^0.3.0"
     micromatch "^2.3.11"
 
-rollup@^0.49.0:
-  version "0.49.3"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-0.49.3.tgz#4cce32643dd8cf2154c69ff0e43470067db0adbf"
+rollup@^0.52.1:
+  version "0.52.1"
+  resolved "https://registry.npmjs.org/rollup/-/rollup-0.52.1.tgz#610e8e1be432f18fcfbfa865408a1cd7618cd707"
 
 rst-selector-parser@^2.2.3:
   version "2.2.3"

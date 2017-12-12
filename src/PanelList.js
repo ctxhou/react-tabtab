@@ -9,7 +9,7 @@ type Props = {
   }
 };
 
-export default class PanelList extends React.Component<Props> {
+export default class PanelList extends React.PureComponent<Props> {
   render() {
     const {
       children,
