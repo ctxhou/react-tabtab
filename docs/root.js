@@ -29,8 +29,8 @@ const SelectWrapper = styled.div`
 `;
 
 const Logo = styled.img`
-  margin-top: 20px;
-  height: 100px;
+  margin-top: 40px;
+  max-height: 100px;
 `;
 
 const examples = [
