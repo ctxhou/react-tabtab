@@ -1,7 +1,7 @@
 {
   "name": "react-tabtab",
   "version": "1.0.0-rc.3",
-  "description": "A mobile support, flexible, beautiful and api based Tab for ReactJS",
+  "description": "A mobile support, draggable, editable and api based Tab for ReactJS",
   "main": "lib/",
   "scripts": {
     "start": "node devServer.js",
@@ -29,7 +29,9 @@
     "react-tab",
     "react-tabtab",
     "react-component",
-    "tab"
+    "tab",
+    "tabtab",
+    "styled-components"
   ],
   "files": [
     "dist",
