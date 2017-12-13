@@ -7,14 +7,10 @@ const TabStyle = styled.div`
   display: ${props => props.vertical ? 'block': 'inline-block'};
   ${props => props.vertical ?
     `
-      border-bottom: 1px solid #efefef;
-      border-left: 1px solid #efefef;
-      border-right: 1px solid #efefef;
       background-color: white;
+      color: black;
       padding: 10px 10px;
-      &:first-child {
-        border-top: 1px solid #efefef;        
-      }
+      z-index: 100000;
     `
   : props => props.closable ? 'padding: 10px 10px 10px 15px;' : 'padding: 10px 15px;'
   }
