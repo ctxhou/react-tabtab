@@ -23,9 +23,6 @@
     "jest",
     "flowtype"
   ],
-  "global" : {
-    "SyntheticEvent": true
-  },
   "rules": {
     "switch-colon-spacing": 0,
     "require-jsdoc": 0,

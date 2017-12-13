@@ -10,11 +10,6 @@ import Modal from './components/Modal';
 import Complicated from './components/Complicated';
 import themes from './themes';
 
-if (process.env.NODE_ENV !== 'production') {
-  const {whyDidYouUpdate} = require('why-did-you-update')
-  whyDidYouUpdate(React)
-}
-
 const themeOptions = Object.keys(themes).map(theme => {
   return {value: theme, label: themes[theme].name};
 });
