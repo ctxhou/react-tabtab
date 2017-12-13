@@ -17,6 +17,8 @@
 
 ### [Demo](https://ctxhou.github.io/react-tabtab/)
 
+![demo gif](https://media.giphy.com/media/3o6fJ9wQBhGGW7aZzO/giphy.gif)
+
 ## Features
 
 * **Mobile supported** — Touch support. Easy to use on mobile device
