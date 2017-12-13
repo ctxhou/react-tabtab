@@ -17,7 +17,7 @@
 
 ### [Demo](https://ctxhou.github.io/react-tabtab/)
 
-![demo gif](https://media.giphy.com/media/3o6fJ9wQBhGGW7aZzO/giphy.gif)
+![demo gif](https://media.giphy.com/media/xUOxeRdRrSvSLiX528/giphy.gif)
 
 ## Features
 
