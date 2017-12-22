@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import CloseButton from './CloseButton';
 
-const TabStyle = styled.div`
+const TabStyle = styled.li`
   display: ${props => props.vertical ? 'block': 'inline-block'};
   ${props => props.vertical ?
     `

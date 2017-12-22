@@ -43,7 +43,7 @@ const ListInner = styled.div`
   overflow: hidden;
 `;
 
-const ListScroll = styled.div`
+const ListScroll = styled.ul`
   padding-left: 0;
   position: relative;
   margin: 0;

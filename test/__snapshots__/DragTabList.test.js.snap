@@ -94,10 +94,10 @@ exports[`DragTabList custom ListStyle style 1`] = `
                 <div
                   className="c1"
                 >
-                  <styled.div
+                  <styled.ul
                     innerRef={[Function]}
                   >
-                    <div
+                    <ul
                       className="c2"
                     >
                       <DragTab
@@ -121,24 +121,24 @@ exports[`DragTabList custom ListStyle style 1`] = `
                               index={0}
                               tabIndex={0}
                             >
-                              <styled.div
+                              <styled.li
                                 active={false}
                                 innerRef={[Function]}
                                 onClick={[Function]}
                               >
-                                <div
+                                <li
                                   className="c3"
                                   onClick={[Function]}
                                 >
                                   Tab1
-                                </div>
-                              </styled.div>
+                                </li>
+                              </styled.li>
                             </Tab>
                           </Component>
                         </sortableElement>
                       </DragTab>
-                    </div>
-                  </styled.div>
+                    </ul>
+                  </styled.ul>
                 </div>
               </styled.div>
             </div>
@@ -228,10 +228,10 @@ exports[`DragTabList render DragTab List 1`] = `
                 <div
                   className="c1"
                 >
-                  <styled.div
+                  <styled.ul
                     innerRef={[Function]}
                   >
-                    <div
+                    <ul
                       className="c2"
                     >
                       <DragTab
@@ -255,24 +255,24 @@ exports[`DragTabList render DragTab List 1`] = `
                               index={0}
                               tabIndex={0}
                             >
-                              <styled.div
+                              <styled.li
                                 active={false}
                                 innerRef={[Function]}
                                 onClick={[Function]}
                               >
-                                <div
+                                <li
                                   className="c3"
                                   onClick={[Function]}
                                 >
                                   Tab1
-                                </div>
-                              </styled.div>
+                                </li>
+                              </styled.li>
                             </Tab>
                           </Component>
                         </sortableElement>
                       </DragTab>
-                    </div>
-                  </styled.div>
+                    </ul>
+                  </styled.ul>
                 </div>
               </styled.div>
             </div>

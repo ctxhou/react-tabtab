@@ -60,10 +60,10 @@ exports[`TabList custom ListStyle style 1`] = `
           <div
             className="c1"
           >
-            <styled.div
+            <styled.ul
               innerRef={[Function]}
             >
-              <div
+              <ul
                 className="c2"
               >
                 <Tab
@@ -72,21 +72,21 @@ exports[`TabList custom ListStyle style 1`] = `
                   key="0/.0"
                   tabIndex={0}
                 >
-                  <styled.div
+                  <styled.li
                     active={false}
                     innerRef={[Function]}
                     onClick={[Function]}
                   >
-                    <div
+                    <li
                       className="c3"
                       onClick={[Function]}
                     >
                       Tab1
-                    </div>
-                  </styled.div>
+                    </li>
+                  </styled.li>
                 </Tab>
-              </div>
-            </styled.div>
+              </ul>
+            </styled.ul>
           </div>
         </styled.div>
       </div>
@@ -151,10 +151,10 @@ exports[`TabList render Tab List 1`] = `
           <div
             className="c1"
           >
-            <styled.div
+            <styled.ul
               innerRef={[Function]}
             >
-              <div
+              <ul
                 className="c2"
               >
                 <Tab
@@ -163,21 +163,21 @@ exports[`TabList render Tab List 1`] = `
                   key="0/.0"
                   tabIndex={0}
                 >
-                  <styled.div
+                  <styled.li
                     active={false}
                     innerRef={[Function]}
                     onClick={[Function]}
                   >
-                    <div
+                    <li
                       className="c3"
                       onClick={[Function]}
                     >
                       Tab1
-                    </div>
-                  </styled.div>
+                    </li>
+                  </styled.li>
                 </Tab>
-              </div>
-            </styled.div>
+              </ul>
+            </styled.ul>
           </div>
         </styled.div>
       </div>
