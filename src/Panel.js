@@ -25,7 +25,7 @@ const PanelStyle = styled.div`
 
 type Props = {
   children: React.Node,
-  CustomPanelStyle?: () => void,
+  CustomPanelStyle: () => void,
   active: boolean,
   index: number
 };

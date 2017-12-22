@@ -23,13 +23,13 @@ const TabStyle = styled.li`
 `;
 
 type Props = {
-  CustomTabStyle?: () => void,
-  handleTabChange?: (event: any) => void,
-  handleEdit?: (event: any) => void,
+  CustomTabStyle: () => void,
+  handleTabChange: (event: any) => void,
+  handleEdit: (event: any) => void,
   index: number,
-  active?: boolean,
-  closable?: boolean,
-  vertical?: boolean,
+  active: boolean,
+  closable: boolean,
+  vertical: boolean,
   children: React.Element<any>
 };
 
@@ -45,14 +45,12 @@ export default class Tab extends React.PureComponent<Props> {
 
   clickTab() {
     const {handleTabChange, index} = this.props;
-    //$FlowFixMe
     handleTabChange(index);
   }
 
   clickDelete(event: SyntheticEvent<HTMLButtonElement>) {
     event.stopPropagation(); // prevent trigger clickTab event.
     const {handleEdit, index} = this.props;
-    //$FlowFixMe
     handleEdit({type: 'delete', index});
   }
 
@@ -60,7 +58,6 @@ export default class Tab extends React.PureComponent<Props> {
     const {CustomTabStyle, active, closable, vertical, index} = this.props;
     const TabComponent = CustomTabStyle || TabStyle;
     return (
-      // $FlowFixMe
       <TabComponent innerRef={node => this.__INTERNAL_NODE = node}
                     onClick={this.clickTab}
                     active={active}

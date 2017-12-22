@@ -3,9 +3,9 @@ import * as React from 'react';
 
 type Props = {
   children: Array<any>,
-  activeIndex?: number,
-  customStyle?: {
-    Panel?: () => void
+  activeIndex: number,
+  customStyle: {
+    Panel: () => void
   }
 };
 
