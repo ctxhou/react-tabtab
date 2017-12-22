@@ -20,16 +20,18 @@ export default class PanelList extends React.PureComponent<Props> {
       return null;
     }
 
-    let props = {activeIndex};
+    let props = {};
     if (customStyle && customStyle.Panel) {
       props = {...props, CustomPanelStyle: customStyle.Panel}
     }
 
-    const child = children[activeIndex];
-    return (
-      <div>
-        {React.cloneElement(child, props)}
-      </div>
-    )
+    return React.Children.map(children, (child, index) => (
+      React.cloneElement(child, {
+        key: index,
+        active: index === activeIndex,
+        index,
+        ...props
+      })
+    ));
   }
 }

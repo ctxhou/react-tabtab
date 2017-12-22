@@ -20,19 +20,29 @@ const PanelStyle = styled.div`
   padding: 20px 15px;
   animation: ${fadeOut} 0.2s linear;
   transition: all 1s linear;
+  ${props => !props.active ? `display: none;` : null}
 `;
 
 type Props = {
   children: React.Node,
-  CustomPanelStyle?: () => void
+  CustomPanelStyle?: () => void,
+  active: boolean,
+  index: number
 };
 
 export default class PanelComponent extends React.PureComponent<Props> {
   render() {
+    const {active, index} = this.props;
     const Panel = this.props.CustomPanelStyle || PanelStyle;
     return (
-      <Panel>
-        {this.props.children}
+      <Panel role="tabpanel"
+             id={`react-tabtab-panel-${index}`}
+             aria-labelledby={`react-tabtab-${index}`}
+             aria-hidden={false}
+             active={active}>
+        {active ?
+          this.props.children
+        : null}
       </Panel>
     )
   }

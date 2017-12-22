@@ -62,9 +62,11 @@ exports[`TabList custom ListStyle style 1`] = `
           >
             <styled.ul
               innerRef={[Function]}
+              role="tablist"
             >
               <ul
                 className="c2"
+                role="tablist"
               >
                 <Tab
                   active={false}
@@ -74,12 +76,20 @@ exports[`TabList custom ListStyle style 1`] = `
                 >
                   <styled.li
                     active={false}
+                    aria-controls="react-tabtab-panel-0"
+                    aria-selected={false}
+                    id="react-tabtab-tab-0"
                     innerRef={[Function]}
                     onClick={[Function]}
+                    role="tab"
                   >
                     <li
+                      aria-controls="react-tabtab-panel-0"
+                      aria-selected={false}
                       className="c3"
+                      id="react-tabtab-tab-0"
                       onClick={[Function]}
+                      role="tab"
                     >
                       Tab1
                     </li>
@@ -153,9 +163,11 @@ exports[`TabList render Tab List 1`] = `
           >
             <styled.ul
               innerRef={[Function]}
+              role="tablist"
             >
               <ul
                 className="c2"
+                role="tablist"
               >
                 <Tab
                   active={false}
@@ -165,12 +177,20 @@ exports[`TabList render Tab List 1`] = `
                 >
                   <styled.li
                     active={false}
+                    aria-controls="react-tabtab-panel-0"
+                    aria-selected={false}
+                    id="react-tabtab-tab-0"
                     innerRef={[Function]}
                     onClick={[Function]}
+                    role="tab"
                   >
                     <li
+                      aria-controls="react-tabtab-panel-0"
+                      aria-selected={false}
                       className="c3"
+                      id="react-tabtab-tab-0"
                       onClick={[Function]}
+                      role="tab"
                     >
                       Tab1
                     </li>

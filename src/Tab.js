@@ -26,7 +26,7 @@ type Props = {
   CustomTabStyle?: () => void,
   handleTabChange?: (event: any) => void,
   handleEdit?: (event: any) => void,
-  index?: number,
+  index: number,
   active?: boolean,
   closable?: boolean,
   vertical?: boolean,
@@ -57,7 +57,7 @@ export default class Tab extends React.PureComponent<Props> {
   }
 
   render() {
-    const {CustomTabStyle, active, closable, vertical} = this.props;
+    const {CustomTabStyle, active, closable, vertical, index} = this.props;
     const TabComponent = CustomTabStyle || TabStyle;
     return (
       // $FlowFixMe
@@ -65,7 +65,11 @@ export default class Tab extends React.PureComponent<Props> {
                     onClick={this.clickTab}
                     active={active}
                     vertical={vertical}
-                    closable={closable}>
+                    closable={closable}
+                    role="tab"
+                    id={`react-tabtab-tab-${index}`}
+                    aria-controls={`react-tabtab-panel-${index}`}
+                    aria-selected={active}>
         {this.props.children}
         {closable ?
           <CloseButton handleDelete={this.clickDelete}/>

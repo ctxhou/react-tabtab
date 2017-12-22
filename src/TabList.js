@@ -331,7 +331,7 @@ export default class TabListComponent extends React.Component<Props, State> {
             </div>
           : null}
           <ListInner innerRef={node => this.listContainer = node}>
-            <ListScroll innerRef={node => this.listScroll = node}>
+            <ListScroll innerRef={node => this.listScroll = node} role="tablist">
               {this.renderTabs()}
             </ListScroll>
           </ListInner>
