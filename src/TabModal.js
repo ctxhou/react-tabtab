@@ -6,9 +6,9 @@ import SortMethod from './SortMethod';
 
 type Props = {
   closeModal: (event: any) => void,
-  handleTabSequence?: (event: any) => void,
-  handleTabChange?: (event: any) => void,
-  activeIndex?: number,
+  handleTabSequence: (event: any) => void,
+  handleTabChange: (event: any) => void,
+  activeIndex: number,
   children: React.Node
 };
 

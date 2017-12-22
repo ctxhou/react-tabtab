@@ -94,11 +94,13 @@ exports[`DragTabList custom ListStyle style 1`] = `
                 <div
                   className="c1"
                 >
-                  <styled.div
+                  <styled.ul
                     innerRef={[Function]}
+                    role="tablist"
                   >
-                    <div
+                    <ul
                       className="c2"
+                      role="tablist"
                     >
                       <DragTab
                         active={false}
@@ -121,24 +123,32 @@ exports[`DragTabList custom ListStyle style 1`] = `
                               index={0}
                               tabIndex={0}
                             >
-                              <styled.div
+                              <styled.li
                                 active={false}
+                                aria-controls="react-tabtab-panel-0"
+                                aria-selected={false}
+                                id="react-tabtab-tab-0"
                                 innerRef={[Function]}
                                 onClick={[Function]}
+                                role="tab"
                               >
-                                <div
+                                <li
+                                  aria-controls="react-tabtab-panel-0"
+                                  aria-selected={false}
                                   className="c3"
+                                  id="react-tabtab-tab-0"
                                   onClick={[Function]}
+                                  role="tab"
                                 >
                                   Tab1
-                                </div>
-                              </styled.div>
+                                </li>
+                              </styled.li>
                             </Tab>
                           </Component>
                         </sortableElement>
                       </DragTab>
-                    </div>
-                  </styled.div>
+                    </ul>
+                  </styled.ul>
                 </div>
               </styled.div>
             </div>
@@ -228,11 +238,13 @@ exports[`DragTabList render DragTab List 1`] = `
                 <div
                   className="c1"
                 >
-                  <styled.div
+                  <styled.ul
                     innerRef={[Function]}
+                    role="tablist"
                   >
-                    <div
+                    <ul
                       className="c2"
+                      role="tablist"
                     >
                       <DragTab
                         active={false}
@@ -255,24 +267,32 @@ exports[`DragTabList render DragTab List 1`] = `
                               index={0}
                               tabIndex={0}
                             >
-                              <styled.div
+                              <styled.li
                                 active={false}
+                                aria-controls="react-tabtab-panel-0"
+                                aria-selected={false}
+                                id="react-tabtab-tab-0"
                                 innerRef={[Function]}
                                 onClick={[Function]}
+                                role="tab"
                               >
-                                <div
+                                <li
+                                  aria-controls="react-tabtab-panel-0"
+                                  aria-selected={false}
                                   className="c3"
+                                  id="react-tabtab-tab-0"
                                   onClick={[Function]}
+                                  role="tab"
                                 >
                                   Tab1
-                                </div>
-                              </styled.div>
+                                </li>
+                              </styled.li>
                             </Tab>
                           </Component>
                         </sortableElement>
                       </DragTab>
-                    </div>
-                  </styled.div>
+                    </ul>
+                  </styled.ul>
                 </div>
               </styled.div>
             </div>

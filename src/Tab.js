@@ -3,7 +3,7 @@ import * as React from 'react';
 import styled from 'styled-components';
 import CloseButton from './CloseButton';
 
-const TabStyle = styled.div`
+const TabStyle = styled.li`
   display: ${props => props.vertical ? 'block': 'inline-block'};
   ${props => props.vertical ?
     `
@@ -23,13 +23,13 @@ const TabStyle = styled.div`
 `;
 
 type Props = {
-  CustomTabStyle?: () => void,
-  handleTabChange?: (event: any) => void,
-  handleEdit?: (event: any) => void,
-  index?: number,
-  active?: boolean,
-  closable?: boolean,
-  vertical?: boolean,
+  CustomTabStyle: () => void,
+  handleTabChange: (event: any) => void,
+  handleEdit: (event: any) => void,
+  index: number,
+  active: boolean,
+  closable: boolean,
+  vertical: boolean,
   children: React.Element<any>
 };
 
@@ -45,27 +45,28 @@ export default class Tab extends React.PureComponent<Props> {
 
   clickTab() {
     const {handleTabChange, index} = this.props;
-    //$FlowFixMe
     handleTabChange(index);
   }
 
   clickDelete(event: SyntheticEvent<HTMLButtonElement>) {
     event.stopPropagation(); // prevent trigger clickTab event.
     const {handleEdit, index} = this.props;
-    //$FlowFixMe
     handleEdit({type: 'delete', index});
   }
 
   render() {
-    const {CustomTabStyle, active, closable, vertical} = this.props;
+    const {CustomTabStyle, active, closable, vertical, index} = this.props;
     const TabComponent = CustomTabStyle || TabStyle;
     return (
-      // $FlowFixMe
       <TabComponent innerRef={node => this.__INTERNAL_NODE = node}
                     onClick={this.clickTab}
                     active={active}
                     vertical={vertical}
-                    closable={closable}>
+                    closable={closable}
+                    role="tab"
+                    id={`react-tabtab-tab-${index}`}
+                    aria-controls={`react-tabtab-panel-${index}`}
+                    aria-selected={active}>
         {this.props.children}
         {closable ?
           <CloseButton handleDelete={this.clickDelete}/>

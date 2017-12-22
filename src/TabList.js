@@ -43,7 +43,7 @@ const ListInner = styled.div`
   overflow: hidden;
 `;
 
-const ListScroll = styled.div`
+const ListScroll = styled.ul`
   padding-left: 0;
   position: relative;
   margin: 0;
@@ -65,7 +65,6 @@ const ActionButtonStyle = styled.div`
   }
 `;
 
-// $FlowFixMe
 const makeScrollButton = ActionButton => ActionButton.extend`
   display: inline-block;
   filter: none;
@@ -79,7 +78,6 @@ const makeScrollButton = ActionButton => ActionButton.extend`
   }
 `;
 
-// $FlowFixMe
 const makeFoldButton = ActionButton => ActionButton.extend`
   display: inline-block;
   filter: none;
@@ -91,17 +89,18 @@ const makeFoldButton = ActionButton => ActionButton.extend`
 `;
 
 type Props = {
-  customStyle?: {
-    TabList?: () => void,
-    Tab?: () => void
+  customStyle: {
+    TabList: () => void,
+    Tab: () => void,
+    ActionButton: () => void
   },
-  activeIndex?: number,
-  showArrowButton?: 'auto' | boolean,
-  showModalButton?: number | boolean,
-  handleTabChange?: (event: any) => void,
-  handleTabSequence?: (event: any) => void,
-  handleEdit?: (event: any) => void,
-  ExtraButton?: React.Element<*>,
+  activeIndex: number,
+  showArrowButton: 'auto' | boolean,
+  showModalButton: number | boolean,
+  handleTabChange: (event: any) => void,
+  handleTabSequence: (event: any) => void,
+  handleEdit: (event: any) => void,
+  ExtraButton: React.Element<*>,
   children: React.ChildrenArray<*>
 };
 
@@ -126,8 +125,9 @@ export default class TabListComponent extends React.Component<Props, State> {
     (this: any).handleScroll = this.handleScroll.bind(this);
     (this: any).toggleModal = this.toggleModal.bind(this);
     (this: any).renderTabs = this.renderTabs.bind(this);
+    (this: any).renderArrowButton = this.renderArrowButton.bind(this);
     (this: any).isShowModalButton = this.isShowModalButton.bind(this);
-    // (this: any).isShowArrowButton = this.isShowArrowButton.bind(this);
+    (this: any).isShowArrowButton = this.isShowArrowButton.bind(this);
     (this: any).scrollPosition = 0;
     (this: any).tabRefs = [];
     (this: any).state = {
@@ -287,6 +287,27 @@ export default class TabListComponent extends React.Component<Props, State> {
     ));
   }
 
+  renderArrowButton(ScrollButton: React.ComponentType<*>) {
+    const {showArrowButton} = this.state;
+    if (showArrowButton) {
+      return (
+        <div>
+          <ScrollButton left
+            onClick={() => { this.handleScroll('left') }}
+            innerRef={node => this.leftArrowNode = node}
+            showModalButton={this.state.showModalButton}>
+            <LeftIcon />
+          </ScrollButton>
+          <ScrollButton onClick={() => { this.handleScroll('right') }}
+            innerRef={node => this.rightArrowNode = node}>
+            <RightIcon />
+          </ScrollButton>
+        </div>
+      )
+    }
+    return null;
+  }
+
   render() {
     const {
       customStyle,
@@ -296,12 +317,10 @@ export default class TabListComponent extends React.Component<Props, State> {
       ExtraButton
     } = this.props;
     const {modalIsOpen} = this.state;
-    // $FlowFixMe
     const TabList = customStyle.TabList || TabListStyle;
-    // $FlowFixMe
     const ActionButton = customStyle.ActionButton || ActionButtonStyle;
-    const FoldButton = makeFoldButton(ActionButton);
     const ScrollButton = makeScrollButton(ActionButton);
+    const FoldButton = makeFoldButton(ActionButton);
     invariant(this.props.children, 'React-tabtab Error: You MUST pass at least one tab')
     return (
       <div>
@@ -316,22 +335,9 @@ export default class TabListComponent extends React.Component<Props, State> {
               <BulletIcon/>
             </FoldButton>
           : null}
-          {this.state.showArrowButton ?
-            <div>
-              <ScrollButton left
-                            onClick={() => {this.handleScroll('left')}}
-                            innerRef={node => this.leftArrowNode = node}
-                            showModalButton={this.state.showModalButton}>
-                <LeftIcon/>
-              </ScrollButton>
-              <ScrollButton onClick={() => {this.handleScroll('right')}}
-                            innerRef={node => this.rightArrowNode = node}>
-                <RightIcon/>
-              </ScrollButton>
-            </div>
-          : null}
+          {this.renderArrowButton(ScrollButton)}
           <ListInner innerRef={node => this.listContainer = node}>
-            <ListScroll innerRef={node => this.listScroll = node}>
+            <ListScroll innerRef={node => this.listScroll = node} role="tablist">
               {this.renderTabs()}
             </ListScroll>
           </ListInner>

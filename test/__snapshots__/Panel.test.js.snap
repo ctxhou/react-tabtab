@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`render Panel 1`] = `
-<styled.div>
-  <span>
-    panel content
-  </span>
-</styled.div>
+<styled.div
+  aria-hidden={false}
+  aria-labelledby="react-tabtab-undefined"
+  id="react-tabtab-panel-undefined"
+  role="tabpanel"
+/>
 `;
