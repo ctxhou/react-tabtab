@@ -26,6 +26,7 @@
 * **Add & Delete** — Tab can be added and deleted
 * **Customizable style** — Based on `styled-components`, super easy to customize tab style
 * **API based** — All actions are controllable
+* **ARIA accessible**
 
 ## Table of Contents
 <!-- toc -->
