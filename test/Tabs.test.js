@@ -1,5 +1,5 @@
 import React from 'react';
-import {Tabs, DragTabList, DragTab, TabList, Tab, PanelList, Panel} from '../src';
+import {Tabs, DragTabList, DragTab, TabList, Tab, PanelList, Panel, ExtraButton} from '../src';
 import {shallow, mount} from 'enzyme';
 
 const normalComponent = (props = {}) => (
@@ -39,6 +39,22 @@ describe('render Tabs', () => {
   it('normal drag tabs', () => {
     testRender(dragComponent());
   });
+  it('normal tab with ExtraButton', () => {
+    testRender(normalComponent({
+      ExtraButton: 
+        <ExtraButton>
+          +
+        </ExtraButton>
+    }))
+  })
+  it('normal drag with ExtraButton', () => {
+    testRender(dragComponent({
+      ExtraButton:
+        <ExtraButton>
+          +
+        </ExtraButton>
+    }))
+  })
 });
 
 describe('props', () => {

@@ -12,7 +12,6 @@ const Wrapper = styled.div`
   display: inline-block;
   color: #777;
   vertical-align: middle;
-  transition: background-color .2s cubic-bezier(.645, .045, .355, 1);
   &:hover {
     color: black;
     cursor: pointer;
