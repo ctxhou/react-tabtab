@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`render Panel 1`] = `
+<PopPop
+  closeBtn={true}
+  closeOnEsc={true}
+  closeOnOverlay={true}
+  onClose={[Function]}
+  open={true}
+  overlayStyle={Object {}}
+  position="topCenter"
+>
+  <ModalTabListWrapper
+    handleTabChange={[Function]}
+    handleTabSequence={[Function]}
+  >
+    <span>
+      fake child
+    </span>
+  </ModalTabListWrapper>
+</PopPop>
+`;

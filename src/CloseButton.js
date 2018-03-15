@@ -9,7 +9,6 @@ const CloseWrapper = styled.div`
   margin-left: 3px;
   padding-bottom: 2px;
   vertical-align: middle;
-  transition: background-color .2s cubic-bezier(.645, .045, .355, 1);
   &:hover {
     color: black;
     background-color: #eee;
