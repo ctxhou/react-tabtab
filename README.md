@@ -180,7 +180,7 @@ And all the actions is controllable. You can customize your switch action. But i
 **normal tab**
 
 ```js
-<Tab>
+<Tabs>
   <TabList>
     <Tab>Tab1</Tab>
   </TabList>
@@ -193,7 +193,7 @@ And all the actions is controllable. You can customize your switch action. But i
 **drag tab**
 
 ```js
-<Tab>
+<Tabs>
   <DragTabList>
     <DragTab>DragTab1</DragTab>
   </DragTabList>
