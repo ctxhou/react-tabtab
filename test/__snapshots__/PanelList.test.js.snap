@@ -1,0 +1,145 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`custom style 1`] = `
+<div>
+  <PanelComponent
+    CustomPanelStyle={[Function]}
+    active={false}
+    index={0}
+    key="0"
+  >
+    <span>
+      panel content
+    </span>
+  </PanelComponent>
+</div>
+`;
+
+exports[`render render multi Panel 1`] = `
+.c1 {
+  background-color: white;
+  text-align: left;
+  padding: 20px 15px;
+}
+
+.c0 {
+  background-color: white;
+  text-align: left;
+  padding: 20px 15px;
+  display: none;
+}
+
+<PanelList
+  activeIndex={1}
+>
+  <div>
+    <PanelComponent
+      active={false}
+      index={0}
+      key="0"
+    >
+      <styled.div
+        active={false}
+        aria-hidden={false}
+        aria-labelledby="react-tabtab-0"
+        id="react-tabtab-panel-0"
+        role="tabpanel"
+      >
+        <div
+          aria-hidden={false}
+          aria-labelledby="react-tabtab-0"
+          className="c0"
+          id="react-tabtab-panel-0"
+          role="tabpanel"
+        />
+      </styled.div>
+    </PanelComponent>
+    <PanelComponent
+      active={true}
+      index={1}
+      key="1"
+    >
+      <styled.div
+        active={true}
+        aria-hidden={false}
+        aria-labelledby="react-tabtab-1"
+        id="react-tabtab-panel-1"
+        role="tabpanel"
+      >
+        <div
+          aria-hidden={false}
+          aria-labelledby="react-tabtab-1"
+          className="c1"
+          id="react-tabtab-panel-1"
+          role="tabpanel"
+        >
+          <span>
+            panel content
+          </span>
+        </div>
+      </styled.div>
+    </PanelComponent>
+    <PanelComponent
+      active={false}
+      index={2}
+      key="2"
+    >
+      <styled.div
+        active={false}
+        aria-hidden={false}
+        aria-labelledby="react-tabtab-2"
+        id="react-tabtab-panel-2"
+        role="tabpanel"
+      >
+        <div
+          aria-hidden={false}
+          aria-labelledby="react-tabtab-2"
+          className="c0"
+          id="react-tabtab-panel-2"
+          role="tabpanel"
+        />
+      </styled.div>
+    </PanelComponent>
+  </div>
+</PanelList>
+`;
+
+exports[`render render one Panel 1`] = `
+.c0 {
+  background-color: white;
+  text-align: left;
+  padding: 20px 15px;
+}
+
+<PanelList
+  activeIndex={0}
+>
+  <div>
+    <PanelComponent
+      active={true}
+      index={0}
+      key="0"
+    >
+      <styled.div
+        active={true}
+        aria-hidden={false}
+        aria-labelledby="react-tabtab-0"
+        id="react-tabtab-panel-0"
+        role="tabpanel"
+      >
+        <div
+          aria-hidden={false}
+          aria-labelledby="react-tabtab-0"
+          className="c0"
+          id="react-tabtab-panel-0"
+          role="tabpanel"
+        >
+          <span>
+            panel content
+          </span>
+        </div>
+      </styled.div>
+    </PanelComponent>
+  </div>
+</PanelList>
+`;

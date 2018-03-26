@@ -25,7 +25,8 @@ export default class PanelList extends React.PureComponent<Props> {
       props = {...props, CustomPanelStyle: customStyle.Panel}
     }
 
-    return children.map((child, index) => (
+    // to prevent the type of one children is object type
+    const result = React.Children.toArray(children).map((child, index) => (
       React.cloneElement(child, {
         key: index,
         active: index === activeIndex,
@@ -33,5 +34,6 @@ export default class PanelList extends React.PureComponent<Props> {
         ...props
       })
     ));
+    return <div>{result}</div>
   }
 }

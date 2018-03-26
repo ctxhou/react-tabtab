@@ -15,9 +15,6 @@ app.use(require('webpack-hot-middleware')(compiler));
 
 app.use(express.static('public'));
 
-// app.get('/', function(req, res) {
-//   res.sendFile(path.join(__dirname, 'example/index.html'));
-// });
 app.use('*', function (req, res, next) {
   var filename = path.join(compiler.outputPath, 'index.html');
   compiler.outputFileSystem.readFile(filename, function(err, result){
