@@ -1,6 +1,6 @@
-import * as bootstrap from '../src/themes/bootstrap';
-import * as md from '../src/themes/material-design';
-import * as bulma from '../src/themes/bulma';
+import * as bootstrap from 'react-tabtab/lib/themes/bootstrap';
+import * as md from 'react-tabtab/lib/themes/material-design';
+import * as bulma from 'react-tabtab/lib/themes/bulma';
 
 export default {
   bootstrap: {
