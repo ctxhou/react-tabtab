@@ -17,7 +17,10 @@ module.exports = {
     publicPath: '/static/'
   },
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js'],
+    alias: {
+      'react-tabtab/lib': path.resolve(__dirname, 'src/')
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),

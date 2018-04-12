@@ -14,7 +14,10 @@ module.exports = {
     filename: '[name].[chunkhash].js'
   },
   resolve: {
-    extensions: ['.js']
+    extensions: ['.js'],
+    alias: {
+      'react-tabtab/lib': path.resolve(__dirname, 'src/')
+    }
   },
   externals: {
     'react': "React",
