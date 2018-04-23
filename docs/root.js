@@ -8,6 +8,7 @@ import Draggable from './components/Draggable';
 import AddAndClose from './components/AddAndClose';
 import Modal from './components/Modal';
 import Complicated from './components/Complicated';
+import Async from './components/Async';
 import themes from './themes';
 
 const themeOptions = Object.keys(themes).map(theme => {
@@ -29,40 +30,47 @@ const Logo = styled.img`
 `;
 
 const examples = [
+  // {
+  //   title: 'Basic Tabs',
+  //   anchor: 'basic',
+  //   description: null,
+  //   Component: Basic,
+  //   source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Basic.js'
+  // },
+  // {
+  //   title: 'Icon Tabs',
+  //   anchor: 'icon',
+  //   description: 'Tab content is customizable. Icons, images, any content is available.',
+  //   Component: IconTab,
+  //   source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/IconTab.js'
+  // },
+  // {
+  //   title: 'Draggable Tabs',
+  //   anchor: 'draggable',
+  //   description: 'Try to drag and drop the tab.',
+  //   Component: Draggable,
+  //   source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Draggable.js'
+  // },
+  // {
+  //   title: 'Add and Close Tabs',
+  //   anchor: 'add-close',
+  //   description: null,
+  //   Component: AddAndClose,
+  //   source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/AddAndClose.js'
+  // },
+  // {
+  //   title: 'Modal View',
+  //   anchor: 'modal',
+  //   description: 'With modal view, it\'s easier to select tab when there are lots of tabs and on mobile device',
+  //   Component: Modal,
+  //   source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Modal.js'
+  // },
   {
-    title: 'Basic Tabs',
+    title: 'Async tab',
     anchor: 'basic',
     description: null,
-    Component: Basic,
-    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Basic.js'
-  },
-  {
-    title: 'Icon Tabs',
-    anchor: 'icon',
-    description: 'Tab content is customizable. Icons, images, any content is available.',
-    Component: IconTab,
-    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/IconTab.js'
-  },
-  {
-    title: 'Draggable Tabs',
-    anchor: 'draggable',
-    description: 'Try to drag and drop the tab.',
-    Component: Draggable,
-    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Draggable.js'
-  },
-  {
-    title: 'Add and Close Tabs',
-    anchor: 'add-close',
-    description: null,
-    Component: AddAndClose,
+    Component: Async,
     source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/AddAndClose.js'
-  },
-  {
-    title: 'Modal View',
-    anchor: 'modal',
-    description: 'With modal view, it\'s easier to select tab when there are lots of tabs and on mobile device',
-    Component: Modal,
-    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Modal.js'
   }
 ]
 
