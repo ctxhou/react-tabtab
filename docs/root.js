@@ -60,7 +60,7 @@ const examples = [
   },
   {
     title: 'Async tab',
-    anchor: 'basic',
+    anchor: 'async',
     description: 'Lazy load the tab content',
     Component: Async,
     source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Async.js'

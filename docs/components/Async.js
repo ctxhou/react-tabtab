@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Tabs, TabList, Tab, PanelList, AsyncPanel} from '../../src';
+import {Tabs, TabList, Tab, PanelList, AsyncPanel, Panel} from '../../src';
 import {Facebook} from 'react-content-loader'
 const MyFacebookLoader = () => <Facebook />
 
@@ -26,11 +26,16 @@ export default class Basic extends Component {
     return (
       <Tabs customStyle={this.props.customStyle}>
         <TabList>
-          <Tab>Callback fetch</Tab>
-          <Tab>Promise fetch</Tab>
+          <Tab>Normal panel</Tab>          
+          <Tab>Callback fetch panel</Tab>
+          <Tab>Promise fetch panel</Tab>
           <Tab>fetch without cache</Tab>
         </TabList>
         <PanelList>
+          <Panel>
+            Normal tab.
+            You can mix normal panel with async panel
+          </Panel>
           <AsyncPanel loadContent={fakeCbFetch}
                       render={data => (<div>{JSON.stringify(data)}</div>)}
                       renderLoading={() => (<MyFacebookLoader/>)}

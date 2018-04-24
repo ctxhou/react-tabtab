@@ -24,6 +24,7 @@
 * **Mobile supported** — Touch support. Easy to use on mobile device
 * **Draggable tab** — Support drag and drop tab
 * **Add & Delete** — Tab can be added and deleted
+* **Async content** — Lazy load panel content
 * **Customizable style** — Based on `styled-components`, super easy to customize tab style
 * **API based** — All actions are controllable
 * **ARIA accessible**
@@ -35,6 +36,7 @@
 - [Usage](#usage)
   * [Basic Example:](#basic-example)
   * [Draggable Example](#draggable-example)
+  * [Async Example](#draggable-example)
   * [Another Example](#another-example)
 - [Components / Api](#components--api)
   * [&lt;Tabs /&gt;](#lttabs-gt)
@@ -96,7 +98,10 @@ You can reference [standalone.html](https://github.com/ctxhou/react-tabtab/blob/
 
 ## Usage
 
-### Basic Example:
+React-tabtab is a tab component with highly customization. You can create a tab in simply setting. You also can create a tab system full with `draggable`, `async loading`, `close and create button`.
+All the actions are api based. It means there is `no state` in the component. Developers have full control.
+
+### Minimal setup
 
 ```js
 import React, {Component} from 'react';
@@ -123,9 +128,9 @@ class Basic extends Component {
 ReactDOM.render(<Basic/>, document.getElementById('root'));
 ```
 
-It's simple to use. Zero configuration and it works well !
+It's simple to use. Zero configuration!
 
-### Draggable Example
+### Draggable tab
 
 ```js
 import React, {Component} from 'react';
@@ -175,7 +180,7 @@ ReactDOM.render(<Basic/>, document.getElementById('root'));
 
 Based on above example, the different to implement `normal tab` or `drag tab` is using different wrapper and child.
 
-And all the actions is controllable. You can customize your switch action. But if you don't want to write customized switch logic, you can directly use `import {simpleSwitch} from 'react-tabtab/lib/helpers/move'` this built-in function.
+And all the actions are controllable. You can customize your switch action. But if you don't want to write customized switch logic, you can directly use `import {simpleSwitch} from 'react-tabtab/lib/helpers/move'` this built-in function.
 
 **normal tab**
 
@@ -202,6 +207,70 @@ And all the actions is controllable. You can customize your switch action. But i
   </PanelList>
 </Tabs>
 ```
+
+### Async Panel
+
+In some case, if the data is large or we want to save the bandwidth, lazy loading the content is possible solution. You can use `AsyncPanel` to laze load panel content.
+Moreover, you can mix lazy load panel with normal panel!
+
+```js
+import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
+import {Tabs, TabList, Tab, PanelList, AsyncPanel, Panel} from 'react-tabtab';
+
+function loadContentFunc(callback) {
+  setTimeout(() => {
+    callback(null, [
+      {product: 'json'},
+      {product: 'joseph'}
+    ]);
+  }, 100);
+}
+
+// You also can provide promise as return function:
+// function loadContentFunc() {
+//   return fetch('/products')
+//     .then(resp => resp.json())
+//     .then(data => data);
+// }
+
+class AsyncTab extends Component {
+  render() {
+    return (
+      <Tabs>
+        <TabList>
+          <Tab>Tab1</Tab>
+          <Tab>Tab2</Tab>
+        </TabList>
+        <PanelList>
+          <Panel>Content1</Panel>
+          <AsyncPanel loadContent={loadContentFunc}
+                      render={data => (<div>{JSON.stringify(data)}</div>)}
+                      renderLoading={() => (<div>Loading...</div>)}
+                      cache={true}
+          />
+        </PanelList>
+      </Tabs>
+    )
+  }
+}
+
+ReactDOM.render(<AsyncTab/>, document.getElementById('root'));
+```
+
+To implement lazy loading, use `AsyncPanel` to wrap your panel content. Remember to provide `loadContent`, `render`, `renderLoading` these 3 props.
+
+In `loadContent` props, both `callback` and `promise` type are supported.
+
+If you use `callback`, remember to call `callback` when finish async loading.
+
+If you use `promise`, need to return promise action.
+
+When data is loading, the panel content will show `renderLoading` component.
+
+After finishing loading data, the panel content will show `render` component and react-tabtab will pass the `loadContent` result as first parameter. So you can customize the component of panel content.
+
+Live example: [Link](https://ctxhou.github.io/react-tabtab/#async)
 
 ### Another Example
 
@@ -373,6 +442,54 @@ Use to wrap `<Panel/>`
 ### &lt;Panel /&gt;
 
 Tab content.
+
+### &lt;AsyncPanel /&gt;
+
+Lazy loading panel content.
+
+<table>
+  <tbody>
+    <tr>
+      <th>props</th>
+      <th>type</th>
+      <th>default</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>loadContent <b>(*)</b></td>
+      <td>
+        <code>(cb) => cb(error, data)</code> ||
+        <code>(cb) => Promise
+      </td>
+      <td>null</td>
+      <td>when loadContent finish, call the callback or you can return promise</td>
+    </tr>
+    <tr>
+      <td>render <b>(*)</b></td>
+      <td>
+        <code>(data) => Component</code>
+      </td>
+      <td>null</td>
+      <td>when finish loading data, render this component</td>
+    </tr>
+    <tr>
+      <td>renderLoading <b>(*)</b></td>
+      <td>
+        <code>() => Component</code>
+      </td>
+      <td>null</td>
+      <td>when it is loading data, render this component</td>
+    </tr>
+    <tr>
+      <td>cache</td>
+      <td>
+        <code>boolean</code>
+      </td>
+      <td>true</td>
+      <td>should cache the data</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Customize style
 
