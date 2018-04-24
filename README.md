@@ -30,13 +30,14 @@
 * **ARIA accessible**
 
 ## Table of Contents
+
 <!-- toc -->
 
 - [Installation](#installation)
 - [Usage](#usage)
-  * [Basic Example:](#basic-example)
-  * [Draggable Example](#draggable-example)
-  * [Async Example](#draggable-example)
+  * [Minimal setup](#minimal-setup)
+  * [Draggable tab](#draggable-tab)
+  * [Async Panel](#async-panel)
   * [Another Example](#another-example)
 - [Components / Api](#components--api)
   * [&lt;Tabs /&gt;](#lttabs-gt)
@@ -46,6 +47,7 @@
   * [&lt;DragTab/ &gt;](#ltdragtab-gt)
   * [&lt;PanelList/ &gt;](#ltpanellist-gt)
   * [&lt;Panel /&gt;](#ltpanel-gt)
+  * [&lt;AsyncPanel /&gt;](#ltasyncpanel-gt)
 - [Customize style](#customize-style)
   * [Use current style](#use-current-style)
   * [Make your own style](#make-your-own-style)
@@ -456,16 +458,16 @@ Lazy loading panel content.
       <th></th>
     </tr>
     <tr>
-      <td>loadContent <b>(*)</b></td>
+      <td>loadContent <b>*</b></td>
       <td>
-        <code>(cb) => cb(error, data)</code> ||
+        <code>(cb) => cb(error, data)</code> or <br/>
         <code>(cb) => Promise
       </td>
       <td>null</td>
       <td>when loadContent finish, call the callback or you can return promise</td>
     </tr>
     <tr>
-      <td>render <b>(*)</b></td>
+      <td>render <b>*</b></td>
       <td>
         <code>(data) => Component</code>
       </td>
@@ -473,7 +475,7 @@ Lazy loading panel content.
       <td>when finish loading data, render this component</td>
     </tr>
     <tr>
-      <td>renderLoading <b>(*)</b></td>
+      <td>renderLoading <b>*</b></td>
       <td>
         <code>() => Component</code>
       </td>
