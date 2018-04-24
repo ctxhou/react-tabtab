@@ -1,3 +1,7 @@
+# 1.5.0
+
+* Support `AsyncPanel`: can lazy loading panel content
+
 # 1.0.0
 
 ### Breaking change
