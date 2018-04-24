@@ -6,6 +6,7 @@ import DragTabList from './DragTabList';
 import DragTab from './DragTab';
 import PanelList from './PanelList';
 import Panel, {PanelStyle} from './Panel';
+import AsyncPanel from './AsyncPanel';
 import ExtraButton from './ExtraButton';
 
 const styled = {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle};
@@ -17,6 +18,7 @@ const defaultOutput = {
   DragTab,
   PanelList,
   Panel,
+  AsyncPanel,
   ExtraButton,
   styled
 }

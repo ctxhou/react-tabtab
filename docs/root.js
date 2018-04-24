@@ -8,6 +8,7 @@ import Draggable from './components/Draggable';
 import AddAndClose from './components/AddAndClose';
 import Modal from './components/Modal';
 import Complicated from './components/Complicated';
+import Async from './components/Async';
 import themes from './themes';
 
 const themeOptions = Object.keys(themes).map(theme => {
@@ -56,6 +57,13 @@ const examples = [
     description: null,
     Component: AddAndClose,
     source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/AddAndClose.js'
+  },
+  {
+    title: 'Async tab',
+    anchor: 'async',
+    description: 'Lazy load the tab content',
+    Component: Async,
+    source: 'https://github.com/ctxhou/react-tabtab/blob/master/docs/components/Async.js'
   },
   {
     title: 'Modal View',

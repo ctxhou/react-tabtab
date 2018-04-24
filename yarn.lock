@@ -2381,7 +2381,7 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
-fbjs@^0.8.16, fbjs@^0.8.5, fbjs@^0.8.9:
+fbjs@^0.8.16, fbjs@^0.8.5, fbjs@^0.8.6, fbjs@^0.8.9:
   version "0.8.16"
   resolved "https://registry.npmjs.org/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -4608,6 +4608,10 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+react-content-loader@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/react-content-loader/-/react-content-loader-3.1.1.tgz#4121cdf1bbf58387bfd031fd4569d0617c0de69d"
+
 react-dom@^16.0.0:
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.2.0.tgz#69003178601c0ca19b709b33a83369fe6124c044"
@@ -4634,12 +4638,12 @@ react-input-autosize@^2.0.1:
     create-react-class "^15.5.2"
     prop-types "^15.5.8"
 
-react-poppop@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.npmjs.org/react-poppop/-/react-poppop-1.3.0.tgz#74ccb44bc4551041493fdadc4729f0ad94139e89"
+react-poppop@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/react-poppop/-/react-poppop-1.4.0.tgz#0c1801924cc1a56acde513cce75233c642e80866"
   dependencies:
     classnames "^2.1.3"
-    react-tappable "^1.0.2"
+    react-tap-event-plugin "^3.0.2"
     react-transition-group "^2.2.1"
 
 react-select@^1.0.0-rc.10:
@@ -4659,9 +4663,11 @@ react-sortable-hoc@^0.6.8:
     lodash "^4.12.0"
     prop-types "^15.5.7"
 
-react-tappable@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/react-tappable/-/react-tappable-1.0.2.tgz#bda67f4e3f0e74bf416a4ec8a5885888482e27d4"
+react-tap-event-plugin@^3.0.2:
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/react-tap-event-plugin/-/react-tap-event-plugin-3.0.2.tgz#280371677b881c31376e0027a0b86d2c6de039ee"
+  dependencies:
+    fbjs "^0.8.6"
 
 react-test-renderer@^16.0.0:
   version "16.2.0"
