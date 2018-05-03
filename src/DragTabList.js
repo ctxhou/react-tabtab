@@ -19,7 +19,6 @@ export default class DragTabList extends SortMethod {
       <DragTabContainer onSortEnd={this.onSortEnd}
                         axis='x'
                         lockAxis='x'
-                        distance={2}
                         {...props}>
         {children}
       </DragTabContainer>

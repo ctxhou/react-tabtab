@@ -54,7 +54,7 @@ exports[`DragTabList custom ListStyle style 1`] = `
         "CustomTabList": [Function],
       }
     }
-    distance={2}
+    distance={0}
     getHelperDimensions={[Function]}
     hideSortableGhost={true}
     lockAxis="x"
@@ -206,7 +206,7 @@ exports[`DragTabList render DragTab List 1`] = `
   <sortableList
     axis="x"
     customStyle={Object {}}
-    distance={2}
+    distance={0}
     getHelperDimensions={[Function]}
     hideSortableGhost={true}
     lockAxis="x"
