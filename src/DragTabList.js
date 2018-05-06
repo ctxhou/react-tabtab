@@ -19,6 +19,9 @@ export default class DragTabList extends SortMethod {
       <DragTabContainer onSortEnd={this.onSortEnd}
                         axis='x'
                         lockAxis='x'
+                        // if no pressDelay, close button cannot be triggered,
+                        // because it would always treat click as dnd action
+                        pressDelay={100}
                         {...props}>
         {children}
       </DragTabContainer>
