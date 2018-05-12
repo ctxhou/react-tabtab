@@ -1,14 +1,13 @@
 {
   "name": "react-tabtab",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "description": "A mobile support, draggable, editable and api based Tab for ReactJS",
   "main": "lib/",
   "scripts": {
     "start": "node devServer.js",
     "build": "npm run build:lib && npm run build:dist",
     "build:lib": "rimraf ./lib && cross-env BABEL_ENV=production babel src -d lib",
-    "build:dist":
-      "rimraf dist && rollup -c --environment ESBUNDLE && rollup -c --environment PRODUCTION",
+    "build:dist": "rimraf dist && rollup -c --environment ESBUNDLE && rollup -c --environment PRODUCTION",
     "lint": "eslint src example test",
     "test": "jest",
     "test:watch": "NODE_ENV=test npm test -- --watch",
@@ -34,7 +33,13 @@
     "tabtab",
     "styled-components"
   ],
-  "files": ["dist", "docs", "flow-typed", "lib", "src"],
+  "files": [
+    "dist",
+    "docs",
+    "flow-typed",
+    "lib",
+    "src"
+  ],
   "author": "ctxhou",
   "license": "MIT",
   "bugs": {
@@ -120,10 +125,23 @@
     "styled-components": "^3.2.6"
   },
   "jest": {
-    "setupFiles": ["./test/shim", "./test/enzyme-setup"],
-    "roots": ["<rootDir>/test/"],
-    "unmockedModulePathPatterns": ["node_modules/react/", "node_modules/enzyme/"],
-    "snapshotSerializers": ["enzyme-to-json/serializer"]
+    "setupFiles": [
+      "./test/shim",
+      "./test/enzyme-setup"
+    ],
+    "roots": [
+      "<rootDir>/test/"
+    ],
+    "unmockedModulePathPatterns": [
+      "node_modules/react/",
+      "node_modules/enzyme/"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
-  "pre-commit": ["lint", "test"]
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
 }
