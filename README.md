@@ -58,10 +58,13 @@
 
 ## Installation
 
-Install it with npm.
+Install it with npm or yarn
+
+Install `styled-components`. Because we put the `styled-components` to the peerDependencies, it suggests by [styled-components official blog](https://www.styled-components.com/docs/faqs#i-am-a-library-author-should-i-bundle-styledcomponents-with-my-library)
 
 ```js
 $ npm install react-tabtab --save
+$ npm install styled-components --save
 ```
 
 Then, import the module by module bundler like `webpack`, `browserify`
