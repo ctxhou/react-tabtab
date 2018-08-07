@@ -1,5 +1,5 @@
 // @flow
-import * as React from 'react';
+import * as React from "react";
 
 type Props = {
   handleTabChange: (event: any) => void,
@@ -14,14 +14,14 @@ export default class SortMethod extends React.PureComponent<Props> {
     (this: any).onSortEnd = this.onSortEnd.bind(this);
   }
 
-  onSortEnd({oldIndex, newIndex}: {oldIndex: number, newIndex: number}) {
-    const {activeIndex, handleTabChange, handleTabSequence} = this.props;
+  onSortEnd({ oldIndex, newIndex }: { oldIndex: number, newIndex: number }) {
+    const { activeIndex, handleTabChange, handleTabSequence } = this.props;
     if (oldIndex === newIndex) {
       if (activeIndex !== oldIndex) {
         handleTabChange(oldIndex);
       }
     } else {
-      handleTabSequence({oldIndex, newIndex});
+      handleTabSequence({ oldIndex, newIndex });
     }
   }
 }

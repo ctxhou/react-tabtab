@@ -21,9 +21,9 @@ exports[`DragTabList custom ListStyle style 1`] = `
   margin: 0;
   list-style: none;
   display: inline-block;
-  -webkit-transition: -webkit-transform .3s cubic-bezier(.42,0,.58,1);
-  -webkit-transition: transform .3s cubic-bezier(.42,0,.58,1);
-  transition: transform .3s cubic-bezier(.42,0,.58,1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.42,0,0.58,1);
+  -webkit-transition: transform 0.3s cubic-bezier(0.42,0,0.58,1);
+  transition: transform 0.3s cubic-bezier(0.42,0,0.58,1);
 }
 
 .c3 {
@@ -57,10 +57,12 @@ exports[`DragTabList custom ListStyle style 1`] = `
     distance={0}
     getHelperDimensions={[Function]}
     hideSortableGhost={true}
+    isDragging={false}
     lockAxis="x"
     lockOffset="50%"
     lockToContainerEdges={false}
     onSortEnd={[Function]}
+    onSortStart={[Function]}
     pressDelay={100}
     pressThreshold={5}
     shouldCancelStart={[Function]}
@@ -73,6 +75,7 @@ exports[`DragTabList custom ListStyle style 1`] = `
           "CustomTabList": [Function],
         }
       }
+      isDragging={false}
     >
       <TabList
         customStyle={
@@ -80,6 +83,7 @@ exports[`DragTabList custom ListStyle style 1`] = `
             "CustomTabList": [Function],
           }
         }
+        isDragging={false}
       >
         <div>
           <styled.div
@@ -181,9 +185,9 @@ exports[`DragTabList render DragTab List 1`] = `
   margin: 0;
   list-style: none;
   display: inline-block;
-  -webkit-transition: -webkit-transform .3s cubic-bezier(.42,0,.58,1);
-  -webkit-transition: transform .3s cubic-bezier(.42,0,.58,1);
-  transition: transform .3s cubic-bezier(.42,0,.58,1);
+  -webkit-transition: -webkit-transform 0.3s cubic-bezier(0.42,0,0.58,1);
+  -webkit-transition: transform 0.3s cubic-bezier(0.42,0,0.58,1);
+  transition: transform 0.3s cubic-bezier(0.42,0,0.58,1);
 }
 
 .c3 {
@@ -209,10 +213,12 @@ exports[`DragTabList render DragTab List 1`] = `
     distance={0}
     getHelperDimensions={[Function]}
     hideSortableGhost={true}
+    isDragging={false}
     lockAxis="x"
     lockOffset="50%"
     lockToContainerEdges={false}
     onSortEnd={[Function]}
+    onSortStart={[Function]}
     pressDelay={100}
     pressThreshold={5}
     shouldCancelStart={[Function]}
@@ -221,9 +227,11 @@ exports[`DragTabList render DragTab List 1`] = `
   >
     <Component
       customStyle={Object {}}
+      isDragging={false}
     >
       <TabList
         customStyle={Object {}}
+        isDragging={false}
       >
         <div>
           <styled.div
