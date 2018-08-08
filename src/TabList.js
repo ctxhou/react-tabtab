@@ -140,6 +140,8 @@ export default class TabListComponent extends React.Component<Props, State> {
   componentDidMount() {
     this.isShowArrowButton();
     this.isShowModalButton();
+    if(this.props.activeIndex > 0)
+      this.scrollToIndex(this.props.activeIndex, 'left')
   }
 
   componentDidUpdate(prevProps: Props, prevState: State) {
@@ -147,11 +149,11 @@ export default class TabListComponent extends React.Component<Props, State> {
       this.isShowArrowButton();
       this.isShowModalButton();
     }
-    // if activeIndex is changed, and children is added
-    // means => add new child
-    if (prevProps.activeIndex !== this.props.activeIndex &&
-        prevProps.children.length < this.props.children.length) {
-      this.scrollToIndex(this.props.activeIndex);
+
+    if (prevProps.activeIndex !== this.props.activeIndex) {
+      //if we scroll to the last tab, alignment is set to the right side of the tab
+      const rectSide = this.props.activeIndex === this.props.children.length - 1 ? 'right' : 'left';
+      this.scrollToIndex(this.props.activeIndex, rectSide);
     }
     // if prev state show arrow button, and current state doesn't show
     // need to reset the scroll position, or some tabs will be hided by container.
@@ -207,12 +209,15 @@ export default class TabListComponent extends React.Component<Props, State> {
   }
 
   // $FlowFixMe
-  scrollToIndex(index: number) {
+  scrollToIndex(index: number, rectSide: 'left' | 'right') {
     const tabOffset = this.getTabNode(this.tabRefs[index]).getBoundingClientRect();
     const containerOffset = this.listContainer.getBoundingClientRect();
-    const leftMove = tabOffset.right - containerOffset.right;
+    // Cancel scrolling if the tab is visible
+    if(tabOffset.right < containerOffset.right &&
+       tabOffset.left > containerOffset.left) return;
+    const leftMove = tabOffset[rectSide] - containerOffset[rectSide];
     this.scrollPosition += leftMove;
-    if (this.scrollPosition < 0) {
+    if (this.scrollPosition < 0 ) {
       this.scrollPosition = 0;
     }
     this.listScroll.style.transform = `translate3d(-${this.scrollPosition}px, 0, 0)`;
@@ -226,7 +231,7 @@ export default class TabListComponent extends React.Component<Props, State> {
     this.setState({modalIsOpen: open}, () => {
       if (!open) {
         // $FlowFixMe
-        this.scrollToIndex(this.props.activeIndex);
+        this.scrollToIndex(this.props.activeIndex, 'right');
       }
     });
   }
