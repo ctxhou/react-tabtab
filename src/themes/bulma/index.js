@@ -1,12 +1,14 @@
-import {styled} from '../../';
-let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styled;
+import styled from 'styled-components';
+import {styled as themeStyled} from '../../';
 
-TabListStyle = TabListStyle.extend`
+let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = themeStyled;
+
+TabListStyle = styled(TabListStyle)`
   background-color: #fff;
   border-bottom: 1px solid #dbdbdb;
 `;
 
-TabStyle = TabStyle.extend`
+TabStyle = styled(TabStyle)`
   position: relative;
   color: #4a4a4a;
   border: 0;
@@ -34,7 +36,7 @@ TabStyle = TabStyle.extend`
   }
 `;
 
-ActionButtonStyle = ActionButtonStyle.extend`
+ActionButtonStyle = styled(ActionButtonStyle)`
   background-color: transparent;
   border-radius: 0;
   &:hover {
@@ -42,7 +44,7 @@ ActionButtonStyle = ActionButtonStyle.extend`
   }
 `;
 
-PanelStyle = PanelStyle.extend`
+PanelStyle = styled(PanelStyle)`
 `;
 
 export default {

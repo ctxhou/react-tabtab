@@ -101,7 +101,9 @@ export default class Root extends React.Component {
           <div>
             <a className="f6 link dim br-pill ba bw1 ph3 pv2 mt3 mb1 dib green"
                href="https://github.com/ctxhou/react-tabtab"
-               target="_blank">
+               target="_blank"
+               rel="noopener noreferrer"
+            >
               Document
             </a>            
           </div>

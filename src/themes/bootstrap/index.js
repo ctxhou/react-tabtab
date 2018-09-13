@@ -1,11 +1,13 @@
-import {styled} from '../../';
-let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styled;
+import styled from 'styled-components';
+import {styled as themeStyled} from '../../';
 
-TabListStyle = TabListStyle.extend`
+let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = themeStyled;
+
+TabListStyle = styled(TabListStyle)`
   border-bottom: 1px solid #eee;
 `;
 
-TabStyle = TabStyle.extend`
+TabStyle = styled(TabStyle)`
   border-top-left-radius: .25rem;
   border-top-right-radius: .25rem;
   transition: color .3s cubic-bezier(.645, .045, .355, 1);
