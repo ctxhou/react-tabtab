@@ -48,15 +48,15 @@ const plugins = [
   babel({
     babelrc: false,
     presets: [
-      ['es2015', { modules: false }],
-      'react'
+      "@babel/preset-env",
+      "@babel/react"
     ],
     plugins: [
+      "@babel/plugin-proposal-class-properties",
+      "@babel/plugin-transform-flow-strip-types",
+      "@babel/plugin-proposal-object-rest-spread",
+      '@babel/plugin-external-helpers',
       'transform-react-remove-prop-types',
-      'transform-flow-strip-types',
-      'transform-class-properties',
-      'transform-object-rest-spread',
-      'external-helpers'
     ]
   })
 ];
