@@ -3,6 +3,7 @@ import { TabListStyle } from '../src/TabList';
 import { mount } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import 'jest-styled-components';
+import styled from 'styled-components';
 import {BulletIcon, RightIcon} from '../src/IconSvg';
 
 const tabListTest = (type, TabListComponent, TabComponent) => {
@@ -23,7 +24,7 @@ const tabListTest = (type, TabListComponent, TabComponent) => {
   })
 
   test('custom ListStyle style', () => {
-    const CustomListStyle = TabListStyle.extend`
+    const CustomListStyle = styled(TabListStyle)`
       background-color: red;
     `;
     const component = mount(

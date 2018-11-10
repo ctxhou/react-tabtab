@@ -65,7 +65,7 @@ const ActionButtonStyle = styled.div`
   }
 `;
 
-const makeScrollButton = ActionButton => ActionButton.extend`
+const makeScrollButton = ActionButton => styled(ActionButton)`
   display: inline-block;
   filter: none;
   position: absolute;
@@ -78,7 +78,7 @@ const makeScrollButton = ActionButton => ActionButton.extend`
   }
 `;
 
-const makeFoldButton = ActionButton => ActionButton.extend`
+const makeFoldButton = ActionButton => styled(ActionButton)`
   display: inline-block;
   filter: none;
   position: absolute;
@@ -299,12 +299,12 @@ export default class TabListComponent extends React.Component<Props, State> {
         <div>
           <ScrollButton left
             onClick={() => { this.handleScroll('left') }}
-            innerRef={node => this.leftArrowNode = node}
+            ref={node => this.leftArrowNode = node}
             showModalButton={this.state.showModalButton}>
             <LeftIcon />
           </ScrollButton>
           <ScrollButton onClick={() => { this.handleScroll('right') }}
-            innerRef={node => this.rightArrowNode = node}>
+            ref={node => this.rightArrowNode = node}>
             <RightIcon />
           </ScrollButton>
         </div>
@@ -334,15 +334,15 @@ export default class TabListComponent extends React.Component<Props, State> {
                  showModalButton={this.state.showModalButton}
                  showArrowButton={this.state.showArrowButton}>
           {this.state.showModalButton ?
-            <FoldButton innerRef={node => this.foldNode = node}
+            <FoldButton ref={node => this.foldNode = node}
                         onClick={this.toggleModal.bind(this, true)}
                         showArrowButton={this.state.showArrowButton}>
               <BulletIcon/>
             </FoldButton>
           : null}
           {this.renderArrowButton(ScrollButton)}
-          <ListInner innerRef={node => this.listContainer = node}>
-            <ListScroll innerRef={node => this.listScroll = node} role="tablist">
+          <ListInner ref={node => this.listContainer = node}>
+            <ListScroll ref={node => this.listScroll = node} role="tablist">
               {this.renderTabs()}
             </ListScroll>
           </ListInner>
