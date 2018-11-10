@@ -22,6 +22,10 @@ const TabStyle = styled.li`
   }
 `;
 
+const TabText = styled.span`
+  vertical-align: middle;
+`;
+
 type Props = {
   CustomTabStyle: () => void,
   handleTabChange: (event: any) => void,
@@ -67,7 +71,7 @@ export default class Tab extends React.PureComponent<Props> {
                     id={`react-tabtab-tab-${index}`}
                     aria-controls={`react-tabtab-panel-${index}`}
                     aria-selected={active}>
-        {this.props.children}
+        <TabText>{this.props.children}</TabText>
         {closable ?
           <CloseButton handleDelete={this.clickDelete}/>
         : null}

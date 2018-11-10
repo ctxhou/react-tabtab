@@ -40,6 +40,10 @@ exports[`TabList custom ListStyle style 1`] = `
   color: black;
 }
 
+.c4 {
+  vertical-align: middle;
+}
+
 <TabList
   customStyle={
     Object {
@@ -309,6 +313,10 @@ exports[`TabList render Tab List 1`] = `
 .c3:hover {
   cursor: pointer;
   color: black;
+}
+
+.c4 {
+  vertical-align: middle;
 }
 
 <TabList

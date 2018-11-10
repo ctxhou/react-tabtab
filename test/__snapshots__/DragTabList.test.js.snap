@@ -40,6 +40,10 @@ exports[`DragTabList custom ListStyle style 1`] = `
   color: black;
 }
 
+.c4 {
+  vertical-align: middle;
+}
+
 <DragTabList
   customStyle={
     Object {
@@ -454,6 +458,10 @@ exports[`DragTabList render DragTab List 1`] = `
 .c3:hover {
   cursor: pointer;
   color: black;
+}
+
+.c4 {
+  vertical-align: middle;
 }
 
 <DragTabList
