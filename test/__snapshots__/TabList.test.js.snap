@@ -40,6 +40,10 @@ exports[`TabList custom ListStyle style 1`] = `
   color: black;
 }
 
+.c4 {
+  vertical-align: middle;
+}
+
 <TabList
   customStyle={
     Object {
@@ -91,7 +95,13 @@ exports[`TabList custom ListStyle style 1`] = `
                       onClick={[Function]}
                       role="tab"
                     >
-                      Tab1
+                      <styled.span>
+                        <span
+                          className="c4"
+                        >
+                          Tab1
+                        </span>
+                      </styled.span>
                     </li>
                   </styled.li>
                 </Tab>
@@ -145,6 +155,10 @@ exports[`TabList render Tab List 1`] = `
   color: black;
 }
 
+.c4 {
+  vertical-align: middle;
+}
+
 <TabList
   customStyle={Object {}}
 >
@@ -192,7 +206,13 @@ exports[`TabList render Tab List 1`] = `
                       onClick={[Function]}
                       role="tab"
                     >
-                      Tab1
+                      <styled.span>
+                        <span
+                          className="c4"
+                        >
+                          Tab1
+                        </span>
+                      </styled.span>
                     </li>
                   </styled.li>
                 </Tab>

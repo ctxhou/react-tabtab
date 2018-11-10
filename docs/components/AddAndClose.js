@@ -6,9 +6,6 @@ import {makeData} from './utils';
 export default class Closable extends Component {
   constructor(props) {
     super(props);
-    this.handleTabChange = this.handleTabChange.bind(this);
-    this.handleExtraButton = this.handleExtraButton.bind(this);
-    this.handleEdit = this.handleEdit.bind(this);
     const tabs = makeData(3);
 
     this.state = {
@@ -17,27 +14,29 @@ export default class Closable extends Component {
     };
   }
 
-  handleExtraButton() {
+  handleExtraButton = () => {
     const {tabs} = this.state;
     const newTabs = [...tabs, {title: 'New Tab', content: 'New Content'}];
     this.setState({tabs: newTabs, activeIndex: newTabs.length - 1});
   }
 
-  handleTabChange(index) {
+  handleTabChange = (index) => {
     this.setState({activeIndex: index});
   }
 
-  handleEdit({type, index}) {
-    let {tabs, activeIndex} = this.state;
-    if (type === 'delete') {
-      tabs.splice(index, 1);
-    }
-    if (index - 1 >= 0) {
-      activeIndex = index - 1;
-    } else {
-      activeIndex = 0;
-    }
-    this.setState({tabs, activeIndex});
+  handleEdit = ({type, index}) => {
+    this.setState((state) => {
+      let {tabs, activeIndex} = state;
+      if (type === 'delete') {
+        tabs = [...tabs.slice(0, index), ...tabs.slice(index + 1)];
+      }
+      if (index - 1 >= 0) {
+        activeIndex = index - 1;
+      } else {
+        activeIndex = 0;
+      }
+      return {tabs, activeIndex};
+    });
   }
 
   render() {
