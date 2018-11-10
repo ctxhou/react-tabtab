@@ -1,7 +1,9 @@
 import React from 'react';
-import Tab, {TabStyle} from '../src/Tab';
-import {shallow, mount} from 'enzyme';
+import styled from 'styled-components';
+import {mount} from 'enzyme';
 import 'jest-styled-components'
+
+import Tab, {TabStyle} from '../src/Tab';
 
 describe('Tab', () => {
   describe('render TabList', () => {
@@ -44,10 +46,10 @@ describe('Tab', () => {
   })
 
   test('custom ListStyle style', () => {
-    const CustomTabStyle = TabStyle.extend`
+    const CustomTabStyle = styled(TabStyle)`
       background-color: red;
     `;
-    const component = shallow(
+    const component = mount(
       <Tab CustomTabStyle={CustomTabStyle}>
         <span>tab</span>
       </Tab>

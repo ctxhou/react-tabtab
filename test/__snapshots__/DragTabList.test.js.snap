@@ -47,7 +47,37 @@ exports[`DragTabList custom ListStyle style 1`] = `
 <DragTabList
   customStyle={
     Object {
-      "CustomTabList": [Function],
+      "CustomTabList": Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": undefined,
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-gZMcBi",
+          "isStatic": false,
+          "rules": Array [
+            "
+      background-color: white;
+      text-align: left;
+      position: relative;
+      white-space: nowrap;
+      overflow: hidden;
+      width: auto;
+      padding: ",
+            [Function],
+            ";
+    ",
+            "
+          background-color: red;
+        ",
+          ],
+        },
+        "displayName": "Styled(styled.div)",
+        "render": [Function],
+        "styledComponentId": "sc-gZMcBi",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      },
     }
   }
 >
@@ -55,7 +85,37 @@ exports[`DragTabList custom ListStyle style 1`] = `
     axis="x"
     customStyle={
       Object {
-        "CustomTabList": [Function],
+        "CustomTabList": Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": undefined,
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-gZMcBi",
+            "isStatic": false,
+            "rules": Array [
+              "
+        background-color: white;
+        text-align: left;
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        width: auto;
+        padding: ",
+              [Function],
+              ";
+      ",
+              "
+            background-color: red;
+          ",
+            ],
+          },
+          "displayName": "Styled(styled.div)",
+          "render": [Function],
+          "styledComponentId": "sc-gZMcBi",
+          "target": "div",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        },
       }
     }
     distance={0}
@@ -74,14 +134,74 @@ exports[`DragTabList custom ListStyle style 1`] = `
     <Component
       customStyle={
         Object {
-          "CustomTabList": [Function],
+          "CustomTabList": Object {
+            "$$typeof": Symbol(react.forward_ref),
+            "attrs": undefined,
+            "componentStyle": ComponentStyle {
+              "componentId": "sc-gZMcBi",
+              "isStatic": false,
+              "rules": Array [
+                "
+          background-color: white;
+          text-align: left;
+          position: relative;
+          white-space: nowrap;
+          overflow: hidden;
+          width: auto;
+          padding: ",
+                [Function],
+                ";
+        ",
+                "
+              background-color: red;
+            ",
+              ],
+            },
+            "displayName": "Styled(styled.div)",
+            "render": [Function],
+            "styledComponentId": "sc-gZMcBi",
+            "target": "div",
+            "toString": [Function],
+            "warnTooManyClasses": [Function],
+            "withComponent": [Function],
+          },
         }
       }
     >
       <TabList
         customStyle={
           Object {
-            "CustomTabList": [Function],
+            "CustomTabList": Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": undefined,
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-gZMcBi",
+                "isStatic": false,
+                "rules": Array [
+                  "
+            background-color: white;
+            text-align: left;
+            position: relative;
+            white-space: nowrap;
+            overflow: hidden;
+            width: auto;
+            padding: ",
+                  [Function],
+                  ";
+          ",
+                  "
+                background-color: red;
+              ",
+                ],
+              },
+              "displayName": "Styled(styled.div)",
+              "render": [Function],
+              "styledComponentId": "sc-gZMcBi",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            },
           }
         }
       >
@@ -89,79 +209,242 @@ exports[`DragTabList custom ListStyle style 1`] = `
           <styled.div
             hasExtraButton={false}
           >
-            <div
-              className="c0"
+            <StyledComponent
+              forwardedClass={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": undefined,
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "c0",
+                    "rules": Array [
+                      "
+                  background-color: white;
+                  text-align: left;
+                  position: relative;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  width: auto;
+                  padding: ",
+                      [Function],
+                      ";
+                ",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              hasExtraButton={false}
             >
-              <styled.div
-                innerRef={[Function]}
+              <div
+                className="c0"
               >
-                <div
-                  className="c1"
-                >
-                  <styled.ul
-                    innerRef={[Function]}
-                    role="tablist"
+                <styled.div>
+                  <StyledComponent
+                    forwardedClass={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": undefined,
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bwzfXH",
+                          "isStatic": true,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "
+                        overflow: hidden;
+                      ",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "render": [Function],
+                        "styledComponentId": "sc-bwzfXH",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={[Function]}
                   >
-                    <ul
-                      className="c2"
-                      role="tablist"
+                    <div
+                      className="c1"
                     >
-                      <DragTab
-                        active={false}
-                        index={0}
-                        key="0/.0"
-                        tabIndex={0}
+                      <styled.ul
+                        role="tablist"
                       >
-                        <sortableElement
-                          active={false}
-                          collection={0}
-                          index={0}
-                          tabIndex={0}
+                        <StyledComponent
+                          forwardedClass={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": undefined,
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-htpNat",
+                                "isStatic": true,
+                                "lastClassName": "c2",
+                                "rules": Array [
+                                  "
+                              padding-left: 0;
+                              position: relative;
+                              margin: 0;
+                              list-style: none;
+                              display: inline-block;
+                              transition: transform .3s cubic-bezier(.42, 0, .58, 1);
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.ul",
+                              "render": [Function],
+                              "styledComponentId": "sc-htpNat",
+                              "target": "ul",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={[Function]}
+                          role="tablist"
                         >
-                          <Component
-                            active={false}
-                            tabIndex={0}
+                          <ul
+                            className="c2"
+                            role="tablist"
                           >
-                            <Tab
+                            <DragTab
                               active={false}
                               index={0}
+                              key="0/.0"
                               tabIndex={0}
                             >
-                              <styled.li
+                              <sortableElement
                                 active={false}
-                                aria-controls="react-tabtab-panel-0"
-                                aria-selected={false}
-                                id="react-tabtab-tab-0"
-                                innerRef={[Function]}
-                                onClick={[Function]}
-                                role="tab"
+                                collection={0}
+                                index={0}
+                                tabIndex={0}
                               >
-                                <li
-                                  aria-controls="react-tabtab-panel-0"
-                                  aria-selected={false}
-                                  className="c3"
-                                  id="react-tabtab-tab-0"
-                                  onClick={[Function]}
-                                  role="tab"
+                                <Component
+                                  active={false}
+                                  tabIndex={0}
                                 >
-                                  <styled.span>
-                                    <span
-                                      className="c4"
+                                  <Tab
+                                    active={false}
+                                    index={0}
+                                    tabIndex={0}
+                                  >
+                                    <styled.li
+                                      active={false}
+                                      aria-controls="react-tabtab-panel-0"
+                                      aria-selected={false}
+                                      id="react-tabtab-tab-0"
+                                      onClick={[Function]}
+                                      role="tab"
                                     >
-                                      Tab1
-                                    </span>
-                                  </styled.span>
-                                </li>
-                              </styled.li>
-                            </Tab>
-                          </Component>
-                        </sortableElement>
-                      </DragTab>
-                    </ul>
-                  </styled.ul>
-                </div>
-              </styled.div>
-            </div>
+                                      <StyledComponent
+                                        active={false}
+                                        aria-controls="react-tabtab-panel-0"
+                                        aria-selected={false}
+                                        forwardedClass={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": undefined,
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "sc-EHOje",
+                                              "isStatic": false,
+                                              "lastClassName": "c3",
+                                              "rules": Array [
+                                                "
+                                            display: ",
+                                                [Function],
+                                                ";
+                                            ",
+                                                [Function],
+                                                "
+                                          
+                                            user-select: none;
+                                            &:hover {
+                                              cursor: pointer;
+                                              color: black;
+                                            }
+                                          ",
+                                              ],
+                                            },
+                                            "displayName": "styled.li",
+                                            "render": [Function],
+                                            "styledComponentId": "sc-EHOje",
+                                            "target": "li",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={[Function]}
+                                        id="react-tabtab-tab-0"
+                                        onClick={[Function]}
+                                        role="tab"
+                                      >
+                                        <li
+                                          aria-controls="react-tabtab-panel-0"
+                                          aria-selected={false}
+                                          className="c3"
+                                          id="react-tabtab-tab-0"
+                                          onClick={[Function]}
+                                          role="tab"
+                                        >
+                                          <styled.span>
+                                            <StyledComponent
+                                              forwardedClass={
+                                                Object {
+                                                  "$$typeof": Symbol(react.forward_ref),
+                                                  "attrs": undefined,
+                                                  "componentStyle": ComponentStyle {
+                                                    "componentId": "sc-bZQynM",
+                                                    "isStatic": true,
+                                                    "lastClassName": "c4",
+                                                    "rules": Array [
+                                                      "
+                                                  vertical-align: middle;
+                                                ",
+                                                    ],
+                                                  },
+                                                  "displayName": "styled.span",
+                                                  "render": [Function],
+                                                  "styledComponentId": "sc-bZQynM",
+                                                  "target": "span",
+                                                  "toString": [Function],
+                                                  "warnTooManyClasses": [Function],
+                                                  "withComponent": [Function],
+                                                }
+                                              }
+                                              forwardedRef={null}
+                                            >
+                                              <span
+                                                className="c4"
+                                              >
+                                                Tab1
+                                              </span>
+                                            </StyledComponent>
+                                          </styled.span>
+                                        </li>
+                                      </StyledComponent>
+                                    </styled.li>
+                                  </Tab>
+                                </Component>
+                              </sortableElement>
+                            </DragTab>
+                          </ul>
+                        </StyledComponent>
+                      </styled.ul>
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </div>
+            </StyledComponent>
           </styled.div>
         </div>
       </TabList>
@@ -243,79 +526,242 @@ exports[`DragTabList render DragTab List 1`] = `
           <styled.div
             hasExtraButton={false}
           >
-            <div
-              className="c0"
+            <StyledComponent
+              forwardedClass={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": undefined,
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "c0",
+                    "rules": Array [
+                      "
+                  background-color: white;
+                  text-align: left;
+                  position: relative;
+                  white-space: nowrap;
+                  overflow: hidden;
+                  width: auto;
+                  padding: ",
+                      [Function],
+                      ";
+                ",
+                    ],
+                  },
+                  "displayName": "styled.div",
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "div",
+                  "toString": [Function],
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              hasExtraButton={false}
             >
-              <styled.div
-                innerRef={[Function]}
+              <div
+                className="c0"
               >
-                <div
-                  className="c1"
-                >
-                  <styled.ul
-                    innerRef={[Function]}
-                    role="tablist"
+                <styled.div>
+                  <StyledComponent
+                    forwardedClass={
+                      Object {
+                        "$$typeof": Symbol(react.forward_ref),
+                        "attrs": undefined,
+                        "componentStyle": ComponentStyle {
+                          "componentId": "sc-bwzfXH",
+                          "isStatic": true,
+                          "lastClassName": "c1",
+                          "rules": Array [
+                            "
+                        overflow: hidden;
+                      ",
+                          ],
+                        },
+                        "displayName": "styled.div",
+                        "render": [Function],
+                        "styledComponentId": "sc-bwzfXH",
+                        "target": "div",
+                        "toString": [Function],
+                        "warnTooManyClasses": [Function],
+                        "withComponent": [Function],
+                      }
+                    }
+                    forwardedRef={[Function]}
                   >
-                    <ul
-                      className="c2"
-                      role="tablist"
+                    <div
+                      className="c1"
                     >
-                      <DragTab
-                        active={false}
-                        index={0}
-                        key="0/.0"
-                        tabIndex={0}
+                      <styled.ul
+                        role="tablist"
                       >
-                        <sortableElement
-                          active={false}
-                          collection={0}
-                          index={0}
-                          tabIndex={0}
+                        <StyledComponent
+                          forwardedClass={
+                            Object {
+                              "$$typeof": Symbol(react.forward_ref),
+                              "attrs": undefined,
+                              "componentStyle": ComponentStyle {
+                                "componentId": "sc-htpNat",
+                                "isStatic": true,
+                                "lastClassName": "c2",
+                                "rules": Array [
+                                  "
+                              padding-left: 0;
+                              position: relative;
+                              margin: 0;
+                              list-style: none;
+                              display: inline-block;
+                              transition: transform .3s cubic-bezier(.42, 0, .58, 1);
+                            ",
+                                ],
+                              },
+                              "displayName": "styled.ul",
+                              "render": [Function],
+                              "styledComponentId": "sc-htpNat",
+                              "target": "ul",
+                              "toString": [Function],
+                              "warnTooManyClasses": [Function],
+                              "withComponent": [Function],
+                            }
+                          }
+                          forwardedRef={[Function]}
+                          role="tablist"
                         >
-                          <Component
-                            active={false}
-                            tabIndex={0}
+                          <ul
+                            className="c2"
+                            role="tablist"
                           >
-                            <Tab
+                            <DragTab
                               active={false}
                               index={0}
+                              key="0/.0"
                               tabIndex={0}
                             >
-                              <styled.li
+                              <sortableElement
                                 active={false}
-                                aria-controls="react-tabtab-panel-0"
-                                aria-selected={false}
-                                id="react-tabtab-tab-0"
-                                innerRef={[Function]}
-                                onClick={[Function]}
-                                role="tab"
+                                collection={0}
+                                index={0}
+                                tabIndex={0}
                               >
-                                <li
-                                  aria-controls="react-tabtab-panel-0"
-                                  aria-selected={false}
-                                  className="c3"
-                                  id="react-tabtab-tab-0"
-                                  onClick={[Function]}
-                                  role="tab"
+                                <Component
+                                  active={false}
+                                  tabIndex={0}
                                 >
-                                  <styled.span>
-                                    <span
-                                      className="c4"
+                                  <Tab
+                                    active={false}
+                                    index={0}
+                                    tabIndex={0}
+                                  >
+                                    <styled.li
+                                      active={false}
+                                      aria-controls="react-tabtab-panel-0"
+                                      aria-selected={false}
+                                      id="react-tabtab-tab-0"
+                                      onClick={[Function]}
+                                      role="tab"
                                     >
-                                      Tab1
-                                    </span>
-                                  </styled.span>
-                                </li>
-                              </styled.li>
-                            </Tab>
-                          </Component>
-                        </sortableElement>
-                      </DragTab>
-                    </ul>
-                  </styled.ul>
-                </div>
-              </styled.div>
-            </div>
+                                      <StyledComponent
+                                        active={false}
+                                        aria-controls="react-tabtab-panel-0"
+                                        aria-selected={false}
+                                        forwardedClass={
+                                          Object {
+                                            "$$typeof": Symbol(react.forward_ref),
+                                            "attrs": undefined,
+                                            "componentStyle": ComponentStyle {
+                                              "componentId": "sc-EHOje",
+                                              "isStatic": false,
+                                              "lastClassName": "c3",
+                                              "rules": Array [
+                                                "
+                                            display: ",
+                                                [Function],
+                                                ";
+                                            ",
+                                                [Function],
+                                                "
+                                          
+                                            user-select: none;
+                                            &:hover {
+                                              cursor: pointer;
+                                              color: black;
+                                            }
+                                          ",
+                                              ],
+                                            },
+                                            "displayName": "styled.li",
+                                            "render": [Function],
+                                            "styledComponentId": "sc-EHOje",
+                                            "target": "li",
+                                            "toString": [Function],
+                                            "warnTooManyClasses": [Function],
+                                            "withComponent": [Function],
+                                          }
+                                        }
+                                        forwardedRef={[Function]}
+                                        id="react-tabtab-tab-0"
+                                        onClick={[Function]}
+                                        role="tab"
+                                      >
+                                        <li
+                                          aria-controls="react-tabtab-panel-0"
+                                          aria-selected={false}
+                                          className="c3"
+                                          id="react-tabtab-tab-0"
+                                          onClick={[Function]}
+                                          role="tab"
+                                        >
+                                          <styled.span>
+                                            <StyledComponent
+                                              forwardedClass={
+                                                Object {
+                                                  "$$typeof": Symbol(react.forward_ref),
+                                                  "attrs": undefined,
+                                                  "componentStyle": ComponentStyle {
+                                                    "componentId": "sc-bZQynM",
+                                                    "isStatic": true,
+                                                    "lastClassName": "c4",
+                                                    "rules": Array [
+                                                      "
+                                                  vertical-align: middle;
+                                                ",
+                                                    ],
+                                                  },
+                                                  "displayName": "styled.span",
+                                                  "render": [Function],
+                                                  "styledComponentId": "sc-bZQynM",
+                                                  "target": "span",
+                                                  "toString": [Function],
+                                                  "warnTooManyClasses": [Function],
+                                                  "withComponent": [Function],
+                                                }
+                                              }
+                                              forwardedRef={null}
+                                            >
+                                              <span
+                                                className="c4"
+                                              >
+                                                Tab1
+                                              </span>
+                                            </StyledComponent>
+                                          </styled.span>
+                                        </li>
+                                      </StyledComponent>
+                                    </styled.li>
+                                  </Tab>
+                                </Component>
+                              </sortableElement>
+                            </DragTab>
+                          </ul>
+                        </StyledComponent>
+                      </styled.ul>
+                    </div>
+                  </StyledComponent>
+                </styled.div>
+              </div>
+            </StyledComponent>
           </styled.div>
         </div>
       </TabList>

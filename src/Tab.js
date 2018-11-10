@@ -62,7 +62,7 @@ export default class Tab extends React.PureComponent<Props> {
     const {CustomTabStyle, active, closable, vertical, index} = this.props;
     const TabComponent = CustomTabStyle || TabStyle;
     return (
-      <TabComponent innerRef={node => this.__INTERNAL_NODE = node}
+      <TabComponent ref={node => this.__INTERNAL_NODE = node}
                     onClick={this.clickTab}
                     active={active}
                     vertical={vertical}

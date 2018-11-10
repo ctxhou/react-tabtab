@@ -3,7 +3,34 @@
 exports[`custom style 1`] = `
 <div>
   <PanelComponent
-    CustomPanelStyle={[Function]}
+    CustomPanelStyle={
+      Object {
+        "$$typeof": Symbol(react.forward_ref),
+        "attrs": undefined,
+        "componentStyle": ComponentStyle {
+          "componentId": "sc-bdVaJa",
+          "isStatic": false,
+          "lastClassName": "guOOuH",
+          "rules": Array [
+            "
+        background-color: white;
+        text-align: left;
+        padding: 20px 15px;
+        ",
+            [Function],
+            "
+      ",
+          ],
+        },
+        "displayName": "styled.div",
+        "render": [Function],
+        "styledComponentId": "sc-bdVaJa",
+        "target": "div",
+        "toString": [Function],
+        "warnTooManyClasses": [Function],
+        "withComponent": [Function],
+      }
+    }
     active={false}
     index={0}
     key="0"
@@ -45,13 +72,50 @@ exports[`render render multi Panel 1`] = `
         id="react-tabtab-panel-0"
         role="tabpanel"
       >
-        <div
+        <StyledComponent
+          active={false}
           aria-hidden={false}
           aria-labelledby="react-tabtab-0"
-          className="c0"
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": undefined,
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bdVaJa",
+                "isStatic": false,
+                "lastClassName": "c0",
+                "rules": Array [
+                  "
+              background-color: white;
+              text-align: left;
+              padding: 20px 15px;
+              ",
+                  [Function],
+                  "
+            ",
+                ],
+              },
+              "displayName": "styled.div",
+              "render": [Function],
+              "styledComponentId": "sc-bdVaJa",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
           id="react-tabtab-panel-0"
           role="tabpanel"
-        />
+        >
+          <div
+            aria-hidden={false}
+            aria-labelledby="react-tabtab-0"
+            className="c0"
+            id="react-tabtab-panel-0"
+            role="tabpanel"
+          />
+        </StyledComponent>
       </styled.div>
     </PanelComponent>
     <PanelComponent
@@ -66,17 +130,54 @@ exports[`render render multi Panel 1`] = `
         id="react-tabtab-panel-1"
         role="tabpanel"
       >
-        <div
+        <StyledComponent
+          active={true}
           aria-hidden={false}
           aria-labelledby="react-tabtab-1"
-          className="c1"
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": undefined,
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bdVaJa",
+                "isStatic": false,
+                "lastClassName": "c0",
+                "rules": Array [
+                  "
+              background-color: white;
+              text-align: left;
+              padding: 20px 15px;
+              ",
+                  [Function],
+                  "
+            ",
+                ],
+              },
+              "displayName": "styled.div",
+              "render": [Function],
+              "styledComponentId": "sc-bdVaJa",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
           id="react-tabtab-panel-1"
           role="tabpanel"
         >
-          <span>
-            panel content
-          </span>
-        </div>
+          <div
+            aria-hidden={false}
+            aria-labelledby="react-tabtab-1"
+            className="c1"
+            id="react-tabtab-panel-1"
+            role="tabpanel"
+          >
+            <span>
+              panel content
+            </span>
+          </div>
+        </StyledComponent>
       </styled.div>
     </PanelComponent>
     <PanelComponent
@@ -91,13 +192,50 @@ exports[`render render multi Panel 1`] = `
         id="react-tabtab-panel-2"
         role="tabpanel"
       >
-        <div
+        <StyledComponent
+          active={false}
           aria-hidden={false}
           aria-labelledby="react-tabtab-2"
-          className="c0"
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": undefined,
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bdVaJa",
+                "isStatic": false,
+                "lastClassName": "c0",
+                "rules": Array [
+                  "
+              background-color: white;
+              text-align: left;
+              padding: 20px 15px;
+              ",
+                  [Function],
+                  "
+            ",
+                ],
+              },
+              "displayName": "styled.div",
+              "render": [Function],
+              "styledComponentId": "sc-bdVaJa",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
           id="react-tabtab-panel-2"
           role="tabpanel"
-        />
+        >
+          <div
+            aria-hidden={false}
+            aria-labelledby="react-tabtab-2"
+            className="c0"
+            id="react-tabtab-panel-2"
+            role="tabpanel"
+          />
+        </StyledComponent>
       </styled.div>
     </PanelComponent>
   </div>
@@ -127,17 +265,54 @@ exports[`render render one Panel 1`] = `
         id="react-tabtab-panel-0"
         role="tabpanel"
       >
-        <div
+        <StyledComponent
+          active={true}
           aria-hidden={false}
           aria-labelledby="react-tabtab-0"
-          className="c0"
+          forwardedClass={
+            Object {
+              "$$typeof": Symbol(react.forward_ref),
+              "attrs": undefined,
+              "componentStyle": ComponentStyle {
+                "componentId": "sc-bdVaJa",
+                "isStatic": false,
+                "lastClassName": "c0",
+                "rules": Array [
+                  "
+              background-color: white;
+              text-align: left;
+              padding: 20px 15px;
+              ",
+                  [Function],
+                  "
+            ",
+                ],
+              },
+              "displayName": "styled.div",
+              "render": [Function],
+              "styledComponentId": "sc-bdVaJa",
+              "target": "div",
+              "toString": [Function],
+              "warnTooManyClasses": [Function],
+              "withComponent": [Function],
+            }
+          }
+          forwardedRef={null}
           id="react-tabtab-panel-0"
           role="tabpanel"
         >
-          <span>
-            panel content
-          </span>
-        </div>
+          <div
+            aria-hidden={false}
+            aria-labelledby="react-tabtab-0"
+            className="c0"
+            id="react-tabtab-panel-0"
+            role="tabpanel"
+          >
+            <span>
+              panel content
+            </span>
+          </div>
+        </StyledComponent>
       </styled.div>
     </PanelComponent>
   </div>

@@ -13,7 +13,9 @@
 ![gzip size](http://img.badgesize.io/https://unpkg.com/react-tabtab/dist/react-tabtab.min.js?compression=gzip)
 
 > A mobile support, draggable, editable and api based Tab for ReactJS. <br/>
-> *Support react v16 and v15*
+> *Support react >= `v16.3`*
+
+**Note: Since v2, we don't support v15 and old styled-components version (<4.0.0) [v15 document](https://github.com/ctxhou/react-tabtab/blob/v1.8.4/README.md)**
 
 ### [Demo](https://ctxhou.github.io/react-tabtab/)
 
@@ -64,7 +66,7 @@ Install `styled-components`. Because we put the `styled-components` to the peerD
 
 ```js
 $ npm install react-tabtab --save
-$ npm install styled-components --save
+$ npm install styled-components@^4.0.0 --save
 ```
 
 Then, import the module by module bundler like `webpack`, `browserify`
@@ -552,19 +554,19 @@ let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styled;
 import {styled} from 'react-tabtab';
 let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styled;
 
-TabListStyle = TabListStyle.extend`
+TabListStyle = styled(TabListStyle)`
   // write css
 `;
 
-TabStyle = TabStyle.extend`
+TabStyle = styled(TabStyle)`
   // write css
 `;
 
-ActionButtonStyle = ActionButtonStyle.extend`
+ActionButtonStyle = styled(ActionButtonStyle)`
   // write css
 `;
 
-PanelStyle = PanelStyle.extend`
+PanelStyle = styled(PanelStyle)`
   // write css
 `;
 
