@@ -1,6 +1,6 @@
 {
   "name": "react-tabtab",
-  "version": "1.8.2",
+  "version": "1.8.4",
   "description": "A mobile support, draggable, editable and api based Tab for ReactJS",
   "main": "lib/",
   "scripts": {
