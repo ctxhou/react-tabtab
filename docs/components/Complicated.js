@@ -36,16 +36,18 @@ export default class Complicated extends Component {
   }
 
   handleEdit = ({type, index}) => {
-    let {tabs, activeIndex} = this.state;
-    if (type === 'delete') {
-      tabs.splice(index, 1);
-    }
-    if (index - 1 >= 0) {
-      activeIndex = index - 1;
-    } else {
-      activeIndex = 0;
-    }
-    this.setState({tabs, activeIndex});
+    this.setState((state) => {
+      let {tabs, activeIndex} = state;
+      if (type === 'delete') {
+        tabs = [...tabs.slice(0, index), ...tabs.slice(index + 1)];
+      }
+      if (index - 1 >= 0) {
+        activeIndex = index - 1;
+      } else {
+        activeIndex = 0;
+      }
+      return {tabs, activeIndex};
+    });
   }
 
   handleChangeTabsNumber = e => {

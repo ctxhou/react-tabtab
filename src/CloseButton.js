@@ -3,16 +3,20 @@ import * as React from 'react';
 import {CloseIcon} from './IconSvg';
 import styled from 'styled-components';
 
-const CloseWrapper = styled.div`
+const CloseWrapper = styled.button`
   display: inline-block;
   color: #777;
-  margin-left: 3px;
-  padding-bottom: 2px;
+  margin-left: 5px;
+  padding: 0;
   vertical-align: middle;
+  border: 0;
+  padding: 2px;
+  outline: 0;
   &:hover {
     color: black;
     background-color: #eee;
     cursor: pointer;
+    border-radius: 50%;
   }
   > svg {
     vertical-align: middle;

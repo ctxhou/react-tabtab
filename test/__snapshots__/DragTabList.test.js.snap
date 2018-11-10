@@ -40,6 +40,10 @@ exports[`DragTabList custom ListStyle style 1`] = `
   color: black;
 }
 
+.c4 {
+  vertical-align: middle;
+}
+
 <DragTabList
   customStyle={
     Object {
@@ -140,7 +144,13 @@ exports[`DragTabList custom ListStyle style 1`] = `
                                   onClick={[Function]}
                                   role="tab"
                                 >
-                                  Tab1
+                                  <styled.span>
+                                    <span
+                                      className="c4"
+                                    >
+                                      Tab1
+                                    </span>
+                                  </styled.span>
                                 </li>
                               </styled.li>
                             </Tab>
@@ -198,6 +208,10 @@ exports[`DragTabList render DragTab List 1`] = `
 .c3:hover {
   cursor: pointer;
   color: black;
+}
+
+.c4 {
+  vertical-align: middle;
 }
 
 <DragTabList
@@ -284,7 +298,13 @@ exports[`DragTabList render DragTab List 1`] = `
                                   onClick={[Function]}
                                   role="tab"
                                 >
-                                  Tab1
+                                  <styled.span>
+                                    <span
+                                      className="c4"
+                                    >
+                                      Tab1
+                                    </span>
+                                  </styled.span>
                                 </li>
                               </styled.li>
                             </Tab>
