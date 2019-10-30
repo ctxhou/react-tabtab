@@ -210,6 +210,15 @@ export default class TabListComponent extends React.Component<Props, State> {
 
   // $FlowFixMe
   scrollToIndex(index: number, rectSide: 'left' | 'right') {
+    // Scroll to the last element if the index is out of bounds
+    if(index > this.tabRefs.length - 1) {
+      index = this.tabRefs.length - 1;
+    }
+    // Cancel scrolling if there are no tabs
+    else if(this.tabRefs.length <= 0) {
+      return;
+    }
+    
     const tabOffset = this.getTabNode(this.tabRefs[index]).getBoundingClientRect();
     const containerOffset = this.listContainer.getBoundingClientRect();
     // Cancel scrolling if the tab is visible
