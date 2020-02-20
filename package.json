@@ -47,6 +47,9 @@
   },
   "homepage": "https://github.com/ctxhou/react-tabtab#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "classnames": "^2.2.5",
     "invariant": "^2.2.2",
     "prop-types": "^15.6.0",

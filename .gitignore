@@ -6,3 +6,4 @@ yarn.lock
 bundle-stats.html
 dist
 coverage
+package-lock.json

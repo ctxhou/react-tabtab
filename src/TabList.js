@@ -2,12 +2,15 @@
 import * as React from 'react';
 import styled from 'styled-components';
 import invariant from 'invariant';
-import {LeftIcon, RightIcon, BulletIcon} from './IconSvg';
-import {isNumber} from './utils/isType';
+import { BulletIcon } from './IconSvg';
+import { isNumber } from './utils/isType';
 import TabModal from './TabModal';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretLeft, faCaretRight } from "@fortawesome/free-solid-svg-icons";
+
 const buttonWidth = 35;
-const getPadding = ({showModalButton, showArrowButton}) => {
+const getPadding = ({ showModalButton, showArrowButton }) => {
   let paddingLeft = 0;
   let paddingRight = 0;
   if (showModalButton) {
@@ -70,8 +73,8 @@ const makeScrollButton = ActionButton => styled(ActionButton)`
   filter: none;
   position: absolute;
   ${props => props.left ?
-    props.showModalButton ? `left: ${buttonWidth + 2}px`: `left: 0`
-  : 'right: 0'
+    props.showModalButton ? `left: ${buttonWidth + 2}px` : `left: 0`
+    : 'right: 0'
   };
   &:hover {
     cursor: pointer;
@@ -140,7 +143,7 @@ export default class TabListComponent extends React.Component<Props, State> {
   componentDidMount() {
     this.isShowArrowButton();
     this.isShowModalButton();
-    if(this.props.activeIndex > 0)
+    if (this.props.activeIndex > 0)
       this.scrollToIndex(this.props.activeIndex, 'left')
   }
 
@@ -213,11 +216,11 @@ export default class TabListComponent extends React.Component<Props, State> {
     const tabOffset = this.getTabNode(this.tabRefs[index]).getBoundingClientRect();
     const containerOffset = this.listContainer.getBoundingClientRect();
     // Cancel scrolling if the tab is visible
-    if(tabOffset.right < containerOffset.right &&
-       tabOffset.left > containerOffset.left) return;
+    if (tabOffset.right < containerOffset.right &&
+      tabOffset.left > containerOffset.left) return;
     const leftMove = tabOffset[rectSide] - containerOffset[rectSide];
     this.scrollPosition += leftMove;
-    if (this.scrollPosition < 0 ) {
+    if (this.scrollPosition < 0) {
       this.scrollPosition = 0;
     }
     this.listScroll.style.transform = `translate3d(-${this.scrollPosition}px, 0, 0)`;
@@ -228,7 +231,7 @@ export default class TabListComponent extends React.Component<Props, State> {
   }
 
   toggleModal(open: boolean) {
-    this.setState({modalIsOpen: open}, () => {
+    this.setState({ modalIsOpen: open }, () => {
       if (!open) {
         // $FlowFixMe
         this.scrollToIndex(this.props.activeIndex, 'right');
@@ -237,16 +240,16 @@ export default class TabListComponent extends React.Component<Props, State> {
   }
 
   isShowModalButton() {
-    let {showModalButton} = this.props;
+    let { showModalButton } = this.props;
     if (isNumber(showModalButton)) {
       // $FlowFixMe, weired. currently set showModalButton as number | bool, but don't know why flow only can recognize it as bool
       showModalButton = this.props.children.length >= showModalButton;
     }
-    this.setState({showModalButton});
+    this.setState({ showModalButton });
   }
 
   isShowArrowButton() {
-    let {showArrowButton} = this.props;
+    let { showArrowButton } = this.props;
     if (showArrowButton === 'auto') {
       let tabWidth = 0;
       const containerWidth = this.listContainer.offsetWidth;
@@ -261,11 +264,11 @@ export default class TabListComponent extends React.Component<Props, State> {
       }
     }
     // $FlowFixMe: flow will show 'auto' is not bool, but with this logic, showArrowButton will never be 'auto'
-    this.setState({showArrowButton});
+    this.setState({ showArrowButton });
   }
 
   renderTabs(options?: any = {}, isModal?: boolean) {
-    const {children, activeIndex, handleTabChange, handleEdit, customStyle} = this.props;
+    const { children, activeIndex, handleTabChange, handleEdit, customStyle } = this.props;
     const props = {
       handleTabChange,
       handleEdit,
@@ -293,7 +296,7 @@ export default class TabListComponent extends React.Component<Props, State> {
   }
 
   renderArrowButton(ScrollButton: React.ComponentType<*>) {
-    const {showArrowButton} = this.state;
+    const { showArrowButton } = this.state;
     if (showArrowButton) {
       return (
         <div>
@@ -301,11 +304,11 @@ export default class TabListComponent extends React.Component<Props, State> {
             onClick={() => { this.handleScroll('left') }}
             ref={node => this.leftArrowNode = node}
             showModalButton={this.state.showModalButton}>
-            <LeftIcon />
+            <FontAwesomeIcon icon={faCaretLeft} />
           </ScrollButton>
           <ScrollButton onClick={() => { this.handleScroll('right') }}
             ref={node => this.rightArrowNode = node}>
-            <RightIcon />
+            <FontAwesomeIcon icon={faCaretRight} />
           </ScrollButton>
         </div>
       )
@@ -321,7 +324,7 @@ export default class TabListComponent extends React.Component<Props, State> {
       handleTabSequence,
       ExtraButton
     } = this.props;
-    const {modalIsOpen} = this.state;
+    const { modalIsOpen } = this.state;
     const TabList = customStyle.TabList || TabListStyle;
     const ActionButton = customStyle.ActionButton || ActionButtonStyle;
     const ScrollButton = makeScrollButton(ActionButton);
@@ -331,15 +334,15 @@ export default class TabListComponent extends React.Component<Props, State> {
       <div>
         {ExtraButton ? ExtraButton : null}
         <TabList hasExtraButton={!!ExtraButton}
-                 showModalButton={this.state.showModalButton}
-                 showArrowButton={this.state.showArrowButton}>
+          showModalButton={this.state.showModalButton}
+          showArrowButton={this.state.showArrowButton}>
           {this.state.showModalButton ?
             <FoldButton ref={node => this.foldNode = node}
-                        onClick={this.toggleModal.bind(this, true)}
-                        showArrowButton={this.state.showArrowButton}>
-              <BulletIcon/>
+              onClick={this.toggleModal.bind(this, true)}
+              showArrowButton={this.state.showArrowButton}>
+              <BulletIcon />
             </FoldButton>
-          : null}
+            : null}
           {this.renderArrowButton(ScrollButton)}
           <ListInner ref={node => this.listContainer = node}>
             <ListScroll ref={node => this.listScroll = node} role="tablist">
@@ -349,12 +352,12 @@ export default class TabListComponent extends React.Component<Props, State> {
         </TabList>
         {modalIsOpen ?
           <TabModal closeModal={this.toggleModal.bind(this, false)}
-                    handleTabSequence={handleTabSequence}
-                    handleTabChange={handleTabChange}
-                    activeIndex={activeIndex}>
-            {this.renderTabs({vertical: true}, true)}
+            handleTabSequence={handleTabSequence}
+            handleTabChange={handleTabChange}
+            activeIndex={activeIndex}>
+            {this.renderTabs({ vertical: true }, true)}
           </TabModal>
-        : null}
+          : null}
       </div>
     )
   }
