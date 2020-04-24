@@ -544,15 +544,19 @@ If current theme doesn't meet your demand, follow this three steps and create a 
 **First step: import current style**
 
 ```js
-import {styled} from 'react-tabtab';
-let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styled;
+import styled from 'styled-components';
+import { styled as styledTabTab } from 'react-tabtab';
+
+let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styledTabTab;
 ```
 
 **Second: extend style and export it**
 
 ```js
-import {styled} from 'react-tabtab';
-let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styled;
+import styled from 'styled-components';
+import { styled as styledTabTab } from 'react-tabtab';
+
+let {TabListStyle, ActionButtonStyle, TabStyle, PanelStyle} = styledTabTab;
 
 TabListStyle = styled(TabListStyle)`
   // write css
