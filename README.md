@@ -356,7 +356,7 @@ More code examples are avalable [here](https://github.com/ctxhou/react-tabtab/bl
     </tr>
     <tr>
       <td>onTabChange</td>
-      <td><code>() => tabIndex</code></td>
+      <td><code>(tabIndex) => void</code></td>
       <td>null</td>
       <td>
         return tabIndex is clicked<br/>
